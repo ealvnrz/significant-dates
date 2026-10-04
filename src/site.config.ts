@@ -9,7 +9,7 @@ export const SITE = {
    * GitHub repository ("owner/name"). Suggestions and corrections are GitHub issues, opened with
    * the forms in .github/ISSUE_TEMPLATE. While it's empty, the buttons only show in `npm run dev`.
    */
-  repo: '',
+  repo: 'ealvnrz/significant-dates',
   /** Days after `checked` before an entry's dates are flagged as possibly out of date. */
   staleAfterDays: 120,
 };

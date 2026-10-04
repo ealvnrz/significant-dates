@@ -1,0 +1,92 @@
+name: Suggest a conference
+description: Add a statistics or probability conference or workshop to Significant Dates.
+title: "Add: "
+labels: ["new conference"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the list complete. Please suggest only meetings whose dates are published on an official page.
+  - type: input
+    id: name
+    attributes:
+      label: Full name
+      placeholder: "e.g. 2028 ISBA World Meeting"
+    validations:
+      required: true
+  - type: input
+    id: acronym
+    attributes:
+      label: Acronym
+      placeholder: "e.g. ISBA 2028"
+  - type: input
+    id: url
+    attributes:
+      label: Official website
+      placeholder: "https://"
+    validations:
+      required: true
+  - type: input
+    id: dates
+    attributes:
+      label: Dates
+      description: First and last day, as YYYY-MM-DD.
+      placeholder: "2028-06-26 to 2028-06-30"
+    validations:
+      required: true
+  - type: checkboxes
+    id: tentative
+    attributes:
+      label: Status
+      options:
+        - label: The organisers haven't confirmed these dates yet
+  - type: input
+    id: location
+    attributes:
+      label: City and country
+      placeholder: "e.g. Milwaukee, United States (or Online)"
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      options:
+        - In person
+        - Hybrid
+        - Online
+        - Not stated
+  - type: dropdown
+    id: topics
+    attributes:
+      label: Topics
+      multiple: true
+      options:
+        - Spatial
+        - Spatio-temporal
+        - Geostatistics
+        - Environmental
+        - Bayesian
+        - Computational
+        - Biostatistics
+        - Probability
+        - General
+        - Data science
+  - type: textarea
+    id: deadlines
+    attributes:
+      label: Deadlines
+      description: One per line, the date and what closes.
+      placeholder: |
+        2027-11-30 Abstract submission
+        2028-03-15 Early-bird registration
+  - type: input
+    id: source
+    attributes:
+      label: Where are the dates published?
+      description: Link to the page that lists the dates, if it isn't the homepage.
+      placeholder: "https://"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?

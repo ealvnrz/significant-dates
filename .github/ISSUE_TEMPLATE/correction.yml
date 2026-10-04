@@ -1,0 +1,39 @@
+name: Suggest a correction
+description: Report a changed date, a new deadline or a broken link for a listed conference.
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: input
+    id: conference
+    attributes:
+      label: Conference
+      description: As listed on the site (the "Suggest a correction" link fills this in).
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What needs fixing?
+      multiple: true
+      options:
+        - Dates
+        - Deadlines
+        - Location or format
+        - Website link
+        - Description or topics
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What it should say.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Link to the official page with the correct information.
+      placeholder: "https://"
