@@ -5,18 +5,6 @@ import type { CollectionEntry } from 'astro:content';
 export type ConferenceEntry = CollectionEntry<'conferences'>;
 export type Conference = ConferenceEntry['data'] & { id: string };
 
-/** A conference with dates as YYYY-MM-DD strings (for the .ics files). */
-export type ConferenceJson = Omit<Conference, 'start' | 'end' | 'deadlines' | 'checked'> & {
-  start: string;
-  end: string;
-  deadlines: { label: string; date: string; tentative: boolean }[];
-  checked: string | null;
-  /** Acronym, or the full name when there's none. */
-  title: string;
-  /** "City, Country" or "Online". */
-  where: string;
-};
-
 export const TOPIC_LABELS: Record<string, string> = {
   spatial: 'Spatial',
   'spatio-temporal': 'Spatio-temporal',
@@ -93,33 +81,6 @@ export function location(c: Pick<Conference, 'format' | 'city' | 'country'>): st
   return [c.city, c.country].filter(Boolean).join(', ');
 }
 
-const compact = (d: Date) => iso(d).replaceAll('-', '');
-const addDays = (d: Date, n: number) => new Date(d.getTime() + n * 86_400_000);
-
-/** Pre-filled "add event" link for Google Calendar (all-day event, end date is exclusive). */
-export function googleCalendarUrl(c: Conference): string {
-  const params = new URLSearchParams({
-    action: 'TEMPLATE',
-    text: c.acronym ? `${c.acronym} — ${c.name}` : c.name,
-    dates: `${compact(c.start)}/${compact(addDays(c.end, 1))}`,
-    details: c.url,
-    location: location(c),
-  });
-  return `https://calendar.google.com/calendar/render?${params}`;
-}
-
-export function toJson(c: Conference): ConferenceJson {
-  return {
-    ...c,
-    start: iso(c.start),
-    end: iso(c.end),
-    deadlines: c.deadlines.map((d) => ({ ...d, date: iso(d.date) })),
-    checked: c.checked ? iso(c.checked) : null,
-    title: c.acronym ?? c.name,
-    where: location(c),
-  };
-}
-
 const ATTENDANCE = {
   'in-person': 'https://schema.org/OfflineEventAttendanceMode',
   hybrid: 'https://schema.org/MixedEventAttendanceMode',
@@ -148,5 +109,3 @@ export function eventJsonLd(c: Conference) {
     ...(c.description ? { description: c.description } : {}),
   };
 }
-
-export { addDays, compact };

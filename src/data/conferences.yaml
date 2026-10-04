@@ -667,6 +667,25 @@
   checked: 2026-09-30
   source: "https://latinr.org/"
 
+- id: metma-latam-2027
+  name: "III METMA LATAM: Latin American Conference on Spatio-Temporal Modelling"
+  acronym: "III METMA LATAM 2027"
+  start: 2027-09-01
+  end: 2027-09-03
+  city: "Santiago"
+  country: "Chile"
+  countryCode: "CL"
+  region: "Latin America"
+  lat: -33.50 # Campus San Joaquín, Pontificia Universidad Católica de Chile
+  lon: -70.61
+  url: "https://iii-metma-latam-2027.vercel.app/"
+  format: "in-person" # format inferred (venue: Faculty of Mathematics, Campus San Joaquín)
+  topics: [spatial, spatio-temporal]
+  description: "Latin American meeting on spatial, temporal and spatio-temporal statistical modelling, with keynote and invited talks, at the Pontificia Universidad Católica de Chile."
+  deadlines: [] # no submission or registration dates published yet
+  checked: 2026-10-03
+  source: "https://iii-metma-latam-2027.vercel.app/"
+
 # ============================ Asia, Africa, Oceania, Europe ============================
 # Added 2026-10-02 to widen coverage beyond Europe and the Americas. Most `format` values are inferred
 # (see the inline comments); deadlines with an inferred year are marked `tentative: true`.

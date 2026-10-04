@@ -89,10 +89,18 @@ const suggestUrl = issueUrl('new-conference.yml');
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <a href="/" class="brand brand-small">
-          <img src="/favicon.svg" alt="" width="22" height="22" />
-          <span>{SITE.name}</span>
-        </a>
+        <div class="footer-brand">
+          <a href="/" class="brand brand-small">
+            <img src="/favicon.svg" alt="" width="22" height="22" />
+            <span>{SITE.name}</span>
+          </a>
+          <span class="footer-credit">
+            <span>by</span>
+            <a href={SITE.author.url} target="_blank" rel="noopener">
+              <Icon name="github" size={13} /> {SITE.author.name}
+            </a>
+          </span>
+        </div>
         <p class="muted">
           Dates come from the official conference sites but can change. Always check them before booking travel.
         </p>

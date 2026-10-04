@@ -1243,49 +1243,6 @@ time.is-stale {
   border-bottom: 1px solid var(--border);
 }
 
-/* ---------- Calendar menu ---------- */
-
-.cal-menu {
-  position: relative;
-}
-.menu {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 6px);
-  z-index: 50;
-  min-width: 236px;
-  padding: 6px;
-  border: 1px solid var(--border-strong);
-  border-radius: 10px;
-  background: var(--bg-elev);
-  box-shadow: var(--shadow);
-  cursor: auto;
-}
-.menu a {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 10px;
-  border-radius: 6px;
-  color: var(--text);
-  font-size: 14px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.menu a svg {
-  color: var(--text-muted);
-}
-.menu a:hover,
-.menu a:focus-visible {
-  outline: none;
-  background: var(--surface);
-}
-.menu-note {
-  padding: 6px 10px 4px;
-  font-size: 12px;
-  color: var(--text-faint);
-}
-
 /* ---------- Past ---------- */
 
 .past {
@@ -1329,9 +1286,6 @@ time.is-stale {
 }
 .rows-past .r-deadline {
   visibility: hidden;
-}
-.rows-past .hide-past {
-  display: none;
 }
 .rows-past .r-title,
 .rows-past .r-range {
@@ -1390,6 +1344,30 @@ time.is-stale {
   align-items: center;
   justify-content: space-between;
   gap: 12px 32px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+.footer-credit a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+}
+.footer-credit a:hover {
+  color: var(--accent);
 }
 
 /* ---------- Leaflet theming ----------

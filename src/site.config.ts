@@ -10,6 +10,8 @@ export const SITE = {
    * the forms in .github/ISSUE_TEMPLATE. While it's empty, the buttons only show in `npm run dev`.
    */
   repo: 'ealvnrz/significant-dates',
+  /** Credit line in the footer. */
+  author: { name: 'ealvnrz', url: 'https://github.com/ealvnrz' },
   /** Days after `checked` before an entry's dates are flagged as possibly out of date. */
   staleAfterDays: 120,
 };

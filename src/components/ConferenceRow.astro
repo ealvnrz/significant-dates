@@ -6,7 +6,6 @@ import {
   FORMAT_LABELS,
   formatDate,
   formatRangeShort,
-  googleCalendarUrl,
   iso,
   location,
   yearLabel,
@@ -26,7 +25,6 @@ const search = [c.name, c.acronym, c.city, c.country, c.region, ...c.topics]
   .toLowerCase();
 const title = c.acronym ?? c.name;
 const detailsId = `details-${c.id}`;
-const menuId = `cal-${c.id}`;
 const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`, conference: `${title} (${c.id})` });
 ---
 
@@ -83,20 +81,9 @@ const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`
   </div>
 
   <div class="r-actions">
-    <div class="cal-menu hide-past">
-      <button class="icon-btn" type="button" data-cal-toggle aria-haspopup="menu" aria-expanded="false" aria-controls={menuId} title="Add to calendar" aria-label={`Add ${title} to your calendar`}>
-        <Icon name="calendar-plus" size={16} />
-      </button>
-      <div class="menu" id={menuId} role="menu" hidden>
-        <a role="menuitem" href={googleCalendarUrl(c)} target="_blank" rel="noopener">
-          <Icon name="external" size={14} /> Google Calendar
-        </a>
-        <a role="menuitem" href={`/ics/${c.id}.ics`} download={`${c.id}.ics`}>
-          <Icon name="download" size={14} /> Apple / Outlook (.ics)
-        </a>
-        {c.deadlines.length > 0 && <p class="menu-note">The .ics file includes {c.deadlines.length === 1 ? 'its deadline' : `its ${c.deadlines.length} deadlines`}</p>}
-      </div>
-    </div>
+    <a class="icon-btn" href={c.url} target="_blank" rel="noopener" title="Conference website" aria-label={`${title} website`}>
+      <Icon name="external" size={16} />
+    </a>
     {
       hasCoords && (
         <button class="icon-btn" type="button" data-locate title="Show on map" aria-label={`Show ${title} on the map`}>

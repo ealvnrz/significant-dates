@@ -389,7 +389,7 @@ search.addEventListener('keydown', (e) => {
 });
 
 // ---------------------------------------------------------------------------
-// 6. Row details, calendar menu, map links, in-page links, copy link.
+// 6. Row details, map links, in-page links, copy link.
 // ---------------------------------------------------------------------------
 function toggleRow(row: HTMLElement, open?: boolean) {
   const btn = $<HTMLButtonElement>('.r-toggle', row)!;
@@ -412,37 +412,8 @@ function focusRow(id: string) {
   row.classList.add('flash');
 }
 
-let openMenu: HTMLElement | null = null;
-function closeMenu(focusToggle = false) {
-  if (!openMenu) return;
-  const toggle = $<HTMLButtonElement>('[data-cal-toggle]', openMenu.parentElement!)!;
-  openMenu.hidden = true;
-  toggle.setAttribute('aria-expanded', 'false');
-  if (focusToggle) toggle.focus();
-  openMenu = null;
-}
-
 document.addEventListener('click', (e) => {
   const target = e.target as HTMLElement;
-
-  const calToggle = target.closest<HTMLButtonElement>('[data-cal-toggle]');
-  if (calToggle) {
-    const menu = $('.menu', calToggle.parentElement!)!;
-    const wasOpen = openMenu === menu;
-    closeMenu();
-    if (!wasOpen) {
-      menu.hidden = false;
-      calToggle.setAttribute('aria-expanded', 'true');
-      openMenu = menu;
-      $('a', menu)?.focus();
-    }
-    return;
-  }
-  if (openMenu && !target.closest('.menu')) closeMenu();
-  if (target.closest('.menu a')) {
-    closeMenu();
-    return;
-  }
 
   const anchor = target.closest<HTMLAnchorElement>('a[href^="#conf-"]');
   if (anchor) {
@@ -465,23 +436,9 @@ document.addEventListener('click', (e) => {
     void copyText(url).then((ok) => flashLabel($('span', copyLink)!, ok ? 'Link copied' : 'Copy failed'));
     return;
   }
-  // Clicking anywhere on a row (except links, buttons, menus and the open details) toggles it.
-  if (target.closest('.r-toggle') || (!target.closest('a, button, .menu, .r-details') && !getSelection()?.toString())) {
+  // Clicking anywhere on a row (except links, buttons and the open details) toggles it.
+  if (target.closest('.r-toggle') || (!target.closest('a, button, .r-details') && !getSelection()?.toString())) {
     toggleRow(row);
-  }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (!openMenu) return;
-  if (e.key === 'Escape') {
-    e.preventDefault();
-    closeMenu(true);
-  }
-  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-    e.preventDefault();
-    const items = $$<HTMLAnchorElement>('a', openMenu);
-    const i = items.indexOf(document.activeElement as HTMLAnchorElement);
-    items[(i + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length].focus();
   }
 });
 
