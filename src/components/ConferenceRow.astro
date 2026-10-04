@@ -1,0 +1,161 @@
+---
+import Icon from './Icon.astro';
+import {
+  type Conference,
+  TOPIC_LABELS,
+  FORMAT_LABELS,
+  formatDate,
+  formatRangeShort,
+  googleCalendarUrl,
+  iso,
+  location,
+  yearLabel,
+  areasOf,
+} from '../lib/conferences';
+import { issueUrl } from '../site.config';
+
+interface Props {
+  conference: Conference;
+}
+
+const { conference: c } = Astro.props;
+const hasCoords = c.lat != null && c.lon != null;
+const search = [c.name, c.acronym, c.city, c.country, c.region, ...c.topics]
+  .filter(Boolean)
+  .join(' ')
+  .toLowerCase();
+const title = c.acronym ?? c.name;
+const detailsId = `details-${c.id}`;
+const menuId = `cal-${c.id}`;
+const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`, conference: `${title} (${c.id})` });
+---
+
+<li
+  class="row"
+  id={`conf-${c.id}`}
+  data-id={c.id}
+  data-start={iso(c.start)}
+  data-end={iso(c.end)}
+  data-areas={areasOf(c).join(' ')}
+  data-region={c.region}
+  data-format={c.format}
+  data-country={c.countryCode ?? ''}
+  data-search={search}
+  data-deadlines={c.deadlines.map((d) => iso(d.date)).join(',')}
+>
+  <div class="r-date">
+    <span class="r-range">{formatRangeShort(c.start, c.end)}</span>
+    <span class="r-year">{yearLabel(c.start, c.end)}</span>
+    <span class="when" data-when></span>
+    {c.tentative && <span class="badge badge-tbc" title="The organisers haven't confirmed these dates yet">Dates TBC</span>}
+  </div>
+
+  <div class="r-main">
+    <h3 class="r-title">
+      <a href={c.url} target="_blank" rel="noopener">{title}</a>
+    </h3>
+    {c.acronym && <p class="r-name">{c.name}</p>}
+    {
+      c.topics.length > 0 && (
+        <ul class="r-topics" aria-label="Topics">
+          {c.topics.map((t) => (
+            <li class="tag">{TOPIC_LABELS[t]}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+
+  <div class="r-place">
+    <span class="r-city">
+      {
+        c.countryCode && (
+          <img class="flag" src={`/flags/${c.countryCode.toLowerCase()}.svg`} alt="" width="20" height="15" loading="lazy" decoding="async" />
+        )
+      }
+      <span>{location(c)}</span>
+    </span>
+    <span class="r-sub">{FORMAT_LABELS[c.format]}</span>
+  </div>
+
+  <div class="r-deadline" data-next-deadline>
+    <span class="r-sub">No open deadlines</span>
+  </div>
+
+  <div class="r-actions">
+    <div class="cal-menu hide-past">
+      <button class="icon-btn" type="button" data-cal-toggle aria-haspopup="menu" aria-expanded="false" aria-controls={menuId} title="Add to calendar" aria-label={`Add ${title} to your calendar`}>
+        <Icon name="calendar-plus" size={16} />
+      </button>
+      <div class="menu" id={menuId} role="menu" hidden>
+        <a role="menuitem" href={googleCalendarUrl(c)} target="_blank" rel="noopener">
+          <Icon name="external" size={14} /> Google Calendar
+        </a>
+        <a role="menuitem" href={`/ics/${c.id}.ics`} download={`${c.id}.ics`}>
+          <Icon name="download" size={14} /> Apple / Outlook (.ics)
+        </a>
+        {c.deadlines.length > 0 && <p class="menu-note">The .ics file includes {c.deadlines.length === 1 ? 'its deadline' : `its ${c.deadlines.length} deadlines`}</p>}
+      </div>
+    </div>
+    {
+      hasCoords && (
+        <button class="icon-btn" type="button" data-locate title="Show on map" aria-label={`Show ${title} on the map`}>
+          <Icon name="pin" size={16} />
+        </button>
+      )
+    }
+    <button class="icon-btn r-toggle" type="button" aria-expanded="false" aria-controls={detailsId} title="Details" aria-label={`Details for ${title}`}>
+      <Icon name="chevron" size={16} />
+    </button>
+  </div>
+
+  <div class="r-details" id={detailsId} hidden>
+    {c.description && <p class="r-desc">{c.description}</p>}
+    {
+      c.note && (
+        <p class="r-note">
+          <Icon name="info" size={15} /> <span>{c.note}</span>
+        </p>
+      )
+    }
+    {
+      c.deadlines.length > 0 && (
+        <ul class="r-deadlines" aria-label="Deadlines">
+          {c.deadlines.map((d) => (
+            <li data-date={iso(d.date)} data-tentative={d.tentative ? '' : undefined}>
+              <span class="dl-date">{formatDate(d.date)}</span>
+              <span class="dl-label">
+                {d.label}
+                {d.tentative && <span class="badge badge-tbc" title="Inferred date: the official page doesn't give the full date">TBC</span>}
+              </span>
+              <span class="dl-status" data-status />
+            </li>
+          ))}
+        </ul>
+      )
+    }
+    <div class="r-foot">
+      {
+        c.source && (
+          <p class="r-source">
+            Checked at{' '}
+            <a href={c.source} target="_blank" rel="noopener">
+              {new URL(c.source).hostname.replace(/^www\./, '')}
+            </a>
+            {c.checked && (
+              <>
+                {' · '}
+                <time datetime={iso(c.checked)} data-checked>{formatDate(c.checked)}</time>
+              </>
+            )}
+          </p>
+        )
+      }
+      <div class="r-links">
+        <a class="link-btn" href={c.url} target="_blank" rel="noopener"><Icon name="external" size={14} /> Website</a>
+        <button class="link-btn" type="button" data-copy-link><Icon name="link" size={14} /> <span>Copy link</span></button>
+        {correctionUrl && <a class="link-btn" href={correctionUrl} target="_blank" rel="noopener"><Icon name="github" size={14} /> Suggest a correction</a>}
+      </div>
+    </div>
+  </div>
+</li>

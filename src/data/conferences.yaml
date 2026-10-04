@@ -1,0 +1,4018 @@
+# Significant Dates — data
+# ----------------------------------------------------------------------------
+# One entry per meeting. Order doesn't matter (the site sorts by date).
+# Dates come from the official page in `source`; `checked` says when they were last verified.
+# "format inferred" = the official page doesn't state it; guessed from the venue.
+# Only closing dates go in `deadlines` (not "registration opens" / notifications),
+# so the countdowns on the site always mean "time left to do something".
+# The list starts in October 2026: meetings that ended earlier aren't recorded.
+# `tentative: true` on a meeting = dates not confirmed by the organisers; on a deadline = the
+# date is inferred (e.g. the page gives "October 9" with no year). Both show a "TBC" mark.
+# `note` = a caveat shown to visitors in the meeting's details.
+# ----------------------------------------------------------------------------
+
+# ============================ Spatial / environmental ============================
+
+- id: spatial-statistics-2027
+  name: "Spatial Statistics 2027: At the core of analytical intelligence"
+  acronym: "Spatial Statistics 2027"
+  start: 2027-07-22
+  end: 2027-07-25
+  city: "Beijing"
+  country: "China"
+  countryCode: "CN"
+  region: "Asia"
+  lat: 39.90
+  lon: 116.41
+  url: "https://www.elsevier.com/events/conferences/all/spatial-statistics"
+  format: "in-person" # format inferred (China Agricultural University, East Campus)
+  topics: [spatial, spatio-temporal, geostatistics]
+  description: "Elsevier's biennial spatial statistics conference; this edition links spatial statistics with AI, predictive modelling and real-time decision support."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2027-01-29
+    - label: "Workshop proposals"
+      date: 2027-03-12
+    - label: "Early-bird / author registration"
+      date: 2027-04-23
+  checked: 2026-09-30
+  source: "https://www.elsevier.com/events/conferences/all/spatial-statistics"
+
+- id: geoenv-2027
+  name: "16th International Conference on Geostatistics for Environmental Applications"
+  acronym: "geoENV 2027"
+  start: 2027-06-08
+  end: 2027-06-11
+  city: "Limassol"
+  country: "Cyprus"
+  countryCode: "CY"
+  region: "Europe"
+  lat: 34.68
+  lon: 33.04
+  url: "https://2027.geoenvia.org/"
+  format: "in-person"
+  topics: [geostatistics, spatial, environmental]
+  description: "Biennial geoENV conference on geostatistical methods for environmental problems, hosted by the Cyprus University of Technology; short courses on day one."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2027-01-17
+    - label: "Early-bird registration"
+      date: 2027-03-21
+    - label: "Author registration"
+      date: 2027-04-18
+  checked: 2026-09-30
+  source: "https://2027.geoenvia.org/"
+
+- id: geoenv-30th-anniversary-2026
+  name: "geoENV 30th Anniversary Celebration"
+  acronym: null
+  start: 2026-11-19
+  end: 2026-11-20
+  city: "Lisbon"
+  country: "Portugal"
+  countryCode: "PT"
+  region: "Europe"
+  lat: 38.72
+  lon: -9.14
+  url: "https://geoenvia.org/2026/09/geoenv-30th-anniversary-celebration-lisbon-19-20-november-2026/"
+  format: "in-person" # format inferred; the announcement gives no venue yet
+  topics: [geostatistics, environmental]
+  description: "The geoENVia association marks 30 years since the first geoENV conference, held in Lisbon in 1996."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://geoenvia.org/2026/09/geoenv-30th-anniversary-celebration-lisbon-19-20-november-2026/"
+
+- id: lacsc-ties-envibayes-envrasa-2026
+  name: "LACSC-TIES-EnviBayes-EnvrASA 2026: Statistics, Data Science and Computing for the Environment and Climate Change"
+  acronym: "LACSC-TIES 2026"
+  start: 2026-12-07
+  end: 2026-12-11
+  city: "Mexico City"
+  country: "Mexico"
+  countryCode: "MX"
+  region: "Latin America"
+  lat: 19.43
+  lon: -99.13
+  url: "https://www.amestad.mx/lacsc-ties-envibayes-envrasa-2026"
+  format: "in-person"
+  topics: [environmental, bayesian, computational, data-science]
+  description: "Joint meeting at UNAM of IASC-LARS, AME, TIES (its 2026 annual conference), ISBA EnviBayes and ASA ENVR on environmental and climate statistics."
+  deadlines:
+    - label: "Abstract submission (extended)"
+      date: 2026-06-30
+    - label: "Early registration (extended)"
+      date: 2026-08-15
+    - label: "Standard registration"
+      date: 2026-09-30
+    - label: "Late registration"
+      date: 2026-10-31
+  checked: 2026-09-30
+  source: "https://www.amestad.mx/lacsc-ties-envibayes-envrasa-2026"
+
+- id: envibayes-inla-workshop-2027
+  name: "EnviBayes–INLA Workshop 2027"
+  acronym: null
+  start: 2027-06-22
+  end: 2027-06-24
+  city: "Glasgow"
+  country: "United Kingdom"
+  countryCode: "GB"
+  region: "Europe"
+  lat: 55.86
+  lon: -4.25
+  url: "https://envibayesinla.github.io/workshop2027/"
+  format: "in-person" # format inferred
+  topics: [spatial, spatio-temporal, bayesian, environmental]
+  description: "First joint meeting of the EnviBayes and INLA workshop series, on Bayesian methods for environmental, ecological, spatial and spatio-temporal data."
+  note: "Submissions are expected to open around December 2026 and early-bird registration around January 2027; dates not yet confirmed."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://envibayesinla.github.io/workshop2027/"
+
+- id: iamg-2027
+  name: "25th Annual Conference of the International Association for Mathematical Geosciences"
+  acronym: "IAMG 2027"
+  start: 2027-09-04
+  end: 2027-09-11
+  city: "Rio de Janeiro"
+  country: "Brazil"
+  countryCode: "BR"
+  region: "Latin America"
+  lat: -22.91
+  lon: -43.17
+  url: "https://www.iamgconferences.org/iamg2027/"
+  format: "in-person" # format inferred (field trips, poster sessions)
+  topics: [geostatistics, spatial, computational]
+  description: "Annual IAMG conference on geostatistics and quantitative geosciences, with short courses, workshops and field trips."
+  deadlines:
+    - label: "Session proposals"
+      date: 2026-12-01
+  checked: 2026-09-30
+  source: "https://www.iamgconferences.org/"
+
+- id: isec-2027
+  name: "International Statistical Ecology Conference 2027"
+  acronym: "ISEC 2027"
+  start: 2027-01-08 # workshops Jan 8–9; main conference Jan 10–15
+  end: 2027-01-15
+  city: "Mérida"
+  country: "Mexico"
+  countryCode: "MX"
+  region: "Latin America"
+  lat: 20.97
+  lon: -89.62
+  url: "https://statisticalecology.org/"
+  format: "in-person"
+  topics: [environmental, spatial, bayesian]
+  description: "Statistical ecology conference at the Autonomous University of Yucatán; pre-conference workshops include an INLA/inlabru course on spatial data."
+  deadlines:
+    - label: "Contributed talks and posters"
+      date: 2026-05-01
+  checked: 2026-09-30
+  source: "https://statisticalecology.org/"
+
+- id: graspa-2027
+  name: "GRASPA 2027 Conference"
+  acronym: "GRASPA 2027"
+  start: 2027-05-27
+  end: 2027-05-28
+  city: "Venice"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 45.44
+  lon: 12.32
+  url: "https://graspa.sis-statistica.it/events/graspa-2027-conference/"
+  format: "in-person"
+  topics: [environmental, spatial]
+  description: "Biennial conference of the Italian Statistical Society's environmental statistics group (a TIES regional meeting), at Ca' Foscari University."
+  deadlines:
+    - label: "Solicited session proposals" # page says "October 9th" with no year; 2026 inferred
+      date: 2026-10-09
+      tentative: true
+  checked: 2026-09-30
+  source: "https://graspa.sis-statistica.it/events/graspa-2027-conference/"
+
+- id: eva-2027
+  name: "Extreme Value Analysis 2027"
+  acronym: "EVA 2027"
+  start: 2027-07-05
+  end: 2027-07-09
+  city: "Montréal"
+  country: "Canada"
+  countryCode: "CA"
+  region: "North America"
+  lat: 45.50
+  lon: -73.57
+  url: "https://hecsciencesdecision.github.io/eva2027/"
+  format: "in-person" # format inferred
+  topics: [environmental, probability]
+  description: "15th biennial conference on extreme value theory and applications, at HEC Montréal; satellite courses on July 3–4."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://hecsciencesdecision.github.io/eva2027/"
+
+- id: sdsc-2026-new-york
+  name: "Spatial Data Science Conference 2026 New York"
+  acronym: "SDSC 2026"
+  start: 2026-10-20
+  end: 2026-10-21
+  city: "New York"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.71
+  lon: -74.01
+  url: "https://spatial-data-science-conference.com/2026/newyork/"
+  format: "in-person"
+  topics: [spatial, data-science]
+  description: "Industry-oriented spatial data science conference (CARTO-sponsored): workshops on day one, talks on day two."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://spatial-data-science-conference.com/"
+
+- id: aag-2027
+  name: "2027 AAG Annual Meeting"
+  acronym: "AAG 2027"
+  start: 2027-02-08
+  end: 2027-02-12
+  city: "New York"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.71
+  lon: -74.01
+  url: "https://www.aag.org/events/aag2027/"
+  format: "hybrid"
+  topics: [spatial]
+  description: "American Association of Geographers annual meeting; hosts the Geospatial Health Research Symposium on spatial epidemiology."
+  deadlines:
+    - label: "Abstract submission" # page says "October 15" with no year; 2026 inferred
+      date: 2026-10-15
+      tentative: true
+    - label: "Session organizing" # "November 5", year inferred
+      date: 2026-11-05
+      tentative: true
+  checked: 2026-09-30
+  source: "https://www.aag.org/events/aag2027/"
+
+# ============================ Bayesian / computational ============================
+
+- id: cobal-ebeb-2027
+  name: "VIII Latin American Meeting on Bayesian Statistics (COBAL) and XVIII Brazilian Meeting of Bayesian Statistics (EBEB)"
+  acronym: "COBAL-EBEB 2027"
+  start: 2027-03-01
+  end: 2027-03-05
+  city: "Búzios"
+  country: "Brazil"
+  countryCode: "BR"
+  region: "Latin America"
+  lat: -22.75
+  lon: -41.88
+  url: "https://cobalebeb2027.softaliza.com.br/"
+  format: "in-person" # format inferred (resort venue)
+  topics: [bayesian]
+  description: "Joint Latin American and Brazilian Bayesian statistics meeting with lectures, thematic sessions, short courses and early-career activities."
+  deadlines:
+    - label: "Oral and poster submissions"
+      date: 2026-09-08
+    - label: "Early-bird registration"
+      date: 2026-11-10
+  checked: 2026-09-30
+  source: "https://cobalebeb2027.softaliza.com.br/"
+
+- id: bayescomp-2027
+  name: "BayesComp 2027"
+  acronym: "BayesComp 2027"
+  start: 2027-05-18
+  end: 2027-05-20
+  city: "College Station"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 30.63
+  lon: -96.33
+  url: "https://bayescomp2027.org/"
+  format: "in-person"
+  topics: [bayesian, computational]
+  description: "Biennial ISBA BayesComp meeting on Bayesian computation (successor to MCMSki), at Texas A&M University."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://bayescomp2027.org/"
+
+- id: bayescomp-2027-mirror
+  name: "BayesComp 2027 Mirror"
+  acronym: null
+  start: 2027-05-17
+  end: 2027-05-21
+  city: "Aussois"
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 45.23
+  lon: 6.74
+  url: "https://sites.google.com/view/bayescomp27mirror/home"
+  format: "in-person"
+  topics: [bayesian, computational]
+  description: "European mirror of BayesComp 2027 at CAES Paul Langevin, streaming the Texas plenaries alongside local talks and posters."
+  deadlines:
+    - label: "Submission"
+      date: 2026-11-30
+  checked: 2026-09-30
+  source: "https://sites.google.com/view/bayescomp27mirror/home"
+
+- id: bnp15-2027
+  name: "15th International Conference on Bayesian Nonparametrics"
+  acronym: "BNP15"
+  start: 2027-06-28
+  end: 2027-07-02
+  city: "Bergamo"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 45.70
+  lon: 9.67
+  url: "https://bnp15.github.io/"
+  format: "in-person" # format inferred
+  topics: [bayesian]
+  description: "Conference of the ISBA BNP section on Bayesian nonparametric methods, at the University of Bergamo."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://bnp15.github.io/"
+
+- id: cfe-cmstatistics-2026
+  name: "20th International Joint Conference CFE-CMStatistics"
+  acronym: "CFE-CMStatistics 2026"
+  start: 2026-12-12 # tutorials on Dec 11
+  end: 2026-12-14
+  city: "Berlin"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 52.52
+  lon: 13.40
+  url: "https://www.cmstatistics.org/CFECMStatistics2026/"
+  format: "hybrid"
+  topics: [computational, general]
+  description: "Large annual ERCIM CMStatistics and CFE meeting on computational and methodological statistics and econometrics, at HTW Berlin."
+  deadlines:
+    - label: "Contributed abstracts (extended)"
+      date: 2026-09-10
+    - label: "Presenting author registration"
+      date: 2026-09-12
+  checked: 2026-09-30
+  source: "https://www.cmstatistics.org/CFECMStatistics2026/important_dates.php"
+
+- id: ecosta-2027
+  name: "10th International Conference on Econometrics and Statistics"
+  acronym: "EcoSta 2027"
+  start: 2027-07-06
+  end: 2027-07-09
+  city: "Shanghai"
+  country: "China"
+  countryCode: "CN"
+  region: "Asia"
+  lat: 31.23
+  lon: 121.47
+  url: "https://www.cmstatistics.org/EcoSta2027/"
+  format: "hybrid" # "partially hybrid, with a stronger focus on in-person"
+  topics: [computational, general]
+  description: "CMStatistics/CFENetwork conference on econometrics and statistics, at ShanghaiTech University."
+  deadlines:
+    - label: "Organized session abstracts"
+      date: 2027-03-12
+    - label: "Contributed abstracts"
+      date: 2027-04-05
+    - label: "Presenting author registration"
+      date: 2027-04-07
+  checked: 2026-09-30
+  source: "https://www.cmstatistics.org/EcoSta2027/important_dates.php"
+
+# ============================ Major general meetings ============================
+
+- id: jsm-2027
+  name: "2027 Joint Statistical Meetings / IMS Annual Meeting"
+  acronym: "JSM 2027"
+  start: 2027-08-08 # from ASA's future-meetings page and the IMS calendar
+  end: 2027-08-12
+  city: "Chicago"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 41.88
+  lon: -87.63
+  url: "https://ww2.amstat.org/meetings/jsm/2027/index.cfm"
+  format: "in-person"
+  topics: [general]
+  description: "North America's largest statistics meeting; the 2027 edition doubles as the IMS Annual Meeting."
+  deadlines:
+    - label: "Invited session proposals"
+      date: 2026-09-23
+    - label: "Topic-contributed session proposals"
+      date: 2026-12-10
+    - label: "Contributed abstracts"
+      date: 2027-02-01
+  checked: 2026-09-30
+  source: "https://www.amstat.org/meetings/joint-statistical-meetings"
+
+- id: isi-wsc-2027
+  name: "66th ISI World Statistics Congress"
+  acronym: "WSC 2027"
+  start: 2027-07-11
+  end: 2027-07-15
+  city: "Lusaka"
+  country: "Zambia"
+  countryCode: "ZM"
+  region: "Africa"
+  lat: -15.39
+  lon: 28.32
+  url: "https://www.isi-next.org/conferences/isi-wsc2027/"
+  format: "in-person" # format inferred (Mulungushi International Conference Centre)
+  topics: [general]
+  description: "Biennial flagship congress of the International Statistical Institute."
+  deadlines:
+    - label: "Contributed paper / poster abstracts"
+      date: 2026-10-08
+    - label: "Invited paper session abstracts"
+      date: 2026-10-27
+    - label: "Early-bird registration"
+      date: 2027-03-12
+  checked: 2026-09-30
+  source: "https://www.isi-next.org/conferences/isi-wsc2027/key-dates/"
+
+- id: enar-2027
+  name: "ENAR 2027 Spring Meeting"
+  acronym: "ENAR 2027"
+  start: 2027-03-14
+  end: 2027-03-17
+  city: "Boston"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 42.36
+  lon: -71.06
+  url: "https://www.enar.org/meetings/spring2027/save-the-date.cfm"
+  format: "in-person"
+  topics: [biostatistics]
+  description: "Spring meeting of the Eastern North American Region of the International Biometric Society."
+  deadlines:
+    - label: "Distinguished Student Paper awards"
+      date: 2026-10-15
+    - label: "Contributed session proposals"
+      date: 2026-10-29
+  checked: 2026-09-30
+  source: "https://www.enar.org/meetings/spring2027/save-the-date.cfm"
+
+- id: wnar-ims-2027
+  name: "2027 WNAR/IMS Annual Meeting"
+  acronym: "WNAR/IMS 2027"
+  start: 2027-06-13
+  end: 2027-06-16
+  city: "Honolulu"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 21.31
+  lon: -157.86
+  url: "https://wnar.org/wnar2027"
+  format: "in-person" # format inferred
+  topics: [biostatistics, general]
+  description: "Joint meeting of the Western North American Region of the IBS and the IMS, with short courses and a student paper award."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://wnar.org/wnar2027"
+
+- id: rss-2027
+  name: "RSS 2027 International Conference"
+  acronym: "RSS 2027"
+  start: 2027-09-06
+  end: 2027-09-09
+  city: "Newport"
+  country: "United Kingdom"
+  countryCode: "GB"
+  region: "Europe"
+  lat: 51.58
+  lon: -2.99
+  url: "https://rss.org.uk/training-events/events/rss-2027-international-conference/"
+  format: "in-person"
+  topics: [general, data-science]
+  description: "Royal Statistical Society annual international conference, at ICC Wales."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://rss.org.uk/training-events/events/rss-2027-international-conference/"
+
+- id: ssc-2027
+  name: "2027 SSC Annual Meeting"
+  acronym: "SSC 2027"
+  start: 2027-05-30
+  end: 2027-06-02
+  city: "Québec City"
+  country: "Canada"
+  countryCode: "CA"
+  region: "North America"
+  lat: 46.81
+  lon: -71.21
+  url: "https://ssc.ca/en/meetings/annual/2027-ssc-annual-meeting-quebec"
+  format: "in-person" # format inferred
+  topics: [general]
+  description: "Annual meeting of the Statistical Society of Canada, organised locally by Université Laval."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://ssc.ca/en/meetings/annual/2027-ssc-annual-meeting-quebec"
+
+- id: iwsm-2027
+  name: "41st International Workshop on Statistical Modelling"
+  acronym: "IWSM 2027"
+  start: 2027-07-18
+  end: 2027-07-23
+  city: "Bilbao"
+  country: "Spain"
+  countryCode: "ES"
+  region: "Europe"
+  lat: 43.26
+  lon: -2.93
+  url: "https://iwsm2027.com/"
+  format: "in-person" # format inferred (Bizkaia Aretoa)
+  topics: [general]
+  description: "Statistical Modelling Society workshop with no parallel sessions and 4-page proceedings papers, hosted by the University of the Basque Country."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://iwsm2027.com/"
+
+- id: spa-2027
+  name: "46th Conference on Stochastic Processes and their Applications"
+  acronym: "SPA 2027"
+  start: 2027-07-05
+  end: 2027-07-09
+  city: "Melbourne"
+  country: "Australia"
+  countryCode: "AU"
+  region: "Oceania"
+  lat: -37.81
+  lon: 144.96
+  url: "https://www.spa2027.org/"
+  format: "in-person" # format inferred
+  topics: [probability]
+  description: "Bernoulli Society conference on stochastic processes, hosted by Monash University."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://www.spa2027.org/"
+
+- id: aasc-2026
+  name: "Australasian Applied Statistics Conference 2026"
+  acronym: "AASC 2026"
+  start: 2026-11-30 # workshops Nov 30; main conference Dec 1–4
+  end: 2026-12-04
+  city: "Mooloolaba"
+  country: "Australia"
+  countryCode: "AU"
+  region: "Oceania"
+  lat: -26.68
+  lon: 153.12
+  url: "https://aasc2026.netlify.app/"
+  format: "in-person" # format inferred
+  topics: [general]
+  description: "Australasian conference on applied statistics and real-world data analysis, on the Sunshine Coast, with pre-conference workshops."
+  deadlines:
+    - label: "Abstract submission" # page shows "Jul 9"; year inferred
+      date: 2026-07-09
+      tentative: true
+    - label: "Early-bird registration" # "Aug 28"; year inferred
+      date: 2026-08-28
+      tentative: true
+  checked: 2026-09-30
+  source: "https://aasc2026.netlify.app/"
+
+# ============================ Latin America ============================
+
+- id: soche-jne-2026
+  name: "XLVIII Jornadas Nacionales de Estadística 2026"
+  acronym: "JNE 2026"
+  start: 2026-10-20
+  end: 2026-10-23
+  city: "Valparaíso"
+  country: "Chile"
+  countryCode: "CL"
+  region: "Latin America"
+  lat: -33.05
+  lon: -71.62
+  url: "https://soche.cl/xlviii-jornadas-nacionales-de-estadistica-2026/"
+  format: "in-person" # format inferred
+  topics: [general]
+  description: "Annual national meeting of the Chilean Statistical Society (SOCHE), hosted by the Institute of Statistics of the Universidad de Valparaíso."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-07-31
+    - label: "Early registration"
+      date: 2026-09-14
+  checked: 2026-09-30
+  source: "https://soche.cl/xlviii-jornadas-nacionales-de-estadistica-2026/"
+
+- id: cae-ii-2026
+  name: "II Congreso Argentino de Estadística (LIII Coloquio SAE and XXX Reunión Científica del GAB)"
+  acronym: "CAE II"
+  start: 2026-10-13 # Oct 13 is the statistics-education day; main congress Oct 14–16
+  end: 2026-10-16
+  city: "Tandil"
+  country: "Argentina"
+  countryCode: "AR"
+  region: "Latin America"
+  lat: -37.32
+  lon: -59.13
+  url: "https://cae2026.exa.unicen.edu.ar/"
+  format: "in-person"
+  topics: [general, biostatistics]
+  description: "Joint congress of the Argentine Statistical Society colloquium and the Argentine Biostatistics Group meeting, at UNICEN."
+  deadlines:
+    - label: "Abstract submission (extended)"
+      date: 2026-08-13
+  checked: 2026-09-30
+  source: "https://cae2026.exa.unicen.edu.ar/"
+
+- id: rbras-2026
+  name: "70ª Reunião Anual da Região Brasileira da Sociedade Internacional de Biometria"
+  acronym: "70ª RBras"
+  start: 2026-11-23
+  end: 2026-11-25
+  city: "Campinas"
+  country: "Brazil"
+  countryCode: "BR"
+  region: "Latin America"
+  lat: -22.91
+  lon: -47.06
+  url: "https://70rbras.org/"
+  format: "in-person" # format inferred (IMECC-Unicamp)
+  topics: [biostatistics]
+  description: "Annual meeting of the Brazilian Region of the International Biometric Society; the VIII WASA survival analysis workshop follows on Nov 26."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://70rbras.org/"
+
+- id: latinr-2026
+  name: "LatinR 2026 — Latin American Conference on the Use of R in R&D"
+  acronym: "LatinR 2026"
+  start: 2026-11-11
+  end: 2026-11-13
+  city: "Medellín"
+  country: "Colombia"
+  countryCode: "CO"
+  region: "Latin America"
+  lat: 6.24
+  lon: -75.58
+  url: "https://latinr.org/"
+  format: "in-person"
+  topics: [computational, data-science]
+  description: "Latin American conference on using R in research, back in person at the Universidad de Antioquia after two virtual years."
+  deadlines: []
+  checked: 2026-09-30
+  source: "https://latinr.org/"
+
+# ============================ Asia, Africa, Oceania, Europe ============================
+# Added 2026-10-02 to widen coverage beyond Europe and the Americas. Most `format` values are inferred
+# (see the inline comments); deadlines with an inferred year are marked `tentative: true`.
+
+- id: robstat-2027
+  name: "RobStat Symposium 2027: Reliable and Trustworthy Inference in Modern Data Environments"
+  acronym: "RobStat 2027"
+  start: 2027-02-05
+  end: 2027-02-07
+  city: "Kolkata"
+  country: "India"
+  countryCode: "IN"
+  region: "Asia"
+  lat: 22.57
+  lon: 88.36
+  url: "https://sites.google.com/view/robstat27"
+  format: "in-person"  # format inferred (venue: Platinum Jubilee Auditorium, ISI Kolkata)
+  topics: [general]
+  description: "International mini-conference on robust statistics and trustworthy data analysis, organised by the Indian Statistical Institute, Kolkata."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-11-30
+    - label: "Regular registration"
+      date: 2026-12-20
+    - label: "Extended registration"
+      date: 2027-01-31
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/robstat27"
+
+- id: iasc-ars-2026
+  name: "14th IASC-ARS & SoAI Joint Conference 2026"
+  acronym: "IASC-ARS 2026"
+  start: 2026-12-09
+  end: 2026-12-11  # 11 Dec has the optional SoAI workshop/excursion plus afternoon sessions and the closing ceremony
+  city: "Chiang Mai"
+  country: "Thailand"
+  countryCode: "TH"
+  region: "Asia"
+  lat: 18.79
+  lon: 98.98
+  url: "https://iasc-ars2026.icdi.cmu.ac.th/IASC_ARS"
+  format: "in-person"  # format inferred (page only mentions "onsite registration")
+  topics: [computational, data-science]
+  description: "Conference of the Asian Regional Section of the International Association for Statistical Computing (IASC-ARS), held jointly with SoAI at Chiang Mai University."
+  deadlines:
+    - label: "Invited session proposals"
+      date: 2026-09-15
+    - label: "Early-bird registration"
+      date: 2026-09-30
+    - label: "Abstract submission"
+      date: 2026-10-31
+    - label: "Regular registration"
+      date: 2026-11-15
+  checked: 2026-10-02
+  source: "https://iasc-ars2026.icdi.cmu.ac.th/IASC_ARS"
+
+- id: isps-2026
+  name: "46th Annual Convention of the Indian Society for Probability and Statistics, with the International Conference on Statistics, Actuarial Science and Data Science Innovations (IC-SADI-2026)"
+  acronym: "ISPS 2026"
+  start: 2026-12-21  # the pre-conference workshop on AI & ML tools (20 Dec 2026) has separate registration, so it is not counted
+  end: 2026-12-23
+  city: "Jalgaon"
+  country: "India"
+  countryCode: "IN"
+  region: "Asia"
+  lat: 21.01
+  lon: 75.56
+  url: "https://nmu.ac.in/en-us/ICSADI-2026"
+  format: "in-person"  # format inferred
+  topics: [general, probability, data-science]
+  description: "Annual convention of the Indian Society for Probability and Statistics, co-organised with Kavayitri Bahinabai Chaudhari North Maharashtra University."
+  deadlines:
+    - label: "Abstract submission (early-bird fees)"
+      date: 2026-11-15
+  checked: 2026-10-02
+  source: "https://isps.org.in/wp-content/uploads/2026/07/ISPS-2026-Conference_Brochure-and-Competitions.pdf"
+
+- id: kss-winter-2026
+  name: "2026 Korean Statistical Society Winter Conference (2026년 한국통계학회 동계학술논문발표회)"
+  acronym: "KSS 2026 Winter"
+  start: 2026-12-22
+  end: 2026-12-23
+  city: "Seoul"
+  country: "South Korea"
+  countryCode: "KR"
+  region: "Asia"
+  lat: 37.57
+  lon: 126.98
+  url: "https://kss.or.kr/"
+  format: "in-person"  # format inferred (venue: Chung-Ang University, Seoul Campus)
+  topics: [general]
+  description: "Winter paper-presentation meeting and general assembly of the Korean Statistical Society; the announcement is in Korean."
+  deadlines:
+    - label: "Session proposals"
+      date: 2026-09-30
+      tentative: true  # notice gives only month/day; 2026 inferred (posted 2026-09-04)
+    - label: "Abstract submission"
+      date: 2026-10-11
+      tentative: true  # notice gives "10월 11일(일)" with no year; the weekday matches 2026
+    - label: "Pre-registration"
+      date: 2026-11-22
+      tentative: true  # notice gives "11월 22일(일)" with no year; the weekday matches 2026
+  checked: 2026-10-02
+  source: "https://kss.or.kr/board/notice/article/284650"
+
+- id: iisa-2026
+  name: "2026 Annual Conference of the International Indian Statistical Association"
+  acronym: "IISA 2026"
+  start: 2026-12-26
+  end: 2026-12-30
+  city: "Varanasi"
+  country: "India"
+  countryCode: "IN"
+  region: "Asia"
+  lat: 25.32
+  lon: 82.97
+  url: "https://www.intindstat.org/conference2026/index"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Annual conference of the International Indian Statistical Association, co-organised with the Department of Statistics, Banaras Hindu University."
+  deadlines:
+    - label: "Contributed talk submission"
+      date: 2026-08-31
+    - label: "Early registration"
+      date: 2026-08-31
+  checked: 2026-10-02
+  source: "https://www.intindstat.org/conference2026/index"
+
+- id: ims-aprm-2028
+  name: "8th IMS Asia Pacific Rim Meeting"
+  acronym: "IMS-APRM 2028"
+  start: 2028-06-17
+  end: 2028-06-20
+  city: null # official site only says "South Korea"; no host city announced yet
+  country: "South Korea"
+  countryCode: "KR"
+  region: "Asia"
+  lat: 36.50  # approximate centre of South Korea, NOT a host city; replace when the city is announced
+  lon: 127.80
+  url: "http://www.ims-aprm2028.com/"
+  format: "in-person"  # format inferred
+  topics: [probability, general]
+  description: "Eighth Asia Pacific Rim Meeting of the Institute of Mathematical Statistics."
+  note: "The host city hasn't been announced; the map pin marks South Korea, not the venue."
+  tentative: true  # official site: "planned to be held in South Korea from June 17 to June 20, 2028"
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://imstat.org/meetings-calendar/2028-ims-asia-pacific-rim-meeting/"
+
+- id: bernoulli-ims-wc-2028
+  name: "12th Bernoulli-IMS World Congress"
+  acronym: "WC 2028"
+  start: 2028-07-24  # Young Researchers Pre-Meeting (21-22 July 2028) is listed separately, so it is not counted
+  end: 2028-07-28
+  city: "Singapore"
+  country: "Singapore"
+  countryCode: "SG"
+  region: "Asia"
+  lat: 1.29
+  lon: 103.85
+  url: "https://wc2028.com"
+  format: "in-person"  # format inferred (campus of the National University of Singapore)
+  topics: [probability, general]
+  description: "Quadrennial world congress of the Bernoulli Society and the Institute of Mathematical Statistics, at the National University of Singapore."
+  deadlines: []  # all submission and registration dates listed as TBA
+  checked: 2026-10-02
+  source: "https://wc2028.com"
+
+
+- id: ibsnam-2026
+  name: "IBSNAM 2026 – First Conference of the Namibian Region of the International Biometric Society"
+  acronym: "IBSNAM 2026"
+  start: 2026-11-18
+  end: 2026-11-19
+  city: "Windhoek"
+  country: "Namibia"
+  countryCode: "NA"
+  region: "Africa"
+  lat: -22.56
+  lon: 17.08
+  url: "https://www.biometricsociety.org/events/event-description?CalendarEventKey=51e3e4f9-ffdc-41ca-8032-01a0d9236d33&CommunityKey=afd311f2-a3c2-46f9-bd3e-0189e635950d&Home=%2fevents%2fcalendar"
+  format: "in-person"  # format inferred; venue still "to be determined" on the IBS page
+  topics: [biostatistics, environmental]
+  description: "First conference of the Namibian Region of the International Biometric Society, on statistical and data-science methods in agriculture, health, ecology and the environment."
+  deadlines: []  # no closing dates on the event page
+  checked: 2026-10-02
+  source: "https://www.biometricsociety.org/events/event-description?CalendarEventKey=51e3e4f9-ffdc-41ca-8032-01a0d9236d33&CommunityKey=afd311f2-a3c2-46f9-bd3e-0189e635950d&Home=%2fevents%2fcalendar"
+
+- id: sasa-2026
+  name: "South African Statistical Association Annual Conference 2026"
+  acronym: "SASA 2026"
+  start: 2026-11-23  # official range 23-27 Nov; the pre-conference workshops fall inside it (no separate day split published)
+  end: 2026-11-27
+  city: "Johannesburg"  # venue is the Birchwood Hotel & OR Tambo Conference Centre, Boksburg (east of Johannesburg); the site says Johannesburg
+  country: "South Africa"
+  countryCode: "ZA"
+  region: "Africa"
+  lat: -26.20
+  lon: 28.05
+  url: "https://sasaconference2026.org/"
+  format: "in-person"
+  topics: [general]
+  description: "Annual conference of the South African Statistical Association, hosted by the School of Statistics and Actuarial Science, University of the Witwatersrand."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-09-14
+    - label: "Registration"
+      date: 2026-09-30
+    - label: "Registration payment"
+      date: 2026-10-09
+  checked: 2026-10-02
+  source: "https://sasaconference2026.org/"
+
+
+- id: adsn-2026
+  name: "Australian Data Science Network Conference 2026"
+  acronym: "ADSN 2026"
+  start: 2026-11-26  # the pre-conference workshop on data linkage (25 Nov) is not counted
+  end: 2026-11-27
+  city: "Canberra"
+  country: "Australia"
+  countryCode: "AU"
+  region: "Oceania"
+  lat: -35.28
+  lon: 149.13
+  url: "https://adsnconf2026.netlify.app/"
+  format: "in-person"  # format inferred (held at ABS House, Belconnen; photo ID required for entry)
+  topics: [data-science]
+  description: "Conference of the Australian Data Science Network, with the Statistical Society of Australia as a partner, at the Australian Bureau of Statistics."
+  deadlines: []  # abstract submission already closed; no dates published
+  checked: 2026-10-02
+  source: "https://adsnconf2026.netlify.app/"
+
+- id: nzsa-2026
+  name: "76th Annual Conference of the New Zealand Statistical Association"
+  acronym: "NZSA 2026"
+  start: 2026-12-14
+  end: 2026-12-16
+  city: "Auckland"
+  country: "New Zealand"
+  countryCode: "NZ"
+  region: "Oceania"
+  lat: -36.85
+  lon: 174.76
+  url: "https://www.stats.org.nz/nzsa2026/index.php"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Annual conference of the New Zealand Statistical Association, hosted by the University of Auckland."
+  deadlines:
+    - label: "Abstract submission & early-bird registration"
+      date: 2026-10-31
+      tentative: true  # page says "open until October 31" with no year; 2026 inferred
+    - label: "Travel support applications"
+      date: 2026-11-09
+      tentative: true  # page says "Monday 9 November" with no year; the weekday matches 2026
+  checked: 2026-10-02
+  source: "https://www.stats.org.nz/nzsa-conference-14-16-december-2026-university-of-auckland/"
+
+- id: jscs-40-2026
+  name: "40th Anniversary Symposium of the Japanese Society of Computational Statistics"
+  acronym: "JSCS 2026"
+  start: 2026-12-17  # the workshop & welcome reception on 16 Dec are listed separately from the symposium days
+  end: 2026-12-18
+  city: "Auckland"
+  country: "New Zealand"
+  countryCode: "NZ"
+  region: "Oceania"
+  lat: -36.85
+  lon: 174.76
+  url: "https://jscs-sympo40anniv.ywstat.jp/"
+  format: "in-person"  # format inferred (The Clock Tower, University of Auckland)
+  topics: [computational]
+  description: "Anniversary symposium of the Japanese Society of Computational Statistics, co-organised with the Department of Statistics, University of Auckland, right after the NZSA conference."
+  deadlines:
+    - label: "Abstract submission (extended)"
+      date: 2026-10-12
+    - label: "Early registration"
+      date: 2026-10-30
+    - label: "Standard registration"
+      date: 2026-11-30
+  checked: 2026-10-02
+  source: "https://jscs-sympo40anniv.ywstat.jp/"
+
+
+- id: jds-2027
+  name: "58èmes Journées de Statistique"
+  acronym: "JdS 2027"
+  start: 2027-05-24
+  end: 2027-05-27
+  city: "Grenoble"  # Université Grenoble Alpes, Saint-Martin-d'Hères campus
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 45.19
+  lon: 5.72
+  url: "https://jds2027.sciencesconf.org/"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Annual congress of the French Statistical Society (SFdS)."
+  deadlines:
+    - label: "Paper submission"
+      date: 2027-02-08
+    - label: "Early registration (before fee increase)"
+      date: 2027-04-10
+    - label: "Registration"
+      date: 2027-05-03
+  checked: 2026-10-02
+  source: "https://jds2027.sciencesconf.org/page/calendrier?lang=fr"
+
+- id: sis-2027
+  name: "Convegno Intermedio SIS 2027"
+  acronym: "SIS 2027"
+  start: 2027-06-15
+  end: 2027-06-18
+  city: "Naples"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 40.85
+  lon: 14.27
+  url: "https://new.sis-statistica.it/event/convegno-intermedio-sis-2027-2/"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Intermediate scientific conference of the Italian Statistical Society (SIS)."
+  deadlines: []  # no call for papers published yet
+  checked: 2026-10-02
+  source: "https://new.sis-statistica.it/event/convegno-intermedio-sis-2027-2/"
+
+- id: iscb-2027
+  name: "48th Annual Conference of the International Society for Clinical Biostatistics"
+  acronym: "ISCB48"
+  start: 2027-08-22  # official dates 22-26 Aug; Sunday 22 Aug is the pre-conference day (parallel sessions, student meeting)
+  end: 2027-08-26
+  city: "Rotterdam"
+  country: "Netherlands"
+  countryCode: "NL"
+  region: "Europe"
+  lat: 51.92
+  lon: 4.48
+  url: "https://iscb2027.info/"
+  format: "in-person"  # format inferred (De Doelen ICC)
+  topics: [biostatistics]
+  description: "Annual conference of the International Society for Clinical Biostatistics, hosted by Erasmus MC at De Doelen ICC."
+  deadlines: []  # abstract submission "opening in 2026", no closing date published
+  checked: 2026-10-02
+  source: "https://iscb2027.info/"
+
+- id: ems-2027
+  name: "36th European Meeting of Statisticians"
+  acronym: "EMS 2027"
+  start: 2027-08-23
+  end: 2027-08-27
+  city: "Warwick"  # University of Warwick campus (on the edge of Coventry); coordinates are for the campus
+  country: "United Kingdom"
+  countryCode: "GB"
+  region: "Europe"
+  lat: 52.38
+  lon: -1.56
+  url: "https://www.bernoullisociety.org/organization/erc/ems"  # no dedicated EMS 2027 website yet
+  format: "in-person"  # format inferred
+  topics: [general, probability]
+  description: "European meeting of the Bernoulli Society's European Regional Committee, covering statistics and probability."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.bernoullisociety.org/meetings"
+
+- id: dagstat-2028
+  name: "8th DAGStat Conference (with the 74th Biometric Colloquium)"
+  acronym: "DAGStat 2028"
+  start: 2028-03-20
+  end: 2028-03-24
+  city: "Bremen"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 53.08
+  lon: 8.80
+  url: "https://www.dagstat.de/"  # no dedicated 2028 conference website yet
+  format: "in-person"  # format inferred
+  topics: [general, biostatistics]
+  description: "Triennial joint conference of the German statistical societies in the DAGStat consortium, incorporating the annual Biometric Colloquium of the IBS German Region."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.biometrische-gesellschaft.de/"
+
+- id: ibc-2028
+  name: "XXXIV International Biometric Conference"
+  acronym: "IBC 2028"
+  start: 2028-07-16
+  end: 2028-07-21
+  city: "Basel"
+  country: "Switzerland"
+  countryCode: "CH"
+  region: "Europe"
+  lat: 47.56
+  lon: 7.59
+  url: "https://www.biometricsociety.org/events/event-description?CalendarEventKey=a703d218-7ac5-4c9a-ab1b-019bb0216116&Home=%2Fevents%2Fcalendar"
+  format: "in-person"  # format inferred; IBS lists the venue as "Congress Centre Basel (pending)"
+  topics: [biostatistics]
+  description: "Biennial conference of the International Biometric Society, supported by its Austro-Swiss, German and French Regions."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.biometricsociety.org/events/event-description?CalendarEventKey=a703d218-7ac5-4c9a-ab1b-019bb0216116&Home=%2Fevents%2Fcalendar"
+
+# ============================ Europe: national and regional meetings ============================
+# Added 2026-10-02 (research by area).
+
+- id: ysm-30-2026
+  name: "30th Young Statisticians Meeting"
+  acronym: "30th YSM"
+  start: 2026-10-02
+  end: 2026-10-04
+  city: "Mönichwald"
+  country: "Austria"
+  countryCode: "AT"
+  region: "Europe"
+  lat: 47.45                     # approximate (village in north-east Styria)
+  lon: 15.88
+  url: "https://ysm5.eu/dir/index.php"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "Annual meeting of young statisticians from Austria, Slovenia, Hungary, Italy and Croatia, with talks in English covering all areas of statistics."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://ysm5.eu/dir/index.php/programme"
+
+- id: rssb-2026
+  name: "33rd Annual Meeting of the Royal Statistical Society of Belgium"
+  acronym: "RSSB 2026"
+  start: 2026-11-19
+  end: 2026-11-20
+  city: "Antwerp"
+  country: "Belgium"
+  countryCode: "BE"
+  region: "Europe"
+  lat: 51.22
+  lon: 4.40
+  url: "https://rssb.be/activities/annual-meeting/"
+  format: "in-person"            # format inferred
+  topics: [general, data-science]
+  description: "Annual meeting of the Royal Statistical Society of Belgium at Hof van Liere (University of Antwerp), with keynote lectures and contributed sessions in statistics, probability and data science."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-08-31
+    - label: "Early registration"
+      date: 2026-09-14
+    - label: "Late registration"
+      date: 2026-10-14
+  checked: 2026-10-02
+  source: "https://rssb.be/activities/annual-meeting/registration"
+
+- id: wsa-2026
+  name: "Workshop on Statistics and Applications 2026"
+  acronym: "WSA 2026"
+  start: 2026-12-04
+  end: 2026-12-05
+  city: "Lisbon"
+  country: "Portugal"
+  countryCode: "PT"
+  region: "Europe"
+  lat: 38.72
+  lon: -9.14
+  url: "https://wsa2026.iseg.ulisboa.pt/"
+  format: "in-person"            # format inferred
+  topics: [general, computational]
+  description: "International workshop organised by ISEG Research (Universidade de Lisboa) with Portuguese and Galician mathematics centres, held in honour of Wenceslao González Manteiga's 70th birthday."
+  deadlines:
+    - label: "Abstract submission (extended)"
+      date: 2026-10-05
+  checked: 2026-10-02
+  source: "https://wsa2026.iseg.ulisboa.pt/conference_fees.php"
+
+- id: emr-ibs-2027
+  name: "13th International Conference of the International Biometric Society's Eastern Mediterranean Region"
+  acronym: "EMR 2027"
+  start: 2027-05-30
+  end: 2027-06-03
+  city: "Sofia"
+  country: "Bulgaria"
+  countryCode: "BG"
+  region: "Europe"
+  lat: 42.70
+  lon: 23.32
+  url: "https://emr2027.fmi.uni-sofia.bg/Home.html"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Regional conference of the Eastern Mediterranean Region of the International Biometric Society, hosted by Sofia University St. Kliment Ohridski."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2027-02-01
+    - label: "Early registration"
+      date: 2027-04-15
+    - label: "Late registration"
+      date: 2027-05-15
+  checked: 2026-10-02
+  source: "https://emr2027.fmi.uni-sofia.bg/Home.html"
+
+- id: sysorm-2027
+  name: "6th Spanish Young Statisticians and Operational Researchers Meeting"
+  acronym: "SYSORM 2027"
+  start: 2027-07-19
+  end: 2027-07-21
+  city: "Badajoz"
+  country: "Spain"
+  countryCode: "ES"
+  region: "Europe"
+  lat: 38.88
+  lon: -6.97
+  url: "https://sites.google.com/view/6thsysorm/home"
+  format: "in-person"            # format inferred
+  topics: [general, data-science]
+  description: "Meeting for early-career researchers in statistics, data science and operations research, promoted by SEIO and hosted by the Universidad de Extremadura."
+  deadlines: []                  # call for papers and registration "to be announced"
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/6thsysorm/home"
+
+- id: roes-2027
+  name: "35th Conference of the Austro-Swiss Region (ROeS) of the International Biometric Society"
+  acronym: "ROeS 2027"
+  start: 2027-08-16
+  end: 2027-08-19
+  city: "Bern"
+  country: "Switzerland"
+  countryCode: "CH"
+  region: "Europe"
+  lat: 46.95
+  lon: 7.45
+  url: "https://www.roes2027.org"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Biennial conference of the Austro-Swiss Region of the International Biometric Society at the University of Bern, with pre-conference courses on the first day."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.roes2027.org/key-dates.html"
+
+- id: ibsdr-preclinical-workshop-2026
+  name: "Pre-Clinical Statistics Autumn Workshop of the IBS-DR Working Groups Non-Clinical Statistics and Ethics and Responsibility"
+  acronym: null
+  start: 2026-11-26
+  end: 2026-11-27
+  city: "Berlin"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 52.52
+  lon: 13.40
+  url: "https://biometrische-gesellschaft.de/"
+  format: "hybrid"
+  topics: [biostatistics]
+  description: "Autumn workshop at Charité Berlin of two working groups of the German Region of the IBS together with the PSI Pre-Clinical SIG, focused on the reproducibility of pre-clinical experiments."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-10-15
+  checked: 2026-10-02
+  source: "https://biometrische-gesellschaft.de/"
+
+- id: ibsdr-bayes-workshop-2026
+  name: "Bayesian Statistics in Medical Research: Workshop of the IBS-DR Working Group Bayes Methods"
+  acronym: null
+  start: 2026-11-26
+  end: 2026-11-27
+  city: "Ingelheim am Rhein"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 49.97
+  lon: 8.06
+  url: "https://biometrische-gesellschaft.de/ag/bayes.html"
+  format: "hybrid"               # flyer: "Ingelheim am Rhein or online"
+  topics: [bayesian, biostatistics]
+  description: "Annual workshop of the Bayes Methods working group of the German Region of the International Biometric Society, with an invited tutorial on Bayesian and causal networks."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-11-02
+    - label: "Registration"
+      date: 2026-11-15
+  checked: 2026-10-02
+  source: "https://biometrische-gesellschaft.de/pdf/AnkuendigungBayesWorkshop2026.pdf"
+
+- id: apf-workshop-2026
+  name: "80th Autumn Workshop of the IBS-DR Working Group Pharmaceutical Research (APF)"
+  acronym: "APF Workshop 2026"
+  start: 2026-11-27
+  end: 2026-11-27
+  city: "Fulda"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 50.55
+  lon: 9.68
+  url: "https://biometrische-gesellschaft.de/"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "One-day workshop of the Pharmaceutical Research working group of the German Region of the IBS, on use cases for AI in statistics and baseline covariate adjustment."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://biometrische-gesellschaft.de/pdf/APF_Conference_Agenda%202026%20Fulda_VL.pdf"
+
+- id: biometric-colloquium-2027
+  name: "73rd Biometrical Colloquium"
+  acronym: "BC2027"
+  start: 2027-02-28
+  end: 2027-03-03
+  city: "Düsseldorf"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 51.23
+  lon: 6.78
+  url: "https://biometrisches-kolloquium-2027.de"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Annual conference of the German Region of the International Biometric Society (IBS-DR), held at Heinrich Heine University Düsseldorf."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-11-01
+    - label: "Early-bird registration"
+      date: 2026-12-31
+  checked: 2026-10-02
+  source: "https://biometrisches-kolloquium-2027.de"
+
+- id: bayst-2027                 # topic workshop, not a national-society meeting; check for overlap with the Bayesian list
+  name: "BAYST Workshop 2027 (BAYesian STructural learning)"
+  acronym: "BAYST 2027"
+  start: 2027-03-01
+  end: 2027-03-03
+  city: "Karlsruhe"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 49.01
+  lon: 8.40
+  url: "https://sites.google.com/view/bayst2027"
+  format: "in-person"            # format inferred
+  topics: [bayesian]
+  description: "Workshop at the Karlsruhe Institute of Technology on Bayesian structural learning and its applications, with invited talks and poster sessions; intended as the kick-off of a proposed ISBA section."
+  deadlines:
+    - label: "Poster submission"
+      date: 2026-09-20
+      tentative: true            # year inferred; IBS-DR page says "bis zum 20. September"
+    - label: "IMS travel awards"
+      date: 2027-02-01
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/bayst2027"
+
+- id: biostat-2027
+  name: "28th International Scientific Symposium on Biometrics"
+  acronym: "BIOSTAT 2027"
+  start: 2027-09-01
+  end: 2027-09-04
+  city: "Split"
+  country: "Croatia"
+  countryCode: "HR"
+  region: "Europe"
+  lat: 43.51
+  lon: 16.44
+  url: "https://www.hbmd.hr/biostat-2027"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Symposium of the Croatian Biometric Society (Croatian Region of the IBS), co-organised by the University of Split School of Medicine."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2027-06-14
+    - label: "Registration"
+      date: 2027-07-01
+  checked: 2026-10-02
+  source: "https://www.hbmd.hr/abstract-submission-2027"
+
+- id: dssr-2027
+  name: "Convegno DSSR 2027 (Data Science and Social Research)"   # expansion of DSSR not stated on the SIS calendar page
+  acronym: "DSSR 2027"
+  start: 2027-02-03
+  end: 2027-02-04
+  city: "Milan"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 45.46
+  lon: 9.19
+  url: "https://new.sis-statistica.it/event/convegno-dssr-2027/"
+  format: "in-person"            # format inferred
+  topics: [data-science, general]
+  description: "Conference on statistics and data science for social research, listed in the Italian Statistical Society (SIS) events calendar."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://new.sis-statistica.it/event/convegno-dssr-2027/"
+
+- id: smea-2027
+  name: "Convegno SMEA 2027 (SIS group Statistical Measurement for Economic Analysis)"
+  acronym: "SMEA 2027"
+  start: 2027-02-17
+  end: 2027-02-19
+  city: "Teramo"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 42.66
+  lon: 13.70
+  url: "https://new.sis-statistica.it/gruppo-smea-sis/"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "Conference of the SMEA group (Statistical Measurement for Economic Analysis) of the Italian Statistical Society."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://new.sis-statistica.it/event/convegno-smea-2027/"
+
+- id: itacosm-2027
+  name: "ITACOSM 2027 - ITAlian COnference on Survey Methodology"
+  acronym: "ITACOSM 2027"
+  start: 2027-06-29
+  end: 2027-07-02
+  city: "Cremona"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 45.13
+  lon: 10.03
+  url: "https://new.sis-statistica.it/gruppo-s2g-sis/"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "Biennial international conference on survey sampling methodology of the S2G group of the Italian Statistical Society."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://new.sis-statistica.it/event/itacosm-2027/"
+
+- id: sisbayes-2027              # national-society Bayesian group meeting; check overlap with the Bayesian list
+  name: "Convegno SISbayes 2027"
+  acronym: "SISbayes 2027"
+  start: 2027-09-06
+  end: 2027-09-07
+  city: "Florence"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 43.77
+  lon: 11.26
+  url: "https://new.sis-statistica.it/gruppo-sisbayes/"
+  format: "in-person"            # format inferred
+  topics: [bayesian]
+  description: "Meeting of SISbayes, the Bayesian statistics group of the Italian Statistical Society."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://new.sis-statistica.it/event/convegno-sisbayes-2027/"
+
+- id: cladag-2027
+  name: "CLADAG 2027 - Scientific Meeting of the Classification and Data Analysis Group of the Italian Statistical Society"
+  acronym: "CLADAG 2027"
+  start: 2027-09-08
+  end: 2027-09-10
+  city: "Pescara"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 42.46
+  lon: 14.21
+  url: "https://sites.google.com/view/cladag/home-page"
+  format: "in-person"            # format inferred
+  topics: [general, data-science]
+  description: "Biennial meeting of the CLADAG section of the Italian Statistical Society on classification, multivariate data analysis and related methods."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://new.sis-statistica.it/event/convegno-cladag-2027/"
+
+- id: ies-2027
+  name: "IES - Innovation & Society 2027: Statistical Methods and Data Science for Evaluation and Quality in the Age of AI"
+  acronym: "IES 2027"
+  start: 2027-09-15
+  end: 2027-09-17
+  city: "Lecce"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 40.35
+  lon: 18.17
+  url: "https://conference.unisalento.it/event/15/"
+  format: "in-person"            # format inferred
+  topics: [general, data-science]
+  description: "13th conference of the SVQS group (Statistics for the Evaluation and Quality of Services) of the Italian Statistical Society, held at the University of Salento."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://conference.unisalento.it/event/15/"
+
+- id: jornadas-r-2026
+  name: "V Congreso y XVI Jornadas de Usuarios de R 2026"
+  acronym: null
+  start: 2026-11-25
+  end: 2026-11-27
+  city: "San Cristóbal de La Laguna"
+  country: "Spain"
+  countryCode: "ES"
+  region: "Europe"
+  lat: 28.49
+  lon: -16.32
+  url: "https://eventos.ull.es/152998/detail/v-congreso-y-xvi-jornadas-de-usuarios-de-r-2026.html"
+  format: "in-person"            # page metadata: offline attendance
+  topics: [computational, data-science]
+  description: "Annual meeting of the Spanish-speaking R community (R Hispano), hosted by the Universidad de La Laguna in Tenerife, with talks and workshops on statistical computing with R."
+  deadlines:
+    - label: "Abstract submission (final round, subject to availability)"
+      date: 2026-10-09
+    - label: "Registration"
+      date: 2026-11-09
+  checked: 2026-10-02
+  source: "https://eventos.ull.es/152998/detail/v-congreso-y-xvi-jornadas-de-usuarios-de-r-2026.html"
+
+- id: surveyforeningen-hostkonferens-2026
+  name: "Surveyföreningens höstkonferens 2026"
+  acronym: null
+  start: 2026-10-06
+  end: 2026-10-06
+  city: "Stockholm"
+  country: "Sweden"
+  countryCode: "SE"
+  region: "Europe"
+  lat: 59.33
+  lon: 18.07
+  url: "https://statistikframjandet.se/surveyforeningen/surveyforeningens-hostkonferens-6-oktober-2026/"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "One-day autumn conference of the Swedish Survey Society (Surveyföreningen, part of the Swedish Statistical Association) on planning and running sample surveys."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://statistikframjandet.se/surveyforeningen/surveyforeningens-hostkonferens-6-oktober-2026/"
+
+- id: cramer-hostmote-2026
+  name: "Cramérsällskapets höstmöte 2026"
+  acronym: null
+  start: 2026-10-21
+  end: 2026-10-22
+  city: "Gothenburg"
+  country: "Sweden"
+  countryCode: "SE"
+  region: "Europe"
+  lat: 57.71
+  lon: 11.97
+  url: "https://statistikframjandet.se/cramersallskapet/hostmote-2026/"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "Autumn meeting of the Cramér Society (Swedish society for statistics and mathematical statistics) at Chalmers/University of Gothenburg, on the core of statistics education."
+  deadlines:
+    - label: "Registration"
+      date: 2026-10-07
+  checked: 2026-10-02
+  source: "https://statistikframjandet.se/cramersallskapet/hostmote-2026/"
+
+- id: dsts-dsbs-twoday-2026
+  name: "DSTS-DSBS Two-day Meeting Autumn 2026"
+  acronym: null
+  start: 2026-11-19
+  end: 2026-11-20
+  city: "Gentofte"
+  country: "Denmark"
+  countryCode: "DK"
+  region: "Europe"
+  lat: 55.75
+  lon: 12.55
+  url: "https://dsts.dk/events/2026-autumn-twodaymeeting/index.html"
+  format: "in-person"            # format inferred
+  topics: [general, biostatistics]
+  description: "Joint autumn meeting of the Danish Society for Statistics (DSTS) and the Danish Society for Biopharmaceutical Statistics (DSBS), hosted by Novo Nordisk (19 Nov afternoon to 20 Nov morning)."
+  deadlines:
+    - label: "Registration"
+      date: 2026-10-05
+  checked: 2026-10-02
+  source: "https://dsts.dk/events/2026-autumn-twodaymeeting/index.html"
+
+- id: nsm-2027
+  name: "Det 22. norske statistikermøtet (Norsk Statistikermøte 2027)"
+  acronym: "NSM27"
+  start: 2027-06-14              # pre-courses 14-15 June; main meeting 15-17 June
+  end: 2027-06-17
+  city: "Bergen"
+  country: "Norway"
+  countryCode: "NO"
+  region: "Europe"
+  lat: 60.39
+  lon: 5.32
+  url: "https://holleland.github.io/NSM27/"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "Biennial national meeting of the Norwegian Statistical Association (Norsk statistisk forening), with pre-conference courses."
+  deadlines: []                  # registration and abstract submission "open later"
+  checked: 2026-10-02
+  source: "https://holleland.github.io/NSM27/"
+
+- id: eurandom-apq-2026         # EURANDOM topic workshop (not a society meeting)
+  name: "Applied Probability and Queues"
+  acronym: null
+  start: 2026-10-05
+  end: 2026-10-07
+  city: "Eindhoven"
+  country: "Netherlands"
+  countryCode: "NL"
+  region: "Europe"
+  lat: 51.44
+  lon: 5.48
+  url: "https://www.eurandom.tue.nl/event/applied-probability-and-queues/"
+  format: "in-person"            # format inferred
+  topics: [probability]
+  description: "Three-day EURANDOM workshop at TU Eindhoven on applied probability, queueing theory and stochastic networks; registration already closed."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.eurandom.tue.nl/event/applied-probability-and-queues/"
+
+- id: yes-2027                   # spatio-temporal topic; check overlap with the spatial list
+  name: "YES 2027: Spatio-Temporal Statistics (Young European Statisticians)"
+  acronym: "YES 2027"
+  start: 2027-02-24
+  end: 2027-02-26
+  city: "Eindhoven"
+  country: "Netherlands"
+  countryCode: "NL"
+  region: "Europe"
+  lat: 51.44
+  lon: 5.48
+  url: "https://www.eurandom.tue.nl/event/yes2027/"
+  format: "in-person"            # format inferred
+  topics: [spatio-temporal]
+  description: "Young European Statisticians meeting at EURANDOM (TU Eindhoven) with invited lectures, contributed talks by early-career researchers and posters on spatio-temporal statistics."
+  deadlines:
+    - label: "Contributed talk abstract"
+      date: 2026-12-01
+    - label: "Travel grant application"
+      date: 2026-12-01
+  checked: 2026-10-02
+  source: "https://www.eurandom.tue.nl/event/yes2027/"
+
+- id: eurandom-pgm-2027         # EURANDOM topic workshop (not a society meeting)
+  name: "Probabilistic Graphical Models"
+  acronym: null
+  start: 2027-04-07
+  end: 2027-04-09
+  city: "Eindhoven"
+  country: "Netherlands"
+  countryCode: "NL"
+  region: "Europe"
+  lat: 51.44
+  lon: 5.48
+  url: "https://www.eurandom.tue.nl/event/probabilistic-graphical-models-2/"
+  format: "in-person"            # format inferred
+  topics: [general, probability]
+  description: "EURANDOM workshop on theory, methods and applications of probabilistic graphical models, with contributed talks and posters by junior researchers."
+  deadlines: []                  # registration opens by 9 Oct 2026; no closing date yet
+  checked: 2026-10-02
+  source: "https://www.eurandom.tue.nl/event/probabilistic-graphical-models-2/"
+
+- id: yep-xxi-2027
+  name: "YEP XXI: Dynamics of and on Graphs (Young European Probabilists)"
+  acronym: "YEP XXI"
+  start: 2027-06-21
+  end: 2027-06-25
+  city: "Eindhoven"
+  country: "Netherlands"
+  countryCode: "NL"
+  region: "Europe"
+  lat: 51.44
+  lon: 5.48
+  url: "https://www.eurandom.tue.nl/event/yep-xxi-dynamics-of-and-on-graphs/"
+  format: "in-person"            # format inferred
+  topics: [probability]
+  description: "21st Young European Probabilists workshop at EURANDOM on random graph dynamics and processes on graphs, with talks and mini-courses."
+  deadlines: []                  # registration opens fall 2026
+  checked: 2026-10-02
+  source: "https://www.eurandom.tue.nl/event/yep-xxi-dynamics-of-and-on-graphs/"
+
+- id: agrostat-2026
+  name: "AgroStat 2026: 17th Edition of the AgroStat Conference"
+  acronym: "AgroStat 2026"
+  start: 2026-10-05
+  end: 2026-10-07
+  city: "Dijon"
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 47.32
+  lon: 5.04
+  url: "https://agrostat2026.sciencesconf.org/"
+  format: "in-person"            # format inferred
+  topics: [general, data-science]
+  description: "Biennial conference of the Agro-Industry group of the French Statistical Society (SFdS) on statistics and data science in agro-food sciences, hosted by INRAE, Institut Agro Dijon and Université Bourgogne Europe."
+  deadlines:
+    - label: "Abstract submission (extended)"
+      date: 2026-06-12
+    - label: "Poster submission"
+      date: 2026-09-30
+  checked: 2026-10-02
+  source: "https://agrostat2026.sciencesconf.org/"
+
+- id: jbiostat-2026
+  name: "Journées de Biostatistique 2026"
+  acronym: null
+  start: 2026-11-05
+  end: 2026-11-06
+  city: "Paris"
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 48.86
+  lon: 2.35
+  url: "https://jbiostat2026.sciencesconf.org/?lang=fr"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Biostatistics meeting at CNAM Paris organised by the CNRS RT Math Bio Santé, the Société Française de Biométrie and the Biopharmacy and Health group of the SFdS."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-10-02
+    - label: "Registration"
+      date: 2026-10-16
+  checked: 2026-10-02
+  source: "https://jbiostat2026.sciencesconf.org/?lang=fr"
+
+- id: cfies-2026
+  name: "9e Colloque Francophone International sur l'Enseignement de la Statistique (CFIES 2026)"
+  acronym: "CFIES 2026"
+  start: 2026-11-25
+  end: 2026-11-27
+  city: "Namur"
+  country: "Belgium"
+  countryCode: "BE"
+  region: "Europe"
+  lat: 50.47
+  lon: 4.87
+  url: "https://cfies2026.sciencesconf.org/"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "French-language international conference on statistics education organised by the French Statistical Society (SFdS) at the University of Namur."
+  deadlines:
+    - label: "Submission of communications"
+      date: 2026-09-08
+  checked: 2026-10-02
+  source: "https://cfies2026.sciencesconf.org/resource/page/id/7"
+
+- id: mascotnum-2027             # uncertainty-quantification meeting (statistics/applied maths); borderline on "mainly statistics"
+  name: "Rencontres Annuelles Mascot-Num 2027: Inverse problems under uncertainties"
+  acronym: "Mascot-Num 2027"
+  start: 2027-04-14
+  end: 2027-04-16
+  city: "Ecully"
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 45.78
+  lon: 4.78
+  url: "https://mascotnum2027.sciencesconf.org/"
+  format: "in-person"            # format inferred
+  topics: [computational]
+  description: "Annual meeting of the CNRS research network on uncertainty quantification (RT-UQ / Mascot-Num) at École Centrale de Lyon, sponsored by the SFdS, with a PhD students day and a workshop on inverse problems under uncertainty."
+  deadlines:
+    - label: "Student abstract submission"
+      date: 2026-12-01
+    - label: "Registration"
+      date: 2027-03-01
+  checked: 2026-10-02
+  source: "https://mascotnum2027.sciencesconf.org/"
+
+- id: isbs-2026                  # international topic series held in Europe; not on the colleagues' list - check for overlap
+  name: "8th International Symposium on Biopharmaceutical Statistics"
+  acronym: "ISBS 2026"
+  start: 2026-10-13              # 13 Oct short-course day; symposium 14-16 Oct
+  end: 2026-10-16
+  city: "Madrid"
+  country: "Spain"
+  countryCode: "ES"
+  region: "Europe"
+  lat: 40.42
+  lon: -3.70
+  url: "https://isbiostat.org/"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Symposium of the International Society for Biopharmaceutical Statistics (ISBS) at the Novotel Madrid Center, with a short-course day followed by three symposium days."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-06-16           # key dates labelled "draft" on the site
+  checked: 2026-10-02
+  source: "https://isbiostat.org/conference-info/"
+
+- id: sda-2026                   # international topic workshop series held in Europe; not on the colleagues' list
+  name: "Symbolic Data Analysis Workshop 2026"
+  acronym: "SDA 2026"
+  start: 2026-10-22
+  end: 2026-10-24
+  city: "Lisbon"
+  country: "Portugal"
+  countryCode: "PT"
+  region: "Europe"
+  lat: 38.72
+  lon: -9.14
+  url: "https://sites.google.com/view/sda2026/"
+  format: "in-person"            # format inferred
+  topics: [general, data-science]
+  description: "11th edition of the Symbolic Data Analysis workshop, held at Instituto Superior Técnico (Universidade de Lisboa) with non-parallel sessions on methods for symbolic (interval, distributional) data."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/sda2026/"
+
+- id: uros-2026                  # international topic series held in Europe; not on the colleagues' list
+  name: "14th International Conference on the Use of R in Official Statistics"
+  acronym: "uRos2026"
+  start: 2026-11-18
+  end: 2026-11-20
+  city: "Paris"
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 48.86
+  lon: 2.35
+  url: "https://r-project.ro/conference2026.html"
+  format: "in-person"            # "on-site event"
+  topics: [computational]
+  description: "Annual conference on the use of R in official statistics, hosted by INSEE at the Pierre Mendès France Conference Center of the French economics ministry."
+  deadlines:
+    - label: "Abstract and tutorial submission (extended)"
+      date: 2026-06-30
+  checked: 2026-10-02
+  source: "https://r-project.ro/conference2026.html"
+
+- id: ims-icsds-2026             # IMS international meeting held in Europe; not on either list - check for overlap
+  name: "2026 IMS International Conference on Statistics and Data Science"
+  acronym: "ICSDS 2026"
+  start: 2026-12-15
+  end: 2026-12-18
+  city: "Split"
+  country: "Croatia"
+  countryCode: "HR"
+  region: "Europe"
+  lat: 43.51
+  lon: 16.44
+  url: "https://sites.google.com/view/ims-icsds2026/"
+  format: "in-person"            # format inferred
+  topics: [general, data-science]
+  description: "Annual international conference of the Institute of Mathematical Statistics on statistics and data science, with plenary, invited, contributed and poster sessions."
+  deadlines:
+    - label: "Student travel award application"
+      date: 2026-09-30
+    - label: "Early registration (includes abstract submission)"
+      date: 2026-10-15
+      tentative: true            # year inferred
+    - label: "Regular registration"
+      date: 2026-11-10
+      tentative: true            # year inferred
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/ims-icsds2026/registration"
+
+- id: biostatnet-women-workshop-2026   # dates read on the SGAPEIO (Galician statistical society) news page; BIOSTATNET site unreachable
+  name: "4th BIOSTATNET Workshop Women and Biostatistics: tribute to Anna Espinal"
+  acronym: null
+  start: 2026-11-09
+  end: 2026-11-09
+  city: "Bellaterra (Cerdanyola del Vallès)"
+  country: "Spain"
+  countryCode: "ES"
+  region: "Europe"
+  lat: 41.50
+  lon: 2.10
+  url: "https://www.sgapeio.es/listado-novas/3813-novas-da-sgapeio-28-de-setembro-de-2026"   # no reachable BIOSTATNET page
+  format: "hybrid"
+  topics: [biostatistics]
+  description: "One-day workshop of the Spanish biostatistics network BIOSTATNET at the Universitat Autònoma de Barcelona, with a scientific session and a commemorative session; attendance free."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.sgapeio.es/listado-novas/3813-novas-da-sgapeio-28-de-setembro-de-2026"
+
+- id: biostatnet-7-2027          # dates read on the SGAPEIO news page ("save the date"); BIOSTATNET site unreachable
+  name: "7th BIOSTATNET Scientific Meeting"
+  acronym: null
+  start: 2027-01-13
+  end: 2027-01-15
+  city: "Valencia"
+  country: "Spain"
+  countryCode: "ES"
+  region: "Europe"
+  lat: 39.47
+  lon: -0.38
+  url: "https://www.sgapeio.es/listado-novas/3813-novas-da-sgapeio-28-de-setembro-de-2026"   # no reachable BIOSTATNET page
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Scientific meeting of BIOSTATNET, the Spanish national biostatistics network; programme and deadlines to be announced."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.sgapeio.es/listado-novas/3813-novas-da-sgapeio-28-de-setembro-de-2026"
+
+# ============================ North America ============================
+# Added 2026-10-02 (research by area).
+
+- id: imsi-generative-modeling-2026
+  name: "IMSI Workshop: Statistical Foundations of Generative Modeling"
+  acronym: null
+  start: 2026-10-05
+  end: 2026-10-09
+  city: "Chicago"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 41.79
+  lon: -87.60
+  url: "https://www.imsi.institute/activities/statistical-foundations-of-generative-modeling/"
+  format: "hybrid"
+  topics: [computational, data-science]
+  description: "Open-registration workshop at the Institute for Mathematical and Statistical Innovation on the statistical theory, evaluation and applications of generative models."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.imsi.institute/activities/statistical-foundations-of-generative-modeling/"
+
+- id: nerds-2026
+  name: "9th Annual New England Rare Disease Statistics Workshop"
+  acronym: "NERDS 2026"
+  start: 2026-10-08
+  end: 2026-10-09
+  city: "Cambridge"              # venue: Hyatt Regency Boston/Cambridge
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 42.37
+  lon: -71.11
+  url: "https://nerds.nestat.org/"
+  format: "in-person"
+  topics: [biostatistics]
+  description: "Day-and-a-half workshop of the New England Statistical Society on statistical methods, real-world evidence and AI in rare disease drug development."
+  deadlines:
+    - label: "Poster submission"
+      date: 2026-10-04
+  checked: 2026-10-02
+  source: "https://nerds.nestat.org/poster.html"
+
+- id: fields-medal-symposium-2026
+  name: "2026 Fields Medal Symposium: Hugo Duminil-Copin"
+  acronym: null
+  start: 2026-10-13
+  end: 2026-10-16                # public opening Oct 13; scientific programme Oct 14-16
+  city: "Toronto"
+  country: "Canada"
+  countryCode: "CA"
+  region: "North America"
+  lat: 43.66
+  lon: -79.40
+  url: "https://www.fields.utoronto.ca/activities/26-27/fieldsmedalsym"
+  format: "in-person"            # format inferred
+  topics: [probability]
+  description: "Fields Institute open symposium honouring Hugo Duminil-Copin's work on the probabilistic theory of phase transitions in statistical physics."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.fields.utoronto.ca/activities/26-27/fieldsmedalsym"
+
+- id: asa-ai-pharma-symposium-2026
+  name: "2026 Annual Symposium on Risks and Opportunities of AI in Pharmaceutical Medicine"
+  acronym: null
+  start: 2026-10-13
+  end: 2026-10-13
+  city: "Berkeley"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 37.87
+  lon: -122.26
+  url: "https://community.amstat.org/events/event-description?CalendarEventKey=ccc491de-3354-4b88-a079-019d4c69eae4"
+  format: "in-person"
+  topics: [biostatistics, data-science]
+  description: "One-day American Statistical Association symposium at UC Berkeley on the risks and opportunities of AI in pharmaceutical medicine."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://community.amstat.org/events/event-description?CalendarEventKey=ccc491de-3354-4b88-a079-019d4c69eae4"
+
+- id: mpc-2026
+  name: "47th Midwest Probability Colloquium"
+  acronym: "MPC 2026"
+  start: 2026-10-15
+  end: 2026-10-17
+  city: "Evanston"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 42.05
+  lon: -87.68
+  url: "https://sites.google.com/view/mpc47"
+  format: "in-person"            # format inferred
+  topics: [probability]
+  description: "Annual probability meeting at Northwestern University with a research programme and a tutorial lecture series."
+  deadlines: []                  # financial-support registration deadline (2026-09-20) has passed
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/mpc47"
+
+- id: s3-olkin-forum-2026
+  name: "S3 Ingram Olkin Forum: Challenges in Modeling and Analyzing Maternal Health Data"
+  acronym: null
+  start: 2026-10-15
+  end: 2026-10-16
+  city: "Columbus"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 39.96
+  lon: -83.00
+  url: "https://www.niss.org/events/s3-ingram-olkin-forum-challenges-modeling-and-analyzing-maternal-health-data"
+  format: "in-person"
+  topics: [biostatistics]
+  description: "Two-day Statistics Serving Society forum of the National Institute of Statistical Sciences at Ohio State University on statistical challenges in maternal health data."
+  deadlines:
+    - label: "Regular registration closes"
+      date: 2026-10-10
+  checked: 2026-10-02
+  source: "https://www.niss.org/events/s3-ingram-olkin-forum-challenges-modeling-and-analyzing-maternal-health-data"
+
+- id: imsi-non-euclidean-data-2026
+  name: "IMSI Workshop: Statistical Foundations for the Analysis of Non-Euclidean Data"
+  acronym: null
+  start: 2026-10-19
+  end: 2026-10-23
+  city: "Chicago"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 41.79
+  lon: -87.60
+  url: "https://www.imsi.institute/activities/statistical-foundations-for-the-analysis-of-non-euclidean-data/"
+  format: "hybrid"
+  topics: [general, computational]
+  description: "Open-registration workshop at the Institute for Mathematical and Statistical Innovation on statistical frameworks for data in non-Euclidean metric spaces."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.imsi.institute/activities/statistical-foundations-for-the-analysis-of-non-euclidean-data/"
+
+- id: dahshu-dss-2026
+  name: "DahShu Data Science Symposium 2026"
+  acronym: "DSDSS 2026"
+  start: 2026-10-22
+  end: 2026-10-23
+  city: "Boston"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 42.34
+  lon: -71.10
+  url: "https://2026.dahshu.org/"
+  format: "hybrid"               # registration page offers in-person and virtual attendance
+  topics: [data-science, biostatistics]
+  description: "Symposium of the non-profit DahShu at Harvard Medical School on statistical thinking, AI and data science in biomedical research and drug development."
+  deadlines:
+    - label: "Registration closes"
+      date: 2026-10-19
+  checked: 2026-10-02
+  source: "https://2026.dahshu.org/registration"
+
+- id: wsds-2026
+  name: "Women in Statistics and Data Science Conference 2026"
+  acronym: "WSDS 2026"
+  start: 2026-10-28
+  end: 2026-10-30
+  city: "Cincinnati"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 39.10
+  lon: -84.51
+  url: "https://ww2.amstat.org/meetings/wsds/2026/"
+  format: "in-person"            # format inferred
+  topics: [general, data-science]
+  description: "American Statistical Association conference highlighting the achievements and careers of women in statistics, biostatistics and data science."
+  deadlines:
+    - label: "Housing deadline"
+      date: 2026-10-13
+  checked: 2026-10-02
+  source: "https://ww2.amstat.org/meetings/wsds/2026/conferenceinfo.cfm"
+
+- id: aisc-2026
+  name: "2026 AISC Conference: Advances in Interdisciplinary Statistics and Combinatorics"
+  acronym: "AISC 2026"
+  start: 2026-10-30
+  end: 2026-11-01
+  city: "Lafayette"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 30.22
+  lon: -92.02
+  url: "https://userweb.ucs.louisiana.edu/~C00253007/AISC2026/index.html"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "Conference at the University of Louisiana at Lafayette, with the Louisiana Chapter of the ASA, on contemporary topics in statistics and interdisciplinary research."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://userweb.ucs.louisiana.edu/~C00253007/AISC2026/index.html"
+
+- id: slds-2026
+  name: "ASA Section on Statistical Learning and Data Science Conference 2026: Inference and Intelligence"
+  acronym: "SLDS 2026"
+  start: 2026-11-01
+  end: 2026-11-03
+  city: "New York"               # venue: New York Marriott at the Brooklyn Bridge (Brooklyn)
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.69
+  lon: -73.99
+  url: "https://asa-slds.github.io/slds2026/"
+  format: "in-person"            # format inferred
+  topics: [data-science, computational]
+  description: "Conference of the ASA Section on Statistical Learning and Data Science on statistical learning, data science and AI."
+  deadlines:
+    - label: "Housing / cancellation deadline"
+      date: 2026-10-12
+    - label: "Online registration closes"
+      date: 2026-10-25
+  checked: 2026-10-02
+  source: "https://asa-slds.github.io/slds2026/"
+
+- id: bass-2026
+  name: "Biopharmaceutical Applied Statistics Symposium XXXIII"
+  acronym: "BASS XXXIII"
+  start: 2026-11-02
+  end: 2026-11-04
+  city: "Savannah"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 32.08
+  lon: -81.09
+  url: "https://www.bassconference.org/"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Annual symposium of tutorials and posters on applied biostatistics in pharmaceutical research and regulation, founded by Karl E. Peace."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.bassconference.org/"
+
+- id: statistics-beyond-euclid-2026
+  name: "Statistics Beyond Euclid: Functional Data, Random Objects and AI"
+  acronym: null
+  start: 2026-11-12
+  end: 2026-11-14
+  city: "Davis"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 38.54
+  lon: -121.74
+  url: "https://anson.ucdavis.edu/statisticsbeyondeuclid/"
+  format: "in-person"            # format inferred
+  topics: [general, computational]
+  description: "Research conference of the UC Davis Department of Statistics on functional data analysis, random objects and AI, with invited sessions and a poster session."
+  deadlines:
+    - label: "Registration closes"
+      date: 2026-10-30
+  checked: 2026-10-02
+  source: "https://anson.ucdavis.edu/statisticsbeyondeuclid/"
+
+- id: imsi-random-objects-2026
+  name: "IMSI Workshop: Random Objects and Metric Statistics for Connectomics"
+  acronym: null
+  start: 2026-11-30
+  end: 2026-12-04
+  city: "Chicago"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 41.79
+  lon: -87.60
+  url: "https://www.imsi.institute/activities/random-objects-and-metric-statistics-for-connectomics/"
+  format: "hybrid"
+  topics: [general, biostatistics]
+  description: "Open-registration workshop at the Institute for Mathematical and Statistical Innovation on statistics for random objects in metric spaces, with applications to brain connectomics."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.imsi.institute/activities/random-objects-and-metric-statistics-for-connectomics/"
+
+- id: deming-2026
+  name: "Annual Deming Conference on Applied Statistics 2026"
+  acronym: "Deming 2026"
+  start: 2026-12-07
+  end: 2026-12-09                # main conference; two parallel 2-day short courses follow on Dec 10-11
+  city: "Atlantic City"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 39.36
+  lon: -74.42
+  url: "https://www.deming-conference.org/"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Three-day tutorial conference on statistical methodology for biopharmaceutical applications, sponsored by the ASA Biopharmaceutical Section and ICSA."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.deming-conference.org/programs/2026-program/"
+
+- id: ichps-2027
+  name: "16th International Conference on Health Policy Statistics"
+  acronym: "ICHPS 2027"
+  start: 2027-01-13
+  end: 2027-01-15
+  city: "Annapolis"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 38.98
+  lon: -76.49
+  url: "https://ww2.amstat.org/meetings/ichps/2027/"
+  format: "in-person"            # format inferred
+  topics: [biostatistics, general]
+  description: "Conference of the ASA Health Policy Statistics Section on statistical methods for health policy and health services research."
+  deadlines:
+    - label: "Speaker registration deadline"
+      date: 2026-10-15
+    - label: "Housing deadline"
+      date: 2026-12-17
+  checked: 2026-10-02
+  source: "https://ww2.amstat.org/meetings/ichps/2027/conferenceinfo.cfm"
+
+- id: statbolic-2027
+  name: "2027 ASA Biopharmaceutical Section STATBOLIC Conference"
+  acronym: "STATBOLIC 2027"
+  start: 2027-02-22
+  end: 2027-02-23                # ASA calendar entry shows only Feb 22 and an "On Hold" status; the STATBOLIC site gives Feb 22-23 with registration open
+  tentative: true               # the ASA calendar lists it as "On Hold"
+  city: "Rockville"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 39.08
+  lon: -77.15
+  url: "https://community.amstat.org/statbolic/home"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "ASA Biopharmaceutical Section conference of industry, academic and regulatory statisticians on statistical methods and designs for treatments of metabolic disorders."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://community.amstat.org/statbolic/home"
+
+- id: ssp-2027
+  name: "Seminar on Stochastic Processes 2027"
+  acronym: "SSP 2027"
+  start: 2027-03-18
+  end: 2027-03-20                # tutorial lectures on Wed 2027-03-17; Sat 2027-03-20 is a half day
+  city: "Los Angeles"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 34.02
+  lon: -118.29
+  url: "https://www.stevenheilman.org/ssp2027.html"   # preliminary site maintained by a USC local organiser
+  format: "in-person"            # format inferred
+  topics: [probability]
+  description: "Long-running annual probability conference on stochastic processes, hosted in 2027 by the University of Southern California."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.stevenheilman.org/ssp2027.html"
+
+- id: cots-2027
+  name: "Conference of Texas Statisticians 2027"
+  acronym: "COTS 2027"
+  start: 2027-04-02
+  end: 2027-04-03
+  city: "Dallas"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 32.84
+  lon: -96.78
+  url: "https://smu-sds.github.io/COTS2027/"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "Annual regional meeting of statisticians and data scientists from Texas, hosted in 2027 by the SMU Department of Statistics and Data Science."
+  deadlines: []                  # only month-level deadlines published (registration opens Dec 2026)
+  checked: 2026-10-02
+  source: "https://smu-sds.github.io/COTS2027/"
+
+- id: sdss-2027
+  name: "Symposium on Data Science and Statistics 2027"
+  acronym: "SDSS 2027"
+  start: 2027-04-27
+  end: 2027-04-29                # NIST event listing says Apr 27-30 (likely incl. short courses); ASA page says Apr 27-29
+  city: "Pittsburgh"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.44
+  lon: -80.00
+  url: "https://ww2.amstat.org/meetings/sdss/2027/"
+  format: "in-person"            # format inferred
+  topics: [data-science, computational, general]
+  description: "American Statistical Association symposium for statisticians, data scientists and computer scientists analysing and visualising complex data."
+  deadlines:
+    - label: "Refereed abstract submission"
+      date: 2026-11-30
+    - label: "Lightning abstract submission"
+      date: 2027-02-05
+  checked: 2026-10-02
+  source: "https://www.amstat.org/meetings/symposium-on-data-science-amp-statistics"
+
+- id: mbsw-2027
+  name: "Midwest Biopharmaceutical Statistics Workshop 2027"
+  acronym: "MBSW 2027"
+  start: 2027-05-24
+  end: 2027-05-26
+  city: "Carmel"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 39.98
+  lon: -86.13
+  url: "https://mbswonline.com/"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Annual workshop fostering discussion of statistical methodology in the pharmaceutical industry, held at the Renaissance Hotel, Carmel, Indiana."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://mbswonline.com/"
+
+- id: lids-2027
+  name: "2027 Lifetime Data Science Conference"
+  acronym: "LiDS 2027"
+  start: 2027-06-09
+  end: 2027-06-11
+  city: "Milwaukee"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 43.04
+  lon: -87.91
+  url: "https://community.amstat.org/lids/events/2027lids-conf"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Conference of the ASA Lifetime Data Science Section on survival, event-history and reliability data analysis."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://community.amstat.org/lids/events/2027lids-conf"
+
+- id: icsa-2027
+  name: "2027 ICSA Applied Statistics Symposium"
+  acronym: "ICSA 2027"
+  start: 2027-06-13
+  end: 2027-06-16
+  city: "Pittsburgh"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.44
+  lon: -79.96
+  url: "https://symposium2027.icsa.org/"
+  format: "in-person"            # format inferred
+  topics: [general, biostatistics]
+  description: "Annual applied statistics symposium of the International Chinese Statistical Association, hosted in 2027 by the University of Pittsburgh."
+  deadlines: []                  # all deadlines TBD on the site
+  checked: 2026-10-02
+  source: "https://symposium2027.icsa.org/"
+
+- id: ncb-2027
+  name: "ASA Nonclinical Biostatistics Conference 2027"
+  acronym: "NCB 2027"
+  start: 2027-06-14
+  end: 2027-06-16
+  city: "Philadelphia"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 39.95
+  lon: -75.19
+  url: "https://community.amstat.org/biop/events/ncb/index"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "ASA Biopharmaceutical Section conference on nonclinical statistics (CMC, discovery and biomarkers, safety and pharmacology, data science), hosted at the Penn Perelman School of Medicine."
+  deadlines: []                  # abstract submission opens November 2026
+  checked: 2026-10-02
+  source: "https://community.amstat.org/biop/events/ncb/index"
+
+- id: jrc-2027
+  name: "Joint Research Conference on Statistics in Quality, Industry, and Technology 2027"
+  acronym: "JRC 2027"
+  start: 2027-06-22
+  end: 2027-06-24                # short courses on 2027-06-21
+  city: "Storrs"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 41.81
+  lon: -72.25
+  url: "https://jointresearchconference.github.io/2027/"
+  format: "in-person"
+  topics: [general]
+  description: "Joint meeting of the Quality and Productivity Research Conference and the Spring Research Conference, co-sponsored by the ASA Q&P and SPES sections and the IMS, hosted by UConn."
+  deadlines: []                  # all deadlines TBA on the site
+  checked: 2026-10-02
+  source: "https://jointresearchconference.github.io/2027/"
+
+- id: cancots-2027
+  name: "Canadian Conference on Teaching Statistics 2027"
+  acronym: "CanCOTS 2027"
+  start: 2027-06-22
+  end: 2027-06-24
+  city: "Toronto"
+  country: "Canada"
+  countryCode: "CA"
+  region: "North America"
+  lat: 43.66
+  lon: -79.40
+  url: "https://ssc.ca/en/node/18645"
+  format: "in-person"            # format inferred
+  topics: [general]
+  description: "Participant-driven conference on statistics and data science education, organised with the Statistical Society of Canada and hosted by the University of Toronto."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://ssc.ca/en/node/18645"
+
+- id: fields-e-value-2027
+  name: "Workshop on E-value Theory, Anytime-valid Inference, and Game-theoretic Statistics"
+  acronym: null
+  start: 2027-07-05
+  end: 2027-07-09
+  city: "Toronto"
+  country: "Canada"
+  countryCode: "CA"
+  region: "North America"
+  lat: 43.66
+  lon: -79.40
+  url: "https://www.fields.utoronto.ca/activities/27-28/e-value"
+  format: "in-person"
+  topics: [general, probability]
+  description: "Open Fields Institute workshop on e-values, anytime-valid inference and game-theoretic statistics."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.fields.utoronto.ca/activities/27-28/e-value"
+
+- id: risw-2027
+  name: "ASA Biopharmaceutical Section Regulatory-Industry Statistics Workshop 2027"
+  acronym: "RISW 2027"
+  start: 2027-09-22
+  end: 2027-09-24
+  city: "Rockville"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 39.08
+  lon: -77.15
+  url: "https://www.amstat.org/meetings/asa-biopharmaceutical-section-regulatory-industry-statistics-workshop"
+  format: "in-person"            # format inferred
+  topics: [biostatistics]
+  description: "Annual workshop of the ASA Biopharmaceutical Section bringing together regulatory, industry and academic statisticians on drug and device development."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.amstat.org/meetings/asa-biopharmaceutical-section-regulatory-industry-statistics-workshop"
+
+# ============================ Latin America and Africa ============================
+# Added 2026-10-02 (research by area).
+
+- id: emr-2027
+  name: "XX Escola de Modelos de Regressão"
+  acronym: "XX EMR"
+  start: 2027-06-09
+  end: 2027-06-11
+  city: "Niterói"
+  country: "Brazil"
+  countryCode: "BR"
+  region: "Latin America"
+  lat: -22.88
+  lon: -43.10
+  url: "https://xxemr.softaliza.com.br/"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Biennial Brazilian meeting on regression models organised by the Associação Brasileira de Estatística (ABE) and Universidade Federal Fluminense, with lectures, thematic sessions, oral and poster presentations and short courses."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2027-01-22
+    - label: "Early registration"
+      date: 2027-03-26
+  checked: 2026-10-02
+  source: "https://xxemr.softaliza.com.br/"
+
+- id: wesab-ufv-2026
+  name: "XIII Workshop em Estatística Aplicada e Biometria"
+  acronym: null
+  start: 2026-10-08
+  end: 2026-10-09
+  city: "Viçosa"
+  country: "Brazil"
+  countryCode: "BR"
+  region: "Latin America"
+  lat: -20.75
+  lon: -42.88
+  url: "https://sites.google.com/ufv.br/xiii-workshop-em-estatstica-ap"
+  format: "in-person"  # format inferred
+  topics: [biostatistics]
+  description: "Open workshop of the Applied Statistics and Biometry study group (GESTBIO) at the Universidade Federal de Viçosa on statistical methods for the agricultural sciences, with invited talks, flash presentations and posters."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-09-14
+  checked: 2026-10-02
+  source: "https://sites.google.com/ufv.br/xiii-workshop-em-estatstica-ap"
+
+- id: cison-2026
+  name: "CISON Annual Conference 2026"
+  acronym: "CISON 2026"
+  start: 2026-10-14
+  end: 2026-10-16
+  city: "Abuja"
+  country: "Nigeria"
+  countryCode: "NG"
+  region: "Africa"
+  lat: 9.08
+  lon: 7.40
+  url: "https://cison.org.ng/event/2026-conference-preconference"
+  format: "in-person"  # format inferred
+  topics: [general, data-science]
+  description: "Third international conference of the Chartered Institute of Statisticians of Nigeria, marking its 50th anniversary, with plenaries, panels and workshops on statistics, data science and official statistics; preceded by a spatial data analysis workshop on 12-13 October."
+  checked: 2026-10-02
+  source: "https://cison.org.ng/event/2026-conference-preconference"
+
+- id: ssk-2026
+  name: "SSK International Conference 2026: Strengthening Evidence for Sustainable Development through Statistics, Machine Learning, and AI"
+  acronym: "SSK 2026"
+  start: 2026-11-17
+  end: 2026-11-19
+  city: "Embu"
+  country: "Kenya"
+  countryCode: "KE"
+  region: "Africa"
+  lat: -0.53
+  lon: 37.45
+  url: "https://conference.sskenya.org/"
+  format: "in-person"  # format inferred
+  topics: [general, data-science]
+  description: "Inaugural international conference of the Statistical Society of Kenya, organised with the University of Embu and the Kenya National Bureau of Statistics, on statistics, machine learning and AI for sustainable development."
+  deadlines:
+    - label: "Registration closes"
+      date: 2026-10-31
+  checked: 2026-10-02
+  source: "https://conference.sskenya.org/#/dates"
+
+- id: aic-2027
+  name: "9th African International Conference on Statistics"
+  acronym: "AIC 2027"
+  start: 2027-01-04
+  end: 2027-01-08
+  city: "Nairobi"
+  country: "Kenya"
+  countryCode: "KE"
+  region: "Africa"
+  lat: -1.29
+  lon: 36.82
+  url: "https://aic2026.strathmore.edu/"
+  format: "in-person"  # format inferred
+  topics: [general, data-science]
+  description: "International statistics conference hosted by Strathmore University and the University of Maryland, Baltimore County, in partnership with the ASA and IMS, on big data, AI and statistical methods for development in Africa."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-12-05
+    - label: "Registration closes"
+      date: 2026-12-20
+  checked: 2026-10-02
+  source: "https://aic2026.strathmore.edu/important-dates/"
+
+# ============================ Asia and Oceania ============================
+# Added 2026-10-02 (research by area).
+
+- id: ism-heterogeneity-survival-2026
+  name: "Statistical Modeling Under Heterogeneity in Data and Its Application to Survival Analysis (ISM Specially Promoted Research meeting)"
+  acronym: null
+  start: 2026-10-22
+  end: 2026-10-23
+  city: "Tachikawa (Tokyo)"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 35.71
+  lon: 139.41
+  url: "https://www.ism.ac.jp/rcmhds/pdf/20261022-1023_SpeciallyPromotedReserch_rcmhds.pdf"
+  format: "in-person"  # format inferred
+  topics: [biostatistics]
+  description: "Two-day research meeting at the Institute of Statistical Mathematics (Research Center for Medical and Health Data Science) on statistical modelling under data heterogeneity and survival analysis."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.ism.ac.jp/rcmhds/pdf/20261022-1023_SpeciallyPromotedReserch_rcmhds.pdf"
+
+- id: salsis-2026
+  name: "24th Symposium Stochastic Analysis on Large Scale Interacting Systems"
+  acronym: "SALSIS 2026"
+  start: 2026-10-26
+  end: 2026-10-29
+  city: "Tokyo"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 35.68
+  lon: 139.69
+  url: "https://sites.google.com/view/workshop-salsis/home/2026"
+  format: "in-person"  # format inferred
+  topics: [probability]
+  description: "Annual probability symposium held at the Graduate School of Mathematical Sciences, University of Tokyo, on interacting particle systems, hydrodynamic limits and stochastic PDEs."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/workshop-salsis/home/2026"
+
+- id: ism-complex-dependent-data-2026
+  name: "Symposium on Statistical Modeling for Complex and Dependent Data"
+  acronym: null
+  start: 2026-10-29
+  end: 2026-10-29
+  city: "Tachikawa (Tokyo)"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 35.71
+  lon: 139.41
+  url: "https://sites.google.com/view/sympo20261029"
+  format: "hybrid"
+  topics: [general, spatio-temporal]  # programme includes spatio-temporal and hierarchical Bayesian talks
+  description: "One-day symposium at the Institute of Statistical Mathematics, organised with Keio University, on statistical modelling for complex and dependent data."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/sympo20261029"
+
+- id: ism-infinitely-divisible-2026
+  name: "ISM Cooperative Research Meeting: Problems Related to Infinitely Divisible Processes (共同研究集会「無限分解可能過程に関連する諸問題」)"
+  acronym: null
+  start: 2026-11-04
+  end: 2026-11-06
+  city: "Tachikawa (Tokyo)"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 35.71
+  lon: 139.41
+  url: "https://sites.google.com/view/takaakishimura"
+  format: "in-person"
+  topics: [probability]
+  description: "Long-running open research meeting (free to attend) of the Institute of Statistical Mathematics on infinitely divisible distributions, Lévy processes and related topics."
+  deadlines:
+    - label: "Talk application"
+      date: 2026-10-07
+    - label: "Abstract (予稿) submission"
+      date: 2026-10-21
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/takaakishimura"
+
+- id: aro-statnet-forum-2026
+  name: "West Japan ARO StatNet Forum 2026 (西日本ARO StatNet Forum 2026)"
+  acronym: null
+  start: 2026-11-05
+  end: 2026-11-06
+  city: "Fukuoka"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 33.59
+  lon: 130.40
+  url: "https://www.ism.ac.jp/rcmhds/pdf/20261105AROStatNetForum2026.pdf"
+  format: "in-person"
+  topics: [biostatistics]
+  description: "Forum for clinical-research biostatisticians organised by West Japan ARO StatNet, co-hosted by the ISM Research Center for Medical and Health Data Science and Kyoto University; free and open to all."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.ism.ac.jp/rcmhds/pdf/20261105AROStatNetForum2026.pdf"
+
+- id: sprf-kyoto-2027
+  name: "Stochastic Processes and Related Fields (in celebration of Prof. Takashi Kumagai's 60th birthday)"
+  acronym: null
+  start: 2027-03-22
+  end: 2027-03-26
+  city: "Kyoto"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 35.01
+  lon: 135.77
+  url: "https://www.kurims.kyoto-u.ac.jp/~croydon/SPRF2027.html"
+  format: "in-person"  # format inferred
+  topics: [probability]
+  description: "International probability workshop at the Research Institute for Mathematical Sciences (RIMS), Kyoto University, on stochastic processes on complex systems and models from statistical mechanics."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.kurims.kyoto-u.ac.jp/~croydon/SPRF2027.html"  # dates appear in the page banner image
+
+- id: kss-bayesian-autumn-2026
+  name: "Korean Statistical Society Bayesian Statistics Research Group 2026 Autumn Seminar (한국통계학회 베이지안 통계 연구회 2026년도 추계 세미나)"
+  acronym: null
+  start: 2026-10-16
+  end: 2026-10-17
+  city: "Pohang"
+  country: "South Korea"
+  countryCode: "KR"
+  region: "Asia"
+  lat: 36.02
+  lon: 129.34
+  url: "https://kss.or.kr/board/conference/article/284348"
+  format: "in-person"
+  topics: [bayesian]
+  description: "Two-day meeting of the Korean Statistical Society's Bayesian statistics research group, held at POSTECH."
+  deadlines:
+    - label: "Pre-registration (no on-site registration)"
+      date: 2026-10-09
+  checked: 2026-10-02
+  source: "https://kss.or.kr/board/conference/article/284348"
+
+- id: lps-2026
+  name: "Lectures on Probability and Stochastic Processes 2026"
+  acronym: "LPS 2026"
+  start: 2026-11-30
+  end: 2026-12-05
+  city: "Kanpur"
+  country: "India"
+  countryCode: "IN"
+  region: "Asia"
+  lat: 26.45
+  lon: 80.33
+  url: "https://sites.google.com/view/lps-2026/"
+  format: "in-person"
+  topics: [probability]
+  description: "Probability meeting combining two mini-courses with conference talks, hosted by IIT Kanpur and sponsored by the Applied Probability Trust."
+  deadlines: []  # registration closed 1 Sept 2026
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/lps-2026/"
+
+- id: icaap-sp-2026
+  name: "International Conference on Advances in Applied Probability & Stochastic Processes"
+  acronym: "ICAAP & SP 2026"
+  start: 2026-12-19
+  end: 2026-12-22  # sessions on 19, 21 and 22 December
+  city: "Manjeri (Malappuram)"
+  country: "India"
+  countryCode: "IN"
+  region: "Asia"
+  lat: 11.12
+  lon: 76.12
+  url: "https://www.icaapsp2026.com/"
+  format: "in-person"
+  topics: [probability]
+  description: "Applied probability conference organised by the Department of Mathematics, KAHM Unity Women's College, in association with the Ramanujan Mathematical Society and the Kerala Mathematical Association."
+  deadlines:
+    - label: "Paper submission"
+      date: 2026-11-15
+    - label: "Registration"
+      date: 2026-12-10
+  checked: 2026-10-02
+  source: "https://www.icaapsp2026.com/"
+
+- id: wombat-2026
+  name: "Workshop Organised by the Monash Business Analytics Team 2026"
+  acronym: "WOMBAT 2026"
+  start: 2026-11-30
+  end: 2026-12-01
+  city: "Melbourne"
+  country: "Australia"
+  countryCode: "AU"
+  region: "Oceania"
+  lat: -37.81
+  lon: 144.96
+  url: "https://wombat2026.numbat.space/"
+  format: "in-person"  # format inferred
+  topics: [data-science, computational]
+  description: "Annual data-analytics workshop run by the Monash Business Analytics Team (Monash Business School), with a tutorial day followed by a day of talks on open-source statistical and data-science tools."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://wombat2026.numbat.space/"
+
+- id: ibs-ar-2027
+  name: "Biometrics by the Bridge: International Biometric Society Australasian Region Conference 2027"
+  acronym: null
+  start: 2027-11-29
+  end: 2027-12-03
+  city: "Sydney"
+  country: "Australia"
+  countryCode: "AU"
+  region: "Oceania"
+  lat: -33.87
+  lon: 151.21
+  url: "https://www.biometricsociety.org.au/conferences.html"
+  format: "in-person"  # format inferred
+  topics: [biostatistics]
+  description: "Biennial regional conference of the International Biometric Society Australasian Region (IBS-AR)."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.biometricsociety.org.au/conferences.html"
+
+- id: csat-2026
+  name: "Joint Meeting of the 2026 Annual Conference of CSAT and the 60th Anniversary Academic Symposium of the Department of Statistics, NCCU (115年統計學術研討會暨政治大學統計學系60週年學術研討會)"
+  acronym: "CSAT 2026"
+  start: 2026-12-04
+  end: 2026-12-04
+  city: "Taipei"
+  country: "Taiwan"
+  countryCode: "TW"
+  region: "Asia"
+  lat: 25.03
+  lon: 121.57
+  url: "https://infostat.nccu.edu.tw/csa2026/"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Annual conference of the Chinese Statistical Association (Taiwan), held jointly with the 60th anniversary symposium of the Department of Statistics, National Chengchi University."
+  deadlines:
+    - label: "Online registration"
+      date: 2026-11-15
+  checked: 2026-10-02
+  source: "https://infostat.nccu.edu.tw/csa2026/"
+
+- id: swt-2026
+  name: "2026 Statistics Week Taiwan"
+  acronym: "SWT 2026"
+  start: 2026-12-14
+  end: 2026-12-18
+  city: "Taipei"  # 14-15 and 18 Dec in Taipei (Academia Sinica); 16-17 Dec in Taichung (Feng Chia University)
+  country: "Taiwan"
+  countryCode: "TW"
+  region: "Asia"
+  lat: 25.03
+  lon: 121.57
+  url: "https://www3.stat.sinica.edu.tw/swt2026/"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Week of joint meetings led by the Institute of Statistical Science, Academia Sinica, including the Taiwan Causal Inference Symposium, a statistics-in-AI conference in Taichung and a poster competition."
+  deadlines:
+    - label: "Taiwan Causal Inference Symposium poster abstract"
+      date: 2026-10-18
+    - label: "Online registration"
+      date: 2026-11-23
+  checked: 2026-10-02
+  source: "https://www3.stat.sinica.edu.tw/swt2026/"  # poster deadline from https://www3.stat.sinica.edu.tw/2026ci/
+
+- id: mtps-2026
+  name: "Modern Trends in Probability and Statistics 2026 (Basu-Bahadur Memorial Conference)"
+  acronym: "MTPS 2026"
+  start: 2026-12-18
+  end: 2026-12-22
+  city: "Kolkata"
+  country: "India"
+  countryCode: "IN"
+  region: "Asia"
+  lat: 22.57
+  lon: 88.36
+  url: "https://sites.google.com/view/mtps-2026/"
+  format: "in-person"  # format inferred
+  topics: [general, probability]
+  description: "International conference at the Indian Statistical Institute, Kolkata, commemorating D. Basu and R. R. Bahadur, with plenary, invited and contributed sessions."
+  deadlines:
+    - label: "Registration"
+      date: 2026-11-30
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/mtps-2026/registration"
+
+- id: ssca-navstat-2027
+  name: "29th (International) Annual Conference of the Society of Statistics, Computer and Applications: Navigation of Statistical Sciences, Artificial Intelligence and Machine Learning for Sustainable Ecosystem"
+  acronym: "NAVSTAT-2027"
+  start: 2027-02-24
+  end: 2027-02-26
+  city: "Solan (Nauni)"
+  country: "India"
+  countryCode: "IN"
+  region: "Asia"
+  lat: 30.91
+  lon: 77.10
+  url: "https://www.ssca.org.in/upcomingconference.html"
+  format: "in-person"  # format inferred
+  topics: [general, data-science]
+  description: "Annual conference of the Society of Statistics, Computer and Applications (SSCA), hosted by Dr. Y.S. Parmar University of Horticulture and Forestry."
+  deadlines:
+    - label: "M.N. Das Memorial Young Scientist Award paper"
+      date: 2026-10-31
+    - label: "Abstract submission"
+      date: 2026-12-15
+    - label: "Registration fee without 10% surcharge"
+      date: 2026-12-31
+  checked: 2026-10-02
+  source: "https://www.ssca.org.in/media/CONFERENCE_BROCHURE_NAVSTAT_FINAL.pdf"
+
+- id: jscs-symposium-40-2026
+  name: "The 40th Symposium of the Japanese Society of Computational Statistics (日本計算機統計学会第40回シンポジウム)"
+  acronym: null
+  start: 2026-10-23
+  end: 2026-10-25
+  city: "Utsunomiya"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 36.56
+  lon: 139.88
+  url: "https://jscs.jp/conf-sympo40/"
+  format: "hybrid"
+  topics: [computational]
+  description: "Annual autumn symposium of the Japanese Society of Computational Statistics, held at the Tochigi Prefectural Culture Center (distinct from the society's 40th-anniversary symposium in Auckland)."
+  deadlines:
+    - label: "Manuscript submission (extended)"
+      date: 2026-10-02
+  checked: 2026-10-02
+  source: "https://jscs.jp/conf-sympo40/%e6%9c%9f%e9%99%90%e3%81%aa%e3%81%a9%e3%81%ae%e6%97%a5%e7%a8%8b/"  # hybrid format stated on https://jscs.jp/
+
+- id: jcs-symposium-2026
+  name: "2026 Symposium of the Japanese Classification Society (2026年度日本分類学会シンポジウム)"
+  acronym: null
+  start: 2026-12-05
+  end: 2026-12-06
+  city: "Fukui"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 36.06
+  lon: 136.22
+  url: "https://jcs-sympo2026.ywstat.jp/"
+  format: "hybrid"
+  topics: [general, data-science]
+  description: "Annual winter symposium of the Japanese Classification Society, a JFSSA member society for classification and data analysis, held at Fukui University of Technology."
+  deadlines:
+    - label: "Talk application"
+      date: 2026-11-06
+    - label: "Manuscript submission"
+      date: 2026-11-20
+  checked: 2026-10-02
+  source: "https://jcs-sympo2026.ywstat.jp/"  # page's update log contains template text with odd dates; session dates and deadlines read from the header/sidebar
+
+- id: nstc-stat-2027
+  name: "2027 NSTC Statistics Research Results Conference (2027統計學門研究成果發表會)"
+  acronym: null
+  start: 2027-01-16
+  end: 2027-01-17
+  city: "Beipu (Hsinchu County)"
+  country: "Taiwan"
+  countryCode: "TW"
+  region: "Asia"
+  lat: 24.70
+  lon: 121.06
+  url: "https://sites.google.com/stat.nycu.edu.tw/nstcstat2027/index"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Meeting where principal investigators of Taiwan's National Science and Technology Council statistics programme present results; hosted by the Institute of Statistics, National Yang Ming Chiao Tung University, with open online registration."
+  deadlines:
+    - label: "Registration"
+      date: 2026-11-15
+  checked: 2026-10-02
+  source: "https://sites.google.com/stat.nycu.edu.tw/nstcstat2027/index"
+
+- id: rims-probability-symposium-2026
+  name: "RIMS Probability Symposium 2026 (確率論シンポジウム)"
+  acronym: null
+  start: 2026-12-21
+  end: 2026-12-24
+  city: "Kyoto"
+  country: "Japan"
+  countryCode: "JP"
+  region: "Asia"
+  lat: 35.01
+  lon: 135.77
+  url: "https://sites.google.com/view/2026-probability-symposium/"
+  format: "in-person"  # format inferred
+  topics: [probability]
+  description: "Open probability symposium (RIMS open-type joint research) at the Research Institute for Mathematical Sciences, Kyoto University, with talks solicited from probability theory and related fields."
+  deadlines:
+    - label: "Talk and travel-support application"
+      date: 2026-11-04
+    - label: "Abstract submission"
+      date: 2026-11-27
+  checked: 2026-10-02
+  source: "https://sites.google.com/view/2026-probability-symposium/"
+
+# ============================ International series: methodology ============================
+# Added 2026-10-02 (research by area).
+
+- id: bisp-2027
+  name: "15th Workshop on Bayesian Inference in Stochastic Processes"
+  acronym: "BISP 2027"
+  start: 2027-05-31
+  end: 2027-06-02
+  city: "Westport"
+  country: "Ireland"
+  countryCode: "IE"
+  region: "Europe"
+  lat: 53.80
+  lon: -9.52
+  url: "https://www.scss.tcd.ie/mimi.zhang/BISP2027/home.html"
+  format: "in-person"  # format inferred
+  topics: [bayesian, probability]
+  description: "Biennial workshop series on Bayesian inference for stochastic processes, endorsed by ISBA, with invited and contributed talks and a poster session."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2027-02-12
+    - label: "Early registration"
+      date: 2027-04-09
+  checked: 2026-10-02
+  source: "https://www.scss.tcd.ie/mimi.zhang/BISP2027/home.html"
+
+- id: gdrr-2027
+  name: "9th Symposium on Games and Decisions in Reliability and Risk"
+  acronym: "GDRR 2027"
+  start: 2027-06-03
+  end: 2027-06-04
+  city: "Westport"
+  country: "Ireland"
+  countryCode: "IE"
+  region: "Europe"
+  lat: 53.80
+  lon: -9.52
+  url: "https://www.scss.tcd.ie/mimi.zhang/GDRR2027/home.html"
+  format: "in-person"  # format inferred
+  topics: [bayesian, probability]  # decision analysis / reliability; ISBA-listed, ISBA member rates
+  description: "Recurring symposium on decision analysis, game theory and risk in reliability, held back-to-back with BISP 2027 and listed by ISBA."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2027-02-12
+    - label: "Early registration"
+      date: 2027-04-09
+  checked: 2026-10-02
+  source: "https://www.scss.tcd.ie/mimi.zhang/GDRR2027/home.html"
+
+- id: isba-2028
+  name: "ISBA World Meeting 2028"
+  acronym: "ISBA 2028"
+  start: 2028-06-18
+  end: 2028-06-23
+  city: "Milwaukee"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 43.04
+  lon: -87.91
+  url: "https://bayesian.org/event/isba-world-meeting/"  # no dedicated 2028 website yet
+  format: "in-person"  # format inferred; ISBA notes the venue could support hybrid participation
+  topics: [bayesian]
+  description: "Biennial world meeting of the International Society for Bayesian Analysis, to be held at the Baird Center in downtown Milwaukee."
+  checked: 2026-10-02
+  source: "https://bayesian.org/wp-content/uploads/2025/07/IB-2506.pdf"  # ISBA Bulletin June 2025, President's message
+
+- id: aistats-2027
+  name: "30th International Conference on Artificial Intelligence and Statistics"
+  acronym: "AISTATS 2027"
+  start: 2027-05-03
+  end: 2027-05-06
+  city: "Montréal"
+  country: "Canada"
+  countryCode: "CA"
+  region: "North America"
+  lat: 45.50
+  lon: -73.57
+  url: "https://aistats.org/aistats2027/"
+  format: "in-person"
+  topics: [computational, data-science]
+  description: "Annual interdisciplinary conference at the intersection of statistics, machine learning and artificial intelligence, with proceedings in PMLR and a dedicated workshop day."
+  deadlines:
+    - label: "Full paper submission"
+      date: 2026-10-06
+    - label: "Workshop submission"
+      date: 2026-10-30  # page says "Tuesday, October 30, 2026" (weekday inconsistent; date as published)
+  checked: 2026-10-02
+  source: "https://virtual.aistats.org/Conferences/2027/CallForPapers"
+
+- id: compstat-2028
+  name: "28th International Conference on Computational Statistics"
+  acronym: "COMPSTAT 2028"
+  start: 2028-08-22
+  end: 2028-08-25
+  city: "Olomouc"
+  country: "Czech Republic"
+  countryCode: "CZ"
+  region: "Europe"
+  lat: 49.59
+  lon: 17.25
+  url: "https://compstat2026.org/announcements.php"  # no COMPSTAT 2028 website yet
+  format: "in-person"  # format inferred
+  topics: [computational]
+  description: "Biennial conference of the European Regional Section of the International Association for Statistical Computing (IASC), hosted by Palacký University Olomouc."
+  checked: 2026-10-02
+  source: "https://compstat2026.org/announcements.php"
+
+- id: informs-aps-2027
+  name: "2027 INFORMS Applied Probability Society Conference"
+  acronym: "APS 2027"
+  start: 2027-07-12
+  end: 2027-07-15
+  city: "Durham"
+  country: "United Kingdom"
+  countryCode: "GB"
+  region: "Europe"
+  lat: 54.78
+  lon: -1.57
+  url: "https://informs-aps.webspace.durham.ac.uk/"
+  format: "in-person"  # format inferred
+  topics: [probability]
+  description: "Biennial conference of the INFORMS Applied Probability Society, hosted by Durham University Business School, with plenary, prize, invited and contributed sessions."
+  deadlines:
+    - label: "Early registration"
+      date: 2027-04-30
+  checked: 2026-10-02
+  source: "https://informs-aps.webspace.durham.ac.uk/"
+
+- id: algstat-2027
+  name: "Algebraic Statistics 2027"
+  acronym: null
+  start: 2027-03-01
+  end: 2027-03-05
+  city: "Magdeburg"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 52.13
+  lon: 11.63
+  url: "https://algebraicstatistics.org/2027/"
+  format: "in-person"  # format inferred
+  topics: [probability, computational]  # algebraic statistics; no closer topic tag available
+  description: "Recurring international conference on algebraic and geometric methods in statistics, hosted by Otto von Guericke University Magdeburg, with invited and contributed talks and posters."
+  deadlines:
+    - label: "Financial support application"
+      date: 2026-11-30
+  checked: 2026-10-02
+  source: "https://algebraicstatistics.org/2027/"
+
+- id: itise-2027
+  name: "13th International Conference on Time Series and Forecasting"
+  acronym: "ITISE 2027"
+  start: 2027-07-14
+  end: 2027-07-16
+  city: "Maspalomas (Gran Canaria)"
+  country: "Spain"
+  countryCode: "ES"
+  region: "Europe"
+  lat: 27.76
+  lon: -15.59
+  url: "https://itise.ugr.es/"
+  format: "in-person"  # format inferred
+  topics: [computational, data-science]
+  description: "Annual conference organised from the University of Granada on time series analysis and forecasting methods and applications, held at Meloneras, Gran Canaria."
+  deadlines:
+    - label: "Special session proposals"
+      date: 2027-01-10
+    - label: "Paper or abstract submission"
+      date: 2027-01-15
+  checked: 2026-10-02
+  source: "https://itise.ugr.es/"
+
+- id: isf-2027
+  name: "47th International Symposium on Forecasting"
+  acronym: "ISF 2027"
+  start: 2027-06-20  # dates from the IIF symposium page text (forecasters.org); page blocked direct fetch (403) on re-check
+  end: 2027-06-23
+  city: "Paphos"
+  country: "Cyprus"
+  countryCode: "CY"
+  region: "Europe"
+  lat: 34.77
+  lon: 32.42
+  url: "https://isf.forecasters.org/"
+  format: "in-person"  # format inferred
+  topics: [data-science, computational]
+  description: "Annual symposium of the International Institute of Forecasters on forecasting research and practice."
+  deadlines:
+    - label: "Invited session proposals"
+      date: 2027-02-21
+      tentative: true  # site lists "February 21" without a year
+    - label: "Abstract submission"
+      date: 2027-03-07
+      tentative: true  # site lists "March 7" without a year
+  checked: 2026-10-02
+  source: "https://forecasters.org/events/symposium-on-forecasting/"
+
+- id: isnps-2028
+  name: "8th International Symposium on Nonparametric Statistics"
+  acronym: "ISNPS 2028"
+  start: 2028-06-12
+  end: 2028-06-16
+  city: "Milan"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 45.46
+  lon: 9.19
+  url: "https://www.isnps.org/conferences.html"  # no dedicated 2028 website yet
+  format: "in-person"  # format inferred
+  topics: [general]  # nonparametric statistics
+  description: "Biennial conference of the International Society for NonParametric Statistics, to be hosted by Bocconi University."
+  checked: 2026-10-02
+  source: "https://www.isnps.org/conferences.html"
+
+- id: bayes-pharma-2026
+  name: "Bayesian Biostatistics Conference Bayes 2026"
+  acronym: "Bayes 2026"
+  start: 2026-10-21
+  end: 2026-10-23
+  city: "Leiden"  # home page also shows a "Hotel Mitland Utrecht" venue block, apparently left over; all page headers say Leiden
+  country: "Netherlands"
+  countryCode: "NL"
+  region: "Europe"
+  lat: 52.16
+  lon: 4.49
+  url: "https://www.bayes-pharma.org/"
+  format: "in-person"  # format inferred
+  topics: [bayesian, biostatistics]
+  description: "Annual Bayes Pharma conference on Bayesian methods in biostatistics and drug development, organised by the Adolphe Quetelet Society (IBS Belgian region)."
+  checked: 2026-10-02
+  source: "https://www.bayes-pharma.org/registration/"
+
+- id: esobe-2027
+  name: "European Seminar on Bayesian Econometrics 2027"
+  acronym: "ESOBE 2027"
+  start: 2027-08-30
+  end: 2027-08-31
+  city: "Rotterdam"
+  country: "Netherlands"
+  countryCode: "NL"
+  region: "Europe"
+  lat: 51.92
+  lon: 4.48
+  url: "https://esobe.org/"
+  format: "in-person"  # format inferred
+  topics: [bayesian]
+  description: "Annual seminar on Bayesian econometrics, hosted in 2027 by Erasmus University Rotterdam."
+  checked: 2026-10-02
+  source: "https://esobe.org/"
+
+- id: mcqmc-2028
+  name: "18th International Conference on Monte Carlo and Quasi-Monte Carlo Methods in Scientific Computing"
+  acronym: "MCQMC 2028"
+  start: 2028-09-25
+  end: 2028-09-29
+  city: "Chemnitz"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 50.83
+  lon: 12.92
+  url: "https://maths.ed.ac.uk/mcqmc-2026/mcqmc2028"  # linked 2028 site (chemnitz-am.de/mcqmc2028) did not resolve on 2026-10-02
+  format: "in-person"  # format inferred
+  topics: [computational, probability]
+  description: "Biennial conference on Monte Carlo and quasi-Monte Carlo methods, to be held at Technische Universität Chemnitz."
+  checked: 2026-10-02
+  source: "https://maths.ed.ac.uk/mcqmc-2026/mcqmc2028"
+
+- id: asmda-2027
+  name: "22nd Conference of the Applied Stochastic Models and Data Analysis International Society and Demographics2027 Workshop"
+  acronym: "ASMDA 2027"
+  start: 2027-06-08
+  end: 2027-06-11
+  city: "Heraklion"
+  country: "Greece"
+  countryCode: "GR"
+  region: "Europe"
+  lat: 35.34
+  lon: 25.13
+  url: "http://www.asmda.es/"
+  format: "hybrid"
+  topics: [probability, data-science]
+  description: "Biennial conference of the ASMDA International Society on applied stochastic models and data analysis, held jointly with a demographics workshop."
+  deadlines:
+    - label: "Abstract submission (1st stream, extended)"
+      date: 2026-12-20
+  checked: 2026-10-02
+  source: "http://www.asmda.es/"
+
+- id: enbis-spring-2027
+  name: "ENBIS Spring Meeting 2027: Statistics and Explainable AI"
+  acronym: null
+  start: 2027-03-31
+  end: 2027-04-01
+  city: "Linz"
+  country: "Austria"
+  countryCode: "AT"
+  region: "Europe"
+  lat: 48.31
+  lon: 14.29
+  url: "https://enbis.org/spring-meeting-2027-on-statistics-and-explainable-ai/"
+  format: "in-person"  # format inferred
+  topics: [data-science, general]
+  description: "Annual thematic spring meeting of the European Network for Business and Industrial Statistics, organised in 2027 with JKU Linz on statistics and explainable AI."
+  checked: 2026-10-02
+  source: "https://enbis.org/spring-meeting-2027-on-statistics-and-explainable-ai/"
+
+- id: enbis-27
+  name: "27th Annual Conference of the European Network for Business and Industrial Statistics"
+  acronym: "ENBIS-27"
+  start: 2027-08-31  # pre-conference courses 31 Aug; sessions 1-3 Sep; post-conference courses 4 Sep
+  end: 2027-09-04
+  city: "Barcelona"
+  country: "Spain"
+  countryCode: "ES"
+  region: "Europe"
+  lat: 41.39
+  lon: 2.17
+  url: "https://enbis.org/enbis-27-conference/"
+  format: "in-person"  # format inferred
+  topics: [general, data-science]
+  description: "Annual ENBIS conference on business and industrial statistics, hosted by Universitat Politècnica de Catalunya at the Barcelona School of Industrial Engineering."
+  checked: 2026-10-02
+  source: "https://enbis.org/enbis-27-conference/"
+
+- id: acic-2027
+  name: "2027 American Causal Inference Conference"
+  acronym: "ACIC 2027"
+  start: 2027-02-08
+  end: 2027-02-11
+  city: "Pittsburgh"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.44
+  lon: -80.00
+  url: "https://sci-info.org/2027-meeting/"
+  format: "in-person"
+  topics: [general, biostatistics]
+  description: "Annual interdisciplinary causal inference conference organised by the Society for Causal Inference."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-10-09
+    - label: "Early registration"
+      date: 2027-01-11
+  checked: 2026-10-02
+  source: "https://sci-info.org/annual-meeting/submissions/"
+
+- id: eurocim-2027
+  name: "European Causal Inference Meeting 2027"
+  acronym: "EuroCIM 2027"
+  start: 2027-04-14  # pre-conference courses on 13 April
+  end: 2027-04-16
+  city: "Paris"
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 48.85
+  lon: 2.34
+  url: "https://eurocim.org/paris-2027"
+  format: "in-person"  # format inferred
+  topics: [biostatistics, general]
+  description: "Annual European meeting on causal inference in health, economics and social sciences, held at Université Paris Cité (Campus Saint-Germain)."
+  checked: 2026-10-02
+  source: "https://eurocim.org/paris-2027"
+
+- id: ntts-2027
+  name: "New Techniques and Technologies for Statistics 2027"
+  acronym: "NTTS 2027"
+  start: 2027-03-16  # satellite events on 15 and 19 March
+  end: 2027-03-18
+  city: "Brussels"
+  country: "Belgium"
+  countryCode: "BE"
+  region: "Europe"
+  lat: 50.85
+  lon: 4.35
+  url: "https://cros.ec.europa.eu/ntts2027"
+  format: "in-person"  # format inferred
+  topics: [data-science, computational]
+  description: "Biennial Eurostat conference on new methods, data sources and technologies for official statistics, held at the Charlemagne Building."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-10-15
+    - label: "Registration"
+      date: 2027-02-15
+  checked: 2026-10-02
+  source: "https://cros.ec.europa.eu/ntts2027"
+
+- id: imps-2027
+  name: "International Meeting of the Psychometric Society 2027"
+  acronym: "IMPS 2027"
+  start: 2027-07-20  # short courses on 19 July
+  end: 2027-07-23
+  city: "Vancouver"
+  country: "Canada"
+  countryCode: "CA"
+  region: "North America"
+  lat: 49.26
+  lon: -123.25
+  url: "https://www.psychometricsociety.org/imps-2027"
+  format: "in-person"
+  topics: [general]  # psychometrics / quantitative methods
+  description: "Annual meeting of the Psychometric Society on statistical and psychometric methodology for behavioural data, held at the University of British Columbia."
+  checked: 2026-10-02
+  source: "https://www.psychometricsociety.org/imps-2027"
+
+# ============================ International series: applied statistics ============================
+# Added 2026-10-02 (research by area).
+
+- id: psi-2027
+  name: "PSI 2027 Conference"
+  acronym: "PSI 2027"
+  start: 2027-06-21
+  end: 2027-06-23
+  city: "Twickenham"   # Allianz Stadium, Twickenham (London)
+  country: "United Kingdom"
+  countryCode: "GB"
+  region: "Europe"
+  lat: 51.45
+  lon: -0.34
+  url: "https://www.psiweb.org/conferences/about-the-conference"
+  format: "in-person"  # format inferred
+  topics: [biostatistics]
+  description: "Annual conference of PSI (Statisticians in the Pharmaceutical Industry) on statistics in drug development."
+  deadlines: []  # oral abstract submission "will go live in October 2026"; no closing date published yet
+  checked: 2026-10-02
+  source: "https://www.psiweb.org/conferences/about-the-conference"
+
+- id: efspi-regulatory-workshop-2027
+  name: "EFSPI Regulatory Statistics Workshop 2027"
+  acronym: null
+  start: 2027-09-15
+  end: 2027-09-16  # page says "15-16 (or 17) September 2027"
+  tentative: true
+  city: "Basel"
+  country: "Switzerland"
+  countryCode: "CH"
+  region: "Europe"
+  lat: 47.56
+  lon: 7.59
+  url: "https://efspieurope.github.io/workshop/"
+  format: "hybrid"  # format inferred: previous editions offered face-to-face and virtual attendance
+  topics: [biostatistics]
+  description: "Annual workshop of the European Federation of Statisticians in the Pharmaceutical Industry bringing together regulators, industry and HTA statisticians."
+  deadlines: []  # "Not available yet"
+  checked: 2026-10-02
+  source: "https://efspieurope.github.io/workshop/2027.html"
+
+- id: sct-2027
+  name: "Society for Clinical Trials 48th Annual Meeting"
+  acronym: "SCT 2027"
+  start: 2027-05-16
+  end: 2027-05-19
+  city: "Chicago"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 41.88
+  lon: -87.63
+  url: "https://www.sctweb.org/"
+  format: "in-person"  # format inferred
+  topics: [biostatistics]
+  description: "Annual meeting of the Society for Clinical Trials on the design, conduct and analysis of clinical trials."
+  deadlines: []  # abstracts being accepted; no closing date shown on the official page
+  checked: 2026-10-02
+  source: "https://www.sctweb.org/"
+
+- id: sct-2028
+  name: "Society for Clinical Trials 49th Annual Meeting"
+  acronym: "SCT 2028"
+  start: 2028-05-21
+  end: 2028-05-24
+  city: "Charlotte"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 35.23
+  lon: -80.84
+  url: "https://www.sctweb.org/"
+  format: "in-person"  # format inferred
+  topics: [biostatistics]
+  description: "Annual meeting of the Society for Clinical Trials on the design, conduct and analysis of clinical trials."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.sctweb.org/"
+
+- id: smpgd-2027
+  name: "Statistical Methods for Post-Genomic Data Workshop 2027"
+  acronym: "SMPGD 2027"
+  start: 2027-01-28
+  end: 2027-01-29
+  city: "Pisa"
+  country: "Italy"
+  countryCode: "IT"
+  region: "Europe"
+  lat: 43.72
+  lon: 10.40
+  url: "https://smpgd2027.sciencesconf.org/"
+  format: "in-person"  # format inferred
+  topics: [biostatistics, computational]
+  description: "Yearly European workshop (since 2003) on statistical methods for high-throughput genomic and post-genomic data."
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-12-11
+    - label: "Registration (free, mandatory)"
+      date: 2027-01-15
+  checked: 2026-10-02
+  source: "https://smpgd2027.sciencesconf.org/"
+
+- id: unece-sde-2026
+  name: "UNECE Expert Meeting on Statistical Data Editing 2026"
+  acronym: null
+  start: 2026-10-19
+  end: 2026-10-21
+  city: "Wiesbaden"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 50.08
+  lon: 8.24
+  url: "https://unece.org/statistics/events/SDE2026"
+  format: "in-person"  # format inferred (UN indico listing marked it "IN-PERSON")
+  topics: [general]
+  description: "UNECE expert meeting on editing and imputation methods for official statistics; open to official-statistics producers, academic institutes and NGOs."
+  deadlines: []
+  checked: 2026-10-02
+  # unece.org sits behind a bot check and could not be read directly; dates read on the UN
+  # Statistics Division Global Calendar of Statistical Events (data supplied by UNECE).
+  source: "https://unstats.un.org/capacity-development/calendar/all-events/?Country=Germany"
+
+- id: esra-2027
+  name: "12th Conference of the European Survey Research Association (joint with WAPOR)"
+  acronym: "ESRA 2027"
+  start: 2027-07-19
+  end: 2027-07-23
+  city: "Paris"  # Campus Condorcet
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 48.86
+  lon: 2.35
+  url: "https://www.europeansurveyresearch.org/conference/paris-2027/"
+  format: "in-person"  # format inferred
+  topics: [general, data-science]
+  description: "Biennial conference of the European Survey Research Association, held jointly with WAPOR, on survey methods, statistics and social data science."
+  deadlines:  # session proposals closed 31 August 2026
+    - label: "Short course proposals"
+      date: 2026-11-15
+  checked: 2026-10-02
+  source: "https://www.europeansurveyresearch.org/conference/paris-2027/call-for-sessions/"  # short-course deadline: https://www.europeansurveyresearch.org/esra27-wapor-call-for-short-courses/
+
+- id: ftc-2026
+  name: "Fall Technical Conference 2026"
+  acronym: "FTC 2026"
+  start: 2026-10-06
+  end: 2026-10-08
+  city: "Charlotte"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 35.23
+  lon: -80.84
+  url: "https://falltechnicalconference.org/"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Annual ASA/ASQ conference on statistics for quality, industry and engineering."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://falltechnicalconference.org/travel/"
+
+- id: uscots-2027
+  name: "United States Conference on Teaching Statistics 2027"
+  acronym: "USCOTS 2027"
+  start: 2027-06-24
+  end: 2027-06-26  # pre-conference workshops from 22 June; research satellite 23-24 June
+  city: "State College"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.79
+  lon: -77.86
+  url: "https://www.causeweb.org/cause/uscots/uscots27"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Biennial CAUSE conference for teachers of statistics and data science."
+  deadlines:
+    - label: "Workshop and breakout session proposals"
+      date: 2026-12-15
+    - label: "Research Satellite proposals"
+      date: 2027-01-25
+    - label: "Posters-and-Beyond proposals"
+      date: 2027-03-15
+  checked: 2026-10-02
+  source: "https://www.causeweb.org/cause/uscots/uscots27/proposals"
+
+- id: mathsport-2027
+  name: "12th MathSport International Conference"
+  acronym: "MathSport 2027"
+  start: 2027-06-23
+  end: 2027-06-25
+  city: "Oldham"
+  country: "United Kingdom"
+  countryCode: "GB"
+  region: "Europe"
+  lat: 53.54
+  lon: -2.11
+  url: "https://mathsportinternational.com/"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Biennial international conference on mathematics, statistics and operational research in sport."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://mathsportinternational.com/conferences.html"
+
+- id: isbis-statfin-2026
+  name: "ISBIS 2026 Annual Meeting jointly with the Eleventh Meeting on Statistical Methods in Finance"
+  acronym: "ISBIS StatFin 2026"
+  start: 2026-12-07
+  end: 2026-12-11  # short courses 7-8 December; conference 9-11 December
+  city: "Chennai"  # Chennai Mathematical Institute, Kelambakkam
+  country: "India"
+  countryCode: "IN"
+  region: "Asia"
+  lat: 13.08
+  lon: 80.27
+  url: "https://statfin.cmi.ac.in/ISBIS2026/index.html"
+  format: "in-person"  # format inferred
+  topics: [general, data-science]
+  description: "Annual meeting of the International Society for Business and Industrial Statistics, held jointly with StatFin at the Chennai Mathematical Institute."
+  deadlines:
+    - label: "Early-bird registration"
+      date: 2026-10-10
+    - label: "Registration"
+      date: 2026-11-30
+  checked: 2026-10-02
+  source: "https://statfin.cmi.ac.in/ISBIS2026/index.html"
+
+- id: ifc-data-science-2027
+  name: "5th IFC Workshop on Data Science in Central Banking"
+  acronym: null
+  start: 2027-03-23
+  end: 2027-03-25
+  city: "Istanbul"
+  country: "Turkey"
+  countryCode: "TR"
+  region: "Europe"  # Istanbul treated as Europe
+  lat: 41.01
+  lon: 28.98
+  url: "https://www.bis.org/ifc/events/270323_ifc.htm"
+  format: "hybrid"  # in person, virtual participation for non-presenters
+  topics: [data-science, general]
+  description: "Workshop of the BIS Irving Fisher Committee on Central Bank Statistics on data science and AI for central-bank statistics and analysis, co-hosted by the Central Bank of the Republic of Turkiye."
+  # Borderline for scope: statistics is one of three primary themes (with AI platforms and data governance).
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-11-30
+  checked: 2026-10-02
+  source: "https://www.bis.org/ifc/events/270323_ifc.htm"
+
+- id: aapor-2027
+  name: "AAPOR 82nd Annual Conference"
+  acronym: "AAPOR 2027"
+  start: 2027-05-12
+  end: 2027-05-14
+  city: "Austin"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 30.27
+  lon: -97.74
+  url: "https://aapor.org/aapor-2027-call-for-abstracts/"
+  format: "in-person"  # format inferred
+  topics: [general]
+  description: "Annual conference of the American Association for Public Opinion Research on survey and public opinion research methods."
+  # Included: survey methodology (sampling, weighting, nonresponse, data quality, total survey error)
+  # is a large, long-running track of the programme, comparable to ESRA. Substantive public-opinion
+  # research makes up much of the rest, so drop it if a strict statistics-only list is wanted.
+  deadlines:
+    - label: "Abstract submission"
+      date: 2026-11-15
+  checked: 2026-10-02
+  source: "https://aapor.org/aapor-2027-call-for-abstracts/"
+
+- id: iges-2026
+  name: "2026 IGES Annual Meeting and Education Workshop"
+  acronym: "IGES 2026"
+  start: 2026-10-17
+  end: 2026-10-20  # arrival/registration 17 Oct; scientific sessions 18-19 Oct; Education Workshop 20 Oct at McGill University, Montreal
+  city: "Esterel"  # Esterel Resort, Quebec, near Montreal
+  country: "Canada"
+  countryCode: "CA"
+  region: "North America"
+  lat: 46.06  # approximate, Esterel QC
+  lon: -74.14
+  url: "https://www.geneticepi.org/2026-annual-meeting-workshop"
+  format: "in-person"  # format inferred
+  topics: [biostatistics]
+  description: "Annual meeting of the International Genetic Epidemiology Society on genetic epidemiology and statistical genetics."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.geneticepi.org/2026agenda"
+
+- id: cmsac-2026
+  name: "Carnegie Mellon Sports Analytics Conference 2026"
+  acronym: "CMSAC 2026"
+  start: 2026-10-23
+  end: 2026-10-24
+  city: "Pittsburgh"  # Baker Hall, Carnegie Mellon University
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.44
+  lon: -80.00
+  url: "https://www.cmsaconference.com/"
+  format: "in-person"  # format inferred
+  topics: [data-science, general]
+  description: "Annual sports analytics conference hosted by Carnegie Mellon's Department of Statistics & Data Science, with a research competition and workshop."
+  deadlines: []
+  checked: 2026-10-02
+  source: "https://www.cmsaconference.com/"
+
+- id: dataworks-2027
+  name: "DATAWorks 2027 (Defense and Aerospace Test and Analysis Workshop)"
+  acronym: "DATAWorks 2027"
+  start: 2027-04-13
+  end: 2027-04-15
+  city: "Hampton"  # NASA Langley Research Center, Virginia
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 37.03
+  lon: -76.35
+  url: "https://dataworks.testscience.org/"
+  format: "in-person"  # format inferred
+  topics: [general, data-science]
+  description: "Annual workshop on statistics and data science for test and evaluation in defense and aerospace."
+  # Venue is a NASA site; access rules for non-US attendees were not checked.
+  deadlines: []  # page gives only "Abstract Submission Closes: February 2027" (no day)
+  checked: 2026-10-02
+  source: "https://dataworks.testscience.org/"
+
+- id: cdsm-2026
+  name: "Causal Data Science Meeting 2026"
+  acronym: "CDSM 2026"
+  start: 2026-11-04
+  end: 2026-11-05  # sponsor section of the same page mentions "November 5-6" (apparently stale); headline and call give 4-5 Nov
+  city: null
+  country: null
+  countryCode: null
+  region: "Online"
+  url: "https://www.causalscience.org/"
+  format: "online"
+  topics: [data-science, general]
+  description: "Annual online workshop, founded in 2020 by researchers at Maastricht, Rotterdam and TU Munich, on causal inference and causal machine learning in academia and industry."
+  deadlines: []  # submission deadline (30 September 2026) has passed
+  checked: 2026-10-02
+  source: "https://www.causalscience.org/"
+
+# =====================================================================
+# CHECKED BUT EXCLUDED (as of 2026-10-02)
+# International series
+# - useR! 2027: no announcement; the R Project conferences page lists only useR! 2026 (Warsaw, 7-9 Jul 2026).
+# - IBC 2026 (Seoul, 12-16 Jul 2026): already over. Added IBC 2028 instead.
+# - EMS 2026 (Lugano, 24-28 Aug 2026): already over. Added EMS 2027 instead.
+# - COMPSTAT 2026 (Athens, 25-28 Aug 2026): already over. COMPSTAT runs every two years, and no 2027/2028 edition is announced.
+# - IMS-APRM 2026 (Hong Kong, 13-16 Jun 2026): already over. Added IMS-APRM 2028 instead (host city not announced yet).
+# - ISNPS 2026 (Thessaloniki, 22-26 Jun 2026): already over; no next edition announced.
+# - ICSA: the 2026 Applied Statistics Symposium (14-17 Jun) and China Conference (26-29 Jun) are over; the ICSA calendar has nothing for 2027.
+# - DAGStat 2027: no such edition (the conference is every three years). Added DAGStat 2028 instead.
+# - 26th EYSM 2027 (Imperial College London): Bernoulli Society lists the date as "tba".
+# - ISBA World Meeting 2028 (Milwaukee): location confirmed, but no dates published.
+# - METMA XIII (2028): no announcement found.
+# - GEOMED 2028: geomed-conference.com lists nothing after Pamplona 2026.
+#
+# National / regional
+# - SEIO: the XLII congress (Santiago de Compostela, 2-5 Sep 2026) is over; the next national congress is not announced.
+#   (Found but not added: SYSORM 2027, the young-researchers meeting, Badajoz, 19-21 Jul 2027.)
+# - Japanese Joint Statistical Meeting 2027: JFSSA lists only 2026 (Yokohama City Univ., 6-10 Sep 2026, over).
+# - Korean Statistical Society 2027 meetings: not announced yet. Added the 2026 winter meeting instead.
+# - Australian Statistical Conference: SSA says ASC2028 will be in Adelaide but gives no dates. No ANZSC 2027 found.
+#   Note: "ANZSA 2027" (Wellington, Feb 2027) is the Australian and New Zealand Shakespeare Association, not statistics.
+# - Bayes on the Beach: the 2026 edition (Wollongong, Feb 2026) is over; no next edition announced.
+# - SUSAN (IBS Sub-Saharan Africa Network) 2027: the IBS page says "2027 in Zimbabwe" with no dates or city.
+# - African International Conference on Statistics (Nairobi, 29 Jun-3 Jul 2026): already over.
+# - ICSA 2026, the International Conference on Statistics and Its Applications (Sidi Bel Abbes, Algeria, 8-9 Apr 2026): already over.
+# - ISOSS Islamic Countries Conference on Statistical Sciences, and the Cairo University ISSR annual conference (usually December):
+#   could not find or load an official page for a 2026/2027 edition.
+# - Nigerian Statistical Association 2026 conference: no official page found.
+# - CLATSE: the XVI edition (Quito, 20-24 Oct 2025) is over; the next edition is not announced.
+# - Simposio Internacional de Estadistica (Colombia): the 35th edition (Bogota, 14-17 Jul 2026) is over; 2027 is not announced.
+# - SLAEST: could not find any conference by that name.
+# - SINAPE 2026 (Gramado, 13-18 Sep 2026): already over.
+# - Foro Nacional de Estadistica (AME, Mexico): the AME site gives no upcoming forum dates.
+# - SIMMAC (Costa Rica): the XXV edition (24-27 Feb 2026) is over; the next is not announced.
+#
+# Possible additions, not included (Europe is already well covered; dates seen only on the IBS events calendar, not on the events' own sites):
+# - EMR-IBS Conference 2027: Sofia University, Sofia, Bulgaria, 30 May-3 Jun 2027.
+# - ROeS 2027 (IBS Austro-Swiss Region): University of Bern, Switzerland, 16-19 Aug 2027.
+# - BIOSTAT 2027 (28th International Symposium on Biometrics): Split, Croatia, 1-4 Sep 2027.
+# ---------------------------------------------------------------------
+# Europe: national and regional meetings (2026-10-02)
+# CHECKED BUT EXCLUDED
+# (checked 2026-10-02; reason given for each)
+# - CASI 2027 (Irish Statistical Association): only CASI 2026 (Portlaoise, 11-13 May 2026, over) on casi.ie / istat.ie; 2027 dates not published.
+# - 11th Channel Network Conference 2027 (IBS BIR/FR/BE/NL): site cnc27.sciencesconf.org is "under construction"; no dates published.
+# - BIR-IBS "Beyond the Divide" (London, 12 Nov 2026): half-day AGM + Presidential Address, not a conference.
+# - Young Statisticians' Meeting (UK YSM) 2027: only YSM 2026 (Cambridge, 29-31 Jul 2026, over) found; 2027 not announced.
+# - Statistische Woche 2027 (DStatG): only 2026 (Essen, 8-11 Sep 2026, over) published.
+# - ÖSG Statistiktage 2027: only 2026 (Vienna, 9-11 Sep 2026, over) published.
+# - Swiss Statistics Meeting 2027: only 2026 (Rorschach, 25-27 Aug 2026, over) published.
+# - EYSM 2027 (London, Imperial College): participation by invitation only; dates TBA.
+# - ECDA 2027: only ECDA 2026 (Stralsund, 9-11 Sep 2026, over) published.
+# - SPE XXVIII Congress 2027 (Leiria region): announced for 2027 but no dates published. Other SPE events in Oct 2026 are a 1-hour online symposium and a European Statistics Day outreach event.
+# - Greek Statistical Institute 39th Panhellenic Conference (2027): GSI "next conference" page still shows the 38th (Thessaloniki, 16-19 Apr 2026, over).
+# - ROBUST (JČMF): winter school; ROBUST 2026 opened 18 Jan 2026 in Srní (over); biennial.
+# - Popdays 2027 (SIS-AISP, Trento, 9-11 Jun 2027): population-studies/demography conference, not mainly statistics. Submission deadline 9 Oct 2026.
+# - SIS Futures Studies summer school (Genoa, 14-16 Oct 2026): summer school.
+# - SWIM Annual Workshop 2026 (Karlsruhe, 9 Dec 2026): one-day infectious-disease modelling meeting (modellers/epidemiologists), not mainly statistics.
+# - GDS Herbsttagung 2026 (German Data Science Society, Berlin, 19 Nov 2026): data-science/GenAI practice meeting, not mainly statistics.
+# - IBS-DR "Academia meets Industry" (9 Oct 2026): virtual networking event, not a conference.
+# - SIS Intermediate Meeting 2027 (Convegno Intermedio SIS, Naples, 15-18 Jun 2027): assumed to be the already-listed sis-2027; not duplicated.
+# - AISP Dissemination Lab (online, Oct-Dec 2026) and ASA Conference 2026 (Teramo, 16-18 Sep 2026, over): online lab / past.
+# - SEIO National Congress (next after SEIO 2026 Santiago, 2-5 Sep 2026): held every 18 months; next edition not announced on seio.es.
+# - XIV Congreso Internacional de Historia de la Estadística y la Probabilidad (AHEPE, Salamanca, 17-19 Sep 2026): over.
+# - BYMAT 2026 (Santiago, 26-29 Oct 2026) and RSME-AMS 2027: mathematics meetings, not mainly statistics.
+# - NORDSTAT: 2026 edition (Helsinki, 1-4 Jun 2026) over; next edition not announced.
+# - Nordic-Baltic Biometric Conference (IBS NBR) 2027: no edition announced on ibsnbr.org or the IBS calendar.
+# - Finnish Statistical Society: only a one-day FORS/Tilastoseura joint seminar (Helsinki, 4 Nov 2026) - seminar.
+# - Swedish Winter Conference in Statistics: no upcoming edition found on statistikframjandet.se.
+# - VVSOR (Netherlands): events page empty; Annual Meeting 2027 date not published (2026 meeting over).
+# - SFdS 22es Journées d'Étude en Statistique (CIRM Marseille, 12-16 Oct 2026): one-week study course on neural networks limited to 45 participants (course/school format).
+# - SFdS Ateliers Statistique 2026 (IHP Paris, 18-19 Nov and 30 Nov-1 Dec 2026): training workshops.
+# - SFdS-related one-day events (Forum Entreprises & Mathématiques 17 Nov 2026; "Le numérique pour la chimie analytique" 19 Nov 2026; AI & Risk Management workshop, Lyon, 24 Nov 2026; Chaire CARE workshop 1 Oct 2026): careers forum / chemistry / one-day AI-risk workshops, not statistics conferences.
+# - SFdS-sponsored: evening event on gendered data (Bordeaux, 7 Dec 2026) and Rencontres des jeunes chercheurs africains en France (IHP, 14-15 Dec 2026): evening event / general-mathematics meeting. EuroCIM 2027 (Paris, 13-16 Apr 2027): left to colleagues.
+# - 5th IFC Workshop on Data Science in Central Banking (BIS Irving Fisher Committee, Istanbul, 23-25 Mar 2027): central-bank data-science/AI workshop, not mainly statistics.
+# - International Day of Women in Statistics and Data Science (6 Oct 2026): online 24-hour event.
+# - Applied Statistics (Slovenia): 2026 edition (Koper, 21-23 Sep 2026) over; 2027 not announced.
+# - Cyprus Statistical Society annual conference: 7th edition (Nicosia, 19 Jun 2026) over; 8th not announced.
+# - ISCCRO (Croatian Statistical Association): latest listed edition is 2024; no upcoming edition published.
+# - Polish Statistical Association (PTS): no upcoming conference on pts.stat.gov.pl; MSA (Łódź) and SKAD sites unreachable.
+# - JOCLAD (Portuguese Classification and Data Analysis Association): 2026 edition (Portalegre, 9-11 Apr 2026) over; 2027 not announced.
+# - Slovak Statistical and Demographic Society (EKOMSTAT 2026, Slovak Statistical and Demographic Conference 2026): both over; 2027 plan not yet published.
+# - Czech Statistical Society: Statistické dny 2026 (Olomouc, 10-11 Sep 2026) over; no upcoming conference listed.
+# - Hungarian Statistical Association (mstnet.hu) and Romanian Statistical Society: no upcoming conferences announced on their sites.
+# - Turkey (Turkish Statistical Association / Statistics Days / International Conference on Statistics): society websites unreachable and web-search budget exhausted; nothing verified. Turkey is represented only by the IFC workshop (excluded) - Turkish coverage is a gap.
+# - Serbia, Bulgaria (other than EMR-IBS 2027), Ukraine, Baltic states, Greece (Greek Stochastics site unreachable): no official page with upcoming dates could be reached without search; not verified - coverage gap.
+# - BIR-IBS / SFdS / DR one-off talks, webinars and seminar series (SIBSINAR, Cramér webinars, ISI/IASS webinars, RSS webinars): seminar/webinar series.
+# - Summer/winter schools and courses (SIS Futures Studies summer school, SGAPEIO/Z-Stat4life online courses, ECAS courses, ROBUST winter school): schools/courses.
+# - German Region IBS other working groups (Statistical Computing, Epidemiology, etc.): IBS-DR site currently shows only a reduced set of pages; no further 2026-27 workshop dates found.
+# - Stochastik-Tage / German Probability and Statistics Days, Norwegian/Danish/Finnish winter or national meetings beyond those listed, Baltic-Nordic survey conference: sites unreachable or no dates found.
+# ---------------------------------------------------------------------
+# North America (2026-10-02)
+# CHECKED BUT EXCLUDED
+# - Conference on Statistical Practice (CSP) 2027: amstat.org CSP page shows nothing after CSP 2024 (New Orleans); no 2026/2027 site (404). Series appears paused.
+# - WSDS 2027: no dates published (ww2.amstat.org/meetings/wsds/2027/ returns 404). WSDS 2026 included.
+# - RISW 2026 (Sep 16-18, 2026, Rockville): already over. RISW 2027 included.
+# - IMS New Researchers Conference 2027: no published dates found; imstat.org calendar blocked by bot protection.
+# - SRCOS Summer Research Conference 2027: srcos.org only covers 2026 (Pensacola); no 2027 dates.
+# - New England Statistics Symposium (NESS) 2027: not announced; NESS 2026 (May 27-29, Storrs) is over.
+# - Applied Statistics in Agriculture and Natural Resources 2027: not announced; 2026 workshop (May, Lincoln NE) is over.
+# - Northeast Probability Seminar 2026: reported as Nov 19-20, 2026 at NYU by third-party lists, but the official CUNY page is behind a Cloudflare challenge and could not be read. Re-check https://probability.commons.gc.cuny.edu/25th-northeast-probability-seminar/
+# - Statistics Canada International Methodology Symposium: no 2026/2027 edition listed (StatCan events page: no upcoming events).
+# - FCSM 2026 (Mar 11-12, 2026): over. FCSM 2027 included.
+# - International Conference on Establishment Statistics (ICES): next edition not announced (last was ICES VII, Glasgow 2024).
+# - Statistical Methods in Imaging (SMI) 2027: not announced; SMI 2026 (Ann Arbor, June) is over.
+# - Graybill Conference: no current edition published.
+# - Southeastern Probability Conference 2027, Frontier Probability Days 2027, Northwest Probability Seminar 2026: no official pages with dates found.
+# - Carnegie Mellon Sports Analytics Conference 2026 and UConn Sports Analytics Symposium 2026: official pages not found (404), dates unverified.
+# - Cascadia Symposium on Statistics in Sports 2026 (Sep 12, 2026, Vancouver): over.
+# - StatFest 2026: no official page found (404).
+# - ISBA events page: no US/Canada meetings listed.
+# - Probabilistic Combinatorics at Rutgers (Oct 8-10, 2026): mainly discrete mathematics/combinatorics.
+# - CanaDAM 2027 (Kelowna): discrete mathematics.
+# - SIAM Conference on Mathematics of Data Science MDS26 (Nov 16-20, 2026, Salt Lake City): SIAM maths/CS conference.
+# - AIM workshop "Probabilistic methods, random matrices, and L-functions" (Dec 14-18, 2026, Pasadena): application-only AIM workshop, number-theory focus.
+# - BIRS "Evolving Random Structures and Interactions" (Dec 6-11, 2026, Banff): invitation-only.
+# - Fields Institute "Workshop on Uncertainty Quantification for Medicine and Health" (May 3-5, 2027): mathematical-modelling focus, not mainly statistics.
+# - Fields Institute "Asymptotic Geometry of Large-Genus Random Surfaces" (May 10-13, 2027): geometry focus.
+# - IMSI "Unpacking AI Weather Emulators" (Sep 28-Oct 2, 2026) and "20 Years of Mean-Field Games" (Feb 2027): AI/climate modelling and maths, not mainly statistics.
+# - 2027 PIMS-CRM Summer School in Probability (Montreal): summer school.
+# - ASA North Texas Chapter traveling course (Nov 13, 2026): short course only.
+# - IDWSDS 2026 (Oct 6, 2026): online-only international event, outside North America scope.
+# - INFORMS Applied Probability Society Conference 2027: Durham, UK (not North America).
+# - ISBS Symposium 2026: Madrid, Spain (not North America).
+# - CANSSI events page: no conferences listed from Oct 2026 onward. CANSSI Ontario site behind security check.
+# - Left to colleagues per instructions (not researched): Fall Technical Conference, QPRC, Stu Hunter, USCOTS, NESSIS, ACIC, PCIC, SCT, AISTATS, useR!, IMPS, ISF, AAPOR.
+# ---------------------------------------------------------------------
+# Latin America and Africa (2026-10-02)
+# CHECKED BUT EXCLUDED
+# --- Latin America ---
+# - SINAPE 2028 (ABE, Brazil): 26th SINAPE was 13-18 Sep 2026 (Gramado), now over; no 2028 dates or host published on redeabe.org.br/sinape.
+# - WPSM (São Carlos): XI edition was 25-27 Feb 2026; no 2027 edition announced on wpsm.icmc.usp.br.
+# - SEAGRO 2027 (with RBras 2027): biennial, but no 2027 dates published (70th RBras 2026 is already listed).
+# - MGEST (Encontro Mineiro de Estatística): biennial, XVII was 22-24 Oct 2025; no XVIII dates.
+# - SouthStat Meeting (Encontro Sul-Brasileiro de Estatística): 1st 2023, 2nd Sep 2025; no 3rd edition announced.
+# - Encontro Baiano de Estatística (EBEST 2026): 8-10 Jun 2026, over.
+# - ESTE (Escola de Séries Temporais e Econometria, ABE): 21st was Aug-Sep 2025; no 2027 dates found.
+# - BCSMIF (Brazilian Conf. on Statistical Modeling in Insurance and Finance): 8th was Sep-Oct 2025; no 9th announced.
+# - Escola Brasileira de Probabilidade (EBP 2026, Rio, 3-7 Aug 2026, over; XXX EBP at IMPA 2-7 Aug 2027): a school, so excluded.
+# - Semanas de Estatística (UFES 5-6 Nov 2026, UFRN, UEM, etc.): student/departmental weeks, not research conferences.
+# - CLAPEM: XVII was 2-6 Mar 2026 (Montevideo); no XVIII dates on SLAPEM or Bernoulli Society pages.
+# - CLATSE: XVI was 20-24 Oct 2025 (Quito); no XVII announced on clatse.com.
+# - SAE Coloquio / GAB meeting 2026: merged into CAE II 2026 (already listed); no 2027 edition announced.
+# - Jornadas Argentinas de Educación Estadística: last edition Nov 2024; nothing newer.
+# - XXX Jornadas "Investigaciones en la Facultad" (FCEyE, UNR Rosario, 3-5 Nov 2026): faculty-wide economics and statistics research days, not mainly statistics.
+# - SUE Jornadas Nacionales de Estadística (Uruguay): last edition Nov 2024; no 2026 edition announced.
+# - Simposio Internacional de Estadística (UNAL, Colombia): 35th was 14-17 Jul 2026, over; no 36th (2027) dates yet.
+# - Congreso Colombiano de Estadística (SCE): IV was May 2025; no V announced.
+# - Chile: JNEDES (Jornada Nacional de Educación Estadística) was Dec 2025, no 2nd edition announced; SOCHE JNE 2026 already listed.
+# - II Congreso Internacional de Estadística y Ciencia de Datos (UNALM, Lima): 15-18 Jun 2026, over.
+# - Congreso Paraguayo de Estadística: II was 23-25 Oct 2025; no III announced.
+# - ESPOL Jornadas en Estadística (Ecuador): last confirmed edition Oct 2023; no 2026 dates found.
+# - AME Foro Nacional de Estadística: 36th was 22-24 Oct 2025; in 2026 AME is co-organising LACSC-TIES-EnviBayes-EnvrASA 2026 (already listed); no 37th Foro dates.
+# - Simposio de Probabilidad y Procesos Estocásticos (Mexico): XV was 10-14 Nov 2025 (Hermosillo); next not announced.
+# - MAER 2026 "Mathematical Advances on Emerging Risks" (Mérida, 3-6 Nov 2026, CIMAT/UADY): financial/actuarial mathematics with invited speakers only, registration terms not stated.
+# - Datostada MX 2026 (Mérida, 13-14 Nov 2026): data/AI industry meetup, not a statistics conference.
+# - SIMMAC (Costa Rica): XXV was 24-27 Feb 2026, and it is an applied-mathematics symposium; next edition not announced.
+# - Cuba: no statistics congress with published dates found (only aggregator listings).
+# - III Congreso Nacional de Estadística (INE Guatemala): Sep 2024, official-statistics event, over.
+# --- Africa ---
+# - SUSAN 2027 (IBS Sub-Saharan Africa Network, Zimbabwe): confirmed for 2027 on the IBS SUSAN page, but no dates or website published.
+# - Nigerian Statistical Association annual conference: nsang.org shows nothing after 2022.
+# - PSSN 10th International Conference (Ilorin, 27-30 Jul 2026): over.
+# - Ghana Statistical Association 4th Annual Statistics & Data Science Conference: 25-29 Aug 2026, over.
+# - Ethiopian Statistical Association annual conference: 34th held mid-2026; no 35th dates published.
+# - FGSSR/ISSR Cairo University annual international conference (December): official site still shows the 2023 (56th) edition; no 2026 dates.
+# - 36th Annual Int. Conf. on Statistics and Modeling in Human and Social Sciences (FEPS Cairo): 31 Mar-1 Apr 2026, over; no 37th dates.
+# - ICSA 2026 (Sidi Bel Abbès, Algeria): 8-9 Apr 2026, over.
+# - CISEM 2026 (Mahdia, Tunisia): 15-17 May 2026, over.
+# - ICAMDS-2 / SFC 2026 (Casablanca): mid-Sep 2026, over.
+# - Colloque Francophone de Statistique, Probabilités et Interactions (Senegal): Jul 2025; no next edition announced.
+# - CBMSSC IV (Palapye, Botswana): 12-13 Mar 2026, over.
+# - STAHY 2026 (Victoria Falls): Jul 2026, over.
+# - 2027 Annual Big Data, Statistics and AI Conference (Africagrowth Institute / CIDEF, Cape Town, 14-15 Apr 2027): programme mostly big data, data infrastructure and AI run by a development-finance institute; not mainly statistics.
+# - CISEA 2026 & 15th ABERS (ENSEA Abidjan, Côte d'Ivoire, 6-8 Oct 2026): joint statistics / applied economics / Africa business conference with economist keynotes and an impact-evaluation theme; mainly economics. Include only if economics-heavy meetings are wanted (https://confcisea.org/index.html).
+# - WiDS Uganda 2026 (2 Oct 2026): one-day Women in Data Science event, not mainly statistics.
+# - WASET / conferenceindex / "conference alert" listings (ICSEM, ICMSS, ICMSSC in Cairo, Tunis, Zanzibar, Cape Town, Marrakesh): low-quality aggregator events, no real organiser pages.
+# ---------------------------------------------------------------------
+# Asia and Oceania (2026-10-02)
+# CHECKED BUT EXCLUDED
+# --- No official dates published yet (re-check later)
+# - Japanese Joint Statistical Meeting 2027 (JFSSA): jfssa.jp/meeting and jss.gr.jp/convention list only the 2026 meeting (6-10 Sep 2026, over).
+# - Japan Statistical Society 21st Spring Meeting (Mar 2027): nothing published; 20th was 7 Mar 2026.
+# - Japanese Society of Applied Statistics 2027 annual meeting: applstat.gr.jp shows only the 2026 meeting (14 May 2026, over).
+# - Biometric Society of Japan 2027 annual meeting: only the 2026 meeting (15-16 May 2026, Matsue, over).
+# - Korean Statistical Society 2027 Spring/Summer meeting: kss.or.kr "next conference" board empty; only 2026 Winter (already listed).
+# - Korean International Statistical Society (KISS): only webinars and sessions inside the KSS 2026 Winter Conference (already listed).
+# - ICSA China Conference 2027: icsa.org events calendar/news list nothing after the 2026 Shenzhen meeting (27-29 Jun 2026); china2027.icsa.org does not resolve.
+# - IMS-China 2027 and 4th/5th Joint Conference on Statistics and Data Science in China 2027: no official page found (JCSDS 2026 was 11-13 Jul 2026, Guiyang, over). imstat.org is behind bot protection, so only an archived copy (21 Aug 2026) of its calendar was checked.
+# - Twelfth International Triennial Calcutta Symposium on Probability and Statistics (Kolkata): IMS calendar lists 28-31 Dec 2027, but the official CSA page (calcuttastatisticalassociation.in/archives/symposium-2027) only says "Coming Soon!". Add once CSA publishes dates.
+# - Chinese Institute of Probability and Statistics (CIPS, Taiwan) 2027 annual meeting: not yet announced (2026 meeting at NCKU, June 2026, over).
+# - ISOSS International Conference on Statistical Sciences (ICSS-23): isoss.net only shows ICSS-22 (15-16 Dec 2025, Sargodha, over).
+# - Iranian Statistics Conference: 18th edition was 7-9 Shahrivar 1405 (29-31 Aug 2026), over; no 19th edition announced.
+# - Australian Statistical Conference 2028 (Adelaide): statsoc.org.au/ASC2028 says dates and venue "will be announced soon".
+# - SSA Early Career & Student Statisticians Conference (ECSSC, formerly YSC) 2027: statsoc.org.au/ECSSC names "ECSSC 2027" with no dates or site.
+# - Bayes on the Beach: 2026 edition (9-11 Feb 2026, Wollongong) over; biennial, no 2028 dates published.
+# - IASSL International Statistics Conference (Sri Lanka): no edition after 2024 announced.
+#
+# --- Could not verify (site unreachable or blocked)
+# - Indian Society of Agricultural Statistics annual conference: isas.org.in does not resolve (DNS failure).
+# - Indian Society for Medical Statistics: isms.org.in unreachable.
+# - Israel Statistical Association annual conference: israstat.org.il unreachable; statistics.org.il redirect loop.
+# - NZ Statistical Association 2027 conference: stat.org.nz does not resolve (2026 conference already listed).
+# - NUS Institute for Mathematical Sciences (Singapore) programmes, incl. "IMS Young Mathematical Scientists Forum - Statistics and Data Science 2026": site behind Incapsula bot protection; not bypassed.
+# - IMS meetings calendar (imstat.org): Anubis bot protection; used an archived copy only for discovery.
+# - Philippine Statistical Association (psai.ph): only webinars listed; PSA National Convention on Statistics page (psa.gov.ph/ncs) returned 403.
+# - Malaysia (ICMSS, SKSM, MyStats), Indonesia, Vietnam, Thailand (other than IASC-ARS 2026, listed), Bangladesh (ICSDM, Bangladesh Statistical Association), Pakistan (other than ISOSS), Hong Kong (HKSS: no upcoming events), Saudi Arabia/UAE/Qatar: no verifiable upcoming statistics meeting found on reachable official pages. Note: the web-search quota ran out mid-task, so these countries were checked only via known society URLs - coverage there is incomplete.
+#
+# --- Out of scope / does not meet criteria
+# - MATRIX (Creswick, AU) 2027 programmes: "Advancements in Multivariate Extremes Theory..." (25 Jan-5 Feb 2027), "Multivariate Dependence Modeling Including Copula..." (8-12 Feb 2027), "Mathematical and Statistical Modelling for the Design of Future Epidemic Surveillance Systems" (1-5 Mar 2027), "Self-Interacting Stochastic Processes" (28 Jun-2 Jul 2027), "Percolation, Spin Systems, and Random Height Functions" (12-23 Jul 2027): registration "by invitation only".
+# - TSIMF Sanya "Stochastic Analysis and Stochastic PDEs" (7-11 Dec 2026) and BIRS-IASM Hangzhou "Random Matrix Theory, KPZ Universality..." (13-18 Jun 2027): research-institute workshops with invited participants.
+# - Indian Official Statistics Conclave on Theoretical and Empirical Issues (OCTEI), ISI Kolkata, 3-4 Nov 2026: participation via state-government enrolment, not an open call.
+# - Applied Statistics Symposium 2026 (JSAS, online, 7 Nov 2026, PCA & factor analysis): tutorial-style lecture day.
+# - RIMS "現代的確率偏微分方程式論の主要課題と方法" (12-15 Jan 2027): introductory lecture series split between SPDE and deterministic PDE.
+# - RIMS "力学系における確率論的手法と変分的手法の展開" (19-22 Oct 2026) and "ランダム力学系理論..." (to 2 Oct 2026): dynamical systems, not mainly probability.
+# - ICTS Bengaluru "Two and a Half Decades of the Macroscopic Fluctuation Theory" (to 9 Oct 2026) and "From Richardson's Diffusion to Spontaneous Stochasticity" (Feb 2027): mathematical/statistical physics programmes.
+# - VIASM-IAMP Summer School 2027 (Hanoi), Lectures/summer schools generally: summer schools.
+# - OceaniaR 2026 (SSA, Melbourne, 29 Nov 2026): R hack/development day, not a conference.
+# - SSA branch seminars, Belz Lecture & ECSS Showcase (20 Nov 2026), ECSSN/NZSA webinar, online R workshops: seminars/short courses.
+# - KSS-Bank of Korea Joint Forum 2026 (11 Sep 2026) and ISM/RIMS events ending before 1 Oct 2026: already over.
+# - Workshop @ NeurIPS Sydney 2026 "Can We Trust AI Evaluation?" (11-12 Dec 2026): part of a machine-learning (CS) conference.
+# - 2026 Data Science Narrative Challenge (Academia Sinica, 21 Nov 2026): competition.
+# - Taiwan Causal Inference Symposium (15-16 Dec 2026): included as part of swt-2026 rather than as a separate entry.
+# - Already in the main list (not duplicated): jscs-40-2026 (JSCS 40th-anniversary symposium, Auckland), kss-winter-2026, iasc-ars-2026, isps-2026, iisa-2026, robstat-2027, spa-2027, aasc-2026, adsn-2026, nzsa-2026, ecosta-2027, ims-aprm-2028, bernoulli-ims-wc-2028.
+# ---------------------------------------------------------------------
+# International series: methodology (2026-10-02)
+# CHECKED BUT EXCLUDED (checked 2026-10-02)
+# Bayesian
+# - O'Bayes 2027: only an unofficial listing (Mike West's Duke conference list: "Boston, Jun 6-10");
+#   ISBA Objective Bayes section page shows no future event and no official site found -> dates unconfirmed.
+# - BAYSM 2027: j-ISBA / BAYSM pages list nothing after BAYSM 2026 (Chiba, June 2026, over).
+# - EAC-ISBA 2027: not announced; EAC-ISBA 2026 (Kunming, 23-25 Jul 2026) is over.
+# - Bayes@Lund 2027: no edition announced on bayesat.github.io.
+# - StanCon 2027: not announced; Stan forums still calling for hosting proposals ("Call for StanCon 2027+").
+# - ABC / approximate-inference meetings (AABI etc.): no future edition with published dates found.
+# - 2026 Örebro Workshop on Macro- and Financial Econometrics (9-10 Nov 2026, listed by ISBA): econometrics
+#   workshop, not a statistical-methodology series; registration deadline 19 Oct 2026 if the editor wants it.
+# - ISAG III "Interactions of Statistics and Geometry III" (HIM Bonn, 7-11 Dec 2026): participation restricted
+#   to invited trimester guests / on request; application deadline passed.
+# Computational & data science
+# - DSSV 2027: not announced (IASC events list nothing after DSSV 2026, Trento, Jun-Jul 2026).
+# - IFCS 2027/2028: IFCS is biennial; 2026 Milan edition over; no next edition announced.
+# - useR! 2027: not announced (R Foundation conferences page lists only useR! 2026).
+# - SLDS (ASA Statistical Learning and Data Science): no future edition found.
+# - SIAM UQ28: SIAM site returned 403; not verified.
+# - IMS ICSDS 2026: IMS calendar is behind an anti-bot challenge and no accessible official page found.
+# - COPA (Conformal Prediction) 2027: only COPA 2026 (2-4 Sep 2026, over) posted.
+# Probability
+# - Stochastic Networks Conference: biennial; 2026 Chicago edition over; next not announced.
+# - Lévy processes conference: last edition 2025 (Sofia); next not announced.
+# - Branching processes workshop (IWBPA, Badajoz): no 2027 edition found.
+# - Northeast Probability Seminar 2026 (NYU, 19-20 Nov 2026 per aggregators): official page blocked (403); unverified.
+# - Rencontres de Probabilités 2026 (Rouen, 19-20 Nov 2026): small French national meeting; recurrence not stated on page.
+# - Highlights in Probability (Jerusalem, 25-28 Oct 2026), ICAAP&SP 2026 (Manjeri, Dec 2026), Stochastic Processes and
+#   Related Fields (Kyoto, Mar 2027), Applied Probability and Queues (Eindhoven, 5-7 Oct 2026), Stein's Method and its
+#   Statistical Applications (Cergy, 2-4 Dec 2026), Mathematical Statistics in the Age of Generative AI (CIRM, 14-18 Dec 2026),
+#   Eurandom Probabilistic Graphical Models (7-9 Apr 2027): one-off workshops, not recurring series.
+# - Lectures on Probability and Stochastic Processes (Kanpur, Nov-Dec 2026): lecture-series/school format.
+# - German Probability and Statistics Days 2027 (Bielefeld, 9-12 Mar 2027), UK Easter Probability Meeting 2027:
+#   national general meetings (other scope); Easter meeting has no website yet.
+# - IMS-COLT: COLT is a machine-learning-theory conference (excluded as pure ML/CS).
+# Spatial / environmental
+# - TIES 2027: environmetrics.org lists only the joint TIES 2026 meeting (already listed as lacsc-ties-envibayes-envrasa-2026).
+# - METMA XIII, GeoMed 2028, Spatial Data Science Symposium, Spatial Econometrics workshop/SEA: no future edition with
+#   published dates found (SEA 2026 annual conference, Paris, June 2026, is over).
+# Time series / extremes
+# - Extreme-value workshops other than EVA: none with published future dates found.
+# - NBER-NSF Time Series Conference: no upcoming edition on the NBER conferences page.
+# Nonparametrics / robustness / multivariate
+# - IWFOS 2027: no edition announced (last IWFOS 2025, Novara).
+# - ICORS 2027: not announced (ICORS 2026, Istanbul, July 2026, over).
+# - IWMS (Matrices and Statistics) 2027: not found. LinStat 2027/2028: not found (LinStat 2026, Poznań, Aug 2026, over).
+# - SMTDA 2027: SMTDA is held in even years (2026 edition over); the odd-year ASMDA 2027 is listed above.
+# Other
+# - SDSS 2027 listed above; ASA ICES (establishment statistics): no upcoming date on ASA page.
+# - IPDC 2027, SETA 2027, EcoSta-type econometrics meetings: econometrics (EcoSta 2027 already listed).
+# - ISF 2027 dates (20-23 Jun 2027) come from the IIF symposium page text; IIF pages returned 403 on direct re-fetch,
+#   while isf.forecasters.org confirmed "47th ISF | Paphos, Cyprus" and the deadline list (no year shown).
+# ---------------------------------------------------------------------
+# International series: applied statistics (2026-10-02)
+# CHECKED BUT EXCLUDED
+# ---------------------------------------------------------------------------
+# Biostatistics / pharma / clinical trials
+# - EFSPI Regulatory Statistics Workshop 2026 (Basel, 19-20 Aug 2026): over; 2027 edition listed above (tentative).
+# - Other PSI/EFSPI calendar items Oct 2026-Mar 2027: webinars, training courses, careers events only.
+# - PHUSE EU Connect 2026 (Glasgow, Nov 2026), PHUSE APAC Connect 2027 (Bengaluru, 28-30 Jan 2027),
+#   PHUSE US Connect 2027 (Dallas, 14-18 Mar 2027): on the PSI calendar, but these are clinical data
+#   science / statistical programming meetings; statistics is a minor strand.
+# - ICTMC 2026 (International Clinical Trials Methodology Conference, Birmingham, 14-17 Sep 2026): over; next edition not announced.
+# - Survival-analysis / longitudinal-data workshop series (e.g. LiDS): no official page with future dates found
+#   (web-search quota ran out mid-session; lidsconference.org did not resolve).
+# - IBS international meetings: only IBC (ibc-2028, already listed); regional IBS meetings are out of scope.
+# Causal inference
+# - Pacific Causal Inference Conference: PCIC 2026 (Tianjin, 18-19 Jul 2026) over; no PCIC 2027 page (spco.cc/pcic2027 404).
+# - Online Causal Inference Seminar / SCI webinars: seminar series, excluded.
+# - SCI preliminary agenda PDF titled "2027" lists May 11-14 weekdays matching 2026; the official 2027 meeting page
+#   gives 8-11 Feb 2027 (used above).
+# Official statistics and surveys
+# - IAOS 2026 (Vilnius, 12-14 May 2026): over; no IAOS 2027/2028 conference on iaos-isi.org.
+# - Q2026 (Sibenik, 3-5 Jun 2026): over; no Q2028 dates published (q2026.hr also has an expired certificate).
+# - ICES: ICES VII (Glasgow, Jun 2024) is the latest; no ICES VIII announced on amstat.org.
+# - BigSurv: bigsurv.org shows an outage page; no future edition verifiable.
+# - International Total Survey Error Workshop (ITSEW): no official page with future dates found.
+# - Small Area Estimation: SAE 2026 (Bucharest, 15-19 Jun 2026) over; no SAE 2027 announced on sae2026.faa.ro.
+# - International Workshop on Household Survey Nonresponse: nonresponse.org now hosts unrelated content; not verifiable.
+# - CSDI workshop: csdiworkshop.org unreachable.
+# - Statistics Canada International Methodology Symposium: statcan.gc.ca conference pages return HTTP 500.
+# - FCSM Research and Policy Conference 2026 (Suitland, 11-12 Mar 2026): over, and attendance limited to US federal employees.
+# - Other UNECE meetings (HLG-MOS Workshop, Geneva, 2-4 Dec 2026; Joint UNECE/OECD SEEA Expert Meeting, 10-12 Mar 2027;
+#   Group of Experts on National Accounts, 19-22 Apr 2027; CES plenary, 14-16 Jun 2027; Group of Experts on CPIs,
+#   5-7 Jul 2027; Joint WG on Environmental Statistics, 10-11 Nov 2026): intergovernmental delegate meetings or
+#   statistics-management/IT focus rather than open methodological meetings; unece.org is behind a bot check, so
+#   participation rules could not be confirmed.
+# - 10th International Conference on Agricultural Statistics (ICAS X, 8-10 Jul 2026): over; next not announced.
+# Industrial / business statistics, reliability, design of experiments
+# - ENBIS-26 (6-10 Sep 2026): over.
+# - QPRC 2026 (Santa Fe, 22-25 Jun 2026): over; no QPRC 2027 dates on the ASA Q&P pages.
+# - Stu Hunter Research Conference: ISEA site lists only webinars (9 Nov, 1 Dec 2026); no next conference dates.
+# - MMR (Mathematical Methods in Reliability): MMR 2025 (Vina del Mar) latest; no MMR 2027 page.
+# - mODa: participation is by invitation through the board (series policy); excluded.
+# - DAE 2026 (Rutgers, 19-21 May 2026): over; no later DAE listed on the DAE conferences site.
+# - DEMA: no current series page found.
+# - ICODOE: memphis.edu page 404.
+# - ISBIS: 2026 annual meeting (with StatFin) listed above; no separate ISBIS 2027 conference found.
+# Statistics education, sports, psychometrics
+# - IASE 2027 satellite: not listed on iase-web.org/conferences or the WSC 2027 site.
+# - ICOTS 12 (Brisbane, 12-17 Jul 2026): over.
+# - eCOTS 2026 (online, 15-18 Jun 2026): over; eCOTS 2028 not announced.
+# - NESSIS 2027: site says only "See you at the next NESSIS in 2027!"; no dates.
+# - Psychoco: psychoco.org did not resolve; no official page found.
+# Other applied
+# - IMSC (International Meeting on Statistical Climatology): series site lists only up to the 13th IMSC.
+# - Conference on Applied Statistics in Agriculture and Natural Resources: only the proceedings site found; no 2027 dates.
+# - EMGM (European Mathematical Genetics Meeting): emgm.eu returns an empty page.
+# - Symbolic Data Analysis Workshop 2026 (Lisbon, 22-24 Oct 2026): methodological, not an applied topic series (other scopes).
+# - SIS 2027 environmental conference and Popdays (Italy): national-society events; outside this scope.
+# Note: the session's web-search budget ran out mid-research, so later candidates were checked only by fetching
+# known official URLs; series with no known URL may need a second pass.

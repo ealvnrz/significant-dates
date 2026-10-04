@@ -1,0 +1,229 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import ConferenceRow from '../components/ConferenceRow.astro';
+import Icon from '../components/Icon.astro';
+import { getConferences } from '../lib/data';
+import { AREAS, FORMAT_LABELS, areasOf, eventJsonLd, formatDate, formatRange, iso, location } from '../lib/conferences';
+import { REGIONS, FORMATS } from '../content.config';
+import { issueUrl } from '../site.config';
+
+const all = await getConferences();
+
+// Build-time split. The browser re-checks against the real "today" (see scripts/atlas.ts),
+// so the page stays correct between deploys.
+const today = iso(new Date());
+const upcoming = all.filter((c) => iso(c.end) >= today);
+const past = all.filter((c) => iso(c.end) < today).reverse();
+
+const openDeadlines = upcoming.reduce((n, c) => n + c.deadlines.filter((d) => iso(d.date) >= today).length, 0);
+const countries = new Set(upcoming.map((c) => c.countryCode).filter(Boolean)).size;
+const checkedDates = all.map((c) => c.checked).filter((d): d is Date => !!d);
+const lastChecked = checkedDates.length ? formatDate(new Date(Math.max(...checkedDates.map(Number)))) : null;
+
+const areaCounts = AREAS.map((a) => ({
+  ...a,
+  count: upcoming.filter((c) => areasOf(c).includes(a.id)).length,
+})).filter((a) => a.count > 0);
+const regions = REGIONS.filter((r) => upcoming.some((c) => c.region === r));
+const formats = FORMATS.filter((f) => upcoming.some((c) => c.format === f));
+
+const mapPoints = all
+  .filter((c) => c.lat != null && c.lon != null)
+  .map((c) => ({
+    id: c.id,
+    title: c.acronym ?? c.name,
+    name: c.name,
+    lat: c.lat,
+    lon: c.lon,
+    when: formatRange(c.start, c.end),
+    where: location(c),
+    flag: c.countryCode?.toLowerCase() ?? null,
+    url: c.url,
+  }));
+const mapJson = JSON.stringify(mapPoints).replace(/</g, '\\u003c');
+
+// schema.org events for search engines.
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Upcoming statistics conferences',
+  itemListElement: upcoming.map((c, i) => ({ '@type': 'ListItem', position: i + 1, item: eventJsonLd(c) })),
+}).replace(/</g, '\\u003c');
+
+const suggestUrl = issueUrl('new-conference.yml');
+const correctionUrl = issueUrl('correction.yml');
+---
+
+<Base>
+  <Hero upcoming={upcoming.length} countries={countries} openDeadlines={openDeadlines} lastChecked={lastChecked} />
+
+  <section id="conferences" class="container section">
+    <header class="section-head section-head-row">
+      <div>
+        <h2>Conferences</h2>
+        <p class="section-lede" aria-live="polite" data-result-count>{upcoming.length} upcoming conferences</p>
+      </div>
+      <div class="head-controls">
+        <div class="segmented" role="radiogroup" aria-label="Sort by">
+          <span class="seg-label">Sort</span>
+          <button type="button" role="radio" data-sort="date" aria-checked="true">By date</button>
+          <button type="button" role="radio" data-sort="deadline" aria-checked="false">By deadline</button>
+        </div>
+        <button type="button" class="btn btn-ghost btn-small" data-map-toggle aria-expanded="true" aria-controls="map-card">
+          <Icon name="map" size={14} /> <span>Hide map</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Filters: one area at a time, plus search, region, format, "still open" and months. -->
+    <div class="area-tabs" role="radiogroup" aria-label="Area">
+      <button type="button" class="area-tab" role="radio" data-area="" aria-checked="true">
+        All <span class="count">{upcoming.length}</span>
+      </button>
+      {
+        areaCounts.map((a) => (
+          <button type="button" class="area-tab" role="radio" data-area={a.id} aria-checked="false">
+            {a.label} <span class="count">{a.count}</span>
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="toolbar" role="search">
+      <label class="search-field">
+        <Icon name="search" size={16} />
+        <span class="sr-only">Search conferences</span>
+        <input type="search" id="f-search" placeholder="Search a conference, city or country" autocomplete="off" />
+        <kbd class="kbd" aria-hidden="true">/</kbd>
+      </label>
+      <label class="select-field">
+        <span class="sr-only">Region</span>
+        <select id="f-region">
+          <option value="">Anywhere</option>
+          {regions.map((r) => <option value={r}>{r}</option>)}
+        </select>
+        <Icon name="chevron" size={14} />
+      </label>
+      <label class="select-field">
+        <span class="sr-only">Format</span>
+        <select id="f-format">
+          <option value="">Any format</option>
+          {formats.map((f) => <option value={f}>{FORMAT_LABELS[f]}</option>)}
+        </select>
+        <Icon name="chevron" size={14} />
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="f-open" />
+        <span class="toggle-track" aria-hidden="true"></span>
+        <span>Deadlines still open</span>
+      </label>
+      <button type="button" class="link-btn" data-reset hidden>
+        <Icon name="reset" size={14} /> Clear
+      </button>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="tl-head">
+        <span class="tl-title">When</span>
+        <span class="tl-range" data-tl-label>Any month</span>
+        <button type="button" class="chip-btn" data-tl-clear hidden><Icon name="x" size={12} /> Any month</button>
+        <span class="tl-hint">Click a month, or drag across several</span>
+      </div>
+      <div class="tl-bars" role="group" aria-label="Filter by month" data-tl-bars></div>
+    </div>
+
+    <div class="map-card" id="map-card">
+      <div id="map" class="map" role="region" aria-label="Map of conference locations"></div>
+      <p class="map-note">
+        <span data-map-count>{mapPoints.length} conferences on the map</span>
+        <span class="muted">Hover a row to find it on the map · online-only meetings are listed only</span>
+      </p>
+    </div>
+
+    <div class="table-head" aria-hidden="true">
+      <span>Dates</span>
+      <span>Conference</span>
+      <span>Location</span>
+      <span>Next deadline</span>
+      <span></span>
+    </div>
+    <ol class="rows" id="upcoming-list">
+      {upcoming.map((c) => <ConferenceRow conference={c} />)}
+    </ol>
+    <div class="empty-state" data-empty hidden>
+      <p><b>No conferences match these filters.</b></p>
+      <p class="muted">Try another area, region or month, or <button type="button" class="link-btn inline" data-reset-inline>clear the filters</button>.</p>
+    </div>
+  </section>
+
+  <!-- Past: only conferences from the start of the list (October 2026) that have since ended. -->
+  <section id="past" class="container section" data-past-section hidden={past.length === 0}>
+    <details class="past">
+      <summary>
+        <span class="past-title">Past conferences <span class="chip-count" data-past-count>{past.length}</span></span>
+        <Icon name="chevron" size={18} class="past-chevron" />
+      </summary>
+      <ol class="rows rows-past" id="past-list">
+        {past.map((c) => <ConferenceRow conference={c} />)}
+      </ol>
+    </details>
+  </section>
+
+  <section id="about" class="container section">
+    <header class="section-head">
+      <h2>About this list</h2>
+    </header>
+    <div class="info-grid">
+      <article>
+        <span class="info-num">01</span>
+        <h3>What's listed</h3>
+        <p>
+          Conferences and workshops whose programme is mainly statistics or probability, in
+          methodology, computation or applications, from October 2026 onwards. Meetings from
+          neighbouring fields (geography, GIS, data science) are included when they have a
+          substantial statistics strand.
+        </p>
+      </article>
+      <article>
+        <span class="info-num">02</span>
+        <h3>How dates are checked</h3>
+        <p>
+          Each date comes from the official conference page, linked with the day it was last
+          checked. Dates the organisers haven't confirmed, or that had to be inferred, are marked
+          <span class="badge badge-tbc">TBC</span>.
+        </p>
+      </article>
+      <article>
+        <span class="info-num">03</span>
+        <h3>Suggestions on GitHub</h3>
+        <p>
+          Missing a conference, or spotted a changed date? Open an issue on GitHub. Each
+          conference's details also have a "Suggest a correction" link.
+        </p>
+        <div class="info-actions">
+          {
+            suggestUrl && (
+              <a class="btn btn-primary btn-small" href={suggestUrl} target="_blank" rel="noopener">
+                <Icon name="github" size={14} /> Suggest a conference
+              </a>
+            )
+          }
+          {
+            correctionUrl && (
+              <a class="btn btn-ghost btn-small" href={correctionUrl} target="_blank" rel="noopener">
+                Report a correction
+              </a>
+            )
+          }
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script type="application/json" id="map-data" set:html={mapJson} />
+  <script type="application/ld+json" set:html={jsonLd} />
+  <script>
+    import '../scripts/atlas.ts';
+  </script>
+</Base>

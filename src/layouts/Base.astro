@@ -1,0 +1,127 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { SITE, issueUrl } from '../site.config';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = `${SITE.name} · ${SITE.tagline}`, description = SITE.description } = Astro.props;
+
+const nav = [
+  { href: '#conferences', label: 'Conferences' },
+  { href: '#about', label: 'About' },
+];
+
+// Absolute URLs need `site` in astro.config.mjs; without it, canonical and og:url are left out.
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+const suggestUrl = issueUrl('new-conference.yml');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    />
+    <!-- Theme: the saved choice, else the system setting. Set before first paint to avoid a flash. -->
+    <script is:inline>
+      (() => {
+        let theme;
+        try {
+          theme = localStorage.getItem('theme');
+        } catch {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conferences">Skip to conferences</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label={`${SITE.name}, home`}>
+          <img src="/favicon.svg" alt="" width="28" height="28" />
+          <span>{SITE.name}</span>
+        </a>
+        <nav class="site-nav" aria-label="Sections">
+          {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+        </nav>
+        <div class="header-actions">
+          {
+            suggestUrl && (
+              <a class="btn btn-ghost btn-small" href={suggestUrl} target="_blank" rel="noopener">
+                <Icon name="github" size={15} /> <span class="hide-xs">Suggest a conference</span>
+              </a>
+            )
+          }
+          <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch between light and dark" title="Switch between light and dark">
+            <Icon name="moon" size={17} class="icon-moon" />
+            <Icon name="sun" size={17} class="icon-sun" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="/" class="brand brand-small">
+          <img src="/favicon.svg" alt="" width="22" height="22" />
+          <span>{SITE.name}</span>
+        </a>
+        <p class="muted">
+          Dates come from the official conference sites but can change. Always check them before booking travel.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      const apply = (theme: string) => {
+        root.dataset.theme = theme;
+        window.dispatchEvent(new CustomEvent('themechange'));
+      };
+
+      document.getElementById('theme-toggle')?.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        try {
+          localStorage.setItem('theme', next);
+        } catch {}
+        apply(next);
+      });
+
+      // Follow the system setting until the visitor picks a theme.
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        let saved = null;
+        try {
+          saved = localStorage.getItem('theme');
+        } catch {}
+        if (!saved) apply(e.matches ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>

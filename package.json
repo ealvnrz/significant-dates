@@ -1,0 +1,26 @@
+{
+  "name": "significant-dates",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check:links": "node tools/check-links.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.3.5",
+    "flag-icons": "^7.5.0",
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "^22.20.5",
+    "js-yaml": "^4.3.2"
+  }
+}
