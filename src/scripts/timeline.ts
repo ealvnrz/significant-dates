@@ -1,28 +1,11 @@
-// Month strip above the list: one bar per month, height = meetings starting that month.
-// The faint bar is every upcoming meeting; the solid bar is those matching the other filters.
-// Click a month to filter by it, drag (or shift-click) to pick a range, click it again to clear.
-
-export type MonthRange = { from: string; to: string } | null;
+// Month strip: counts conferences overlapping a month, or with open deadlines in it.
+import type { MonthRange } from '../lib/calendar';
+export type { MonthRange } from '../lib/calendar';
 
 const monthName = new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const monthShort = new Intl.DateTimeFormat('en', { month: 'short', timeZone: 'UTC' });
 const monthShortYear = new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric', timeZone: 'UTC' });
 const toDate = (m: string) => Date.UTC(Number(m.slice(0, 4)), Number(m.slice(5, 7)) - 1, 1);
-
-/** Every YYYY-MM from `first` to `last`, inclusive. */
-export function monthsBetween(first: string, last: string): string[] {
-  const out: string[] = [];
-  let y = Number(first.slice(0, 4));
-  let m = Number(first.slice(5, 7));
-  for (let guard = 0; guard < 240; guard++) {
-    const key = `${y}-${String(m).padStart(2, '0')}`;
-    out.push(key);
-    if (key >= last) break;
-    m = m === 12 ? 1 : m + 1;
-    if (m === 1) y++;
-  }
-  return out;
-}
 
 export function rangeLabel(r: MonthRange): string {
   if (!r) return 'Any month';
@@ -35,6 +18,9 @@ export function createTimeline(root: HTMLElement, months: string[], onChange: (r
   const label = root.querySelector<HTMLElement>('[data-tl-label]')!;
   const clear = root.querySelector<HTMLButtonElement>('[data-tl-clear]')!;
   let range: MonthRange = null;
+  const controller = new AbortController();
+  const listen = <K extends keyof WindowEventMap>(target: Window | HTMLElement, type: K, handler: (event: WindowEventMap[K]) => void) =>
+    target.addEventListener(type, handler as EventListener, { signal: controller.signal });
 
   const buttons = months.map((m, i) => {
     const b = document.createElement('button');
@@ -83,14 +69,14 @@ export function createTimeline(root: HTMLElement, months: string[], onChange: (r
     }
     return buttons.length - 1;
   };
-  bars.addEventListener('pointerdown', (e) => {
+  listen(bars, 'pointerdown', (e) => {
     const bar = (e.target as HTMLElement).closest<HTMLElement>('.tl-bar');
     if (!bar || e.button !== 0) return;
     anchor = buttons.indexOf(bar as HTMLButtonElement);
     dragged = false;
     swallowClick = false;
   });
-  window.addEventListener('pointermove', (e) => {
+  listen(window, 'pointermove', (e) => {
     if (anchor === null || !(e.buttons & 1)) return;
     const i = indexAt(e.clientX);
     if (i === anchor && !dragged) return;
@@ -99,12 +85,12 @@ export function createTimeline(root: HTMLElement, months: string[], onChange: (r
     const next = { from: months[a], to: months[b] };
     if (!range || range.from !== next.from || range.to !== next.to) set(next);
   });
-  window.addEventListener('pointerup', () => {
+  listen(window, 'pointerup', () => {
     if (anchor !== null && dragged) swallowClick = true;
     anchor = null;
   });
 
-  bars.addEventListener('click', (e) => {
+  listen(bars, 'click', (e) => {
     const bar = (e.target as HTMLElement).closest<HTMLButtonElement>('.tl-bar');
     if (swallowClick || !bar) {
       swallowClick = false;
@@ -121,7 +107,7 @@ export function createTimeline(root: HTMLElement, months: string[], onChange: (r
   });
 
   // Arrow keys move between months.
-  bars.addEventListener('keydown', (e) => {
+  listen(bars, 'keydown', (e) => {
     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
     const i = buttons.indexOf(document.activeElement as HTMLButtonElement);
     if (i < 0) return;
@@ -129,7 +115,7 @@ export function createTimeline(root: HTMLElement, months: string[], onChange: (r
     buttons[Math.max(0, Math.min(buttons.length - 1, i + (e.key === 'ArrowRight' ? 1 : -1)))].focus();
   });
 
-  clear.addEventListener('click', () => set(null));
+  listen(clear, 'click', () => set(null));
 
   return {
     /** counts: matching meetings per month; totals: all upcoming meetings per month. */
@@ -151,5 +137,6 @@ export function createTimeline(root: HTMLElement, months: string[], onChange: (r
     },
     set: (r: MonthRange) => set(r, false),
     get: () => range,
+    destroy: () => { controller.abort(); bars.replaceChildren(); },
   };
 }

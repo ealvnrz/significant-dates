@@ -12,12 +12,17 @@ import {
   areasOf,
 } from '../lib/conferences';
 import { issueUrl } from '../site.config';
+import { calendarDay, DEADLINE_LABELS, deadlineSummary, deadlineCountdown, deadlineState, openDeadlines, reviewDue } from '../lib/calendar';
 
 interface Props {
   conference: Conference;
+  today?: string;
 }
 
-const { conference: c } = Astro.props;
+const { conference: c, today = calendarDay() } = Astro.props;
+const deadlines = c.deadlines.map(d => ({ ...d, date: iso(d.date) }));
+const next = openDeadlines(deadlines, today)[0];
+const needsReview = reviewDue(c.checked && iso(c.checked), deadlines, today);
 const hasCoords = c.lat != null && c.lon != null;
 const search = [c.name, c.acronym, c.city, c.country, c.region, ...c.topics]
   .filter(Boolean)
@@ -39,7 +44,8 @@ const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`
   data-format={c.format}
   data-country={c.countryCode ?? ''}
   data-search={search}
-  data-deadlines={c.deadlines.map((d) => iso(d.date)).join(',')}
+  data-deadlines={JSON.stringify(deadlines)}
+  data-deadline-status={c.deadlineStatus}
 >
   <div class="r-date">
     <span class="r-range">{formatRangeShort(c.start, c.end)}</span>
@@ -77,7 +83,10 @@ const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`
   </div>
 
   <div class="r-deadline" data-next-deadline>
-    <span class="r-sub">No open deadlines</span>
+    {next ? <>
+      <span class="nd-label">{next.label}</span>
+      <span class="nd-meta" data-state={deadlineState(next.date, today)}>{formatDate(new Date(next.date))} · {deadlineCountdown(next.date, today)}{next.tentative ? ' · TBC' : ''}</span>
+    </> : <span class="r-sub">{deadlineSummary(deadlines, c.deadlineStatus, today)}</span>}
   </div>
 
   <div class="r-actions">
@@ -86,17 +95,16 @@ const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`
     </a>
     {
       hasCoords && (
-        <button class="icon-btn" type="button" data-locate title="Show on map" aria-label={`Show ${title} on the map`}>
+        <button class="icon-btn" type="button" data-locate data-enhanced hidden title="Show on map" aria-label={`Show ${title} on the map`}>
           <Icon name="pin" size={16} />
         </button>
       )
     }
-    <button class="icon-btn r-toggle" type="button" aria-expanded="false" aria-controls={detailsId} title="Details" aria-label={`Details for ${title}`}>
-      <Icon name="chevron" size={16} />
-    </button>
   </div>
 
-  <div class="r-details" id={detailsId} hidden>
+  <details class="r-details" id={detailsId}>
+    <summary aria-label={`Details for ${title}`}>Details <Icon name="chevron" size={14} /></summary>
+    <div class="r-details-body">
     {c.description && <p class="r-desc">{c.description}</p>}
     {
       c.note && (
@@ -109,18 +117,20 @@ const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`
       c.deadlines.length > 0 && (
         <ul class="r-deadlines" aria-label="Deadlines">
           {c.deadlines.map((d) => (
-            <li data-date={iso(d.date)} data-tentative={d.tentative ? '' : undefined}>
+            <li data-date={iso(d.date)} data-state={deadlineState(iso(d.date), today)} data-tentative={d.tentative ? '' : undefined}>
               <span class="dl-date">{formatDate(d.date)}</span>
               <span class="dl-label">
                 {d.label}
+                <small class="dl-types">{d.types.map(t => DEADLINE_LABELS[t]).join(' · ')}</small>
                 {d.tentative && <span class="badge badge-tbc" title="Inferred date: the official page doesn't give the full date">TBC</span>}
               </span>
-              <span class="dl-status" data-status />
+              <span class="dl-status" data-status>{deadlineCountdown(iso(d.date), today)}</span>
             </li>
           ))}
         </ul>
       )
     }
+    {c.deadlines.length === 0 && <p class="r-sub">{deadlineSummary(deadlines, c.deadlineStatus, today)}. Check the official website for updates.</p>}
     <div class="r-foot">
       {
         c.source && (
@@ -132,7 +142,8 @@ const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`
             {c.checked && (
               <>
                 {' · '}
-                <time datetime={iso(c.checked)} data-checked>{formatDate(c.checked)}</time>
+                <time datetime={iso(c.checked)} data-checked class:list={{ 'is-stale': needsReview }}>{formatDate(c.checked)}</time>
+                <span data-review-note hidden={!needsReview}> · Review due</span>
               </>
             )}
           </p>
@@ -140,9 +151,10 @@ const correctionUrl = issueUrl('correction.yml', { title: `Correction: ${title}`
       }
       <div class="r-links">
         <a class="link-btn" href={c.url} target="_blank" rel="noopener"><Icon name="external" size={14} /> Website</a>
-        <button class="link-btn" type="button" data-copy-link><Icon name="link" size={14} /> <span>Copy link</span></button>
+        <button class="link-btn" type="button" data-copy-link data-enhanced hidden><Icon name="link" size={14} /> <span>Copy link</span></button>
         {correctionUrl && <a class="link-btn" href={correctionUrl} target="_blank" rel="noopener"><Icon name="github" size={14} /> Suggest a correction</a>}
       </div>
     </div>
-  </div>
+    </div>
+  </details>
 </li>

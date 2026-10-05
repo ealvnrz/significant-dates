@@ -11,7 +11,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check:links": "node tools/check-links.mjs"
+    "check:links": "node --experimental-strip-types tools/check-links.mjs",
+    "prebuild": "npm run validate:data",
+    "check": "astro check",
+    "validate:data": "node --experimental-strip-types tools/validate-data.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "check:reviews": "node --experimental-strip-types tools/check-links.mjs --offline",
+    "test:browser": "playwright test"
   },
   "dependencies": {
     "astro": "^7.3.5",
@@ -19,8 +25,11 @@
     "leaflet": "^1.9.4"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@playwright/test": "^1.63.0",
     "@types/leaflet": "^1.9.22",
     "@types/node": "^22.20.5",
-    "js-yaml": "^4.3.2"
+    "js-yaml": "^4.3.2",
+    "typescript": "^6.0.3"
   }
 }

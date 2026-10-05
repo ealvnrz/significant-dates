@@ -8,6 +8,9 @@
 # The list starts in October 2026: meetings that ended earlier aren't recorded.
 # `tentative: true` on a meeting = dates not confirmed by the organisers; on a deadline = the
 # date is inferred (e.g. the page gives "October 9" with no year). Both show a "TBC" mark.
+# `deadlineStatus`: published (recorded dates), unknown (no information recorded), or
+# not-announced (only with explicit official evidence explained in `note`).
+# Each deadline has one or more `types`: submission, registration, proposal, funding, housing, other.
 # `note` = a caveat shown to visitors in the meeting's details.
 # ----------------------------------------------------------------------------
 
@@ -28,12 +31,16 @@
   format: "in-person" # format inferred (China Agricultural University, East Campus)
   topics: [spatial, spatio-temporal, geostatistics]
   description: "Elsevier's biennial spatial statistics conference; this edition links spatial statistics with AI, predictive modelling and real-time decision support."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2027-01-29
     - label: "Workshop proposals"
+      types: [proposal]
       date: 2027-03-12
     - label: "Early-bird / author registration"
+      types: [registration]
       date: 2027-04-23
   checked: 2026-09-30
   source: "https://www.elsevier.com/events/conferences/all/spatial-statistics"
@@ -53,12 +60,16 @@
   format: "in-person"
   topics: [geostatistics, spatial, environmental]
   description: "Biennial geoENV conference on geostatistical methods for environmental problems, hosted by the Cyprus University of Technology; short courses on day one."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2027-01-17
     - label: "Early-bird registration"
+      types: [registration]
       date: 2027-03-21
     - label: "Author registration"
+      types: [registration]
       date: 2027-04-18
   checked: 2026-09-30
   source: "https://2027.geoenvia.org/"
@@ -78,6 +89,7 @@
   format: "in-person" # format inferred; the announcement gives no venue yet
   topics: [geostatistics, environmental]
   description: "The geoENVia association marks 30 years since the first geoENV conference, held in Lisbon in 1996."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://geoenvia.org/2026/09/geoenv-30th-anniversary-celebration-lisbon-19-20-november-2026/"
@@ -97,14 +109,19 @@
   format: "in-person"
   topics: [environmental, bayesian, computational, data-science]
   description: "Joint meeting at UNAM of IASC-LARS, AME, TIES (its 2026 annual conference), ISBA EnviBayes and ASA ENVR on environmental and climate statistics."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission (extended)"
+      types: [submission]
       date: 2026-06-30
     - label: "Early registration (extended)"
+      types: [registration]
       date: 2026-08-15
     - label: "Standard registration"
+      types: [registration]
       date: 2026-09-30
     - label: "Late registration"
+      types: [registration]
       date: 2026-10-31
   checked: 2026-09-30
   source: "https://www.amestad.mx/lacsc-ties-envibayes-envrasa-2026"
@@ -125,6 +142,7 @@
   topics: [spatial, spatio-temporal, bayesian, environmental]
   description: "First joint meeting of the EnviBayes and INLA workshop series, on Bayesian methods for environmental, ecological, spatial and spatio-temporal data."
   note: "Submissions are expected to open around December 2026 and early-bird registration around January 2027; dates not yet confirmed."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://envibayesinla.github.io/workshop2027/"
@@ -144,8 +162,10 @@
   format: "in-person" # format inferred (field trips, poster sessions)
   topics: [geostatistics, spatial, computational]
   description: "Annual IAMG conference on geostatistics and quantitative geosciences, with short courses, workshops and field trips."
+  deadlineStatus: published
   deadlines:
     - label: "Session proposals"
+      types: [proposal]
       date: 2026-12-01
   checked: 2026-09-30
   source: "https://www.iamgconferences.org/"
@@ -165,8 +185,10 @@
   format: "in-person"
   topics: [environmental, spatial, bayesian]
   description: "Statistical ecology conference at the Autonomous University of Yucatán; pre-conference workshops include an INLA/inlabru course on spatial data."
+  deadlineStatus: published
   deadlines:
     - label: "Contributed talks and posters"
+      types: [submission]
       date: 2026-05-01
   checked: 2026-09-30
   source: "https://statisticalecology.org/"
@@ -186,8 +208,10 @@
   format: "in-person"
   topics: [environmental, spatial]
   description: "Biennial conference of the Italian Statistical Society's environmental statistics group (a TIES regional meeting), at Ca' Foscari University."
+  deadlineStatus: published
   deadlines:
     - label: "Solicited session proposals" # page says "October 9th" with no year; 2026 inferred
+      types: [proposal]
       date: 2026-10-09
       tentative: true
   checked: 2026-09-30
@@ -208,6 +232,7 @@
   format: "in-person" # format inferred
   topics: [environmental, probability]
   description: "15th biennial conference on extreme value theory and applications, at HEC Montréal; satellite courses on July 3–4."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://hecsciencesdecision.github.io/eva2027/"
@@ -227,6 +252,7 @@
   format: "in-person"
   topics: [spatial, data-science]
   description: "Industry-oriented spatial data science conference (CARTO-sponsored): workshops on day one, talks on day two."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://spatial-data-science-conference.com/"
@@ -246,11 +272,14 @@
   format: "hybrid"
   topics: [spatial]
   description: "American Association of Geographers annual meeting; hosts the Geospatial Health Research Symposium on spatial epidemiology."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission" # page says "October 15" with no year; 2026 inferred
+      types: [submission]
       date: 2026-10-15
       tentative: true
     - label: "Session organizing" # "November 5", year inferred
+      types: [proposal]
       date: 2026-11-05
       tentative: true
   checked: 2026-09-30
@@ -273,10 +302,13 @@
   format: "in-person" # format inferred (resort venue)
   topics: [bayesian]
   description: "Joint Latin American and Brazilian Bayesian statistics meeting with lectures, thematic sessions, short courses and early-career activities."
+  deadlineStatus: published
   deadlines:
     - label: "Oral and poster submissions"
+      types: [submission]
       date: 2026-09-08
     - label: "Early-bird registration"
+      types: [registration]
       date: 2026-11-10
   checked: 2026-09-30
   source: "https://cobalebeb2027.softaliza.com.br/"
@@ -296,6 +328,7 @@
   format: "in-person"
   topics: [bayesian, computational]
   description: "Biennial ISBA BayesComp meeting on Bayesian computation (successor to MCMSki), at Texas A&M University."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://bayescomp2027.org/"
@@ -315,8 +348,10 @@
   format: "in-person"
   topics: [bayesian, computational]
   description: "European mirror of BayesComp 2027 at CAES Paul Langevin, streaming the Texas plenaries alongside local talks and posters."
+  deadlineStatus: published
   deadlines:
     - label: "Submission"
+      types: [submission]
       date: 2026-11-30
   checked: 2026-09-30
   source: "https://sites.google.com/view/bayescomp27mirror/home"
@@ -336,6 +371,7 @@
   format: "in-person" # format inferred
   topics: [bayesian]
   description: "Conference of the ISBA BNP section on Bayesian nonparametric methods, at the University of Bergamo."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://bnp15.github.io/"
@@ -355,10 +391,13 @@
   format: "hybrid"
   topics: [computational, general]
   description: "Large annual ERCIM CMStatistics and CFE meeting on computational and methodological statistics and econometrics, at HTW Berlin."
+  deadlineStatus: published
   deadlines:
     - label: "Contributed abstracts (extended)"
+      types: [submission]
       date: 2026-09-10
     - label: "Presenting author registration"
+      types: [registration]
       date: 2026-09-12
   checked: 2026-09-30
   source: "https://www.cmstatistics.org/CFECMStatistics2026/important_dates.php"
@@ -378,12 +417,16 @@
   format: "hybrid" # "partially hybrid, with a stronger focus on in-person"
   topics: [computational, general]
   description: "CMStatistics/CFENetwork conference on econometrics and statistics, at ShanghaiTech University."
+  deadlineStatus: published
   deadlines:
     - label: "Organized session abstracts"
+      types: [submission]
       date: 2027-03-12
     - label: "Contributed abstracts"
+      types: [submission]
       date: 2027-04-05
     - label: "Presenting author registration"
+      types: [registration]
       date: 2027-04-07
   checked: 2026-09-30
   source: "https://www.cmstatistics.org/EcoSta2027/important_dates.php"
@@ -405,12 +448,16 @@
   format: "in-person"
   topics: [general]
   description: "North America's largest statistics meeting; the 2027 edition doubles as the IMS Annual Meeting."
+  deadlineStatus: published
   deadlines:
     - label: "Invited session proposals"
+      types: [proposal]
       date: 2026-09-23
     - label: "Topic-contributed session proposals"
+      types: [proposal]
       date: 2026-12-10
     - label: "Contributed abstracts"
+      types: [submission]
       date: 2027-02-01
   checked: 2026-09-30
   source: "https://www.amstat.org/meetings/joint-statistical-meetings"
@@ -430,12 +477,16 @@
   format: "in-person" # format inferred (Mulungushi International Conference Centre)
   topics: [general]
   description: "Biennial flagship congress of the International Statistical Institute."
+  deadlineStatus: published
   deadlines:
     - label: "Contributed paper / poster abstracts"
+      types: [submission]
       date: 2026-10-08
     - label: "Invited paper session abstracts"
+      types: [submission]
       date: 2026-10-27
     - label: "Early-bird registration"
+      types: [registration]
       date: 2027-03-12
   checked: 2026-09-30
   source: "https://www.isi-next.org/conferences/isi-wsc2027/key-dates/"
@@ -455,10 +506,13 @@
   format: "in-person"
   topics: [biostatistics]
   description: "Spring meeting of the Eastern North American Region of the International Biometric Society."
+  deadlineStatus: published
   deadlines:
     - label: "Distinguished Student Paper awards"
+      types: [funding]
       date: 2026-10-15
     - label: "Contributed session proposals"
+      types: [proposal]
       date: 2026-10-29
   checked: 2026-09-30
   source: "https://www.enar.org/meetings/spring2027/save-the-date.cfm"
@@ -478,6 +532,7 @@
   format: "in-person" # format inferred
   topics: [biostatistics, general]
   description: "Joint meeting of the Western North American Region of the IBS and the IMS, with short courses and a student paper award."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://wnar.org/wnar2027"
@@ -497,6 +552,7 @@
   format: "in-person"
   topics: [general, data-science]
   description: "Royal Statistical Society annual international conference, at ICC Wales."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://rss.org.uk/training-events/events/rss-2027-international-conference/"
@@ -516,6 +572,7 @@
   format: "in-person" # format inferred
   topics: [general]
   description: "Annual meeting of the Statistical Society of Canada, organised locally by Université Laval."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://ssc.ca/en/meetings/annual/2027-ssc-annual-meeting-quebec"
@@ -535,6 +592,7 @@
   format: "in-person" # format inferred (Bizkaia Aretoa)
   topics: [general]
   description: "Statistical Modelling Society workshop with no parallel sessions and 4-page proceedings papers, hosted by the University of the Basque Country."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://iwsm2027.com/"
@@ -554,6 +612,7 @@
   format: "in-person" # format inferred
   topics: [probability]
   description: "Bernoulli Society conference on stochastic processes, hosted by Monash University."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://www.spa2027.org/"
@@ -573,11 +632,14 @@
   format: "in-person" # format inferred
   topics: [general]
   description: "Australasian conference on applied statistics and real-world data analysis, on the Sunshine Coast, with pre-conference workshops."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission" # page shows "Jul 9"; year inferred
+      types: [submission]
       date: 2026-07-09
       tentative: true
     - label: "Early-bird registration" # "Aug 28"; year inferred
+      types: [registration]
       date: 2026-08-28
       tentative: true
   checked: 2026-09-30
@@ -600,10 +662,13 @@
   format: "in-person" # format inferred
   topics: [general]
   description: "Annual national meeting of the Chilean Statistical Society (SOCHE), hosted by the Institute of Statistics of the Universidad de Valparaíso."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-07-31
     - label: "Early registration"
+      types: [registration]
       date: 2026-09-14
   checked: 2026-09-30
   source: "https://soche.cl/xlviii-jornadas-nacionales-de-estadistica-2026/"
@@ -623,8 +688,10 @@
   format: "in-person"
   topics: [general, biostatistics]
   description: "Joint congress of the Argentine Statistical Society colloquium and the Argentine Biostatistics Group meeting, at UNICEN."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission (extended)"
+      types: [submission]
       date: 2026-08-13
   checked: 2026-09-30
   source: "https://cae2026.exa.unicen.edu.ar/"
@@ -644,6 +711,7 @@
   format: "in-person" # format inferred (IMECC-Unicamp)
   topics: [biostatistics]
   description: "Annual meeting of the Brazilian Region of the International Biometric Society; the VIII WASA survival analysis workshop follows on Nov 26."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://70rbras.org/"
@@ -663,6 +731,7 @@
   format: "in-person"
   topics: [computational, data-science]
   description: "Latin American conference on using R in research, back in person at the Universidad de Antioquia after two virtual years."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-09-30
   source: "https://latinr.org/"
@@ -682,6 +751,7 @@
   format: "in-person" # format inferred (venue: Faculty of Mathematics, Campus San Joaquín)
   topics: [spatial, spatio-temporal]
   description: "Latin American meeting on spatial, temporal and spatio-temporal statistical modelling, with keynote and invited talks, at the Pontificia Universidad Católica de Chile."
+  deadlineStatus: unknown
   deadlines: [] # no submission or registration dates published yet
   checked: 2026-10-03
   source: "https://iii-metma-latam-2027.vercel.app/"
@@ -705,12 +775,16 @@
   format: "in-person"  # format inferred (venue: Platinum Jubilee Auditorium, ISI Kolkata)
   topics: [general]
   description: "International mini-conference on robust statistics and trustworthy data analysis, organised by the Indian Statistical Institute, Kolkata."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-11-30
     - label: "Regular registration"
+      types: [registration]
       date: 2026-12-20
     - label: "Extended registration"
+      types: [registration]
       date: 2027-01-31
   checked: 2026-10-02
   source: "https://sites.google.com/view/robstat27"
@@ -730,14 +804,19 @@
   format: "in-person"  # format inferred (page only mentions "onsite registration")
   topics: [computational, data-science]
   description: "Conference of the Asian Regional Section of the International Association for Statistical Computing (IASC-ARS), held jointly with SoAI at Chiang Mai University."
+  deadlineStatus: published
   deadlines:
     - label: "Invited session proposals"
+      types: [proposal]
       date: 2026-09-15
     - label: "Early-bird registration"
+      types: [registration]
       date: 2026-09-30
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-10-31
     - label: "Regular registration"
+      types: [registration]
       date: 2026-11-15
   checked: 2026-10-02
   source: "https://iasc-ars2026.icdi.cmu.ac.th/IASC_ARS"
@@ -757,8 +836,10 @@
   format: "in-person"  # format inferred
   topics: [general, probability, data-science]
   description: "Annual convention of the Indian Society for Probability and Statistics, co-organised with Kavayitri Bahinabai Chaudhari North Maharashtra University."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission (early-bird fees)"
+      types: [submission]
       date: 2026-11-15
   checked: 2026-10-02
   source: "https://isps.org.in/wp-content/uploads/2026/07/ISPS-2026-Conference_Brochure-and-Competitions.pdf"
@@ -778,14 +859,18 @@
   format: "in-person"  # format inferred (venue: Chung-Ang University, Seoul Campus)
   topics: [general]
   description: "Winter paper-presentation meeting and general assembly of the Korean Statistical Society; the announcement is in Korean."
+  deadlineStatus: published
   deadlines:
     - label: "Session proposals"
+      types: [proposal]
       date: 2026-09-30
       tentative: true  # notice gives only month/day; 2026 inferred (posted 2026-09-04)
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-10-11
       tentative: true  # notice gives "10월 11일(일)" with no year; the weekday matches 2026
     - label: "Pre-registration"
+      types: [registration]
       date: 2026-11-22
       tentative: true  # notice gives "11월 22일(일)" with no year; the weekday matches 2026
   checked: 2026-10-02
@@ -806,10 +891,13 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Annual conference of the International Indian Statistical Association, co-organised with the Department of Statistics, Banaras Hindu University."
+  deadlineStatus: published
   deadlines:
     - label: "Contributed talk submission"
+      types: [submission]
       date: 2026-08-31
     - label: "Early registration"
+      types: [registration]
       date: 2026-08-31
   checked: 2026-10-02
   source: "https://www.intindstat.org/conference2026/index"
@@ -831,6 +919,7 @@
   description: "Eighth Asia Pacific Rim Meeting of the Institute of Mathematical Statistics."
   note: "The host city hasn't been announced; the map pin marks South Korea, not the venue."
   tentative: true  # official site: "planned to be held in South Korea from June 17 to June 20, 2028"
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://imstat.org/meetings-calendar/2028-ims-asia-pacific-rim-meeting/"
@@ -850,6 +939,7 @@
   format: "in-person"  # format inferred (campus of the National University of Singapore)
   topics: [probability, general]
   description: "Quadrennial world congress of the Bernoulli Society and the Institute of Mathematical Statistics, at the National University of Singapore."
+  deadlineStatus: unknown
   deadlines: []  # all submission and registration dates listed as TBA
   checked: 2026-10-02
   source: "https://wc2028.com"
@@ -870,6 +960,7 @@
   format: "in-person"  # format inferred; venue still "to be determined" on the IBS page
   topics: [biostatistics, environmental]
   description: "First conference of the Namibian Region of the International Biometric Society, on statistical and data-science methods in agriculture, health, ecology and the environment."
+  deadlineStatus: unknown
   deadlines: []  # no closing dates on the event page
   checked: 2026-10-02
   source: "https://www.biometricsociety.org/events/event-description?CalendarEventKey=51e3e4f9-ffdc-41ca-8032-01a0d9236d33&CommunityKey=afd311f2-a3c2-46f9-bd3e-0189e635950d&Home=%2fevents%2fcalendar"
@@ -889,12 +980,16 @@
   format: "in-person"
   topics: [general]
   description: "Annual conference of the South African Statistical Association, hosted by the School of Statistics and Actuarial Science, University of the Witwatersrand."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-09-14
     - label: "Registration"
+      types: [registration]
       date: 2026-09-30
     - label: "Registration payment"
+      types: [registration]
       date: 2026-10-09
   checked: 2026-10-02
   source: "https://sasaconference2026.org/"
@@ -915,6 +1010,7 @@
   format: "in-person"  # format inferred (held at ABS House, Belconnen; photo ID required for entry)
   topics: [data-science]
   description: "Conference of the Australian Data Science Network, with the Statistical Society of Australia as a partner, at the Australian Bureau of Statistics."
+  deadlineStatus: unknown
   deadlines: []  # abstract submission already closed; no dates published
   checked: 2026-10-02
   source: "https://adsnconf2026.netlify.app/"
@@ -934,11 +1030,14 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Annual conference of the New Zealand Statistical Association, hosted by the University of Auckland."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission & early-bird registration"
+      types: [submission, registration]
       date: 2026-10-31
       tentative: true  # page says "open until October 31" with no year; 2026 inferred
     - label: "Travel support applications"
+      types: [funding]
       date: 2026-11-09
       tentative: true  # page says "Monday 9 November" with no year; the weekday matches 2026
   checked: 2026-10-02
@@ -959,12 +1058,16 @@
   format: "in-person"  # format inferred (The Clock Tower, University of Auckland)
   topics: [computational]
   description: "Anniversary symposium of the Japanese Society of Computational Statistics, co-organised with the Department of Statistics, University of Auckland, right after the NZSA conference."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission (extended)"
+      types: [submission]
       date: 2026-10-12
     - label: "Early registration"
+      types: [registration]
       date: 2026-10-30
     - label: "Standard registration"
+      types: [registration]
       date: 2026-11-30
   checked: 2026-10-02
   source: "https://jscs-sympo40anniv.ywstat.jp/"
@@ -985,12 +1088,16 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Annual congress of the French Statistical Society (SFdS)."
+  deadlineStatus: published
   deadlines:
     - label: "Paper submission"
+      types: [submission]
       date: 2027-02-08
     - label: "Early registration (before fee increase)"
+      types: [registration]
       date: 2027-04-10
     - label: "Registration"
+      types: [registration]
       date: 2027-05-03
   checked: 2026-10-02
   source: "https://jds2027.sciencesconf.org/page/calendrier?lang=fr"
@@ -1010,6 +1117,7 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Intermediate scientific conference of the Italian Statistical Society (SIS)."
+  deadlineStatus: unknown
   deadlines: []  # no call for papers published yet
   checked: 2026-10-02
   source: "https://new.sis-statistica.it/event/convegno-intermedio-sis-2027-2/"
@@ -1029,6 +1137,7 @@
   format: "in-person"  # format inferred (De Doelen ICC)
   topics: [biostatistics]
   description: "Annual conference of the International Society for Clinical Biostatistics, hosted by Erasmus MC at De Doelen ICC."
+  deadlineStatus: unknown
   deadlines: []  # abstract submission "opening in 2026", no closing date published
   checked: 2026-10-02
   source: "https://iscb2027.info/"
@@ -1048,6 +1157,7 @@
   format: "in-person"  # format inferred
   topics: [general, probability]
   description: "European meeting of the Bernoulli Society's European Regional Committee, covering statistics and probability."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.bernoullisociety.org/meetings"
@@ -1067,6 +1177,7 @@
   format: "in-person"  # format inferred
   topics: [general, biostatistics]
   description: "Triennial joint conference of the German statistical societies in the DAGStat consortium, incorporating the annual Biometric Colloquium of the IBS German Region."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.biometrische-gesellschaft.de/"
@@ -1086,6 +1197,7 @@
   format: "in-person"  # format inferred; IBS lists the venue as "Congress Centre Basel (pending)"
   topics: [biostatistics]
   description: "Biennial conference of the International Biometric Society, supported by its Austro-Swiss, German and French Regions."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.biometricsociety.org/events/event-description?CalendarEventKey=a703d218-7ac5-4c9a-ab1b-019bb0216116&Home=%2Fevents%2Fcalendar"
@@ -1108,6 +1220,7 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Annual meeting of young statisticians from Austria, Slovenia, Hungary, Italy and Croatia, with talks in English covering all areas of statistics."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://ysm5.eu/dir/index.php/programme"
@@ -1127,12 +1240,16 @@
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "Annual meeting of the Royal Statistical Society of Belgium at Hof van Liere (University of Antwerp), with keynote lectures and contributed sessions in statistics, probability and data science."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-08-31
     - label: "Early registration"
+      types: [registration]
       date: 2026-09-14
     - label: "Late registration"
+      types: [registration]
       date: 2026-10-14
   checked: 2026-10-02
   source: "https://rssb.be/activities/annual-meeting/registration"
@@ -1152,8 +1269,10 @@
   format: "in-person"            # format inferred
   topics: [general, computational]
   description: "International workshop organised by ISEG Research (Universidade de Lisboa) with Portuguese and Galician mathematics centres, held in honour of Wenceslao González Manteiga's 70th birthday."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission (extended)"
+      types: [submission]
       date: 2026-10-05
   checked: 2026-10-02
   source: "https://wsa2026.iseg.ulisboa.pt/conference_fees.php"
@@ -1173,12 +1292,16 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Regional conference of the Eastern Mediterranean Region of the International Biometric Society, hosted by Sofia University St. Kliment Ohridski."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2027-02-01
     - label: "Early registration"
+      types: [registration]
       date: 2027-04-15
     - label: "Late registration"
+      types: [registration]
       date: 2027-05-15
   checked: 2026-10-02
   source: "https://emr2027.fmi.uni-sofia.bg/Home.html"
@@ -1198,6 +1321,7 @@
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "Meeting for early-career researchers in statistics, data science and operations research, promoted by SEIO and hosted by the Universidad de Extremadura."
+  deadlineStatus: unknown
   deadlines: []                  # call for papers and registration "to be announced"
   checked: 2026-10-02
   source: "https://sites.google.com/view/6thsysorm/home"
@@ -1217,6 +1341,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Biennial conference of the Austro-Swiss Region of the International Biometric Society at the University of Bern, with pre-conference courses on the first day."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.roes2027.org/key-dates.html"
@@ -1236,8 +1361,10 @@
   format: "hybrid"
   topics: [biostatistics]
   description: "Autumn workshop at Charité Berlin of two working groups of the German Region of the IBS together with the PSI Pre-Clinical SIG, focused on the reproducibility of pre-clinical experiments."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-10-15
   checked: 2026-10-02
   source: "https://biometrische-gesellschaft.de/"
@@ -1257,10 +1384,13 @@
   format: "hybrid"               # flyer: "Ingelheim am Rhein or online"
   topics: [bayesian, biostatistics]
   description: "Annual workshop of the Bayes Methods working group of the German Region of the International Biometric Society, with an invited tutorial on Bayesian and causal networks."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-11-02
     - label: "Registration"
+      types: [registration]
       date: 2026-11-15
   checked: 2026-10-02
   source: "https://biometrische-gesellschaft.de/pdf/AnkuendigungBayesWorkshop2026.pdf"
@@ -1280,6 +1410,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "One-day workshop of the Pharmaceutical Research working group of the German Region of the IBS, on use cases for AI in statistics and baseline covariate adjustment."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://biometrische-gesellschaft.de/pdf/APF_Conference_Agenda%202026%20Fulda_VL.pdf"
@@ -1299,10 +1430,13 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Annual conference of the German Region of the International Biometric Society (IBS-DR), held at Heinrich Heine University Düsseldorf."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-11-01
     - label: "Early-bird registration"
+      types: [registration]
       date: 2026-12-31
   checked: 2026-10-02
   source: "https://biometrisches-kolloquium-2027.de"
@@ -1322,11 +1456,14 @@
   format: "in-person"            # format inferred
   topics: [bayesian]
   description: "Workshop at the Karlsruhe Institute of Technology on Bayesian structural learning and its applications, with invited talks and poster sessions; intended as the kick-off of a proposed ISBA section."
+  deadlineStatus: published
   deadlines:
     - label: "Poster submission"
+      types: [submission]
       date: 2026-09-20
       tentative: true            # year inferred; IBS-DR page says "bis zum 20. September"
     - label: "IMS travel awards"
+      types: [funding]
       date: 2027-02-01
   checked: 2026-10-02
   source: "https://sites.google.com/view/bayst2027"
@@ -1346,10 +1483,13 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Symposium of the Croatian Biometric Society (Croatian Region of the IBS), co-organised by the University of Split School of Medicine."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2027-06-14
     - label: "Registration"
+      types: [registration]
       date: 2027-07-01
   checked: 2026-10-02
   source: "https://www.hbmd.hr/abstract-submission-2027"
@@ -1369,6 +1509,7 @@
   format: "in-person"            # format inferred
   topics: [data-science, general]
   description: "Conference on statistics and data science for social research, listed in the Italian Statistical Society (SIS) events calendar."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://new.sis-statistica.it/event/convegno-dssr-2027/"
@@ -1388,6 +1529,7 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Conference of the SMEA group (Statistical Measurement for Economic Analysis) of the Italian Statistical Society."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://new.sis-statistica.it/event/convegno-smea-2027/"
@@ -1407,6 +1549,7 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Biennial international conference on survey sampling methodology of the S2G group of the Italian Statistical Society."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://new.sis-statistica.it/event/itacosm-2027/"
@@ -1426,6 +1569,7 @@
   format: "in-person"            # format inferred
   topics: [bayesian]
   description: "Meeting of SISbayes, the Bayesian statistics group of the Italian Statistical Society."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://new.sis-statistica.it/event/convegno-sisbayes-2027/"
@@ -1445,6 +1589,7 @@
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "Biennial meeting of the CLADAG section of the Italian Statistical Society on classification, multivariate data analysis and related methods."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://new.sis-statistica.it/event/convegno-cladag-2027/"
@@ -1464,6 +1609,7 @@
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "13th conference of the SVQS group (Statistics for the Evaluation and Quality of Services) of the Italian Statistical Society, held at the University of Salento."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://conference.unisalento.it/event/15/"
@@ -1483,10 +1629,13 @@
   format: "in-person"            # page metadata: offline attendance
   topics: [computational, data-science]
   description: "Annual meeting of the Spanish-speaking R community (R Hispano), hosted by the Universidad de La Laguna in Tenerife, with talks and workshops on statistical computing with R."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission (final round, subject to availability)"
+      types: [submission]
       date: 2026-10-09
     - label: "Registration"
+      types: [registration]
       date: 2026-11-09
   checked: 2026-10-02
   source: "https://eventos.ull.es/152998/detail/v-congreso-y-xvi-jornadas-de-usuarios-de-r-2026.html"
@@ -1506,6 +1655,7 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "One-day autumn conference of the Swedish Survey Society (Surveyföreningen, part of the Swedish Statistical Association) on planning and running sample surveys."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://statistikframjandet.se/surveyforeningen/surveyforeningens-hostkonferens-6-oktober-2026/"
@@ -1525,8 +1675,10 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Autumn meeting of the Cramér Society (Swedish society for statistics and mathematical statistics) at Chalmers/University of Gothenburg, on the core of statistics education."
+  deadlineStatus: published
   deadlines:
     - label: "Registration"
+      types: [registration]
       date: 2026-10-07
   checked: 2026-10-02
   source: "https://statistikframjandet.se/cramersallskapet/hostmote-2026/"
@@ -1546,8 +1698,10 @@
   format: "in-person"            # format inferred
   topics: [general, biostatistics]
   description: "Joint autumn meeting of the Danish Society for Statistics (DSTS) and the Danish Society for Biopharmaceutical Statistics (DSBS), hosted by Novo Nordisk (19 Nov afternoon to 20 Nov morning)."
+  deadlineStatus: published
   deadlines:
     - label: "Registration"
+      types: [registration]
       date: 2026-10-05
   checked: 2026-10-02
   source: "https://dsts.dk/events/2026-autumn-twodaymeeting/index.html"
@@ -1567,6 +1721,7 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Biennial national meeting of the Norwegian Statistical Association (Norsk statistisk forening), with pre-conference courses."
+  deadlineStatus: unknown
   deadlines: []                  # registration and abstract submission "open later"
   checked: 2026-10-02
   source: "https://holleland.github.io/NSM27/"
@@ -1586,6 +1741,7 @@
   format: "in-person"            # format inferred
   topics: [probability]
   description: "Three-day EURANDOM workshop at TU Eindhoven on applied probability, queueing theory and stochastic networks; registration already closed."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.eurandom.tue.nl/event/applied-probability-and-queues/"
@@ -1605,10 +1761,13 @@
   format: "in-person"            # format inferred
   topics: [spatio-temporal]
   description: "Young European Statisticians meeting at EURANDOM (TU Eindhoven) with invited lectures, contributed talks by early-career researchers and posters on spatio-temporal statistics."
+  deadlineStatus: published
   deadlines:
     - label: "Contributed talk abstract"
+      types: [submission]
       date: 2026-12-01
     - label: "Travel grant application"
+      types: [funding]
       date: 2026-12-01
   checked: 2026-10-02
   source: "https://www.eurandom.tue.nl/event/yes2027/"
@@ -1628,6 +1787,7 @@
   format: "in-person"            # format inferred
   topics: [general, probability]
   description: "EURANDOM workshop on theory, methods and applications of probabilistic graphical models, with contributed talks and posters by junior researchers."
+  deadlineStatus: unknown
   deadlines: []                  # registration opens by 9 Oct 2026; no closing date yet
   checked: 2026-10-02
   source: "https://www.eurandom.tue.nl/event/probabilistic-graphical-models-2/"
@@ -1647,6 +1807,7 @@
   format: "in-person"            # format inferred
   topics: [probability]
   description: "21st Young European Probabilists workshop at EURANDOM on random graph dynamics and processes on graphs, with talks and mini-courses."
+  deadlineStatus: unknown
   deadlines: []                  # registration opens fall 2026
   checked: 2026-10-02
   source: "https://www.eurandom.tue.nl/event/yep-xxi-dynamics-of-and-on-graphs/"
@@ -1666,10 +1827,13 @@
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "Biennial conference of the Agro-Industry group of the French Statistical Society (SFdS) on statistics and data science in agro-food sciences, hosted by INRAE, Institut Agro Dijon and Université Bourgogne Europe."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission (extended)"
+      types: [submission]
       date: 2026-06-12
     - label: "Poster submission"
+      types: [submission]
       date: 2026-09-30
   checked: 2026-10-02
   source: "https://agrostat2026.sciencesconf.org/"
@@ -1689,10 +1853,13 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Biostatistics meeting at CNAM Paris organised by the CNRS RT Math Bio Santé, the Société Française de Biométrie and the Biopharmacy and Health group of the SFdS."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-10-02
     - label: "Registration"
+      types: [registration]
       date: 2026-10-16
   checked: 2026-10-02
   source: "https://jbiostat2026.sciencesconf.org/?lang=fr"
@@ -1712,8 +1879,10 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "French-language international conference on statistics education organised by the French Statistical Society (SFdS) at the University of Namur."
+  deadlineStatus: published
   deadlines:
     - label: "Submission of communications"
+      types: [submission]
       date: 2026-09-08
   checked: 2026-10-02
   source: "https://cfies2026.sciencesconf.org/resource/page/id/7"
@@ -1733,10 +1902,13 @@
   format: "in-person"            # format inferred
   topics: [computational]
   description: "Annual meeting of the CNRS research network on uncertainty quantification (RT-UQ / Mascot-Num) at École Centrale de Lyon, sponsored by the SFdS, with a PhD students day and a workshop on inverse problems under uncertainty."
+  deadlineStatus: published
   deadlines:
     - label: "Student abstract submission"
+      types: [submission]
       date: 2026-12-01
     - label: "Registration"
+      types: [registration]
       date: 2027-03-01
   checked: 2026-10-02
   source: "https://mascotnum2027.sciencesconf.org/"
@@ -1756,8 +1928,10 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Symposium of the International Society for Biopharmaceutical Statistics (ISBS) at the Novotel Madrid Center, with a short-course day followed by three symposium days."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-06-16           # key dates labelled "draft" on the site
   checked: 2026-10-02
   source: "https://isbiostat.org/conference-info/"
@@ -1777,6 +1951,7 @@
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "11th edition of the Symbolic Data Analysis workshop, held at Instituto Superior Técnico (Universidade de Lisboa) with non-parallel sessions on methods for symbolic (interval, distributional) data."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://sites.google.com/view/sda2026/"
@@ -1796,8 +1971,10 @@
   format: "in-person"            # "on-site event"
   topics: [computational]
   description: "Annual conference on the use of R in official statistics, hosted by INSEE at the Pierre Mendès France Conference Center of the French economics ministry."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract and tutorial submission (extended)"
+      types: [submission]
       date: 2026-06-30
   checked: 2026-10-02
   source: "https://r-project.ro/conference2026.html"
@@ -1817,13 +1994,17 @@
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "Annual international conference of the Institute of Mathematical Statistics on statistics and data science, with plenary, invited, contributed and poster sessions."
+  deadlineStatus: published
   deadlines:
     - label: "Student travel award application"
+      types: [funding]
       date: 2026-09-30
     - label: "Early registration (includes abstract submission)"
+      types: [submission, registration]
       date: 2026-10-15
       tentative: true            # year inferred
     - label: "Regular registration"
+      types: [registration]
       date: 2026-11-10
       tentative: true            # year inferred
   checked: 2026-10-02
@@ -1844,6 +2025,7 @@
   format: "hybrid"
   topics: [biostatistics]
   description: "One-day workshop of the Spanish biostatistics network BIOSTATNET at the Universitat Autònoma de Barcelona, with a scientific session and a commemorative session; attendance free."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.sgapeio.es/listado-novas/3813-novas-da-sgapeio-28-de-setembro-de-2026"
@@ -1863,6 +2045,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Scientific meeting of BIOSTATNET, the Spanish national biostatistics network; programme and deadlines to be announced."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.sgapeio.es/listado-novas/3813-novas-da-sgapeio-28-de-setembro-de-2026"
@@ -1885,6 +2068,7 @@
   format: "hybrid"
   topics: [computational, data-science]
   description: "Open-registration workshop at the Institute for Mathematical and Statistical Innovation on the statistical theory, evaluation and applications of generative models."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.imsi.institute/activities/statistical-foundations-of-generative-modeling/"
@@ -1904,8 +2088,10 @@
   format: "in-person"
   topics: [biostatistics]
   description: "Day-and-a-half workshop of the New England Statistical Society on statistical methods, real-world evidence and AI in rare disease drug development."
+  deadlineStatus: published
   deadlines:
     - label: "Poster submission"
+      types: [submission]
       date: 2026-10-04
   checked: 2026-10-02
   source: "https://nerds.nestat.org/poster.html"
@@ -1925,6 +2111,7 @@
   format: "in-person"            # format inferred
   topics: [probability]
   description: "Fields Institute open symposium honouring Hugo Duminil-Copin's work on the probabilistic theory of phase transitions in statistical physics."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.fields.utoronto.ca/activities/26-27/fieldsmedalsym"
@@ -1944,6 +2131,7 @@
   format: "in-person"
   topics: [biostatistics, data-science]
   description: "One-day American Statistical Association symposium at UC Berkeley on the risks and opportunities of AI in pharmaceutical medicine."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://community.amstat.org/events/event-description?CalendarEventKey=ccc491de-3354-4b88-a079-019d4c69eae4"
@@ -1963,6 +2151,7 @@
   format: "in-person"            # format inferred
   topics: [probability]
   description: "Annual probability meeting at Northwestern University with a research programme and a tutorial lecture series."
+  deadlineStatus: unknown
   deadlines: []                  # financial-support registration deadline (2026-09-20) has passed
   checked: 2026-10-02
   source: "https://sites.google.com/view/mpc47"
@@ -1982,8 +2171,10 @@
   format: "in-person"
   topics: [biostatistics]
   description: "Two-day Statistics Serving Society forum of the National Institute of Statistical Sciences at Ohio State University on statistical challenges in maternal health data."
+  deadlineStatus: published
   deadlines:
     - label: "Regular registration closes"
+      types: [registration]
       date: 2026-10-10
   checked: 2026-10-02
   source: "https://www.niss.org/events/s3-ingram-olkin-forum-challenges-modeling-and-analyzing-maternal-health-data"
@@ -2003,6 +2194,7 @@
   format: "hybrid"
   topics: [general, computational]
   description: "Open-registration workshop at the Institute for Mathematical and Statistical Innovation on statistical frameworks for data in non-Euclidean metric spaces."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.imsi.institute/activities/statistical-foundations-for-the-analysis-of-non-euclidean-data/"
@@ -2022,8 +2214,10 @@
   format: "hybrid"               # registration page offers in-person and virtual attendance
   topics: [data-science, biostatistics]
   description: "Symposium of the non-profit DahShu at Harvard Medical School on statistical thinking, AI and data science in biomedical research and drug development."
+  deadlineStatus: published
   deadlines:
     - label: "Registration closes"
+      types: [registration]
       date: 2026-10-19
   checked: 2026-10-02
   source: "https://2026.dahshu.org/registration"
@@ -2043,8 +2237,10 @@
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "American Statistical Association conference highlighting the achievements and careers of women in statistics, biostatistics and data science."
+  deadlineStatus: published
   deadlines:
     - label: "Housing deadline"
+      types: [housing]
       date: 2026-10-13
   checked: 2026-10-02
   source: "https://ww2.amstat.org/meetings/wsds/2026/conferenceinfo.cfm"
@@ -2064,6 +2260,7 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Conference at the University of Louisiana at Lafayette, with the Louisiana Chapter of the ASA, on contemporary topics in statistics and interdisciplinary research."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://userweb.ucs.louisiana.edu/~C00253007/AISC2026/index.html"
@@ -2083,10 +2280,13 @@
   format: "in-person"            # format inferred
   topics: [data-science, computational]
   description: "Conference of the ASA Section on Statistical Learning and Data Science on statistical learning, data science and AI."
+  deadlineStatus: published
   deadlines:
     - label: "Housing / cancellation deadline"
+      types: [housing]
       date: 2026-10-12
     - label: "Online registration closes"
+      types: [registration]
       date: 2026-10-25
   checked: 2026-10-02
   source: "https://asa-slds.github.io/slds2026/"
@@ -2106,6 +2306,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Annual symposium of tutorials and posters on applied biostatistics in pharmaceutical research and regulation, founded by Karl E. Peace."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.bassconference.org/"
@@ -2125,8 +2326,10 @@
   format: "in-person"            # format inferred
   topics: [general, computational]
   description: "Research conference of the UC Davis Department of Statistics on functional data analysis, random objects and AI, with invited sessions and a poster session."
+  deadlineStatus: published
   deadlines:
     - label: "Registration closes"
+      types: [registration]
       date: 2026-10-30
   checked: 2026-10-02
   source: "https://anson.ucdavis.edu/statisticsbeyondeuclid/"
@@ -2146,6 +2349,7 @@
   format: "hybrid"
   topics: [general, biostatistics]
   description: "Open-registration workshop at the Institute for Mathematical and Statistical Innovation on statistics for random objects in metric spaces, with applications to brain connectomics."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.imsi.institute/activities/random-objects-and-metric-statistics-for-connectomics/"
@@ -2165,6 +2369,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Three-day tutorial conference on statistical methodology for biopharmaceutical applications, sponsored by the ASA Biopharmaceutical Section and ICSA."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.deming-conference.org/programs/2026-program/"
@@ -2184,10 +2389,13 @@
   format: "in-person"            # format inferred
   topics: [biostatistics, general]
   description: "Conference of the ASA Health Policy Statistics Section on statistical methods for health policy and health services research."
+  deadlineStatus: published
   deadlines:
     - label: "Speaker registration deadline"
+      types: [registration]
       date: 2026-10-15
     - label: "Housing deadline"
+      types: [housing]
       date: 2026-12-17
   checked: 2026-10-02
   source: "https://ww2.amstat.org/meetings/ichps/2027/conferenceinfo.cfm"
@@ -2208,6 +2416,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "ASA Biopharmaceutical Section conference of industry, academic and regulatory statisticians on statistical methods and designs for treatments of metabolic disorders."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://community.amstat.org/statbolic/home"
@@ -2227,6 +2436,7 @@
   format: "in-person"            # format inferred
   topics: [probability]
   description: "Long-running annual probability conference on stochastic processes, hosted in 2027 by the University of Southern California."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.stevenheilman.org/ssp2027.html"
@@ -2246,6 +2456,7 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Annual regional meeting of statisticians and data scientists from Texas, hosted in 2027 by the SMU Department of Statistics and Data Science."
+  deadlineStatus: unknown
   deadlines: []                  # only month-level deadlines published (registration opens Dec 2026)
   checked: 2026-10-02
   source: "https://smu-sds.github.io/COTS2027/"
@@ -2265,10 +2476,13 @@
   format: "in-person"            # format inferred
   topics: [data-science, computational, general]
   description: "American Statistical Association symposium for statisticians, data scientists and computer scientists analysing and visualising complex data."
+  deadlineStatus: published
   deadlines:
     - label: "Refereed abstract submission"
+      types: [submission]
       date: 2026-11-30
     - label: "Lightning abstract submission"
+      types: [submission]
       date: 2027-02-05
   checked: 2026-10-02
   source: "https://www.amstat.org/meetings/symposium-on-data-science-amp-statistics"
@@ -2288,6 +2502,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Annual workshop fostering discussion of statistical methodology in the pharmaceutical industry, held at the Renaissance Hotel, Carmel, Indiana."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://mbswonline.com/"
@@ -2307,6 +2522,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Conference of the ASA Lifetime Data Science Section on survival, event-history and reliability data analysis."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://community.amstat.org/lids/events/2027lids-conf"
@@ -2326,6 +2542,7 @@
   format: "in-person"            # format inferred
   topics: [general, biostatistics]
   description: "Annual applied statistics symposium of the International Chinese Statistical Association, hosted in 2027 by the University of Pittsburgh."
+  deadlineStatus: unknown
   deadlines: []                  # all deadlines TBD on the site
   checked: 2026-10-02
   source: "https://symposium2027.icsa.org/"
@@ -2345,6 +2562,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "ASA Biopharmaceutical Section conference on nonclinical statistics (CMC, discovery and biomarkers, safety and pharmacology, data science), hosted at the Penn Perelman School of Medicine."
+  deadlineStatus: unknown
   deadlines: []                  # abstract submission opens November 2026
   checked: 2026-10-02
   source: "https://community.amstat.org/biop/events/ncb/index"
@@ -2364,6 +2582,7 @@
   format: "in-person"
   topics: [general]
   description: "Joint meeting of the Quality and Productivity Research Conference and the Spring Research Conference, co-sponsored by the ASA Q&P and SPES sections and the IMS, hosted by UConn."
+  deadlineStatus: unknown
   deadlines: []                  # all deadlines TBA on the site
   checked: 2026-10-02
   source: "https://jointresearchconference.github.io/2027/"
@@ -2383,6 +2602,7 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Participant-driven conference on statistics and data science education, organised with the Statistical Society of Canada and hosted by the University of Toronto."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://ssc.ca/en/node/18645"
@@ -2402,6 +2622,7 @@
   format: "in-person"
   topics: [general, probability]
   description: "Open Fields Institute workshop on e-values, anytime-valid inference and game-theoretic statistics."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.fields.utoronto.ca/activities/27-28/e-value"
@@ -2421,6 +2642,7 @@
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Annual workshop of the ASA Biopharmaceutical Section bringing together regulatory, industry and academic statisticians on drug and device development."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.amstat.org/meetings/asa-biopharmaceutical-section-regulatory-industry-statistics-workshop"
@@ -2443,10 +2665,13 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Biennial Brazilian meeting on regression models organised by the Associação Brasileira de Estatística (ABE) and Universidade Federal Fluminense, with lectures, thematic sessions, oral and poster presentations and short courses."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2027-01-22
     - label: "Early registration"
+      types: [registration]
       date: 2027-03-26
   checked: 2026-10-02
   source: "https://xxemr.softaliza.com.br/"
@@ -2466,8 +2691,10 @@
   format: "in-person"  # format inferred
   topics: [biostatistics]
   description: "Open workshop of the Applied Statistics and Biometry study group (GESTBIO) at the Universidade Federal de Viçosa on statistical methods for the agricultural sciences, with invited talks, flash presentations and posters."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-09-14
   checked: 2026-10-02
   source: "https://sites.google.com/ufv.br/xiii-workshop-em-estatstica-ap"
@@ -2487,6 +2714,7 @@
   format: "in-person"  # format inferred
   topics: [general, data-science]
   description: "Third international conference of the Chartered Institute of Statisticians of Nigeria, marking its 50th anniversary, with plenaries, panels and workshops on statistics, data science and official statistics; preceded by a spatial data analysis workshop on 12-13 October."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://cison.org.ng/event/2026-conference-preconference"
 
@@ -2505,8 +2733,10 @@
   format: "in-person"  # format inferred
   topics: [general, data-science]
   description: "Inaugural international conference of the Statistical Society of Kenya, organised with the University of Embu and the Kenya National Bureau of Statistics, on statistics, machine learning and AI for sustainable development."
+  deadlineStatus: published
   deadlines:
     - label: "Registration closes"
+      types: [registration]
       date: 2026-10-31
   checked: 2026-10-02
   source: "https://conference.sskenya.org/#/dates"
@@ -2526,10 +2756,13 @@
   format: "in-person"  # format inferred
   topics: [general, data-science]
   description: "International statistics conference hosted by Strathmore University and the University of Maryland, Baltimore County, in partnership with the ASA and IMS, on big data, AI and statistical methods for development in Africa."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-12-05
     - label: "Registration closes"
+      types: [registration]
       date: 2026-12-20
   checked: 2026-10-02
   source: "https://aic2026.strathmore.edu/important-dates/"
@@ -2552,6 +2785,7 @@
   format: "in-person"  # format inferred
   topics: [biostatistics]
   description: "Two-day research meeting at the Institute of Statistical Mathematics (Research Center for Medical and Health Data Science) on statistical modelling under data heterogeneity and survival analysis."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.ism.ac.jp/rcmhds/pdf/20261022-1023_SpeciallyPromotedReserch_rcmhds.pdf"
@@ -2571,6 +2805,7 @@
   format: "in-person"  # format inferred
   topics: [probability]
   description: "Annual probability symposium held at the Graduate School of Mathematical Sciences, University of Tokyo, on interacting particle systems, hydrodynamic limits and stochastic PDEs."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://sites.google.com/view/workshop-salsis/home/2026"
@@ -2590,6 +2825,7 @@
   format: "hybrid"
   topics: [general, spatio-temporal]  # programme includes spatio-temporal and hierarchical Bayesian talks
   description: "One-day symposium at the Institute of Statistical Mathematics, organised with Keio University, on statistical modelling for complex and dependent data."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://sites.google.com/view/sympo20261029"
@@ -2609,10 +2845,13 @@
   format: "in-person"
   topics: [probability]
   description: "Long-running open research meeting (free to attend) of the Institute of Statistical Mathematics on infinitely divisible distributions, Lévy processes and related topics."
+  deadlineStatus: published
   deadlines:
     - label: "Talk application"
+      types: [submission]
       date: 2026-10-07
-    - label: "Abstract (予稿) submission"
+    - label: "Abstract submission"
+      types: [submission]
       date: 2026-10-21
   checked: 2026-10-02
   source: "https://sites.google.com/view/takaakishimura"
@@ -2632,6 +2871,7 @@
   format: "in-person"
   topics: [biostatistics]
   description: "Forum for clinical-research biostatisticians organised by West Japan ARO StatNet, co-hosted by the ISM Research Center for Medical and Health Data Science and Kyoto University; free and open to all."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.ism.ac.jp/rcmhds/pdf/20261105AROStatNetForum2026.pdf"
@@ -2651,6 +2891,7 @@
   format: "in-person"  # format inferred
   topics: [probability]
   description: "International probability workshop at the Research Institute for Mathematical Sciences (RIMS), Kyoto University, on stochastic processes on complex systems and models from statistical mechanics."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.kurims.kyoto-u.ac.jp/~croydon/SPRF2027.html"  # dates appear in the page banner image
@@ -2670,8 +2911,10 @@
   format: "in-person"
   topics: [bayesian]
   description: "Two-day meeting of the Korean Statistical Society's Bayesian statistics research group, held at POSTECH."
+  deadlineStatus: published
   deadlines:
     - label: "Pre-registration (no on-site registration)"
+      types: [registration]
       date: 2026-10-09
   checked: 2026-10-02
   source: "https://kss.or.kr/board/conference/article/284348"
@@ -2691,6 +2934,7 @@
   format: "in-person"
   topics: [probability]
   description: "Probability meeting combining two mini-courses with conference talks, hosted by IIT Kanpur and sponsored by the Applied Probability Trust."
+  deadlineStatus: unknown
   deadlines: []  # registration closed 1 Sept 2026
   checked: 2026-10-02
   source: "https://sites.google.com/view/lps-2026/"
@@ -2710,10 +2954,13 @@
   format: "in-person"
   topics: [probability]
   description: "Applied probability conference organised by the Department of Mathematics, KAHM Unity Women's College, in association with the Ramanujan Mathematical Society and the Kerala Mathematical Association."
+  deadlineStatus: published
   deadlines:
     - label: "Paper submission"
+      types: [submission]
       date: 2026-11-15
     - label: "Registration"
+      types: [registration]
       date: 2026-12-10
   checked: 2026-10-02
   source: "https://www.icaapsp2026.com/"
@@ -2733,6 +2980,7 @@
   format: "in-person"  # format inferred
   topics: [data-science, computational]
   description: "Annual data-analytics workshop run by the Monash Business Analytics Team (Monash Business School), with a tutorial day followed by a day of talks on open-source statistical and data-science tools."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://wombat2026.numbat.space/"
@@ -2752,6 +3000,7 @@
   format: "in-person"  # format inferred
   topics: [biostatistics]
   description: "Biennial regional conference of the International Biometric Society Australasian Region (IBS-AR)."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.biometricsociety.org.au/conferences.html"
@@ -2771,8 +3020,10 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Annual conference of the Chinese Statistical Association (Taiwan), held jointly with the 60th anniversary symposium of the Department of Statistics, National Chengchi University."
+  deadlineStatus: published
   deadlines:
     - label: "Online registration"
+      types: [registration]
       date: 2026-11-15
   checked: 2026-10-02
   source: "https://infostat.nccu.edu.tw/csa2026/"
@@ -2792,10 +3043,13 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Week of joint meetings led by the Institute of Statistical Science, Academia Sinica, including the Taiwan Causal Inference Symposium, a statistics-in-AI conference in Taichung and a poster competition."
+  deadlineStatus: published
   deadlines:
     - label: "Taiwan Causal Inference Symposium poster abstract"
+      types: [submission]
       date: 2026-10-18
     - label: "Online registration"
+      types: [registration]
       date: 2026-11-23
   checked: 2026-10-02
   source: "https://www3.stat.sinica.edu.tw/swt2026/"  # poster deadline from https://www3.stat.sinica.edu.tw/2026ci/
@@ -2815,8 +3069,10 @@
   format: "in-person"  # format inferred
   topics: [general, probability]
   description: "International conference at the Indian Statistical Institute, Kolkata, commemorating D. Basu and R. R. Bahadur, with plenary, invited and contributed sessions."
+  deadlineStatus: published
   deadlines:
     - label: "Registration"
+      types: [registration]
       date: 2026-11-30
   checked: 2026-10-02
   source: "https://sites.google.com/view/mtps-2026/registration"
@@ -2836,12 +3092,16 @@
   format: "in-person"  # format inferred
   topics: [general, data-science]
   description: "Annual conference of the Society of Statistics, Computer and Applications (SSCA), hosted by Dr. Y.S. Parmar University of Horticulture and Forestry."
+  deadlineStatus: published
   deadlines:
     - label: "M.N. Das Memorial Young Scientist Award paper"
+      types: [funding]
       date: 2026-10-31
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-12-15
     - label: "Registration fee without 10% surcharge"
+      types: [registration]
       date: 2026-12-31
   checked: 2026-10-02
   source: "https://www.ssca.org.in/media/CONFERENCE_BROCHURE_NAVSTAT_FINAL.pdf"
@@ -2861,8 +3121,10 @@
   format: "hybrid"
   topics: [computational]
   description: "Annual autumn symposium of the Japanese Society of Computational Statistics, held at the Tochigi Prefectural Culture Center (distinct from the society's 40th-anniversary symposium in Auckland)."
+  deadlineStatus: published
   deadlines:
     - label: "Manuscript submission (extended)"
+      types: [submission]
       date: 2026-10-02
   checked: 2026-10-02
   source: "https://jscs.jp/conf-sympo40/%e6%9c%9f%e9%99%90%e3%81%aa%e3%81%a9%e3%81%ae%e6%97%a5%e7%a8%8b/"  # hybrid format stated on https://jscs.jp/
@@ -2882,10 +3144,13 @@
   format: "hybrid"
   topics: [general, data-science]
   description: "Annual winter symposium of the Japanese Classification Society, a JFSSA member society for classification and data analysis, held at Fukui University of Technology."
+  deadlineStatus: published
   deadlines:
     - label: "Talk application"
+      types: [submission]
       date: 2026-11-06
     - label: "Manuscript submission"
+      types: [submission]
       date: 2026-11-20
   checked: 2026-10-02
   source: "https://jcs-sympo2026.ywstat.jp/"  # page's update log contains template text with odd dates; session dates and deadlines read from the header/sidebar
@@ -2905,8 +3170,10 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Meeting where principal investigators of Taiwan's National Science and Technology Council statistics programme present results; hosted by the Institute of Statistics, National Yang Ming Chiao Tung University, with open online registration."
+  deadlineStatus: published
   deadlines:
     - label: "Registration"
+      types: [registration]
       date: 2026-11-15
   checked: 2026-10-02
   source: "https://sites.google.com/stat.nycu.edu.tw/nstcstat2027/index"
@@ -2926,10 +3193,13 @@
   format: "in-person"  # format inferred
   topics: [probability]
   description: "Open probability symposium (RIMS open-type joint research) at the Research Institute for Mathematical Sciences, Kyoto University, with talks solicited from probability theory and related fields."
+  deadlineStatus: published
   deadlines:
     - label: "Talk and travel-support application"
+      types: [submission, funding]
       date: 2026-11-04
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-11-27
   checked: 2026-10-02
   source: "https://sites.google.com/view/2026-probability-symposium/"
@@ -2952,10 +3222,13 @@
   format: "in-person"  # format inferred
   topics: [bayesian, probability]
   description: "Biennial workshop series on Bayesian inference for stochastic processes, endorsed by ISBA, with invited and contributed talks and a poster session."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2027-02-12
     - label: "Early registration"
+      types: [registration]
       date: 2027-04-09
   checked: 2026-10-02
   source: "https://www.scss.tcd.ie/mimi.zhang/BISP2027/home.html"
@@ -2975,10 +3248,13 @@
   format: "in-person"  # format inferred
   topics: [bayesian, probability]  # decision analysis / reliability; ISBA-listed, ISBA member rates
   description: "Recurring symposium on decision analysis, game theory and risk in reliability, held back-to-back with BISP 2027 and listed by ISBA."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2027-02-12
     - label: "Early registration"
+      types: [registration]
       date: 2027-04-09
   checked: 2026-10-02
   source: "https://www.scss.tcd.ie/mimi.zhang/GDRR2027/home.html"
@@ -2998,6 +3274,7 @@
   format: "in-person"  # format inferred; ISBA notes the venue could support hybrid participation
   topics: [bayesian]
   description: "Biennial world meeting of the International Society for Bayesian Analysis, to be held at the Baird Center in downtown Milwaukee."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://bayesian.org/wp-content/uploads/2025/07/IB-2506.pdf"  # ISBA Bulletin June 2025, President's message
 
@@ -3016,10 +3293,13 @@
   format: "in-person"
   topics: [computational, data-science]
   description: "Annual interdisciplinary conference at the intersection of statistics, machine learning and artificial intelligence, with proceedings in PMLR and a dedicated workshop day."
+  deadlineStatus: published
   deadlines:
     - label: "Full paper submission"
+      types: [submission]
       date: 2026-10-06
     - label: "Workshop submission"
+      types: [proposal]
       date: 2026-10-30  # page says "Tuesday, October 30, 2026" (weekday inconsistent; date as published)
   checked: 2026-10-02
   source: "https://virtual.aistats.org/Conferences/2027/CallForPapers"
@@ -3039,6 +3319,7 @@
   format: "in-person"  # format inferred
   topics: [computational]
   description: "Biennial conference of the European Regional Section of the International Association for Statistical Computing (IASC), hosted by Palacký University Olomouc."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://compstat2026.org/announcements.php"
 
@@ -3057,8 +3338,10 @@
   format: "in-person"  # format inferred
   topics: [probability]
   description: "Biennial conference of the INFORMS Applied Probability Society, hosted by Durham University Business School, with plenary, prize, invited and contributed sessions."
+  deadlineStatus: published
   deadlines:
     - label: "Early registration"
+      types: [registration]
       date: 2027-04-30
   checked: 2026-10-02
   source: "https://informs-aps.webspace.durham.ac.uk/"
@@ -3078,8 +3361,10 @@
   format: "in-person"  # format inferred
   topics: [probability, computational]  # algebraic statistics; no closer topic tag available
   description: "Recurring international conference on algebraic and geometric methods in statistics, hosted by Otto von Guericke University Magdeburg, with invited and contributed talks and posters."
+  deadlineStatus: published
   deadlines:
     - label: "Financial support application"
+      types: [funding]
       date: 2026-11-30
   checked: 2026-10-02
   source: "https://algebraicstatistics.org/2027/"
@@ -3099,10 +3384,13 @@
   format: "in-person"  # format inferred
   topics: [computational, data-science]
   description: "Annual conference organised from the University of Granada on time series analysis and forecasting methods and applications, held at Meloneras, Gran Canaria."
+  deadlineStatus: published
   deadlines:
     - label: "Special session proposals"
+      types: [proposal]
       date: 2027-01-10
     - label: "Paper or abstract submission"
+      types: [submission]
       date: 2027-01-15
   checked: 2026-10-02
   source: "https://itise.ugr.es/"
@@ -3122,11 +3410,14 @@
   format: "in-person"  # format inferred
   topics: [data-science, computational]
   description: "Annual symposium of the International Institute of Forecasters on forecasting research and practice."
+  deadlineStatus: published
   deadlines:
     - label: "Invited session proposals"
+      types: [proposal]
       date: 2027-02-21
       tentative: true  # site lists "February 21" without a year
     - label: "Abstract submission"
+      types: [submission]
       date: 2027-03-07
       tentative: true  # site lists "March 7" without a year
   checked: 2026-10-02
@@ -3147,6 +3438,7 @@
   format: "in-person"  # format inferred
   topics: [general]  # nonparametric statistics
   description: "Biennial conference of the International Society for NonParametric Statistics, to be hosted by Bocconi University."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://www.isnps.org/conferences.html"
 
@@ -3165,6 +3457,7 @@
   format: "in-person"  # format inferred
   topics: [bayesian, biostatistics]
   description: "Annual Bayes Pharma conference on Bayesian methods in biostatistics and drug development, organised by the Adolphe Quetelet Society (IBS Belgian region)."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://www.bayes-pharma.org/registration/"
 
@@ -3183,6 +3476,7 @@
   format: "in-person"  # format inferred
   topics: [bayesian]
   description: "Annual seminar on Bayesian econometrics, hosted in 2027 by Erasmus University Rotterdam."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://esobe.org/"
 
@@ -3201,6 +3495,7 @@
   format: "in-person"  # format inferred
   topics: [computational, probability]
   description: "Biennial conference on Monte Carlo and quasi-Monte Carlo methods, to be held at Technische Universität Chemnitz."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://maths.ed.ac.uk/mcqmc-2026/mcqmc2028"
 
@@ -3219,8 +3514,10 @@
   format: "hybrid"
   topics: [probability, data-science]
   description: "Biennial conference of the ASMDA International Society on applied stochastic models and data analysis, held jointly with a demographics workshop."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission (1st stream, extended)"
+      types: [submission]
       date: 2026-12-20
   checked: 2026-10-02
   source: "http://www.asmda.es/"
@@ -3240,6 +3537,7 @@
   format: "in-person"  # format inferred
   topics: [data-science, general]
   description: "Annual thematic spring meeting of the European Network for Business and Industrial Statistics, organised in 2027 with JKU Linz on statistics and explainable AI."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://enbis.org/spring-meeting-2027-on-statistics-and-explainable-ai/"
 
@@ -3258,6 +3556,7 @@
   format: "in-person"  # format inferred
   topics: [general, data-science]
   description: "Annual ENBIS conference on business and industrial statistics, hosted by Universitat Politècnica de Catalunya at the Barcelona School of Industrial Engineering."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://enbis.org/enbis-27-conference/"
 
@@ -3276,10 +3575,13 @@
   format: "in-person"
   topics: [general, biostatistics]
   description: "Annual interdisciplinary causal inference conference organised by the Society for Causal Inference."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-10-09
     - label: "Early registration"
+      types: [registration]
       date: 2027-01-11
   checked: 2026-10-02
   source: "https://sci-info.org/annual-meeting/submissions/"
@@ -3299,6 +3601,7 @@
   format: "in-person"  # format inferred
   topics: [biostatistics, general]
   description: "Annual European meeting on causal inference in health, economics and social sciences, held at Université Paris Cité (Campus Saint-Germain)."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://eurocim.org/paris-2027"
 
@@ -3317,10 +3620,13 @@
   format: "in-person"  # format inferred
   topics: [data-science, computational]
   description: "Biennial Eurostat conference on new methods, data sources and technologies for official statistics, held at the Charlemagne Building."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-10-15
     - label: "Registration"
+      types: [registration]
       date: 2027-02-15
   checked: 2026-10-02
   source: "https://cros.ec.europa.eu/ntts2027"
@@ -3340,6 +3646,7 @@
   format: "in-person"
   topics: [general]  # psychometrics / quantitative methods
   description: "Annual meeting of the Psychometric Society on statistical and psychometric methodology for behavioural data, held at the University of British Columbia."
+  deadlineStatus: unknown
   checked: 2026-10-02
   source: "https://www.psychometricsociety.org/imps-2027"
 
@@ -3361,6 +3668,7 @@
   format: "in-person"  # format inferred
   topics: [biostatistics]
   description: "Annual conference of PSI (Statisticians in the Pharmaceutical Industry) on statistics in drug development."
+  deadlineStatus: unknown
   deadlines: []  # oral abstract submission "will go live in October 2026"; no closing date published yet
   checked: 2026-10-02
   source: "https://www.psiweb.org/conferences/about-the-conference"
@@ -3381,6 +3689,7 @@
   format: "hybrid"  # format inferred: previous editions offered face-to-face and virtual attendance
   topics: [biostatistics]
   description: "Annual workshop of the European Federation of Statisticians in the Pharmaceutical Industry bringing together regulators, industry and HTA statisticians."
+  deadlineStatus: unknown
   deadlines: []  # "Not available yet"
   checked: 2026-10-02
   source: "https://efspieurope.github.io/workshop/2027.html"
@@ -3400,6 +3709,7 @@
   format: "in-person"  # format inferred
   topics: [biostatistics]
   description: "Annual meeting of the Society for Clinical Trials on the design, conduct and analysis of clinical trials."
+  deadlineStatus: unknown
   deadlines: []  # abstracts being accepted; no closing date shown on the official page
   checked: 2026-10-02
   source: "https://www.sctweb.org/"
@@ -3419,6 +3729,7 @@
   format: "in-person"  # format inferred
   topics: [biostatistics]
   description: "Annual meeting of the Society for Clinical Trials on the design, conduct and analysis of clinical trials."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.sctweb.org/"
@@ -3438,10 +3749,13 @@
   format: "in-person"  # format inferred
   topics: [biostatistics, computational]
   description: "Yearly European workshop (since 2003) on statistical methods for high-throughput genomic and post-genomic data."
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-12-11
     - label: "Registration (free, mandatory)"
+      types: [registration]
       date: 2027-01-15
   checked: 2026-10-02
   source: "https://smpgd2027.sciencesconf.org/"
@@ -3461,6 +3775,7 @@
   format: "in-person"  # format inferred (UN indico listing marked it "IN-PERSON")
   topics: [general]
   description: "UNECE expert meeting on editing and imputation methods for official statistics; open to official-statistics producers, academic institutes and NGOs."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   # unece.org sits behind a bot check and could not be read directly; dates read on the UN
@@ -3482,8 +3797,10 @@
   format: "in-person"  # format inferred
   topics: [general, data-science]
   description: "Biennial conference of the European Survey Research Association, held jointly with WAPOR, on survey methods, statistics and social data science."
+  deadlineStatus: published
   deadlines:  # session proposals closed 31 August 2026
     - label: "Short course proposals"
+      types: [proposal]
       date: 2026-11-15
   checked: 2026-10-02
   source: "https://www.europeansurveyresearch.org/conference/paris-2027/call-for-sessions/"  # short-course deadline: https://www.europeansurveyresearch.org/esra27-wapor-call-for-short-courses/
@@ -3503,6 +3820,7 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Annual ASA/ASQ conference on statistics for quality, industry and engineering."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://falltechnicalconference.org/travel/"
@@ -3522,12 +3840,16 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Biennial CAUSE conference for teachers of statistics and data science."
+  deadlineStatus: published
   deadlines:
     - label: "Workshop and breakout session proposals"
+      types: [proposal]
       date: 2026-12-15
     - label: "Research Satellite proposals"
+      types: [proposal]
       date: 2027-01-25
     - label: "Posters-and-Beyond proposals"
+      types: [proposal]
       date: 2027-03-15
   checked: 2026-10-02
   source: "https://www.causeweb.org/cause/uscots/uscots27/proposals"
@@ -3547,6 +3869,7 @@
   format: "in-person"  # format inferred
   topics: [general]
   description: "Biennial international conference on mathematics, statistics and operational research in sport."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://mathsportinternational.com/conferences.html"
@@ -3566,10 +3889,13 @@
   format: "in-person"  # format inferred
   topics: [general, data-science]
   description: "Annual meeting of the International Society for Business and Industrial Statistics, held jointly with StatFin at the Chennai Mathematical Institute."
+  deadlineStatus: published
   deadlines:
     - label: "Early-bird registration"
+      types: [registration]
       date: 2026-10-10
     - label: "Registration"
+      types: [registration]
       date: 2026-11-30
   checked: 2026-10-02
   source: "https://statfin.cmi.ac.in/ISBIS2026/index.html"
@@ -3590,8 +3916,10 @@
   topics: [data-science, general]
   description: "Workshop of the BIS Irving Fisher Committee on Central Bank Statistics on data science and AI for central-bank statistics and analysis, co-hosted by the Central Bank of the Republic of Turkiye."
   # Borderline for scope: statistics is one of three primary themes (with AI platforms and data governance).
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-11-30
   checked: 2026-10-02
   source: "https://www.bis.org/ifc/events/270323_ifc.htm"
@@ -3614,8 +3942,10 @@
   # Included: survey methodology (sampling, weighting, nonresponse, data quality, total survey error)
   # is a large, long-running track of the programme, comparable to ESRA. Substantive public-opinion
   # research makes up much of the rest, so drop it if a strict statistics-only list is wanted.
+  deadlineStatus: published
   deadlines:
     - label: "Abstract submission"
+      types: [submission]
       date: 2026-11-15
   checked: 2026-10-02
   source: "https://aapor.org/aapor-2027-call-for-abstracts/"
@@ -3635,6 +3965,7 @@
   format: "in-person"  # format inferred
   topics: [biostatistics]
   description: "Annual meeting of the International Genetic Epidemiology Society on genetic epidemiology and statistical genetics."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.geneticepi.org/2026agenda"
@@ -3654,6 +3985,7 @@
   format: "in-person"  # format inferred
   topics: [data-science, general]
   description: "Annual sports analytics conference hosted by Carnegie Mellon's Department of Statistics & Data Science, with a research competition and workshop."
+  deadlineStatus: unknown
   deadlines: []
   checked: 2026-10-02
   source: "https://www.cmsaconference.com/"
@@ -3674,6 +4006,7 @@
   topics: [general, data-science]
   description: "Annual workshop on statistics and data science for test and evaluation in defense and aerospace."
   # Venue is a NASA site; access rules for non-US attendees were not checked.
+  deadlineStatus: unknown
   deadlines: []  # page gives only "Abstract Submission Closes: February 2027" (no day)
   checked: 2026-10-02
   source: "https://dataworks.testscience.org/"
@@ -3691,6 +4024,7 @@
   format: "online"
   topics: [data-science, general]
   description: "Annual online workshop, founded in 2020 by researchers at Maastricht, Rotterdam and TU Munich, on causal inference and causal machine learning in academia and industry."
+  deadlineStatus: unknown
   deadlines: []  # submission deadline (30 September 2026) has passed
   checked: 2026-10-02
   source: "https://www.causalscience.org/"

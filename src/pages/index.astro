@@ -7,12 +7,13 @@ import { getConferences } from '../lib/data';
 import { AREAS, FORMAT_LABELS, areasOf, eventJsonLd, formatDate, formatRange, iso, location } from '../lib/conferences';
 import { REGIONS, FORMATS } from '../content.config';
 import { issueUrl } from '../site.config';
+import { calendarDay, DEADLINE_TYPES, DEADLINE_LABELS } from '../lib/calendar';
 
 const all = await getConferences();
 
 // Build-time split. The browser re-checks against the real "today" (see scripts/atlas.ts),
 // so the page stays correct between deploys.
-const today = iso(new Date());
+const today = calendarDay();
 const upcoming = all.filter((c) => iso(c.end) >= today);
 const past = all.filter((c) => iso(c.end) < today).reverse();
 
@@ -24,9 +25,9 @@ const lastChecked = checkedDates.length ? formatDate(new Date(Math.max(...checke
 const areaCounts = AREAS.map((a) => ({
   ...a,
   count: upcoming.filter((c) => areasOf(c).includes(a.id)).length,
-})).filter((a) => a.count > 0);
-const regions = REGIONS.filter((r) => upcoming.some((c) => c.region === r));
-const formats = FORMATS.filter((f) => upcoming.some((c) => c.format === f));
+}));
+const regions = REGIONS.filter((r) => all.some((c) => c.region === r));
+const formats = FORMATS.filter((f) => all.some((c) => c.format === f));
 
 const mapPoints = all
   .filter((c) => c.lat != null && c.lon != null)
@@ -64,20 +65,22 @@ const correctionUrl = issueUrl('correction.yml');
         <h2>Conferences</h2>
         <p class="section-lede" aria-live="polite" data-result-count>{upcoming.length} upcoming conferences</p>
       </div>
-      <div class="head-controls">
+      <div class="head-controls" data-enhanced hidden>
         <div class="segmented" role="radiogroup" aria-label="Sort by">
           <span class="seg-label">Sort</span>
           <button type="button" role="radio" data-sort="date" aria-checked="true">By date</button>
           <button type="button" role="radio" data-sort="deadline" aria-checked="false">By deadline</button>
         </div>
-        <button type="button" class="btn btn-ghost btn-small" data-map-toggle aria-expanded="true" aria-controls="map-card">
-          <Icon name="map" size={14} /> <span>Hide map</span>
+        <button type="button" class="btn btn-ghost btn-small" data-map-toggle aria-expanded="false" aria-controls="map-card">
+          <Icon name="map" size={14} /> <span>Show map</span>
         </button>
       </div>
     </header>
 
     <!-- Filters: one area at a time, plus search, region, format, "still open" and months. -->
-    <div class="area-tabs" role="radiogroup" aria-label="Area">
+    <p class="calendar-note">Date status as of <time data-status-day datetime={today}>{today}</time> (UTC). Check each organiser's closing time and time zone.</p>
+    <noscript><p class="calendar-note">Search and map require JavaScript. Conference details, recorded deadlines and official links remain available below. Status reflects the date shown above.</p></noscript>
+    <div class="area-tabs" role="radiogroup" aria-label="Area" data-enhanced hidden>
       <button type="button" class="area-tab" role="radio" data-area="" aria-checked="true">
         All <span class="count">{upcoming.length}</span>
       </button>
@@ -90,12 +93,20 @@ const correctionUrl = issueUrl('correction.yml');
       }
     </div>
 
-    <div class="toolbar" role="search">
+    <div class="toolbar" role="search" data-enhanced hidden>
       <label class="search-field">
         <Icon name="search" size={16} />
         <span class="sr-only">Search conferences</span>
         <input type="search" id="f-search" placeholder="Search a conference, city or country" autocomplete="off" />
         <kbd class="kbd" aria-hidden="true">/</kbd>
+      </label>
+      <label class="select-field">
+        <span class="sr-only">Deadline type</span>
+        <select id="f-deadline-type">
+          <option value="">Any deadline type</option>
+          {DEADLINE_TYPES.map(t => <option value={t}>{DEADLINE_LABELS[t]}</option>)}
+        </select>
+        <Icon name="chevron" size={14} />
       </label>
       <label class="select-field">
         <span class="sr-only">Region</span>
@@ -116,24 +127,38 @@ const correctionUrl = issueUrl('correction.yml');
       <label class="toggle">
         <input type="checkbox" id="f-open" />
         <span class="toggle-track" aria-hidden="true"></span>
-        <span>Deadlines still open</span>
+        <span>Only open deadlines</span>
       </label>
       <button type="button" class="link-btn" data-reset hidden>
         <Icon name="reset" size={14} /> Clear
       </button>
     </div>
 
-    <div class="timeline" id="timeline">
+    <div class="quick-filters" data-enhanced hidden aria-label="Open opportunities">
+      <button type="button" class="chip-btn" data-opportunity="submission" aria-pressed="false">I can still submit a paper / abstract</button>
+      <button type="button" class="chip-btn" data-opportunity="registration" aria-pressed="false">I can still register</button>
+    </div>
+    <div class="timeline" id="timeline" data-enhanced hidden>
       <div class="tl-head">
-        <span class="tl-title">When</span>
+        <label class="select-field">
+          <span class="sr-only">Month filter applies to</span>
+          <select id="f-month-mode">
+            <option value="conference">Conference month</option>
+            <option value="deadline">Deadline month</option>
+          </select>
+          <Icon name="chevron" size={14} />
+        </label>
         <span class="tl-range" data-tl-label>Any month</span>
         <button type="button" class="chip-btn" data-tl-clear hidden><Icon name="x" size={12} /> Any month</button>
         <span class="tl-hint">Click a month, or drag across several</span>
       </div>
+      <p class="calendar-note" data-month-help>Includes every month the conference takes place in.</p>
       <div class="tl-bars" role="group" aria-label="Filter by month" data-tl-bars></div>
     </div>
 
-    <div class="map-card" id="map-card">
+    <div class="map-card" id="map-card" hidden>
+      <p class="calendar-note" data-map-status role="status"></p>
+      <button type="button" class="link-btn" data-map-retry hidden>Reload to retry map</button>
       <div id="map" class="map" role="region" aria-label="Map of conference locations"></div>
       <p class="map-note">
         <span data-map-count>{mapPoints.length} conferences on the map</span>
@@ -149,7 +174,7 @@ const correctionUrl = issueUrl('correction.yml');
       <span></span>
     </div>
     <ol class="rows" id="upcoming-list">
-      {upcoming.map((c) => <ConferenceRow conference={c} />)}
+      {upcoming.map((c) => <ConferenceRow conference={c} today={today} />)}
     </ol>
     <div class="empty-state" data-empty hidden>
       <p><b>No conferences match these filters.</b></p>
@@ -165,7 +190,7 @@ const correctionUrl = issueUrl('correction.yml');
         <Icon name="chevron" size={18} class="past-chevron" />
       </summary>
       <ol class="rows rows-past" id="past-list">
-        {past.map((c) => <ConferenceRow conference={c} />)}
+        {past.map((c) => <ConferenceRow conference={c} today={today} />)}
       </ol>
     </details>
   </section>
@@ -192,6 +217,8 @@ const correctionUrl = issueUrl('correction.yml');
           Each date comes from the official conference page, linked with the day it was last
           checked. Dates the organisers haven't confirmed, or that had to be inferred, are marked
           <span class="badge badge-tbc">TBC</span>.
+          Missing deadline information does not mean submissions are closed. Automated checks flag broken links
+          and entries due for review; only an editorial check of the official page updates a review date.
         </p>
       </article>
       <article>

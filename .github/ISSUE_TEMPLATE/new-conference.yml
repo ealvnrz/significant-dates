@@ -76,10 +76,19 @@ body:
     id: deadlines
     attributes:
       label: Deadlines
-      description: One per line, the date and what closes.
+      description: One per line, the date, what closes and its type (submission, registration, proposal, funding, housing or other). Include closing time/time zone if published. Leave empty if unknown.
       placeholder: |
-        2027-11-30 Abstract submission
-        2028-03-15 Early-bird registration
+        2027-11-30 Abstract submission [submission]
+        2028-03-15 Early-bird registration [registration]
+  - type: dropdown
+    id: deadline-status
+    attributes:
+      label: Deadline information
+      options:
+        - No information recorded
+        - The official page explicitly says dates have not been announced
+        - Published closing dates are listed above
+      description: Missing dates alone do not mean they are unannounced or that submissions are closed. Explain any explicit announcement in the notes.
   - type: input
     id: source
     attributes:

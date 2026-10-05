@@ -1104,20 +1104,65 @@ kbd {
   gap: 2px;
   margin-top: -4px;
 }
-.r-toggle svg {
+.r-details summary svg {
   transition: transform 0.2s;
 }
-.r-toggle[aria-expanded='true'] svg {
+.r-details[open] summary svg {
   transform: rotate(180deg);
 }
 
 .r-details {
   grid-area: details;
+  padding-top: 8px;
+  cursor: auto;
+  min-width: 0;
+}
+.r-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 4px 0;
+}
+.r-details summary::-webkit-details-marker {
+  display: none;
+}
+.r-details-body {
   display: grid;
   gap: 14px;
   padding-top: 16px;
   cursor: auto;
 }
+.calendar-note {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  margin-bottom: 12px;
+}
+.quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+.quick-filters [aria-pressed='true'] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.dl-types {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.nd-meta { display: block; }
+.nd-meta::before { display: inline-block; margin-right: 7px; vertical-align: 1px; }
+.tl-head { flex-wrap: wrap; }
+.map-card > .calendar-note { margin: 12px; }
+.calendar-note:empty { display: none; }
 .r-desc {
   max-width: 72ch;
   font-size: 14.5px;

@@ -50,7 +50,7 @@ function spread(points: MapPoint[]): MapPoint[] {
   );
 }
 
-export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id: string) => void) {
+export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id: string) => void, onTileError: () => void = () => {}) {
   const map = L.map(el, { scrollWheelZoom: false, worldCopyJump: true, minZoom: 1 }).setView([20, 0], 2);
 
   // Leaflet stops click propagation inside popups, so wire the popup button directly.
@@ -64,6 +64,8 @@ export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id
     attribution: 'Tiles &copy; <a href="https://www.esri.com">Esri</a> — Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
   }).addTo(map);
   const labels = L.tileLayer(tileUrl('Reference'), { maxZoom: 16 }).addTo(map);
+  base.on('tileerror', onTileError);
+  labels.on('tileerror', onTileError);
 
   const markers = new Map<string, L.CircleMarker>();
   for (const p of spread(points)) {
