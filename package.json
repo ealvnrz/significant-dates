@@ -30,6 +30,7 @@
     "@types/leaflet": "^1.9.22",
     "@types/node": "^22.20.5",
     "js-yaml": "^4.3.2",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "undici": "^7.30.0"
   }
 }

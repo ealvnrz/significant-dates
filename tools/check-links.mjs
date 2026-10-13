@@ -5,11 +5,13 @@
 //   - deadlines in the next 14 days, as a reminder to confirm them.
 // Prints Markdown (it ends up in the GitHub job summary). Exits 1 if any link is broken.
 import { loadEntries } from './data.mjs';
+import { createLinkDispatcher } from './link-tls.mjs';
 import { calendarDay, daysBetween, REVIEW_POLICY, reviewDue } from '../src/lib/calendar.ts';
 
 const { staleDays: STALE_DAYS, soonDays: SOON_DAYS, urgentReviewDays: URGENT_DAYS } = REVIEW_POLICY;
 const CONCURRENCY = 6;
 const offline = process.argv.includes('--offline');
+const dispatcher = offline ? undefined : createLinkDispatcher();
 
 const iso = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : String(d));
 const today = calendarDay();
@@ -27,6 +29,7 @@ for (const e of upcoming) {
 
 async function check(url) {
   const init = {
+    dispatcher,
     redirect: 'follow',
     headers: { 'user-agent': 'Mozilla/5.0 (compatible; SignificantDatesLinkCheck/1.0)', accept: 'text/html,*/*;q=0.8' },
   };
@@ -46,14 +49,18 @@ async function check(url) {
 
 const results = [];
 const queue = offline ? [] : [...links.keys()];
-await Promise.all(
-  Array.from({ length: CONCURRENCY }, async () => {
-    while (queue.length) {
-      const url = queue.shift();
-      results.push({ url, used: links.get(url), ...(await check(url)) });
-    }
-  }),
-);
+try {
+  await Promise.all(
+    Array.from({ length: CONCURRENCY }, async () => {
+      while (queue.length) {
+        const url = queue.shift();
+        results.push({ url, used: links.get(url), ...(await check(url)) });
+      }
+    }),
+  );
+} finally {
+  await dispatcher?.close();
+}
 
 // 401/403/429 usually mean "no bots", not "gone": list them separately, don't fail on them.
 const blocked = results.filter((r) => [401, 403, 429].includes(r.status));
