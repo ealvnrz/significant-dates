@@ -6,6 +6,7 @@
 // Prints Markdown (it ends up in the GitHub job summary). Exits 1 if any link is broken.
 import { loadEntries } from './data.mjs';
 import { createLinkDispatcher } from './link-tls.mjs';
+import { checkLink } from './link-request.mjs';
 import { calendarDay, daysBetween, REVIEW_POLICY, reviewDue } from '../src/lib/calendar.ts';
 
 const { staleDays: STALE_DAYS, soonDays: SOON_DAYS, urgentReviewDays: URGENT_DAYS } = REVIEW_POLICY;
@@ -27,26 +28,6 @@ for (const e of upcoming) {
   for (const url of new Set([e.url, e.source].filter(Boolean))) links.set(url, [...(links.get(url) ?? []), title(e)]);
 }
 
-async function check(url) {
-  const init = {
-    dispatcher,
-    redirect: 'follow',
-    headers: { 'user-agent': 'Mozilla/5.0 (compatible; SignificantDatesLinkCheck/1.0)', accept: 'text/html,*/*;q=0.8' },
-  };
-  try {
-    let res = await fetch(url, { ...init, method: 'HEAD', signal: AbortSignal.timeout(20_000) });
-    // Plenty of servers reject HEAD; ask again with GET before calling it broken.
-    if (res.status >= 400) {
-      await res.body?.cancel();
-      res = await fetch(url, { ...init, method: 'GET', signal: AbortSignal.timeout(20_000) });
-    }
-    await res.body?.cancel();
-    return { status: res.status };
-  } catch (err) {
-    return { status: 0, error: err.cause?.code ?? err.name };
-  }
-}
-
 const results = [];
 const queue = offline ? [] : [...links.keys()];
 try {
@@ -54,7 +35,7 @@ try {
     Array.from({ length: CONCURRENCY }, async () => {
       while (queue.length) {
         const url = queue.shift();
-        results.push({ url, used: links.get(url), ...(await check(url)) });
+        results.push({ url, used: links.get(url), ...(await checkLink(url, { dispatcher })) });
       }
     }),
   );
@@ -65,6 +46,7 @@ try {
 // 401/403/429 usually mean "no bots", not "gone": list them separately, don't fail on them.
 const blocked = results.filter((r) => [401, 403, 429].includes(r.status));
 const broken = results.filter((r) => (r.status === 0 || r.status >= 400) && !blocked.includes(r));
+const recovered = results.filter((r) => r.attempts > 1 && r.status > 0 && r.status < 400);
 
 const stale = upcoming
   .filter((e) => reviewDue(e.checked && iso(e.checked), e.deadlines.map(d => ({ ...d, date: iso(d.date) })), today))
@@ -81,6 +63,7 @@ const out = [
   `## Conference data check, ${today}`,
   '',
   offline ? `Offline editorial review report for ${upcoming.length} upcoming meetings. Links were not checked.` : `Checked ${results.length} links for ${upcoming.length} upcoming meetings.`,
+  ...(recovered.length ? [`Recovered after a connection retry: ${recovered.map(r => r.url).join(', ')}.`] : []),
   'HTTP availability does not verify the dates on a page. Review the official sources before changing checked dates.',
   '',
   offline ? '### Link availability' : `### Broken links or failed requests (${broken.length})`,

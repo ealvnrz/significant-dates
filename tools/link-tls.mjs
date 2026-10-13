@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { rootCertificates } from 'node:tls';
 import { Agent, Pool } from 'undici';
+import { REQUEST_TIMEOUT_MS } from './link-request.mjs';
 
 const certificate = (name) => readFileSync(new URL(`./certificates/${name}`, import.meta.url), 'utf8');
 const geant = certificate('geant-tls-rsa-1.pem');
@@ -27,7 +28,7 @@ export function createLinkDispatcher() {
     // Choose TLS settings per destination, including after redirects.
     factory: (origin, options) => new Pool(origin, {
       ...options,
-      connect: linkTlsOptions(new URL(origin).hostname),
+      connect: { timeout: REQUEST_TIMEOUT_MS, ...linkTlsOptions(new URL(origin).hostname) },
     }),
   });
 }
