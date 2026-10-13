@@ -1,7 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => {
-  await page.clock.setFixedTime(new Date('2026-10-05T12:00:00Z'));
+test.beforeEach(async ({ page, javaScriptEnabled }) => {
+  // Use fallback fonts so UI checks do not depend on an external font service.
+  await page.route(/^https:\/\/fonts\.(googleapis|gstatic)\.com\//, route => route.abort());
+  if (javaScriptEnabled) {
+    await page.clock.setFixedTime(new Date('2026-10-05T12:00:00Z'));
+  }
 });
 
 test('unknown information is distinct from closed submissions and open registration', async ({ page }) => {
@@ -42,18 +46,54 @@ test('URLs restore controls and native details open through shared links', async
   await expect(page.locator('#details-bnp15-2027')).toHaveAttribute('open', '');
 });
 
-test('essential content and native details work with JavaScript disabled', async ({ browser, baseURL, viewport }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false, baseURL, viewport: viewport ?? undefined });
-  const page = await context.newPage();
+test('native details open and close with a pointer', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#f-search')).toBeHidden();
-  await expect(page.locator('[data-map-toggle]')).toBeHidden();
   const details = page.locator('#details-spatial-statistics-2027');
+  await expect(details).not.toHaveAttribute('open', '');
   await details.locator('summary').click();
   await expect(details.locator('.r-deadlines')).toBeVisible();
-  await expect(details.locator('.dl-date').first()).toHaveText('Jan 29, 2027');
-  await expect(page.locator('#conf-bnp15-2027 [data-next-deadline]')).toHaveText('No deadline information recorded');
-  await context.close();
+  await details.locator('summary').click();
+  await expect(details.locator('.r-deadlines')).toBeHidden();
+});
+
+test.describe('without JavaScript', () => {
+  // Keep the configured device, reduced motion and automatic context cleanup.
+  test.use({ javaScriptEnabled: false });
+
+  for (const moving of [false, true]) {
+    test(`essential content and native details work${moving ? ' during layout movement' : ''}`, async ({ page }) => {
+      if (moving) {
+        // Exercise the same unstable-element path as a late font/layout change.
+        await page.route('**/', async route => {
+          const response = await route.fetch();
+          const body = (await response.text()).replace('</head>', `<style>
+            @keyframes move-summary { from { transform: translateX(0); } to { transform: translateX(8px); } }
+            #details-spatial-statistics-2027 > summary {
+              animation: move-summary 1s linear 2 alternate !important;
+            }
+          </style></head>`);
+          await route.fulfill({ response, body });
+        });
+      }
+      await page.goto('/');
+      await expect(page.locator('#f-search')).toBeHidden();
+      await expect(page.locator('[data-map-toggle]')).toBeHidden();
+      const details = page.locator('#details-spatial-statistics-2027');
+      const summary = details.locator('summary');
+      await expect(summary).toBeVisible();
+      await expect(details).not.toHaveAttribute('open', '');
+      // Pointer retries use page timers, which cannot run with JavaScript disabled.
+      // Native keyboard activation still exercises the browser's <details> behavior.
+      await summary.press('Enter');
+      await expect(details).toHaveAttribute('open', '');
+      await expect(details.locator('.r-deadlines')).toBeVisible();
+      await expect(details.locator('.dl-date').first()).toHaveText('Jan 29, 2027');
+      await summary.press('Space');
+      await expect(details).not.toHaveAttribute('open', '');
+      await expect(details.locator('.r-deadlines')).toBeHidden();
+      await expect(page.locator('#conf-bnp15-2027 [data-next-deadline]')).toHaveText('No deadline information recorded');
+    });
+  }
 });
 
 test('map is lazy and a failed map download leaves filters usable', async ({ page }) => {
