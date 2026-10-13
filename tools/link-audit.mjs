@@ -16,11 +16,12 @@ export function summarizeLinks(results) {
 export async function auditLinks(urls, {
   dispatcher, request, pause = sleep, now = Date.now, onProgress = () => {},
   retryDelays = RETRY_DELAYS_MS, timeoutMs = AUDIT_TIMEOUT_MS, concurrency = 6,
+  initialMethod = 'HEAD', notBefore = [],
 } = {}) {
   const deadline = now() + timeoutMs;
   const signal = AbortSignal.timeout(timeoutMs);
   const records = [...new Set(urls)].map(url => ({ url, status: 0, error: 'NotChecked', attempts: 0, history: [] }));
-  const originReadyAt = new Map();
+  const originReadyAt = new Map(notBefore);
   const remaining = () => Math.max(0, deadline - now());
   const wait = async ms => {
     if (signal.aborted || ms >= remaining()) return false;
@@ -55,14 +56,18 @@ export async function auditLinks(urls, {
             continue;
           }
           const result = await checkLink(record.url, {
-            dispatcher, request, signal, now, method: round ? 'GET' : 'HEAD',
+            dispatcher, request, signal, now, method: round ? 'GET' : initialMethod,
           });
           record.attempts++;
           record.history.push(result.status || result.error);
           delete record.error;
           delete record.retryAfterMs;
+          delete record.retryNotBefore;
           Object.assign(record, result);
-          if (result.retryAfterMs) originReadyAt.set(origin, now() + result.retryAfterMs);
+          if (result.retryAfterMs) {
+            record.retryNotBefore = now() + result.retryAfterMs;
+            originReadyAt.set(origin, record.retryNotBefore);
+          }
         }
       }
     }));

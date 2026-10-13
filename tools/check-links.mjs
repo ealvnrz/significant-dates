@@ -3,14 +3,27 @@
 //   - `url` / `source` links that no longer answer,
 //   - entries whose `checked` date is older than STALE_DAYS,
 //   - deadlines in the next 14 days, as a reminder to confirm them.
-// Prints Markdown (it ends up in the GitHub job summary). Exits 1 if any link is broken.
+// Prints Markdown. The final check exits 1 if any link is broken or unresolved.
+// Collection mode saves preliminary results for the required final CI job.
+import { readFile, writeFile } from 'node:fs/promises';
+import { parseArgs } from 'node:util';
 import { loadEntries } from './data.mjs';
 import { createLinkDispatcher } from './link-tls.mjs';
 import { auditLinks, summarizeLinks } from './link-audit.mjs';
+import { createLinkReport, resumeLinkReport } from './link-report.mjs';
 import { calendarDay, daysBetween, REVIEW_POLICY, reviewDue } from '../src/lib/calendar.ts';
 
 const { staleDays: STALE_DAYS, soonDays: SOON_DAYS, urgentReviewDays: URGENT_DAYS } = REVIEW_POLICY;
-const offline = process.argv.includes('--offline');
+const { values: args } = parseArgs({ options: {
+  offline: { type: 'boolean' },
+  'collect-report': { type: 'string' },
+  'resume-report': { type: 'string' },
+} });
+const offline = args.offline;
+const collectPath = args['collect-report'];
+const resumePath = args['resume-report'];
+if ([offline, collectPath, resumePath].filter(Boolean).length > 1) throw new Error('Choose only one link-check mode.');
+const revision = process.env.GITHUB_SHA ?? null;
 const dispatcher = offline ? undefined : createLinkDispatcher();
 
 const iso = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : String(d));
@@ -30,9 +43,13 @@ for (const e of upcoming) {
 let results = [];
 try {
   if (!offline) {
-    results = (await auditLinks([...links.keys()], {
-      dispatcher, onProgress: message => console.error(message),
-    })).map(result => ({ ...result, used: links.get(result.url) }));
+    const urls = [...links.keys()];
+    const options = { dispatcher, onProgress: message => console.error(message) };
+    results = resumePath
+      ? await resumeLinkReport(JSON.parse(await readFile(resumePath, 'utf8')), urls, revision, options)
+      : await auditLinks(urls, { ...options, ...(collectPath ? { retryDelays: [30_000] } : {}) });
+    if (collectPath) await writeFile(collectPath, JSON.stringify(createLinkReport(results, urls, revision)));
+    results = results.map(result => ({ ...result, used: links.get(result.url) }));
   }
 } finally {
   await dispatcher?.destroy();
@@ -56,7 +73,9 @@ const out = [
   `## Conference data check, ${today}`,
   '',
   offline ? `Offline editorial review report for ${upcoming.length} upcoming meetings. Links were not checked.` : `Checked ${results.filter(r => r.attempts > 0).length} of ${links.size} links for ${upcoming.length} upcoming meetings.`,
-  ...(!offline ? ['Temporary failures are retried after 30, 90 and 180 seconds, using GET. Server Retry-After delays are respected within a 12-minute total budget. Unresolved failures still fail this check.'] : []),
+  ...(!offline ? [collectPath
+    ? 'Preliminary observations: one retry after 30 seconds. The required links job determines the final result, checking unresolved temporary failures from a second runner.'
+    : `${resumePath ? 'Includes the primary runner results. Only unresolved temporary failures are checked again here. ' : ''}Temporary failures are retried after 30, 90 and 180 seconds, using GET. Retry-After is respected within a 12-minute budget per runner. Permanent and unresolved failures fail this check.`] : []),
   'HTTP availability does not verify the dates on a page. Review the official sources before changing checked dates.',
   '',
   offline ? '### Link availability' : `### Broken links or failed requests (${broken.length})`,
@@ -83,4 +102,6 @@ const out = [
   '',
 ];
 console.log(out.join('\n'));
-process.exitCode = exitCode;
+// The collection job is not the success gate: the dependent links job validates
+// every record and fails for permanent errors or failures on both runners.
+process.exitCode = collectPath ? 0 : exitCode;

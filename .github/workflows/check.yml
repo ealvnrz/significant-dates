@@ -31,7 +31,7 @@ jobs:
           set -o pipefail
           npm run check:reviews | tee -a "$GITHUB_STEP_SUMMARY"
 
-  links:
+  links-primary:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -42,8 +42,41 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - name: Check official links and report review priorities
+      - name: Collect initial link observations
         shell: bash
         run: |
           set -o pipefail
-          npm run check:links | tee -a "$GITHUB_STEP_SUMMARY"
+          npm run check:links -- --collect-report "$RUNNER_TEMP/links-primary.json" | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: links-primary
+          path: ${{ runner.temp }}/links-primary.json
+          if-no-files-found: error
+          retention-days: 1
+
+  links:
+    needs: links-primary
+    if: always() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    # A separate runner pool can reach sites affected by the primary runner's route.
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 20
+    steps:
+      - name: Require completed primary check
+        env:
+          PRIMARY_RESULT: ${{ needs.links-primary.result }}
+        run: test "$PRIMARY_RESULT" = success
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: links-primary
+          path: ${{ runner.temp }}/links-primary
+      - name: Recover temporary failures and enforce the final result
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run check:links -- --resume-report "$RUNNER_TEMP/links-primary/links-primary.json" | tee -a "$GITHUB_STEP_SUMMARY"
