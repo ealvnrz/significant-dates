@@ -28,6 +28,7 @@ export function createLinkDispatcher() {
     // Choose TLS settings per destination, including after redirects.
     factory: (origin, options) => new Pool(origin, {
       ...options,
+      connections: 1,
       connect: { timeout: REQUEST_TIMEOUT_MS, ...linkTlsOptions(new URL(origin).hostname) },
     }),
   });

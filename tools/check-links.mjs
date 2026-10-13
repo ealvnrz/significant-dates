@@ -6,11 +6,10 @@
 // Prints Markdown (it ends up in the GitHub job summary). Exits 1 if any link is broken.
 import { loadEntries } from './data.mjs';
 import { createLinkDispatcher } from './link-tls.mjs';
-import { checkLink } from './link-request.mjs';
+import { auditLinks, summarizeLinks } from './link-audit.mjs';
 import { calendarDay, daysBetween, REVIEW_POLICY, reviewDue } from '../src/lib/calendar.ts';
 
 const { staleDays: STALE_DAYS, soonDays: SOON_DAYS, urgentReviewDays: URGENT_DAYS } = REVIEW_POLICY;
-const CONCURRENCY = 6;
 const offline = process.argv.includes('--offline');
 const dispatcher = offline ? undefined : createLinkDispatcher();
 
@@ -28,25 +27,18 @@ for (const e of upcoming) {
   for (const url of new Set([e.url, e.source].filter(Boolean))) links.set(url, [...(links.get(url) ?? []), title(e)]);
 }
 
-const results = [];
-const queue = offline ? [] : [...links.keys()];
+let results = [];
 try {
-  await Promise.all(
-    Array.from({ length: CONCURRENCY }, async () => {
-      while (queue.length) {
-        const url = queue.shift();
-        results.push({ url, used: links.get(url), ...(await checkLink(url, { dispatcher })) });
-      }
-    }),
-  );
+  if (!offline) {
+    results = (await auditLinks([...links.keys()], {
+      dispatcher, onProgress: message => console.error(message),
+    })).map(result => ({ ...result, used: links.get(result.url) }));
+  }
 } finally {
-  await dispatcher?.close();
+  await dispatcher?.destroy();
 }
 
-// 401/403/429 usually mean "no bots", not "gone": list them separately, don't fail on them.
-const blocked = results.filter((r) => [401, 403, 429].includes(r.status));
-const broken = results.filter((r) => (r.status === 0 || r.status >= 400) && !blocked.includes(r));
-const recovered = results.filter((r) => r.attempts > 1 && r.status > 0 && r.status < 400);
+const { blocked, failed: broken, recovered, exitCode } = summarizeLinks(results);
 
 const stale = upcoming
   .filter((e) => reviewDue(e.checked && iso(e.checked), e.deadlines.map(d => ({ ...d, date: iso(d.date) })), today))
@@ -58,20 +50,23 @@ const soon = upcoming
   .sort((a, b) => a.days - b.days)
   .map(({ e, d, days }) => `- ${iso(d.date)} (${days === 0 ? 'today' : `in ${days} ${days === 1 ? 'day' : 'days'}`}): ${title(e)}, ${d.label} [${d.types.join(', ')}]${d.tentative ? ' (date TBC)' : ''}`);
 
-const row = (r) => `| ${r.used.join(', ')} | ${r.url} | ${r.status || r.error} |`;
+const row = (r) => `| ${r.used.join(', ')} | ${r.url} | ${r.status || r.error} | ${r.attempts} | ${r.history.join(' → ')}${r.note ? `; ${r.note}` : ''} |`;
+const tableHeader = ['| Meeting | Link | Status | Attempts | History |', '| --- | --- | --- | --- | --- |'];
 const out = [
   `## Conference data check, ${today}`,
   '',
-  offline ? `Offline editorial review report for ${upcoming.length} upcoming meetings. Links were not checked.` : `Checked ${results.length} links for ${upcoming.length} upcoming meetings.`,
-  ...(recovered.length ? [`Recovered after a connection retry: ${recovered.map(r => r.url).join(', ')}.`] : []),
+  offline ? `Offline editorial review report for ${upcoming.length} upcoming meetings. Links were not checked.` : `Checked ${results.filter(r => r.attempts > 0).length} of ${links.size} links for ${upcoming.length} upcoming meetings.`,
+  ...(!offline ? ['Temporary failures are retried after 30, 90 and 180 seconds, using GET. Server Retry-After delays are respected within a 12-minute total budget. Unresolved failures still fail this check.'] : []),
   'HTTP availability does not verify the dates on a page. Review the official sources before changing checked dates.',
   '',
   offline ? '### Link availability' : `### Broken links or failed requests (${broken.length})`,
-  ...(offline ? ['', 'Not checked in offline mode.'] : broken.length ? ['', '| Meeting | Link | Status |', '| --- | --- | --- |', ...broken.map(row)] : ['', 'None.']),
+  ...(offline ? ['', 'Not checked in offline mode.'] : broken.length ? ['', ...tableHeader, ...broken.map(row)] : ['', 'None.']),
+  ...(!offline ? ['', `### Links recovered automatically (${recovered.length})`,
+    ...(recovered.length ? ['', ...tableHeader, ...recovered.map(row)] : ['', 'None.'])] : []),
   '',
   ...(!offline ? [`### Links that refuse automated checks (${blocked.length})`,
     'Open these by hand; they usually work in a browser.',
-    ...(blocked.length ? ['', '| Meeting | Link | Status |', '| --- | --- | --- |', ...blocked.map(row)] : ['', 'None.'])] : []),
+    ...(blocked.length ? ['', ...tableHeader, ...blocked.map(row)] : ['', 'None.'])] : []),
   '',
   `### Editorial review due (${stale.length})`,
   `Review after ${STALE_DAYS} days, or ${URGENT_DAYS} days when a deadline is within ${SOON_DAYS} days.`,
@@ -88,4 +83,4 @@ const out = [
   '',
 ];
 console.log(out.join('\n'));
-process.exitCode = broken.length ? 1 : 0;
+process.exitCode = exitCode;

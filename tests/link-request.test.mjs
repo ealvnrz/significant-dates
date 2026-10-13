@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { checkLink } from '../tools/link-request.mjs';
+import { checkLink, isTransientResult } from '../tools/link-request.mjs';
 
 function requests(...responses) {
   const methods = [];
@@ -8,10 +8,10 @@ function requests(...responses) {
     methods,
     request: async (_url, options) => {
       methods.push(options.method);
+      assert.ok(options.signal instanceof AbortSignal);
       const next = responses.shift();
       if (next instanceof Error) throw next;
-      assert.equal(typeof next, 'number', 'unexpected extra request');
-      return new Response(null, { status: next });
+      return typeof next === 'number' ? new Response(null, { status: next }) : next;
     },
   };
 }
@@ -20,42 +20,68 @@ const url = 'https://example.org/';
 
 test('successful HEAD needs only one request', async () => {
   const client = requests(200);
-  assert.deepEqual(await checkLink(url, client), { status: 200, attempts: 1 });
+  assert.deepEqual(await checkLink(url, client), { status: 200, method: 'HEAD' });
   assert.deepEqual(client.methods, ['HEAD']);
 });
 
 test('servers rejecting HEAD are checked with GET', async () => {
   const client = requests(405, 200);
-  assert.deepEqual(await checkLink(url, client), { status: 200, attempts: 1 });
+  assert.deepEqual(await checkLink(url, client), { status: 200, method: 'GET' });
   assert.deepEqual(client.methods, ['HEAD', 'GET']);
 });
 
-test('a temporary connection timeout can recover on one delayed retry', async () => {
-  const client = requests(failure('UND_ERR_CONNECT_TIMEOUT'), 200);
-  const delays = [];
-  const result = await checkLink(url, { ...client, pause: async ms => { delays.push(ms); } });
-  assert.deepEqual(result, { status: 200, attempts: 2 });
-  assert.deepEqual(client.methods, ['HEAD', 'HEAD']);
-  assert.deepEqual(delays, [1000]);
+test('404 and 410 must be confirmed by GET, rather than inferred from HEAD', async () => {
+  for (const status of [404, 410]) {
+    const client = requests(status, status);
+    const result = await checkLink(url, client);
+    assert.deepEqual(result, { status, method: 'GET' });
+    assert.equal(isTransientResult(result), false);
+    assert.deepEqual(client.methods, ['HEAD', 'GET']);
+  }
+  const client = requests(404, 200);
+  assert.equal((await checkLink(url, client)).status, 200);
 });
 
-test('persistent timeouts still fail after the retry limit', async () => {
-  const client = requests(failure('UND_ERR_CONNECT_TIMEOUT'), failure('UND_ERR_CONNECT_TIMEOUT'));
-  assert.deepEqual(await checkLink(url, { ...client, pause: async () => {} }),
-    { status: 0, error: 'UND_ERR_CONNECT_TIMEOUT', attempts: 2 });
-  assert.equal(client.methods.length, 2);
+test('temporary errors are returned to the scheduler instead of retried immediately', async () => {
+  for (const status of [408, 425, 429, 500, 502, 503, 504]) {
+    const client = requests(status);
+    const result = await checkLink(url, client);
+    assert.equal(isTransientResult(result), true);
+    assert.deepEqual(client.methods, ['HEAD']);
+  }
+  for (const code of ['UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_HEADERS_TIMEOUT', 'UND_ERR_SOCKET', 'ENOTFOUND', 'EAI_AGAIN', 'ECONNRESET']) {
+    const result = await checkLink(url, requests(failure(code)));
+    assert.equal(result.error, code);
+    assert.equal(isTransientResult(result), true);
+  }
+  assert.equal(isTransientResult(await checkLink(url, requests(new DOMException('Timed out', 'TimeoutError')))), true);
 });
 
-test('TLS failures are preserved without retrying or relaxing verification', async () => {
-  for (const code of ['CERT_HAS_EXPIRED', 'ERR_TLS_CERT_ALTNAME_INVALID', 'UNABLE_TO_VERIFY_LEAF_SIGNATURE']) {
+test('Retry-After accepts seconds and HTTP dates, including invalid and past values', async () => {
+  const now = () => Date.parse('2026-10-13T12:00:00Z');
+  for (const [value, delay] of [
+    ['120', 120_000], ['Tue, 13 Oct 2026 12:01:00 GMT', 60_000],
+    ['Tue, 13 Oct 2026 11:59:00 GMT', 0], ['invalid', 0],
+  ]) {
+    const client = requests(new Response(null, { status: 503, headers: { 'Retry-After': value } }));
+    assert.equal((await checkLink(url, { ...client, now })).retryAfterMs, delay);
+  }
+});
+
+test('TLS and unknown failures are never classified as temporary network errors', async () => {
+  for (const code of ['CERT_HAS_EXPIRED', 'ERR_TLS_CERT_ALTNAME_INVALID', 'UNABLE_TO_VERIFY_LEAF_SIGNATURE', 'UNKNOWN_ERROR']) {
     const client = requests(failure(code));
-    assert.deepEqual(await checkLink(url, client), { status: 0, error: code, attempts: 1 });
+    const result = await checkLink(url, client);
+    assert.deepEqual(result, { status: 0, error: code, method: 'HEAD' });
+    assert.equal(isTransientResult(result), false);
     assert.equal(client.methods.length, 1);
   }
 });
 
-test('HTTP errors remain failures after GET confirms them', async () => {
-  const client = requests(404, 404);
-  assert.deepEqual(await checkLink(url, client), { status: 404, attempts: 1 });
-  assert.deepEqual(client.methods, ['HEAD', 'GET']);
+test('response bodies are released before fallback and after GET', async () => {
+  const cancelled = [];
+  const response = status => ({ status, headers: new Headers(), body: { cancel: async () => cancelled.push(status) } });
+  const client = requests(response(405), response(200));
+  await checkLink(url, client);
+  assert.deepEqual(cancelled, [405, 200]);
 });
