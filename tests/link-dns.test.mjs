@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { once } from 'node:events';
-import { createLinkLookup } from '../tools/link-dns.mjs';
+import { createLinkLookup, requestPublicDns } from '../tools/link-dns.mjs';
 import { createLinkDispatcher } from '../tools/link-tls.mjs';
 import { checkLink } from '../tools/link-request.mjs';
 import { summarizeLinks } from '../tools/link-audit.mjs';
@@ -110,6 +110,31 @@ test('DNS recovery cannot turn a real HTTP 404 or 503 into a successful link', a
     }
   } finally {
     await dispatcher.destroy();
+    await new Promise(resolve => server.close(resolve));
+  }
+});
+
+test('fallback transport resolves independently of OS lookup and releases connections on success and timeout', async () => {
+  const server = createServer((request, response) => {
+    if (request.url === '/hung') return;
+    response.setHeader('Content-Type', 'application/json');
+    response.end(JSON.stringify({ Status: 0, Answer: [{ type: 1, data: '192.0.2.1' }] }));
+  });
+  server.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  let cancelled = 0;
+  const resolver = {
+    resolve4: async hostname => { assert.equal(hostname, 'resolver.example'); return ['127.0.0.1']; },
+    cancel: () => { cancelled++; },
+  };
+  const base = `http://resolver.example:${server.address().port}`;
+  try {
+    const response = await requestPublicDns(base, { signal: AbortSignal.timeout(1000) }, { resolver });
+    assert.equal((await response.json()).Answer[0].data, '192.0.2.1');
+    await assert.rejects(requestPublicDns(`${base}/hung`, { signal: AbortSignal.timeout(20) }, { resolver }));
+    assert.equal(cancelled, 2);
+  } finally {
+    server.closeAllConnections();
     await new Promise(resolve => server.close(resolve));
   }
 });

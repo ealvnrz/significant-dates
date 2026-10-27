@@ -1,11 +1,33 @@
 import { lookup as systemLookup } from 'node:dns';
+import { Resolver } from 'node:dns/promises';
 import { isIP } from 'node:net';
+import { Agent } from 'undici';
 
 const retryable = new Set(['EAI_AGAIN', 'ENOTFOUND', 'ETIMEOUT']);
 const dnsError = (code, hostname) => Object.assign(new Error(`${code}: DNS lookup for ${hostname}`), { code, hostname });
 
+export async function requestPublicDns(url, options, { resolver = new Resolver({ timeout: 1_000, tries: 1 }) } = {}) {
+  // c-ares resolves the HTTPS resolver itself without using the OS lookup worker
+  // pool, which may be occupied by the stalled lookups we are recovering from.
+  const dispatcher = new Agent({ connect: {
+    family: 4,
+    lookup: (hostname, settings, callback) => resolver.resolve4(hostname).then(addresses => {
+      if (!addresses.length) return callback(dnsError('ENOTFOUND', hostname));
+      if (settings.all) callback(null, addresses.map(address => ({ address, family: 4 })));
+      else callback(null, addresses[0], 4);
+    }, callback),
+  } });
+  try {
+    const response = await fetch(url, { ...options, dispatcher });
+    return new Response(await response.text(), { status: response.status });
+  } finally {
+    resolver.cancel();
+    await dispatcher.destroy();
+  }
+}
+
 export function createLinkLookup({
-  lookup = systemLookup, request = fetch, systemTimeoutMs = 3_000, fallbackTimeoutMs = 5_000,
+  lookup = systemLookup, request = requestPublicDns, systemTimeoutMs = 3_000, fallbackTimeoutMs = 5_000,
   onFallback = () => {},
 } = {}) {
   async function resolve(hostname, options) {
