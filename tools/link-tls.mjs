@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { rootCertificates } from 'node:tls';
 import { Agent, Pool } from 'undici';
 import { REQUEST_TIMEOUT_MS } from './link-request.mjs';
+import { createLinkLookup } from './link-dns.mjs';
 
 const certificate = (name) => readFileSync(new URL(`./certificates/${name}`, import.meta.url), 'utf8');
 const geant = certificate('geant-tls-rsa-1.pem');
@@ -23,13 +24,15 @@ export function linkTlsOptions(hostname) {
   };
 }
 
-export function createLinkDispatcher() {
+export function createLinkDispatcher({ lookup = createLinkLookup({
+  onFallback: (host, error) => console.error(`DNS recovery for ${host}: ${error} from the system resolver; using Google Public DNS over HTTPS.`),
+}) } = {}) {
   return new Agent({
     // Choose TLS settings per destination, including after redirects.
     factory: (origin, options) => new Pool(origin, {
       ...options,
       connections: 1,
-      connect: { timeout: REQUEST_TIMEOUT_MS, ...linkTlsOptions(new URL(origin).hostname) },
+      connect: { timeout: REQUEST_TIMEOUT_MS, lookup, ...linkTlsOptions(new URL(origin).hostname) },
     }),
   });
 }

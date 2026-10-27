@@ -19,7 +19,7 @@ export async function checkLink(url, { dispatcher, request = fetch, method = 'HE
   const init = {
     dispatcher,
     redirect: 'follow',
-    headers: { 'user-agent': 'Mozilla/5.0 (compatible; SignificantDatesLinkCheck/1.0)', accept: 'text/html,*/*;q=0.8' },
+    headers: { 'user-agent': 'Mozilla/5.0 (compatible; SignificantDates/1.0)', accept: 'text/html,*/*;q=0.8' },
   };
   const send = async verb => {
     const timeout = AbortSignal.timeout(REQUEST_TIMEOUT_MS);

@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createServer } from 'node:http';
+import { once } from 'node:events';
+import { createLinkDispatcher } from '../tools/link-tls.mjs';
 import { checkLink, isTransientResult } from '../tools/link-request.mjs';
 
 function requests(...responses) {
@@ -84,4 +87,25 @@ test('response bodies are released before fallback and after GET', async () => {
   const client = requests(response(405), response(200));
   await checkLink(url, client);
   assert.deepEqual(cancelled, [405, 200]);
+});
+
+test('compatible client identification avoids connection resets without ignoring HTTP failures', async () => {
+  const server = createServer((request, response) => {
+    // Reproduce BDAI's connection reset for the old checker identifier.
+    if (request.headers['user-agent']?.includes('LinkCheck')) return request.socket.destroy();
+    response.statusCode = request.url === '/missing' ? 404 : 200;
+    response.end();
+  });
+  server.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const dispatcher = createLinkDispatcher();
+  try {
+    await assert.rejects(fetch(base, { dispatcher, headers: { 'user-agent': 'Mozilla/5.0 (compatible; SignificantDatesLinkCheck/1.0)' } }));
+    assert.equal((await checkLink(base, { dispatcher })).status, 200);
+    assert.equal((await checkLink(`${base}/missing`, { dispatcher })).status, 404);
+  } finally {
+    await dispatcher.destroy();
+    await new Promise(resolve => server.close(resolve));
+  }
 });
