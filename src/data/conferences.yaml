@@ -862,14 +862,14 @@
   region: "Latin America"
   lat: -33.50 # Campus San Joaquín, Pontificia Universidad Católica de Chile
   lon: -70.61
-  url: "https://iii-metma-latam-2027.vercel.app/"
+  url: "https://metma.mat.uc.cl/"
   format: "in-person" # format inferred (venue: Faculty of Mathematics, Campus San Joaquín)
   topics: [spatial, spatio-temporal]
   description: "Latin American meeting on spatial, temporal and spatio-temporal statistical modelling, with keynote and invited talks, at the Pontificia Universidad Católica de Chile."
   deadlineStatus: unknown
   deadlines: [] # no submission or registration dates published yet
-  checked: 2026-10-26
-  source: "https://iii-metma-latam-2027.vercel.app/"
+  checked: 2026-10-27
+  source: "https://metma.mat.uc.cl/"
 
 # ============================ Asia, Africa, Oceania, Europe ============================
 
