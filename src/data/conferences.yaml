@@ -45,6 +45,27 @@
   checked: 2026-10-26
   source: "https://www.elsevier.com/events/conferences/all/spatial-statistics"
 
+- id: envstat-2027
+  name: "Environmental Statistics and Data Science 2027"
+  acronym: "EnvStat27"
+  start: 2027-11-18
+  end: 2027-11-20
+  city: "Vienna"
+  country: "Austria"
+  countryCode: "AT"
+  region: "Europe"
+  lat: 48.21
+  lon: 16.37
+  url: "https://boku.ac.at/en/nwnr/stat/conferences-and-events/envstat27"
+  format: "in-person" # format inferred (BOKU University, Vienna)
+  topics: [environmental, spatial, spatio-temporal, geostatistics, data-science]
+  description: "BOKU conference on statistical methods for water, climate and ecosystems, including extremes, spatial modelling, uncertainty and machine learning."
+  note: "The organisers state that abstract submission, registration and programme information will be announced later."
+  deadlineStatus: not-announced
+  deadlines: []
+  checked: 2026-11-03
+  source: "https://boku.ac.at/en/nwnr/stat/conferences-and-events/envstat27"
+
 - id: geoenv-2027
   name: "16th International Conference on Geostatistics for Environmental Applications"
   acronym: "geoENV 2027"
@@ -148,7 +169,7 @@
     - label: "Contributed talk and poster abstracts"
       types: [submission]
       date: 2027-01-31
-  checked: 2026-10-13
+  checked: 2026-11-03
   source: "https://envibayesinla.github.io/workshop2027/"
 
 - id: iamg-2027
@@ -339,7 +360,7 @@
     - label: "Early-bird registration"
       types: [registration]
       date: 2026-11-10
-  checked: 2026-10-13
+  checked: 2026-11-03
   source: "https://cobalebeb2027.softaliza.com.br/"
 
 - id: bayescomp-2027
@@ -368,7 +389,7 @@
     - label: "Poster abstracts"
       types: [submission]
       date: 2027-01-03
-  checked: 2026-10-26
+  checked: 2026-11-03
   source: "https://bayescomp2027.org/"
 
 - id: bayescomp-2027-mirror
@@ -449,7 +470,7 @@
     - label: "Late registration"
       types: [registration]
       date: 2026-11-16
-  checked: 2026-10-13
+  checked: 2026-11-03
   source: "https://www.cmstatistics.org/CFECMStatistics2026/important_dates.php"
 
 - id: ecosta-2027
@@ -577,7 +598,7 @@
     - label: "Early-bird registration"
       types: [registration]
       date: 2027-03-12
-  checked: 2026-10-13
+  checked: 2026-11-03
   source: "https://www.isi-next.org/conferences/isi-wsc2027/key-dates/"
 
 - id: enar-2027
@@ -645,16 +666,17 @@
   description: "Royal Statistical Society annual international conference, at ICC Wales."
   deadlineStatus: published
   deadlines:
-    - label: "Invited session proposals"
+    - label: "Session / workshop proposals (date TBC)"
       types: [proposal]
-      date: 2026-11-21
+      date: 2026-11-20
+      tentative: true
     - label: "Invited talk abstracts"
       types: [submission]
       date: 2027-07-05
       tentative: true
-  note: "The invited-talk abstract deadline is given as July 5 without a year; 2027 is inferred from the conference edition."
-  checked: 2026-10-13
-  source: "https://rss.org.uk/getattachment/Training-Events/Conference-2027/Invited-Topic-Sessions/Guidance-for-Invited-Session-organisers-RSS-2027.pdf.aspx?lang=en-GB"
+  note: "The conference pages give November 20 for session proposals, but the linked organiser guide gives November 21, 2026; the earlier date is shown pending clarification. The guide lists invited-talk abstracts as July 5 without a year; 2027 is inferred."
+  checked: 2026-11-03
+  source: "https://rss.org.uk/training-events/conference-2027/invited-topic-sessions/"
 
 - id: ssc-2027
   name: "2027 SSC Annual Meeting"
@@ -2288,6 +2310,32 @@
 # ============================ North America ============================
 # Added 2026-10-02 (research by area).
 
+- id: spcc-2027
+  name: "7th Statistical Practice in Cancer Conference"
+  acronym: "SPCC 2027"
+  start: 2027-02-12
+  end: 2027-02-13
+  city: "Tampa"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 28.06
+  lon: -82.42
+  url: "https://beststatisticalpractice.com/"
+  format: "in-person" # format inferred (Moffitt Cancer Center)
+  topics: [biostatistics, data-science]
+  description: "Meeting at Moffitt Cancer Center on cancer biostatistics, from statistical foundations to AI, with invited lectures and a workshop."
+  deadlineStatus: published
+  deadlines:
+    - label: "Abstract submission"
+      types: [submission]
+      date: 2026-11-30
+    - label: "Registration"
+      types: [registration]
+      date: 2027-01-11
+  checked: 2026-11-03
+  source: "https://community.amstat.org/discussion/announcement-7th-statistical-practice-in-cancer-conference-spcc-feb-12-13-2027-tampa-call-for-abstracts"
+
 - id: imsi-generative-modeling-2026
   name: "IMSI Workshop: Statistical Foundations of Generative Modeling"
   acronym: null
@@ -3595,6 +3643,47 @@
 # ============================ International series: methodology ============================
 # Added 2026-10-02 (research by area).
 
+- id: stein-statistical-applications-2026
+  name: "Stein's Method and Its Statistical Applications"
+  acronym: null
+  start: 2026-12-02
+  end: 2026-12-04
+  city: "Cergy-Pontoise"
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 49.03
+  lon: 2.08
+  url: "https://sites.google.com/essec.edu/steins-method-and-applications/home"
+  format: "in-person" # format inferred (ESSEC Business School)
+  topics: [probability, bayesian, computational]
+  description: "ESSEC workshop on Stein's method in high-dimensional statistics, Bayesian inference, stochastic processes and computation."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-03
+  source: "https://sites.google.com/essec.edu/steins-method-and-applications/home"
+
+- id: cirm-statistics-generative-ai-2026
+  name: "Mathematical Statistics in the Age of Generative AI"
+  acronym: null
+  start: 2026-12-14
+  end: 2026-12-18
+  city: "Marseille"
+  country: "France"
+  countryCode: "FR"
+  region: "Europe"
+  lat: 43.23
+  lon: 5.44
+  url: "https://conferences.cirm-math.fr/3676.html"
+  format: "in-person" # format inferred (CIRM, Luminy)
+  topics: [general, probability, computational, data-science]
+  description: "CIRM meeting on the statistical foundations of generative models, including sampling, nonparametric estimation, optimal transport and computational efficiency."
+  note: "Pre-registration is closed according to the official page; no closing date is recorded."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-03
+  source: "https://conferences.cirm-math.fr/3676.html"
+
 - id: bisp-2027
   name: "15th Workshop on Bayesian Inference in Stochastic Processes"
   acronym: "BISP 2027"
@@ -3689,14 +3778,14 @@
     - label: "Full paper submission"
       types: [submission]
       date: 2026-10-06
-    - label: "Workshop submission"
+    - label: "Workshop submission (extended)"
       types: [proposal]
-      date: 2026-10-30
+      date: 2026-11-06
     - label: "Journal-to-Conference submission (AoE)"
       types: [submission]
       date: 2027-01-18
   note: "Workshops run May 3; the main conference runs May 4–6, 2027."
-  checked: 2026-10-26
+  checked: 2026-11-03
   source: "https://virtual.aistats.org/Conferences/2027/Dates"
 
 - id: compstat-2028
@@ -3899,7 +3988,7 @@
   topics: [bayesian]
   description: "Annual seminar on Bayesian econometrics, hosted in 2027 by Erasmus University Rotterdam."
   deadlineStatus: unknown
-  note: "The official website timed out during the October 26, 2026 review; its availability and any new deadlines could not be confirmed."
+  note: "The official website timed out again during the November 3, 2026 review; its availability and any new deadlines could not be confirmed."
   checked: 2026-10-13
   source: "https://esobe.org/"
 
@@ -4800,7 +4889,7 @@
     - label: "Regular registration"
       types: [registration]
       date: 2027-04-30
-  checked: 2026-10-26
+  checked: 2026-11-03
   source: "https://aisp-sis.com/popdays-2027/"
 
 - id: hdda-2027
