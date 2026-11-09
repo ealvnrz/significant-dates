@@ -112,7 +112,7 @@
   description: "The geoENVia association marks 30 years since the first geoENV conference, held in Lisbon in 1996."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://geoenvia.org/2026/09/geoenv-30th-anniversary-celebration-lisbon-19-20-november-2026/"
 
 - id: lacsc-ties-envibayes-envrasa-2026
@@ -198,8 +198,7 @@
     - label: "Early registration / presenter registration"
       types: [registration]
       date: 2027-05-17
-  note: "The official website returned HTTP 503 during the October 26, 2026 review. Previously recorded deadlines are retained pending confirmation."
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://www.iamgconferences.org/iamg2027/dates.php"
 
 - id: isec-2027
@@ -269,7 +268,7 @@
   description: "15th biennial conference on extreme value theory and applications, at HEC Montréal; satellite courses on July 3–4."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-26
+  checked: 2026-11-09
   source: "https://hecsciencesdecision.github.io/eva2027/"
 
 - id: sdsc-2026-new-york
@@ -360,7 +359,7 @@
     - label: "Early-bird registration"
       types: [registration]
       date: 2026-11-10
-  checked: 2026-11-03
+  checked: 2026-11-09
   source: "https://cobalebeb2027.softaliza.com.br/"
 
 - id: bayescomp-2027
@@ -389,7 +388,7 @@
     - label: "Poster abstracts"
       types: [submission]
       date: 2027-01-03
-  checked: 2026-11-03
+  checked: 2026-11-09
   source: "https://bayescomp2027.org/"
 
 - id: bayescomp-2027-mirror
@@ -412,7 +411,7 @@
     - label: "Submission"
       types: [submission]
       date: 2026-11-30
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://sites.google.com/view/bayescomp27mirror/home"
 
 - id: bnp15-2027
@@ -430,9 +429,10 @@
   format: "in-person" # format inferred
   topics: [bayesian]
   description: "Conference of the ISBA BNP section on Bayesian nonparametric methods, at the University of Bergamo."
+  note: "Contributed-talk submissions are open. The conference page says key dates and registration details will be announced later; no submission closing date is recorded."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-26
+  checked: 2026-11-09
   source: "https://bnp15.github.io/"
 
 - id: cfe-cmstatistics-2026
@@ -470,7 +470,7 @@
     - label: "Late registration"
       types: [registration]
       date: 2026-11-16
-  checked: 2026-11-03
+  checked: 2026-11-09
   source: "https://www.cmstatistics.org/CFECMStatistics2026/important_dates.php"
 
 - id: ecosta-2027
@@ -566,8 +566,8 @@
     - label: "Late registration"
       types: [registration]
       date: 2027-08-12
-  checked: 2026-10-13
-  source: "https://www.amstat.org/meetings/joint-statistical-meetings"
+  checked: 2026-11-09
+  source: "https://ww2.amstat.org/meetings/jsm/2027/conferenceinfo.cfm"
 
 - id: isi-wsc-2027
   name: "66th ISI World Statistics Congress"
@@ -716,7 +716,7 @@
   deadlineStatus: unknown
   deadlines: []
   note: "The short course takes place on July 18; conference sessions run July 19–23, 2027."
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://iwsm2027.com/"
 
 - id: spa-2027
@@ -890,8 +890,56 @@
   description: "Latin American meeting on spatial, temporal and spatio-temporal statistical modelling, with keynote and invited talks, at the Pontificia Universidad Católica de Chile."
   deadlineStatus: unknown
   deadlines: [] # no submission or registration dates published yet
-  checked: 2026-10-27
+  checked: 2026-11-09
   source: "https://metma.mat.uc.cl/"
+
+- id: pisa-2027
+  name: "Probability in South America 2027"
+  acronym: "PISA 2027"
+  start: 2027-01-13
+  end: 2027-01-15
+  city: "Santiago"
+  country: "Chile"
+  countryCode: "CL"
+  region: "Latin America"
+  lat: -33.50
+  lon: -70.61
+  url: "https://pisa.mat.uc.cl/"
+  format: "in-person" # format inferred (UC San Joaquín Campus)
+  topics: [probability]
+  description: "Three days of invited research talks on probability and its applications at Pontificia Universidad Católica de Chile, coordinated with the following week's CMM summer school."
+  note: "The registration form is not yet open; the organisers have published the registration and financial-support deadlines."
+  deadlineStatus: published
+  deadlines:
+    - label: "Financial support requests"
+      types: [funding]
+      date: 2026-12-01
+    - label: "Registration"
+      types: [registration]
+      date: 2026-12-18
+  checked: 2026-11-09
+  source: "https://pisa.mat.uc.cl/"
+
+- id: cmm-probability-school-2027
+  name: "VIII Summer School in Probabilities and Stochastic Processes"
+  acronym: null
+  start: 2027-01-18
+  end: 2027-01-22
+  city: "Santiago"
+  country: "Chile"
+  countryCode: "CL"
+  region: "Latin America"
+  lat: -33.46
+  lon: -70.66
+  url: "https://eventos.cmm.uchile.cl/escuelappe2027/"
+  format: "in-person" # format inferred (CMM, Universidad de Chile)
+  topics: [probability]
+  description: "CMM summer school introducing current probability research to master's and doctoral students and researchers, with particular encouragement for young participants from Latin America."
+  note: "Registration includes a financial-support request option; no closing date is recorded."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-09
+  source: "https://eventos.cmm.uchile.cl/escuelappe2027/"
 
 # ============================ Asia, Africa, Oceania, Europe ============================
 
@@ -921,7 +969,7 @@
     - label: "Extended registration"
       types: [registration]
       date: 2027-01-31
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://sites.google.com/view/robstat27"
 
 - id: iasc-ars-2026
@@ -953,7 +1001,7 @@
     - label: "Regular registration"
       types: [registration]
       date: 2026-11-15
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://iasc-ars2026.icdi.cmu.ac.th/IASC_ARS"
 
 - id: isps-2026
@@ -1016,7 +1064,7 @@
       types: [submission]
       date: 2026-12-13
       tentative: true
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://kss.or.kr/board/notice/article/284650"
 
 - id: iisa-2026
@@ -1200,8 +1248,13 @@
       types: [funding]
       date: 2026-11-09
       tentative: true  # page says "Monday 9 November" with no year; the weekday matches 2026
-  checked: 2026-10-13
-  source: "https://www.stats.org.nz/nzsa-conference-14-16-december-2026-university-of-auckland/"
+    - label: "Women in Data Science NZ award applications"
+      types: [funding]
+      date: 2026-11-15
+      tentative: true  # the award notice omits the year; 2026 inferred
+  note: "The Women in Data Science NZ award is for women presenting at NZSA for the first time or returning after at least five years."
+  checked: 2026-11-09
+  source: "https://www.stats.org.nz/nzsa2026/index.php"
 
 - id: jscs-40-2026
   name: "40th Anniversary Symposium of the Japanese Society of Computational Statistics"
@@ -1447,7 +1500,7 @@
       date: 2026-11-14
       tentative: true
   note: "Reduced fees apply before November 15, 2026; the last eligible day is inferred as November 14."
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://wsa2026.iseg.ulisboa.pt/conference_fees.php"
 
 - id: emr-ibs-2027
@@ -1511,14 +1564,17 @@
   region: "Europe"
   lat: 46.95
   lon: 7.45
-  url: "https://www.roes2027.org"
+  url: "https://roes2027.org/"
   format: "in-person"            # format inferred
   topics: [biostatistics]
   description: "Biennial conference of the Austro-Swiss Region of the International Biometric Society at the University of Bern, with pre-conference courses on the first day."
-  deadlineStatus: unknown
-  deadlines: []
-  checked: 2026-10-26
-  source: "https://www.roes2027.org/key-dates.html"
+  deadlineStatus: published
+  deadlines:
+    - label: "Invited / topic-contributed session and short-course proposals"
+      types: [proposal]
+      date: 2026-12-11
+  checked: 2026-11-09
+  source: "https://roes2027.org/key-dates"
 
 - id: ibsdr-preclinical-workshop-2026
   name: "Pre-Clinical Statistics Autumn Workshop of the IBS-DR Working Groups Non-Clinical Statistics and Ethics and Responsibility"
@@ -1566,8 +1622,8 @@
     - label: "Registration"
       types: [registration]
       date: 2026-11-15
-  checked: 2026-10-13
-  source: "https://biometrische-gesellschaft.de/pdf/AnkuendigungBayesWorkshop2026.pdf"
+  checked: 2026-11-09
+  source: "https://biometrische-gesellschaft.de/ag/bayes.html"
 
 - id: apf-workshop-2026
   name: "80th Autumn Workshop of the IBS-DR Working Group Pharmaceutical Research (APF)"
@@ -1698,7 +1754,7 @@
     - label: "Standard registration"
       types: [registration]
       date: 2027-02-03
-  checked: 2026-10-26
+  checked: 2026-11-09
   source: "https://dssr2027.unimib.it/important-dates"
 
 - id: smea-2027
@@ -2102,13 +2158,13 @@
     - label: "Submission of communications"
       types: [submission]
       date: 2026-09-08
-    - label: "Early registration"
+    - label: "Early registration (extended)"
       types: [registration]
-      date: 2026-11-01
+      date: 2026-11-08
     - label: "Registration"
       types: [registration]
       date: 2026-11-15
-  checked: 2026-10-26
+  checked: 2026-11-09
   source: "https://cfies2026.sciencesconf.org/page/tarifs?lang=fr"
 
 - id: mascotnum-2027
@@ -2264,7 +2320,7 @@
       types: [registration]
       date: 2026-12-15
       tentative: true
-  checked: 2026-10-26
+  checked: 2026-11-09
   source: "https://sites.google.com/view/ims-icsds2026/registration"
 
 - id: biostatnet-women-workshop-2026
@@ -3367,14 +3423,14 @@
   description: "Applied probability conference organised by the Department of Mathematics, KAHM Unity Women's College, in association with the Ramanujan Mathematical Society and the Kerala Mathematical Association."
   deadlineStatus: published
   deadlines:
-    - label: "Paper submission"
+    - label: "Paper submission (extended)"
       types: [submission]
-      date: 2026-11-15
+      date: 2026-12-05
     - label: "Registration"
       types: [registration]
       date: 2026-12-10
   note: "Conference sessions take place on December 19, 21 and 22, 2026; there is no conference session on December 20."
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://www.icaapsp2026.com/"
 
 - id: wombat-2026
@@ -3440,7 +3496,7 @@
     - label: "Online registration"
       types: [registration]
       date: 2026-11-15
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://infostat.nccu.edu.tw/csa2026/"
 
 - id: swt-2026
@@ -3467,7 +3523,7 @@
       types: [registration]
       date: 2026-11-23
   note: "Events take place in Taipei and Taichung; the Feng Chia University workshop in Taichung runs December 16–17."
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://www3.stat.sinica.edu.tw/swt2026/"  # poster deadline from https://www3.stat.sinica.edu.tw/2026ci/
 
 - id: mtps-2026
@@ -3523,7 +3579,7 @@
       types: [registration]
       date: 2027-01-31
   note: "The current host website and SSCA announcement place the meeting in Jammu. The older Solan brochure has been superseded for the venue and deadlines."
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://ggmconferences.in/"
 
 - id: jscs-symposium-40-2026
@@ -3575,14 +3631,14 @@
     - label: "Early payment"
       types: [registration]
       date: 2026-11-06
-    - label: "Talk application"
+    - label: "Talk application (extended)"
       types: [submission]
-      date: 2026-11-06
-    - label: "Manuscript submission"
+      date: 2026-11-18
+    - label: "Manuscript submission (extended)"
       types: [submission]
-      date: 2026-11-20
-  checked: 2026-10-13
-  source: "https://jcs-sympo2026.ywstat.jp/"  # page's update log contains template text with odd dates; session dates and deadlines read from the header/sidebar
+      date: 2026-11-25
+  checked: 2026-11-09
+  source: "https://jcs-sympo2026.ywstat.jp/"
 
 - id: nstc-stat-2027
   name: "2027 NSTC Statistics Research Results Conference"
@@ -3641,6 +3697,68 @@
   source: "https://sites.google.com/view/2026-probability-symposium/"
 
 # ============================ International series: methodology ============================
+
+- id: manchester-stein-2027
+  name: "Manchester Workshop on Stein's Method and Statistics"
+  acronym: null
+  start: 2027-02-09
+  end: 2027-02-12
+  city: "Manchester"
+  country: "United Kingdom"
+  countryCode: "GB"
+  region: "Europe"
+  lat: 53.47
+  lon: -2.23
+  url: "https://manchester-stein.github.io/"
+  format: "in-person" # format inferred (Alan Turing Building, University of Manchester)
+  topics: [probability, general]
+  description: "University of Manchester workshop on Stein's method and its statistical applications, with invited talks and an informal lunchtime poster display."
+  note: "Registration is free and compulsory. Funding is available for UK research students, early-career researchers and caring costs; no closing dates are recorded."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-09
+  source: "https://manchester-stein.github.io/registration.html"
+
+- id: mcm-2027
+  name: "16th International Conference on Monte Carlo Methods and Applications"
+  acronym: "MCM 2027"
+  start: 2027-07-26
+  end: 2027-07-30
+  city: "Passau"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 48.57
+  lon: 13.46
+  url: "https://tmgron.github.io/MCM2027/"
+  format: "in-person" # format inferred (University of Passau)
+  topics: [computational, probability, bayesian]
+  description: "Biennial conference on stochastic simulation and Monte Carlo methods, including MCMC, sequential and quasi-Monte Carlo, uncertainty quantification and statistical learning."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-09
+  source: "https://tmgron.github.io/MCM2027/"
+
+- id: isag-iii-2026
+  name: "Interactions of Statistics and Geometry III"
+  acronym: "ISAG III"
+  start: 2026-12-07
+  end: 2026-12-11
+  city: "Bonn"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 50.73
+  lon: 7.10
+  url: "https://math-events.uni-bonn.de/event/494/"
+  format: "in-person" # format inferred (Hausdorff Research Institute for Mathematics)
+  topics: [general, computational, data-science]
+  description: "HIM conference on statistical analysis of data with geometric structure, linking statistics, probability, optimisation and machine learning with geometry and topology."
+  note: "The official page says the application deadline has passed but does not give its date. Registration is by invitation after selection; HCM researchers may request participation."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-09
+  source: "https://math-events.uni-bonn.de/event/494/"
 # Added 2026-10-02 (research by area).
 
 - id: stein-statistical-applications-2026
@@ -4196,7 +4314,7 @@
     - label: "Poster abstracts"
       types: [submission]
       date: 2027-02-05
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://psiweb.org/conferences/about-the-conference/abstract-submissions/"
 
 - id: efspi-regulatory-workshop-2027
@@ -4356,7 +4474,7 @@
       date: 2026-11-15
     - label: "Travel and stay grant expression of interest"
       types: [funding]
-      date: 2026-12-20
+      date: 2027-01-12
     - label: "Individual paper and poster abstracts"
       types: [submission]
       date: 2027-01-12
@@ -4367,8 +4485,8 @@
     - label: "Early Career Researcher Award papers"
       types: [submission, funding]
       date: 2027-04-30
-  note: "The grant page requires interest by December 20, 2026, earlier than the general abstract deadline. Supporting documents are due before March 1, 2027; February 28 is the inferred last eligible day."
-  checked: 2026-10-13
+  note: "Travel and stay grant interest is due with abstracts by January 12, 2027. Supporting documents are due before March 1, 2027; February 28 is the inferred last eligible day."
+  checked: 2026-11-09
   source: "https://www.europeansurveyresearch.org/conference/paris-2027/"
 
 - id: ftc-2026
@@ -4523,7 +4641,7 @@
     - label: "Abstract submission"
       types: [submission]
       date: 2026-11-15
-  checked: 2026-10-13
+  checked: 2026-11-09
   source: "https://aapor.org/aapor-2027-call-for-abstracts/"
 
 - id: iges-2026
