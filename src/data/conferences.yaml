@@ -16,6 +16,41 @@
 
 # ============================ Spatial / environmental ============================
 
+- id: siam-gs-2027
+  name: "SIAM Conference on Mathematical and Computational Issues in the Geosciences"
+  acronym: "SIAM GS27"
+  start: 2027-06-02
+  end: 2027-06-05
+  city: "Baltimore"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 39.29
+  lon: -76.61
+  url: "https://www.siam.org/conferences-events/siam-conferences/gs27/"
+  format: "in-person"
+  topics: [environmental, computational, data-science]
+  description: "SIAM Geosciences meeting on mathematical and computational methods for environmental and Earth systems, including uncertainty quantification, data assimilation and machine learning."
+  deadlineStatus: published
+  deadlines:
+    - label: "Minisymposium proposals (extended)"
+      types: [proposal]
+      date: 2026-12-02
+    - label: "Contributed lecture, poster and minisymposium abstracts"
+      types: [submission]
+      date: 2026-12-02
+    - label: "Travel support application"
+      types: [funding]
+      date: 2027-03-03
+    - label: "Early registration"
+      types: [registration]
+      date: 2027-05-10
+    - label: "Hotel reservation"
+      types: [housing]
+      date: 2027-05-10
+  checked: 2026-11-16
+  source: "https://www.siam.org/conferences-events/siam-conferences/gs27/"
+
 - id: spatial-statistics-2027
   name: "Spatial Statistics 2027: At the core of analytical intelligence"
   acronym: "Spatial Statistics 2027"
@@ -224,7 +259,7 @@
     - label: "Early-bird registration (extended)"
       types: [registration]
       date: 2026-10-15
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://statisticalecology.org/registration/"
 
 - id: graspa-2027
@@ -248,7 +283,10 @@
       types: [proposal]
       date: 2026-10-09
       tentative: true
-  checked: 2026-10-13
+    - label: "Contributed oral and poster abstracts"
+      types: [submission]
+      date: 2027-01-31
+  checked: 2026-11-16
   source: "https://graspa.sis-statistica.it/events/graspa-2027-conference/"
 
 - id: eva-2027
@@ -359,7 +397,7 @@
     - label: "Early-bird registration"
       types: [registration]
       date: 2026-11-10
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://cobalebeb2027.softaliza.com.br/"
 
 - id: bayescomp-2027
@@ -470,7 +508,7 @@
     - label: "Late registration"
       types: [registration]
       date: 2026-11-16
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://www.cmstatistics.org/CFECMStatistics2026/important_dates.php"
 
 - id: ecosta-2027
@@ -566,7 +604,7 @@
     - label: "Late registration"
       types: [registration]
       date: 2027-08-12
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://ww2.amstat.org/meetings/jsm/2027/conferenceinfo.cfm"
 
 - id: isi-wsc-2027
@@ -675,7 +713,7 @@
       date: 2027-07-05
       tentative: true
   note: "The conference pages give November 20 for session proposals, but the linked organiser guide gives November 21, 2026; the earlier date is shown pending clarification. The guide lists invited-talk abstracts as July 5 without a year; 2027 is inferred."
-  checked: 2026-11-03
+  checked: 2026-11-16
   source: "https://rss.org.uk/training-events/conference-2027/invited-topic-sessions/"
 
 - id: ssc-2027
@@ -841,13 +879,14 @@
     - label: "First registration tier"
       types: [registration]
       date: 2026-10-02
-      tentative: true
     - label: "Second registration tier"
       types: [registration]
       date: 2026-10-31
-      tentative: true
-  note: "Registration tier dates omit the year; 2026 is inferred from the meeting edition. WASA on November 26 requires separate registration."
-  checked: 2026-10-13
+    - label: "Late registration"
+      types: [registration]
+      date: 2026-11-23
+  note: "Late registration runs until the start of the meeting on November 23, 2026. WASA on November 26 requires separate registration."
+  checked: 2026-11-16
   source: "https://70rbras.org/inscricoes.html"
 
 - id: latinr-2026
@@ -890,7 +929,7 @@
   description: "Latin American meeting on spatial, temporal and spatio-temporal statistical modelling, with keynote and invited talks, at the Pontificia Universidad Católica de Chile."
   deadlineStatus: unknown
   deadlines: [] # no submission or registration dates published yet
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://metma.mat.uc.cl/"
 
 - id: pisa-2027
@@ -917,7 +956,7 @@
     - label: "Registration"
       types: [registration]
       date: 2026-12-18
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://pisa.mat.uc.cl/"
 
 - id: cmm-probability-school-2027
@@ -938,7 +977,7 @@
   note: "Registration includes a financial-support request option; no closing date is recorded."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://eventos.cmm.uchile.cl/escuelappe2027/"
 
 # ============================ Asia, Africa, Oceania, Europe ============================
@@ -969,7 +1008,7 @@
     - label: "Extended registration"
       types: [registration]
       date: 2027-01-31
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://sites.google.com/view/robstat27"
 
 - id: iasc-ars-2026
@@ -1064,7 +1103,7 @@
       types: [submission]
       date: 2026-12-13
       tentative: true
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://kss.or.kr/board/notice/article/284650"
 
 - id: iisa-2026
@@ -1268,7 +1307,7 @@
   lat: -36.85
   lon: 174.76
   url: "https://jscs-sympo40anniv.ywstat.jp/"
-  format: "in-person"  # format inferred (The Clock Tower, University of Auckland)
+  format: "in-person"  # explicitly confirmed by the organisers on October 20, 2026
   topics: [computational]
   description: "Anniversary symposium of the Japanese Society of Computational Statistics, co-organised with the Department of Statistics, University of Auckland, right after the NZSA conference."
   deadlineStatus: published
@@ -1282,7 +1321,7 @@
     - label: "Standard registration"
       types: [registration]
       date: 2026-11-30
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://jscs-sympo40anniv.ywstat.jp/"
 
 
@@ -1334,7 +1373,7 @@
   description: "Intermediate scientific conference of the Italian Statistical Society (SIS)."
   deadlineStatus: unknown
   deadlines: []  # no call for papers published yet
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://new.sis-statistica.it/event/convegno-intermedio-sis-2027-2/"
 
 - id: iscb-2027
@@ -1573,7 +1612,7 @@
     - label: "Invited / topic-contributed session and short-course proposals"
       types: [proposal]
       date: 2026-12-11
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://roes2027.org/key-dates"
 
 - id: ibsdr-preclinical-workshop-2026
@@ -2025,7 +2064,7 @@
     - label: "Registration (subject to capacity)"
       types: [registration]
       date: 2027-02-10
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://www.eurandom.tue.nl/event/yes2027/"
 
 - id: eurandom-pgm-2027
@@ -2042,22 +2081,24 @@
   url: "https://www.eurandom.tue.nl/event/probabilistic-graphical-models-2/"
   format: "in-person"            # format inferred
   topics: [general, probability]
-  description: "EURANDOM workshop on theory, methods and applications of probabilistic graphical models, with contributed talks and posters by junior researchers."
+  description: "EURANDOM workshop on theory, methods and applications of probabilistic graphical models, with poster presentations by junior researchers."
   deadlineStatus: published
   deadlines:
     - label: "Poster presentation registration"
       types: [registration]
       date: 2026-12-01
-    - label: "Travel grant applications (subject to funding)"
+    - label: "Travel grant applications (unconfirmed)"
       types: [funding]
       date: 2026-12-01
+      tentative: true
     - label: "Poster abstract (14 days before the meeting)"
       types: [submission]
       date: 2027-03-24
     - label: "Registration (subject to capacity)"
       types: [registration]
       date: 2027-04-02
-  checked: 2026-10-26
+  note: "The current official page no longer mentions travel grants. The previously listed December 1 funding deadline is retained as tentative pending clarification; poster and registration deadlines are confirmed."
+  checked: 2026-11-16
   source: "https://www.eurandom.tue.nl/event/probabilistic-graphical-models-2/"
 
 - id: yep-xxi-2027
@@ -2366,6 +2407,78 @@
 # ============================ North America ============================
 # Added 2026-10-02 (research by area).
 
+- id: siam-mds-2026
+  name: "SIAM Conference on Mathematics of Data Science"
+  acronym: "SIAM MDS26"
+  start: 2026-11-16
+  end: 2026-11-20
+  city: "Salt Lake City"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.76
+  lon: -111.89
+  url: "https://www.siam.org/conferences-events/siam-conferences/mds26/"
+  format: "in-person"
+  topics: [data-science, computational, general]
+  description: "SIAM meeting on the mathematical and statistical foundations of data science, including high-dimensional methods, statistical learning and uncertainty, at the Salt Palace Convention Center."
+  deadlineStatus: published
+  deadlines:
+    - label: "Minisymposium and miniposterium proposals"
+      types: [proposal]
+      date: 2026-04-20
+    - label: "Contributed poster, miniposterium and minisymposium abstracts"
+      types: [submission]
+      date: 2026-05-18
+    - label: "Travel support application"
+      types: [funding]
+      date: 2026-08-17
+    - label: "Early registration"
+      types: [registration]
+      date: 2026-10-19
+    - label: "Hotel reservation (extended)"
+      types: [housing]
+      date: 2026-10-26
+  note: "Held jointly with SIAM IS26 and SDM26, which have separate programmes and dates."
+  checked: 2026-11-16
+  source: "https://www.siam.org/conferences-events/siam-conferences/mds26/"
+
+- id: siam-sdm-2026
+  name: "SIAM International Conference on Data Mining"
+  acronym: "SIAM SDM26"
+  start: 2026-11-19
+  end: 2026-11-20
+  city: "Salt Lake City"
+  country: "United States"
+  countryCode: "US"
+  region: "North America"
+  lat: 40.76
+  lon: -111.89
+  url: "https://www.siam.org/conferences-events/siam-conferences/sdm26/"
+  format: "in-person"
+  topics: [data-science, computational]
+  description: "SIAM Data Science activity-group conference on data mining and machine learning, including causal inference, anomaly detection and statistical learning, at the Salt Palace Convention Center."
+  deadlineStatus: published
+  deadlines:
+    - label: "Paper abstract (AoE)"
+      types: [submission]
+      date: 2026-04-10
+    - label: "Full paper (AoE)"
+      types: [submission]
+      date: 2026-04-17
+    - label: "Travel support application"
+      types: [funding]
+      date: 2026-08-17
+    - label: "Early registration"
+      types: [registration]
+      date: 2026-10-19
+    - label: "Hotel reservation (extended)"
+      types: [housing]
+      date: 2026-10-26
+  note: "Co-located with SIAM MDS26 and IS26. Paper deadlines use Anywhere on Earth (AoE) time."
+  checked: 2026-11-16
+  source: "https://www.siam.org/conferences-events/siam-conferences/sdm26/"
+
 - id: spcc-2027
   name: "7th Statistical Practice in Cancer Conference"
   acronym: "SPCC 2027"
@@ -2389,7 +2502,7 @@
     - label: "Registration"
       types: [registration]
       date: 2027-01-11
-  checked: 2026-11-03
+  checked: 2026-11-16
   source: "https://community.amstat.org/discussion/announcement-7th-statistical-practice-in-cancer-conference-spcc-feb-12-13-2027-tampa-call-for-abstracts"
 
 - id: imsi-generative-modeling-2026
@@ -2852,10 +2965,17 @@
     - label: "Early registration"
       types: [registration]
       date: 2026-11-30
+    - label: "Poster submission"
+      types: [submission]
+      date: 2026-11-30
+    - label: "Hotel reservation"
+      types: [housing]
+      date: 2027-01-30
     - label: "Regular registration"
       types: [registration]
       date: 2027-02-05
-  checked: 2026-10-13
+  note: "The ASA calendar entry remains on hold and lists February 22 only; the organiser website confirms February 22–23, 2027, with registration open. The discrepancy remains unresolved."
+  checked: 2026-11-16
   source: "https://community.amstat.org/statbolic/home"
 
 - id: ssp-2027
@@ -2932,7 +3052,7 @@
     - label: "Housing reservations"
       types: [housing]
       date: 2027-03-30
-  checked: 2026-10-26
+  checked: 2026-11-16
   source: "https://ww2.amstat.org/meetings/sdss/2027/conferenceinfo.cfm"
 
 - id: mbsw-2027
@@ -3013,8 +3133,9 @@
   topics: [biostatistics]
   description: "ASA Biopharmaceutical Section conference on nonclinical statistics (CMC, discovery and biomarkers, safety and pharmacology, data science), hosted at the Penn Perelman School of Medicine."
   deadlineStatus: unknown
-  deadlines: []                  # abstract submission opens November 2026
-  checked: 2026-10-13
+  deadlines: []
+  note: "The abstract page says submissions will open in December 2026, while the home page still says November. Registration is scheduled to open in January 2027; closing dates are not yet published."
+  checked: 2026-11-16
   source: "https://community.amstat.org/biop/events/ncb/index"
 
 - id: jrc-2027
@@ -3222,11 +3343,39 @@
     - label: "Registration closes"
       types: [registration]
       date: 2026-12-20
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://aic2026.strathmore.edu/important-dates/"
 
 # ============================ Asia and Oceania ============================
 # Added 2026-10-02 (research by area).
+
+- id: trust-ai-eval-2026
+  name: "Can We Trust AI Evaluation? Robustness, Causality, and Risk in Modern AI Assessment"
+  acronym: "TAE 2026"
+  start: 2026-12-12
+  end: 2026-12-12
+  city: "Sydney"
+  country: "Australia"
+  countryCode: "AU"
+  region: "Oceania"
+  lat: -33.87
+  lon: 151.21
+  url: "https://tai-eval.github.io/"
+  format: "in-person"
+  topics: [data-science, general, computational]
+  description: "NeurIPS workshop on the statistical reliability of model evaluation, including uncertainty, benchmark reuse, robustness, causal validity and deployment risk."
+  deadlineStatus: published
+  deadlines:
+    - label: "Paper submission (AoE; indicative date)"
+      types: [submission]
+      date: 2026-08-29
+      tentative: true
+    - label: "Camera-ready paper (AoE)"
+      types: [submission]
+      date: 2026-11-15
+  note: "The organisers confirm December 12, 2026; the IMS calendar lists the broader December 11–12 workshop window. The submission calendar is labelled indicative, while the camera-ready deadline is explicitly stated in the author instructions. Accepted papers are non-archival."
+  checked: 2026-11-16
+  source: "https://tai-eval.github.io/"
 
 - id: ism-heterogeneity-survival-2026
   name: "Statistical Modeling Under Heterogeneity in Data and Its Application to Survival Analysis (ISM Specially Promoted Research meeting)"
@@ -3430,7 +3579,7 @@
       types: [registration]
       date: 2026-12-10
   note: "Conference sessions take place on December 19, 21 and 22, 2026; there is no conference session on December 20."
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://www.icaapsp2026.com/"
 
 - id: wombat-2026
@@ -3549,7 +3698,7 @@
     - label: "Registration"
       types: [registration]
       date: 2026-11-30
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://sites.google.com/view/mtps-2026/registration"
 
 - id: ssca-navstat-2027
@@ -3637,7 +3786,7 @@
     - label: "Manuscript submission (extended)"
       types: [submission]
       date: 2026-11-25
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://jcs-sympo2026.ywstat.jp/"
 
 - id: nstc-stat-2027
@@ -3693,7 +3842,7 @@
       date: 2026-11-27
       tentative: true
   note: "No deadline applies to attendance without a talk. Nursery, talk, travel-support and abstract dates are stated without a year; 2026 is inferred from the meeting edition."
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://sites.google.com/view/2026-probability-symposium/"
 
 # ============================ International series: methodology ============================
@@ -3716,7 +3865,7 @@
   note: "Registration is free and compulsory. Funding is available for UK research students, early-career researchers and caring costs; no closing dates are recorded."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://manchester-stein.github.io/registration.html"
 
 - id: mcm-2027
@@ -3977,7 +4126,7 @@
     - label: "Financial support application"
       types: [funding]
       date: 2026-11-30
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://algebraicstatistics.org/2027/"
 
 - id: itise-2027
@@ -4106,8 +4255,7 @@
   topics: [bayesian]
   description: "Annual seminar on Bayesian econometrics, hosted in 2027 by Erasmus University Rotterdam."
   deadlineStatus: unknown
-  note: "The official website timed out again during the November 3, 2026 review; its availability and any new deadlines could not be confirmed."
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://esobe.org/"
 
 - id: mcqmc-2028
@@ -4167,10 +4315,23 @@
   format: "in-person"  # format inferred
   topics: [data-science, general]
   description: "Annual thematic spring meeting of the European Network for Business and Industrial Statistics, organised in 2027 with JKU Linz on statistics and explainable AI."
-  deadlineStatus: not-announced
-  note: "The official registration and abstract-submission pages both state that information is coming soon."
-  checked: 2026-10-26
-  source: "https://conferences.enbis.org/event/93/"
+  deadlineStatus: published
+  deadlines:
+    - label: "Early-bird registration"
+      types: [registration]
+      date: 2027-02-28
+    - label: "ENBIS Knowledge Fund application"
+      types: [funding]
+      date: 2027-03-06
+    - label: "Abstract submission"
+      types: [submission]
+      date: 2027-03-21
+    - label: "Registration"
+      types: [registration]
+      date: 2027-03-29
+  note: "Abstract submissions open November 23, 2026; registration opens December 1, 2026."
+  checked: 2026-11-16
+  source: "https://conferences.enbis.org/event/93/registrations/"
 
 - id: enbis-27
   name: "27th Annual Conference of the European Network for Business and Industrial Statistics"
@@ -4240,7 +4401,8 @@
   topics: [biostatistics, general]
   description: "Annual European meeting on causal inference in health, economics and social sciences, held at Université Paris Cité (Campus Saint-Germain)."
   deadlineStatus: unknown
-  checked: 2026-10-13
+  note: "Pre-conference courses are on April 13; the main conference runs April 14–16, 2027."
+  checked: 2026-11-16
   source: "https://eurocim.org/paris-2027"
 
 - id: ntts-2027
@@ -4314,7 +4476,7 @@
     - label: "Poster abstracts"
       types: [submission]
       date: 2027-02-05
-  checked: 2026-11-09
+  checked: 2026-11-16
   source: "https://psiweb.org/conferences/about-the-conference/abstract-submissions/"
 
 - id: efspi-regulatory-workshop-2027
@@ -4588,7 +4750,7 @@
       types: [registration]
       date: 2026-11-30
   note: "Short courses run December 7–8; conference sessions run December 9–11, 2026."
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://statfin.cmi.ac.in/ISBIS2026/index.html"
 
 - id: ifc-data-science-2027
@@ -4602,7 +4764,7 @@
   region: "Europe"  # Istanbul treated as Europe
   lat: 41.01
   lon: 28.98
-  url: "https://www.bis.org/ifc/events/270323_ifc.htm"
+  url: "https://www.bis.org/events/20270323-5th-ifc-workshop-data-science-central-banking"
   format: "hybrid"  # in person, virtual participation for non-presenters
   topics: [data-science, general]
   description: "Workshop of the BIS Irving Fisher Committee on Central Bank Statistics on data science and AI for central-bank statistics and analysis, co-hosted by the Central Bank of the Republic of Turkiye."
@@ -4615,8 +4777,8 @@
     - label: "Presentation slides"
       types: [submission]
       date: 2027-02-28
-  checked: 2026-10-13
-  source: "https://www.bis.org/ifc/events/270323_ifc.htm"
+  checked: 2026-11-16
+  source: "https://www.bis.org/events/20270323-5th-ifc-workshop-data-science-central-banking"
 
 - id: aapor-2027
   name: "AAPOR 82nd Annual Conference"
@@ -4800,7 +4962,7 @@
   description: "Probability meeting at the University of Warwick with three mini-courses, invited research talks and contributed talks by early-career researchers."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-16
   source: "https://warwick.ac.uk/fac/sci/statistics/news/uk-easter-probability-meeting-2027/"
 
 - id: icasp-2027
@@ -4877,7 +5039,7 @@
       types: [registration]
       date: 2026-11-30
   note: "Deadlines use Anywhere on Earth (AoE) time. Both paper tracks are non-archival."
-  checked: 2026-10-26
+  checked: 2026-11-16
   source: "https://fsml-ims-workshop.org/"
 
 - id: orebro-econometrics-2026
@@ -4952,7 +5114,7 @@
       types: [submission]
       date: 2026-11-27
   note: "Posters and short talks are shared online. Workshops are in person; online workshop participation requires a specific request to the organisers."
-  checked: 2026-10-26
+  checked: 2026-11-16
   source: "https://sites.google.com/view/datascienceweek2026/"
 
 - id: bdai-2026
@@ -4978,7 +5140,7 @@
     - label: "Registration"
       types: [registration]
       date: 2026-11-17
-  checked: 2026-10-26
+  checked: 2026-11-16
   source: "https://www.univda.it/bdai2026/important-dates/"
 
 - id: popdays-2027
