@@ -115,7 +115,7 @@ export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id
     fit() {
       map.invalidateSize();
       const bounds = layer.getBounds();
-      if (bounds.isValid()) map.fitBounds(bounds, { padding: [32, 32], maxZoom: 5 });
+      if (bounds.isValid()) map.fitBounds(bounds, { padding: [32, 32], maxZoom: 5, animate: false });
     },
     highlight(id: string, on: boolean) {
       const m = markers.get(id);
@@ -133,7 +133,7 @@ export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id
       if (!m) return;
       map.invalidateSize();
       if (!layer.hasLayer(m)) layer.addLayer(m);
-      map.setView(m.getLatLng(), 16);
+      map.setView(m.getLatLng(), 16, { animate: false });
       m.openPopup();
     },
   };

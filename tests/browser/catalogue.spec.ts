@@ -187,6 +187,9 @@ test('locating METMA keeps its faculty coordinates even with another meeting nea
   const x = Math.floor((lon + 180) / 360 * scale);
   const y = Math.floor((1 - Math.asinh(Math.tan(lat * Math.PI / 180)) / Math.PI) / 2 * scale);
   await expect.poll(() => tiles.has(`16/${y}/${x}`)).toBe(true);
+  // Initial map fitting must not undo the venue zoom after its animation settles.
+  await page.waitForTimeout(500);
+  await expect(page.locator('.leaflet-control-zoom-in')).toHaveAttribute('aria-disabled', 'true');
 });
 
 test('coincident meetings share their true location and the popup respects filters', async ({ page }) => {

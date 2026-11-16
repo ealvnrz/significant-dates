@@ -318,6 +318,7 @@ document.addEventListener('click', e => {
   const row = target.closest<HTMLElement>('.row');
   if (!row) return;
   if (target.closest('[data-locate]')) {
+    clearTimeout(fitTimer);
     setMapShown(true);
     void ensureMap().then(m => { if (!mapCard.hidden) { m?.locate(rowId(row)); scrollTo(mapCard); } });
     return;
