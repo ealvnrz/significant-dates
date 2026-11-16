@@ -33,30 +33,35 @@ const pinStyle = (active = false): L.CircleMarkerOptions => ({
   fillOpacity: 1,
 });
 
-/** Spread meetings that share a city so every pin stays clickable. */
-function spread(points: MapPoint[]): MapPoint[] {
+/** Keep geographic coordinates intact; coincident meetings share a popup. */
+function groupByLocation(points: MapPoint[]): MapPoint[][] {
   const groups = new Map<string, MapPoint[]>();
   for (const p of points) {
-    const key = `${p.lat.toFixed(2)},${p.lon.toFixed(2)}`;
+    const key = `${p.lat},${p.lon}`;
     groups.set(key, [...(groups.get(key) ?? []), p]);
   }
-  return [...groups.values()].flatMap((g) =>
-    g.length === 1
-      ? g
-      : g.map((p, i) => {
-          const a = (2 * Math.PI * i) / g.length;
-          return { ...p, lat: p.lat + 0.12 * Math.sin(a), lon: p.lon + 0.12 * Math.cos(a) };
-        }),
-  );
+  return [...groups.values()];
 }
+
+const popupContent = (p: MapPoint) => `<div class="popup">
+  <p class="popup-when">${esc(p.when)}</p>
+  <p class="popup-title">${esc(p.title)}</p>
+  ${p.title !== p.name ? `<p class="popup-name">${esc(p.name)}</p>` : ''}
+  <p class="popup-where">${p.flag ? `<img class="flag" src="/flags/${esc(p.flag)}.svg" alt="" width="18" height="13.5">` : ''}${esc(p.where)}</p>
+  <p class="popup-links">
+    <a href="${esc(p.url)}" target="_blank" rel="noopener">Website ↗</a>
+    <button type="button" data-show-in-list="${esc(p.id)}">Show in list</button>
+  </p>
+</div>`;
 
 export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id: string) => void, onTileError: () => void = () => {}) {
   const map = L.map(el, { scrollWheelZoom: false, worldCopyJump: true, minZoom: 1 }).setView([20, 0], 2);
 
   // Leaflet stops click propagation inside popups, so wire the popup button directly.
   map.on('popupopen', (e) => {
-    const btn = e.popup.getElement()?.querySelector<HTMLButtonElement>('[data-show-in-list]');
-    if (btn) btn.onclick = () => onShowInList(btn.dataset.showInList!);
+    e.popup.getElement()?.querySelectorAll<HTMLButtonElement>('[data-show-in-list]').forEach((btn) => {
+      btn.onclick = () => onShowInList(btn.dataset.showInList!);
+    });
   });
 
   const base = L.tileLayer(tileUrl('Base'), {
@@ -68,25 +73,16 @@ export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id
   labels.on('tileerror', onTileError);
 
   const markers = new Map<string, L.CircleMarker>();
-  for (const p of spread(points)) {
+  const locations = groupByLocation(points).map((group) => {
+    const p = group[0];
     const marker = L.circleMarker([p.lat, p.lon], pinStyle());
-    marker.bindTooltip(esc(p.title), { direction: 'top', offset: [0, -6] });
-    marker.bindPopup(
-      `<div class="popup">
-        <p class="popup-when">${esc(p.when)}</p>
-        <p class="popup-title">${esc(p.title)}</p>
-        ${p.title !== p.name ? `<p class="popup-name">${esc(p.name)}</p>` : ''}
-        <p class="popup-where">${p.flag ? `<img class="flag" src="/flags/${esc(p.flag)}.svg" alt="" width="18" height="13.5">` : ''}${esc(p.where)}</p>
-        <p class="popup-links">
-          <a href="${esc(p.url)}" target="_blank" rel="noopener">Website ↗</a>
-          <button type="button" data-show-in-list="${esc(p.id)}">Show in list</button>
-        </p>
-      </div>`,
-    );
+    marker.bindTooltip('', { direction: 'top', offset: [0, -6] });
+    marker.bindPopup('', { maxHeight: 260 });
     marker.on('mouseover', () => marker.setStyle(pinStyle(true)));
     marker.on('mouseout', () => marker.setStyle(pinStyle()));
-    markers.set(p.id, marker);
-  }
+    for (const point of group) markers.set(point.id, marker);
+    return { group, marker };
+  });
 
   const layer = L.featureGroup().addTo(map);
 
@@ -97,7 +93,7 @@ export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id
   window.addEventListener('themechange', () => {
     base.setUrl(tileUrl('Base'));
     labels.setUrl(tileUrl('Reference'));
-    for (const m of markers.values()) m.setStyle(pinStyle());
+    for (const { marker } of locations) marker.setStyle(pinStyle());
   });
 
   new ResizeObserver(() => map.invalidateSize()).observe(el);
@@ -105,8 +101,16 @@ export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id
   return {
     setVisible(ids: Set<string>) {
       layer.clearLayers();
-      for (const [id, m] of markers) if (ids.has(id)) layer.addLayer(m);
-      return layer.getLayers().length;
+      let visibleMeetings = 0;
+      for (const { group, marker } of locations) {
+        const visible = group.filter(p => ids.has(p.id));
+        if (!visible.length) continue;
+        visibleMeetings += visible.length;
+        marker.setTooltipContent(visible.map(p => esc(p.title)).join('<br>'));
+        marker.setPopupContent(visible.map(popupContent).join('<hr>'));
+        layer.addLayer(marker);
+      }
+      return visibleMeetings;
     },
     fit() {
       map.invalidateSize();
@@ -129,7 +133,7 @@ export function createMap(el: HTMLElement, points: MapPoint[], onShowInList: (id
       if (!m) return;
       map.invalidateSize();
       if (!layer.hasLayer(m)) layer.addLayer(m);
-      map.setView(m.getLatLng(), 5);
+      map.setView(m.getLatLng(), 16);
       m.openPopup();
     },
   };

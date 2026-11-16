@@ -91,9 +91,11 @@ test('response bodies are released before fallback and after GET', async () => {
 
 test('compatible client identification avoids connection resets without ignoring HTTP failures', async () => {
   const server = createServer((request, response) => {
-    // Reproduce BDAI's connection reset for the old checker identifier.
-    if (request.headers['user-agent']?.includes('LinkCheck')) return request.socket.destroy();
-    response.statusCode = request.url === '/missing' ? 404 : 200;
+    // Reproduce BDAI, RSSB and PopDays rejecting the previous identifiers.
+    const agent = request.headers['user-agent'] ?? '';
+    if (agent.includes('LinkCheck') || agent.includes('(compatible; SignificantDates/')) return request.socket.destroy();
+    assert.match(agent, /SignificantDates\//, 'the checker must still identify itself');
+    response.statusCode = Number(request.url.slice(1)) || 200;
     response.end();
   });
   server.listen(0, '127.0.0.1');
@@ -102,10 +104,28 @@ test('compatible client identification avoids connection resets without ignoring
   const dispatcher = createLinkDispatcher();
   try {
     await assert.rejects(fetch(base, { dispatcher, headers: { 'user-agent': 'Mozilla/5.0 (compatible; SignificantDatesLinkCheck/1.0)' } }));
+    await assert.rejects(fetch(base, { dispatcher, headers: { 'user-agent': 'Mozilla/5.0 (compatible; SignificantDates/1.0)' } }));
     assert.equal((await checkLink(base, { dispatcher })).status, 200);
-    assert.equal((await checkLink(`${base}/missing`, { dispatcher })).status, 404);
+    for (const status of [401, 403, 404, 410, 429, 503]) {
+      assert.equal((await checkLink(`${base}/${status}`, { dispatcher })).status, status);
+    }
   } finally {
     await dispatcher.destroy();
     await new Promise(resolve => server.close(resolve));
   }
+});
+
+test('a Cloudflare challenge remains an unverified 403, with an explanation', async () => {
+  const response = () => new Response(null, { status: 403, headers: { 'cf-mitigated': 'challenge' } });
+  const client = requests(response(), response());
+  const result = await checkLink(url, client);
+  assert.equal(result.status, 403);
+  assert.match(result.note, /Cloudflare.*unverified/);
+  assert.deepEqual(client.methods, ['HEAD', 'GET']);
+  assert.equal(isTransientResult(result), false);
+});
+
+test('challenge metadata cannot reclassify a confirmed missing page', async () => {
+  const response = () => new Response(null, { status: 404, headers: { 'cf-mitigated': 'challenge' } });
+  assert.deepEqual(await checkLink(url, requests(response(), response())), { status: 404, method: 'GET' });
 });

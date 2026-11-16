@@ -1,4 +1,7 @@
 export const REQUEST_TIMEOUT_MS = 20_000;
+// Some public sites reset connections for the shortened "compatible" identifier.
+// Keep our crawler name while supplying the browser-compatible header they accept.
+const USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36 SignificantDates/1.0';
 const transientErrors = new Set([
   'TimeoutError', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_HEADERS_TIMEOUT', 'UND_ERR_BODY_TIMEOUT',
   'UND_ERR_SOCKET', 'ETIMEDOUT', 'ECONNRESET', 'ECONNREFUSED', 'EAI_AGAIN', 'ENOTFOUND',
@@ -19,12 +22,15 @@ export async function checkLink(url, { dispatcher, request = fetch, method = 'HE
   const init = {
     dispatcher,
     redirect: 'follow',
-    headers: { 'user-agent': 'Mozilla/5.0 (compatible; SignificantDates/1.0)', accept: 'text/html,*/*;q=0.8' },
+    headers: { 'user-agent': USER_AGENT, accept: 'text/html,*/*;q=0.8' },
   };
   const send = async verb => {
     const timeout = AbortSignal.timeout(REQUEST_TIMEOUT_MS);
     const res = await request(url, { ...init, method: verb, signal: signal ? AbortSignal.any([signal, timeout]) : timeout });
     const result = { status: res.status, method: verb };
+    if (res.status === 403 && res.headers.get('cf-mitigated') === 'challenge') {
+      result.note = 'Cloudflare returned a browser challenge; link availability is unverified.';
+    }
     if (transientStatuses.has(res.status)) result.retryAfterMs = retryAfterMs(res.headers.get('retry-after'), now());
     await res.body?.cancel();
     return result;

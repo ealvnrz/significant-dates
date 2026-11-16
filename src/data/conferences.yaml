@@ -921,16 +921,16 @@
   country: "Chile"
   countryCode: "CL"
   region: "Latin America"
-  lat: -33.50 # Campus San Joaquín, Pontificia Universidad Católica de Chile
-  lon: -70.61
+  lat: -33.499727
+  lon: -70.610632  # Faculty of Mathematics map pin (Google Maps place 16673061285952092408)
   url: "https://metma.mat.uc.cl/"
   format: "in-person" # format inferred (venue: Faculty of Mathematics, Campus San Joaquín)
   topics: [spatial, spatio-temporal]
-  description: "Latin American meeting on spatial, temporal and spatio-temporal statistical modelling, with keynote and invited talks, at the Pontificia Universidad Católica de Chile."
+  description: "Latin American meeting on spatial, temporal and spatio-temporal statistical modelling, with keynote and invited talks, at the Faculty of Mathematics, Pontificia Universidad Católica de Chile, San Joaquín Campus."
   deadlineStatus: unknown
   deadlines: [] # no submission or registration dates published yet
   checked: 2026-11-16
-  source: "https://metma.mat.uc.cl/"
+  source: "https://metma.mat.uc.cl/venue"
 
 - id: pisa-2027
   name: "Probability in South America 2027"

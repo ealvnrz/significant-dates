@@ -84,7 +84,7 @@ const out = [
     ...(recovered.length ? ['', ...tableHeader, ...recovered.map(row)] : ['', 'None.'])] : []),
   '',
   ...(!offline ? [`### Links that refuse automated checks (${blocked.length})`,
-    'Open these by hand; they usually work in a browser.',
+    'Access was refused: availability is unverified, not confirmed healthy or broken. Check these manually; browser challenges may also block a browser.',
     ...(blocked.length ? ['', ...tableHeader, ...blocked.map(row)] : ['', 'None.'])] : []),
   '',
   `### Editorial review due (${stale.length})`,

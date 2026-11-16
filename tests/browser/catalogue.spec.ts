@@ -170,3 +170,35 @@ test('a tab left open across UTC midnight refreshes automatically', async ({ pag
   await expect(page.locator('#past-list #conf-ysm-30-2026')).toHaveCount(1);
   await expect(page.locator('#f-search')).toHaveValue('WSA');
 });
+
+test('locating METMA keeps its faculty coordinates even with another meeting nearby', async ({ page }) => {
+  const tiles = new Set<string>();
+  await page.route('https://server.arcgisonline.com/**', route => {
+    tiles.add(new URL(route.request().url()).pathname.split('/tile/')[1]);
+    return route.abort();
+  });
+  await page.goto('/?q=METMA');
+  await page.locator('#conf-metma-latam-2027 [data-locate]').click();
+  await expect(page.locator('.leaflet-popup .popup-title')).toHaveText('III METMA LATAM 2027');
+  // The requested street-map tile must contain the faculty, not an offset city pin.
+  const lat = -33.499727;
+  const lon = -70.610632;
+  const scale = 2 ** 16;
+  const x = Math.floor((lon + 180) / 360 * scale);
+  const y = Math.floor((1 - Math.asinh(Math.tan(lat * Math.PI / 180)) / Math.PI) / 2 * scale);
+  await expect.poll(() => tiles.has(`16/${y}/${x}`)).toBe(true);
+});
+
+test('coincident meetings share their true location and the popup respects filters', async ({ page }) => {
+  await page.route('https://server.arcgisonline.com/**', route => route.abort());
+  await page.goto('/?q=SIAM');
+  await page.locator('#conf-siam-mds-2026 [data-locate]').click();
+  await expect(page.locator('#map .leaflet-interactive')).toHaveCount(2);
+  await expect(page.locator('.leaflet-popup .popup-title')).toHaveText(['SIAM MDS26', 'SIAM SDM26']);
+  await page.locator('.leaflet-popup [data-show-in-list="siam-sdm-2026"]').click();
+  await expect(page.locator('#details-siam-sdm-2026')).toHaveAttribute('open', '');
+  await page.locator('#f-search').fill('SIAM SDM26');
+  await page.locator('#conf-siam-sdm-2026 [data-locate]').click();
+  await expect(page.locator('#map .leaflet-interactive')).toHaveCount(1);
+  await expect(page.locator('.leaflet-popup .popup-title')).toHaveText('SIAM SDM26');
+});
