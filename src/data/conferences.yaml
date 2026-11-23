@@ -198,13 +198,16 @@
   format: "in-person" # format inferred
   topics: [spatial, spatio-temporal, bayesian, environmental]
   description: "First joint meeting of the EnviBayes and INLA workshop series, on Bayesian methods for environmental, ecological, spatial and spatio-temporal data."
-  note: "Early-bird registration closes in February 2027 and standard registration in April 2027; exact days have not been announced."
+  note: "Pre-workshop tutorials take place on June 21; the main workshop runs June 22–24, 2027. Standard registration closes in April 2027; the exact day has not been announced."
   deadlineStatus: published
   deadlines:
     - label: "Contributed talk and poster abstracts"
       types: [submission]
       date: 2027-01-31
-  checked: 2026-11-03
+    - label: "Early-bird registration"
+      types: [registration]
+      date: 2027-02-26
+  checked: 2026-11-23
   source: "https://envibayesinla.github.io/workshop2027/"
 
 - id: iamg-2027
@@ -233,7 +236,7 @@
     - label: "Early registration / presenter registration"
       types: [registration]
       date: 2027-05-17
-  checked: 2026-11-09
+  checked: 2026-11-23
   source: "https://www.iamgconferences.org/iamg2027/dates.php"
 
 - id: isec-2027
@@ -346,13 +349,13 @@
   description: "American Association of Geographers annual meeting; hosts the Geospatial Health Research Symposium on spatial epidemiology."
   deadlineStatus: published
   deadlines:
-    - label: "Abstract submission"
+    - label: "Abstract submission (extended)"
       types: [submission]
-      date: 2026-10-15
+      date: 2026-10-22
       tentative: true
-    - label: "Session organizing"
+    - label: "Session organizing (extended)"
       types: [proposal]
-      date: 2026-11-05
+      date: 2026-11-12
       tentative: true
     - label: "Workshop and field visit proposals"
       types: [proposal]
@@ -366,7 +369,7 @@
       types: [housing]
       date: 2027-01-15
   note: "Abstract, session and workshop deadlines omit the year; 2026 is inferred from the February 2027 meeting."
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://www.aag.org/events/aag2027/"
 
 # ============================ Bayesian / computational ============================
@@ -449,7 +452,7 @@
     - label: "Submission"
       types: [submission]
       date: 2026-11-30
-  checked: 2026-11-09
+  checked: 2026-11-23
   source: "https://sites.google.com/view/bayescomp27mirror/home"
 
 - id: bnp15-2027
@@ -549,7 +552,7 @@
     - label: "Late registration"
       types: [registration]
       date: 2027-06-15
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://www.cmstatistics.org/EcoSta2027/important_dates.php"
 
 # ============================ Major general meetings ============================
@@ -604,7 +607,7 @@
     - label: "Late registration"
       types: [registration]
       date: 2027-08-12
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://ww2.amstat.org/meetings/jsm/2027/conferenceinfo.cfm"
 
 - id: isi-wsc-2027
@@ -681,10 +684,28 @@
   format: "in-person" # format inferred
   topics: [biostatistics, general]
   description: "Joint meeting of the Western North American Region of the IBS and the IMS, with short courses and a student paper award."
-  deadlineStatus: not-announced
-  deadlines: []
-  note: "The official meeting page states that submission and registration deadlines are coming soon."
-  checked: 2026-10-26
+  deadlineStatus: published
+  deadlines:
+    - label: "Invited session proposals"
+      types: [proposal]
+      date: 2026-12-31
+    - label: "Contributed, poster, invited and student competition abstracts"
+      types: [submission]
+      date: 2027-02-15
+    - label: "Student paper competition manuscripts"
+      types: [submission, funding]
+      date: 2027-04-01
+    - label: "Presenter registration"
+      types: [registration]
+      date: 2027-04-15
+    - label: "Indigenous Student Travel Award applications"
+      types: [funding]
+      date: 2027-05-01
+    - label: "Conference hotel rate"
+      types: [housing]
+      date: 2027-05-21
+  note: "Registration fees and additional dates are still to be announced."
+  checked: 2026-11-23
   source: "https://wnar.org/wnar2027"
 
 - id: rss-2027
@@ -713,7 +734,7 @@
       date: 2027-07-05
       tentative: true
   note: "The conference pages give November 20 for session proposals, but the linked organiser guide gives November 21, 2026; the earlier date is shown pending clarification. The guide lists invited-talk abstracts as July 5 without a year; 2027 is inferred."
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://rss.org.uk/training-events/conference-2027/invited-topic-sessions/"
 
 - id: ssc-2027
@@ -802,7 +823,7 @@
       types: [registration]
       date: 2026-08-28
       tentative: true
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://aasc2026.netlify.app/"
 
 # ============================ Latin America ============================
@@ -885,8 +906,8 @@
     - label: "Late registration"
       types: [registration]
       date: 2026-11-23
-  note: "Late registration runs until the start of the meeting on November 23, 2026. WASA on November 26 requires separate registration."
-  checked: 2026-11-16
+  note: "On-site registration is available during the meeting; the previously published registration tier deadlines are retained. WASA on November 26 requires separate registration."
+  checked: 2026-11-23
   source: "https://70rbras.org/inscricoes.html"
 
 - id: latinr-2026
@@ -929,7 +950,7 @@
   description: "Latin American meeting on spatial, temporal and spatio-temporal statistical modelling, with keynote and invited talks, at the Faculty of Mathematics, Pontificia Universidad Católica de Chile, San Joaquín Campus."
   deadlineStatus: unknown
   deadlines: [] # no submission or registration dates published yet
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://metma.mat.uc.cl/venue"
 
 - id: pisa-2027
@@ -956,7 +977,7 @@
     - label: "Registration"
       types: [registration]
       date: 2026-12-18
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://pisa.mat.uc.cl/"
 
 - id: cmm-probability-school-2027
@@ -977,7 +998,7 @@
   note: "Registration includes a financial-support request option; no closing date is recorded."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://eventos.cmm.uchile.cl/escuelappe2027/"
 
 # ============================ Asia, Africa, Oceania, Europe ============================
@@ -1008,7 +1029,7 @@
     - label: "Extended registration"
       types: [registration]
       date: 2027-01-31
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://sites.google.com/view/robstat27"
 
 - id: iasc-ars-2026
@@ -1103,7 +1124,7 @@
       types: [submission]
       date: 2026-12-13
       tentative: true
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://kss.or.kr/board/notice/article/284650"
 
 - id: iisa-2026
@@ -1234,7 +1255,7 @@
     - label: "Registration payment"
       types: [registration]
       date: 2026-10-09
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://sasaconference2026.org/"
 
 
@@ -1259,7 +1280,8 @@
       types: [registration]
       date: 2026-09-18
       tentative: true
-  checked: 2026-10-13
+  note: "Registration and abstract submissions are closed. Contact the conference chair about late registration."
+  checked: 2026-11-23
   source: "https://adsnconf2026.netlify.app/"
 
 - id: nzsa-2026
@@ -1321,7 +1343,7 @@
     - label: "Standard registration"
       types: [registration]
       date: 2026-11-30
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://jscs-sympo40anniv.ywstat.jp/"
 
 
@@ -1419,7 +1441,7 @@
   description: "European meeting of the Bernoulli Society's European Regional Committee, covering statistics and probability."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://www.bernoullisociety.org/meetings"
 
 - id: dagstat-2028
@@ -1439,7 +1461,7 @@
   description: "Triennial joint conference of the German statistical societies in the DAGStat consortium, incorporating the annual Biometric Colloquium of the IBS German Region."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://www.biometrische-gesellschaft.de/"
 
 - id: ibc-2028
@@ -1453,14 +1475,15 @@
   region: "Europe"
   lat: 47.56
   lon: 7.59
-  url: "https://www.biometricsociety.org/events/event-description?CalendarEventKey=a703d218-7ac5-4c9a-ab1b-019bb0216116&Home=%2Fevents%2Fcalendar"
+  url: "https://www.biometricsociety.org/meetings/conferences"
   format: "in-person"  # format inferred; IBS lists the venue as "Congress Centre Basel (pending)"
   topics: [biostatistics]
   description: "Biennial conference of the International Biometric Society, supported by its Austro-Swiss, German and French Regions."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
-  source: "https://www.biometricsociety.org/events/event-description?CalendarEventKey=a703d218-7ac5-4c9a-ab1b-019bb0216116&Home=%2Fevents%2Fcalendar"
+  note: "The IBS confirms Basel and the meeting dates; Congress Centre Basel is still listed as a pending venue."
+  checked: 2026-11-23
+  source: "https://www.biometricsociety.org/meetings/conferences"
 
 # ============================ Europe: national and regional meetings ============================
 # Added 2026-10-02 (research by area).
@@ -1612,7 +1635,7 @@
     - label: "Invited / topic-contributed session and short-course proposals"
       types: [proposal]
       date: 2026-12-11
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://roes2027.org/key-dates"
 
 - id: ibsdr-preclinical-workshop-2026
@@ -1701,13 +1724,13 @@
   description: "Annual conference of the German Region of the International Biometric Society (IBS-DR), held at Heinrich Heine University Düsseldorf."
   deadlineStatus: published
   deadlines:
-    - label: "Abstract submission"
+    - label: "Abstract submission (extended)"
       types: [submission]
-      date: 2026-11-01
+      date: 2026-11-08
     - label: "Early-bird registration"
       types: [registration]
       date: 2026-12-31
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://biometrisches-kolloquium-2027.de"
 
 - id: bayst-2027
@@ -1793,7 +1816,7 @@
     - label: "Standard registration"
       types: [registration]
       date: 2027-02-03
-  checked: 2026-11-09
+  checked: 2026-11-23
   source: "https://dssr2027.unimib.it/important-dates"
 
 - id: smea-2027
@@ -1813,7 +1836,7 @@
   description: "Conference of the SMEA group (Statistical Measurement for Economic Analysis) of the Italian Statistical Society."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://new.sis-statistica.it/event/convegno-smea-2027/"
 
 - id: itacosm-2027
@@ -1827,14 +1850,15 @@
   region: "Europe"
   lat: 45.13
   lon: 10.03
-  url: "https://new.sis-statistica.it/gruppo-s2g-sis/"
+  url: "https://itacosm.github.io/2027/index.html"
   format: "in-person"            # format inferred
   topics: [general]
   description: "Biennial international conference on survey sampling methodology of the S2G group of the Italian Statistical Society."
-  deadlineStatus: unknown
+  deadlineStatus: not-announced
   deadlines: []
-  checked: 2026-10-13
-  source: "https://new.sis-statistica.it/event/itacosm-2027/"
+  note: "The official conference website states that the call for papers, programme and registration details will be published in the coming months."
+  checked: 2026-11-23
+  source: "https://itacosm.github.io/2027/index.html"
 
 - id: sisbayes-2027
   name: "Convegno SISbayes 2027"
@@ -1853,7 +1877,7 @@
   description: "Meeting of SISbayes, the Bayesian statistics group of the Italian Statistical Society."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://new.sis-statistica.it/event/convegno-sisbayes-2027/"
 
 - id: cladag-2027
@@ -1867,14 +1891,15 @@
   region: "Europe"
   lat: 42.46
   lon: 14.21
-  url: "https://sites.google.com/view/cladag/home-page"
+  url: "https://cladag.sis-statistica.it/meetings/cladag-2027/"
   format: "in-person"            # format inferred
   topics: [general, data-science]
   description: "Biennial meeting of the CLADAG section of the Italian Statistical Society on classification, multivariate data analysis and related methods."
-  deadlineStatus: unknown
+  deadlineStatus: not-announced
   deadlines: []
-  checked: 2026-10-13
-  source: "https://new.sis-statistica.it/event/convegno-cladag-2027/"
+  note: "The official Call for Papers and Fees and Registration pages both state that details are to be announced."
+  checked: 2026-11-23
+  source: "https://cladag.sis-statistica.it/meetings/cladag-2027/"
 
 - id: ies-2027
   name: "IES - Innovation & Society 2027: Statistical Methods and Data Science for Evaluation and Quality in the Age of AI"
@@ -2009,10 +2034,16 @@
   format: "in-person"            # format inferred
   topics: [general]
   description: "Biennial national meeting of the Norwegian Statistical Association (Norsk statistisk forening), with pre-conference courses."
-  deadlineStatus: unknown
-  deadlines: []                  # registration and abstract submission "open later"
+  deadlineStatus: published
+  deadlines:
+    - label: "Contributed presentations"
+      types: [submission]
+      date: 2027-02-15
+    - label: "Registration closes"
+      types: [registration]
+      date: 2027-05-14
   note: "Pre-conference courses run June 14–15; the main meeting runs June 15–17, 2027."
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://holleland.github.io/NSM27/"
 
 - id: eurandom-apq-2026
@@ -2064,7 +2095,7 @@
     - label: "Registration (subject to capacity)"
       types: [registration]
       date: 2027-02-10
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://www.eurandom.tue.nl/event/yes2027/"
 
 - id: eurandom-pgm-2027
@@ -2098,7 +2129,7 @@
       types: [registration]
       date: 2027-04-02
   note: "The current official page no longer mentions travel grants. The previously listed December 1 funding deadline is retained as tentative pending clarification; poster and registration deadlines are confirmed."
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://www.eurandom.tue.nl/event/probabilistic-graphical-models-2/"
 
 - id: yep-xxi-2027
@@ -2118,7 +2149,7 @@
   description: "21st Young European Probabilists workshop at EURANDOM on random graph dynamics and processes on graphs, with talks and mini-courses."
   deadlineStatus: unknown
   deadlines: []                  # registration opens fall 2026
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://www.eurandom.tue.nl/event/yep-xxi-dynamics-of-and-on-graphs/"
 
 - id: agrostat-2026
@@ -2231,7 +2262,7 @@
     - label: "Registration"
       types: [registration]
       date: 2027-03-01
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://mascotnum2027.sciencesconf.org/"
 
 - id: isbs-2026
@@ -2361,7 +2392,7 @@
       types: [registration]
       date: 2026-12-15
       tentative: true
-  checked: 2026-11-09
+  checked: 2026-11-23
   source: "https://sites.google.com/view/ims-icsds2026/registration"
 
 - id: biostatnet-women-workshop-2026
@@ -2502,7 +2533,7 @@
     - label: "Registration"
       types: [registration]
       date: 2027-01-11
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://community.amstat.org/discussion/announcement-7th-statistical-practice-in-cancer-conference-spcc-feb-12-13-2027-tampa-call-for-abstracts"
 
 - id: imsi-generative-modeling-2026
@@ -2909,7 +2940,7 @@
       date: 2026-12-01
       tentative: true
   note: "The fee schedule gives December 7–9 for the conference and December 10–11 for short courses. Other pages give inconsistent overall date ranges and retain 2025 poster deadlines; the 2026 poster deadline is unverified."
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://www.deming-conference.org/programs/2026-program/"
 
 - id: ichps-2027
@@ -2941,7 +2972,7 @@
     - label: "Online registration"
       types: [registration]
       date: 2027-01-15
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://ww2.amstat.org/meetings/ichps/2027/conferenceinfo.cfm"
 
 - id: statbolic-2027
@@ -2975,7 +3006,7 @@
       types: [registration]
       date: 2027-02-05
   note: "The ASA calendar entry remains on hold and lists February 22 only; the organiser website confirms February 22–23, 2027, with registration open. The discrepancy remains unresolved."
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://community.amstat.org/statbolic/home"
 
 - id: ssp-2027
@@ -2996,7 +3027,7 @@
   deadlineStatus: not-announced
   deadlines: []
   note: "The preliminary official announcement says registration, funding and poster deadlines will be posted when available. Tutorials are planned for March 17."
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://www.stevenheilman.org/ssp2027.html"
 
 - id: cots-2027
@@ -3052,7 +3083,7 @@
     - label: "Housing reservations"
       types: [housing]
       date: 2027-03-30
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://ww2.amstat.org/meetings/sdss/2027/conferenceinfo.cfm"
 
 - id: mbsw-2027
@@ -3073,7 +3104,7 @@
   deadlineStatus: unknown
   deadlines: []
   note: "The abstract page gives March 31 without identifying the edition; that date has not been assigned to 2027."
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://mbswonline.com/"
 
 - id: lids-2027
@@ -3093,7 +3124,7 @@
   description: "Conference of the ASA Lifetime Data Science Section on survival, event-history and reliability data analysis."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://community.amstat.org/lids/events/2027lids-conf"
 
 - id: icsa-2027
@@ -3111,10 +3142,25 @@
   format: "in-person"            # format inferred
   topics: [general, biostatistics]
   description: "Annual applied statistics symposium of the International Chinese Statistical Association, hosted in 2027 by the University of Pittsburgh."
-  deadlineStatus: not-announced
-  deadlines: []                  # all deadlines TBD on the site
-  note: "All submission and early-bird registration deadlines are listed as TBD on the official website."
-  checked: 2026-10-26
+  deadlineStatus: published
+  deadlines:
+    - label: "Invited session and short course proposals"
+      types: [proposal]
+      date: 2027-02-01
+    - label: "Invited session abstracts"
+      types: [submission]
+      date: 2027-04-01
+    - label: "Student paper competition"
+      types: [submission, funding]
+      date: 2027-04-15
+    - label: "Early-bird registration"
+      types: [registration]
+      date: 2027-04-15
+    - label: "Poster abstracts"
+      types: [submission]
+      date: 2027-05-15
+  note: "Account registration is not open yet; submission and early-bird registration deadlines have been announced."
+  checked: 2026-11-23
   source: "https://symposium2027.icsa.org/"
 
 - id: ncb-2027
@@ -3320,31 +3366,8 @@
   checked: 2026-10-13
   source: "https://conference.sskenya.org/#/dates"
 
-- id: aic-2027
-  name: "9th African International Conference on Statistics"
-  acronym: "AIC 2027"
-  start: 2027-01-04
-  end: 2027-01-08
-  city: "Nairobi"
-  country: "Kenya"
-  countryCode: "KE"
-  region: "Africa"
-  lat: -1.29
-  lon: 36.82
-  url: "https://aic2026.strathmore.edu/"
-  format: "in-person"  # format inferred
-  topics: [general, data-science]
-  description: "International statistics conference hosted by Strathmore University and the University of Maryland, Baltimore County, in partnership with the ASA and IMS, on big data, AI and statistical methods for development in Africa."
-  deadlineStatus: published
-  deadlines:
-    - label: "Abstract submission"
-      types: [submission]
-      date: 2026-12-05
-    - label: "Registration closes"
-      types: [registration]
-      date: 2026-12-20
-  checked: 2026-11-16
-  source: "https://aic2026.strathmore.edu/important-dates/"
+# AIC 2027 was cancelled; official homepage notice verified 2026-11-23.
+# https://aic2026.strathmore.edu/wp-content/uploads/2026/11/AICS-2026-Web-Cancelled.png
 
 # ============================ Asia and Oceania ============================
 # Added 2026-10-02 (research by area).
@@ -3579,7 +3602,7 @@
       types: [registration]
       date: 2026-12-10
   note: "Conference sessions take place on December 19, 21 and 22, 2026; there is no conference session on December 20."
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://www.icaapsp2026.com/"
 
 - id: wombat-2026
@@ -3599,7 +3622,7 @@
   description: "Annual data-analytics workshop run by the Monash Business Analytics Team (Monash Business School), with a tutorial day followed by a day of talks on open-source statistical and data-science tools."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://wombat2026.numbat.space/"
 
 - id: ibs-ar-2027
@@ -3672,7 +3695,7 @@
       types: [registration]
       date: 2026-11-23
   note: "Events take place in Taipei and Taichung; the Feng Chia University workshop in Taichung runs December 16–17."
-  checked: 2026-11-09
+  checked: 2026-11-23
   source: "https://www3.stat.sinica.edu.tw/swt2026/"  # poster deadline from https://www3.stat.sinica.edu.tw/2026ci/
 
 - id: mtps-2026
@@ -3698,7 +3721,7 @@
     - label: "Registration"
       types: [registration]
       date: 2026-11-30
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://sites.google.com/view/mtps-2026/registration"
 
 - id: ssca-navstat-2027
@@ -3786,7 +3809,7 @@
     - label: "Manuscript submission (extended)"
       types: [submission]
       date: 2026-11-25
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://jcs-sympo2026.ywstat.jp/"
 
 - id: nstc-stat-2027
@@ -3842,7 +3865,7 @@
       date: 2026-11-27
       tentative: true
   note: "No deadline applies to attendance without a talk. Nursery, talk, travel-support and abstract dates are stated without a year; 2026 is inferred from the meeting edition."
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://sites.google.com/view/2026-probability-symposium/"
 
 # ============================ International series: methodology ============================
@@ -4103,7 +4126,7 @@
     - label: "Early registration"
       types: [registration]
       date: 2027-04-30
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://informs-aps.webspace.durham.ac.uk/key-dates/"
 
 - id: algstat-2027
@@ -4126,7 +4149,7 @@
     - label: "Financial support application"
       types: [funding]
       date: 2026-11-30
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://algebraicstatistics.org/2027/"
 
 - id: itise-2027
@@ -4297,7 +4320,7 @@
     - label: "Abstract submission (1st stream, extended)"
       types: [submission]
       date: 2026-12-20
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "http://www.asmda.es/"
 
 - id: enbis-spring-2027
@@ -4382,7 +4405,7 @@
     - label: "Early registration"
       types: [registration]
       date: 2027-01-11
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://sci-info.org/annual-meeting/submissions/"
 
 - id: eurocim-2027
@@ -4476,7 +4499,7 @@
     - label: "Poster abstracts"
       types: [submission]
       date: 2027-02-05
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://psiweb.org/conferences/about-the-conference/abstract-submissions/"
 
 - id: efspi-regulatory-workshop-2027
@@ -4539,7 +4562,7 @@
     - label: "David Sackett Trial of the Year nominations"
       types: [other]
       date: 2027-01-04
-  checked: 2026-10-26
+  checked: 2026-11-23
   source: "https://www.sctweb.org/meeting/index.cfm"
 
 - id: sct-2028
@@ -4585,7 +4608,7 @@
     - label: "Registration (free, mandatory)"
       types: [registration]
       date: 2027-01-15
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://smpgd2027.sciencesconf.org/"
 
 - id: unece-sde-2026
@@ -4700,7 +4723,7 @@
     - label: "Posters-and-Beyond proposals"
       types: [proposal]
       date: 2027-03-15
-  checked: 2026-10-26
+  checked: 2026-11-23
   source: "https://www.causeweb.org/cause/uscots/uscots27/proposals"
 
 - id: mathsport-2027
@@ -4777,7 +4800,7 @@
     - label: "Presentation slides"
       types: [submission]
       date: 2027-02-28
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://www.bis.org/events/20270323-5th-ifc-workshop-data-science-central-banking"
 
 - id: aapor-2027
@@ -4803,7 +4826,7 @@
     - label: "Abstract submission"
       types: [submission]
       date: 2026-11-15
-  checked: 2026-11-09
+  checked: 2026-11-23
   source: "https://aapor.org/aapor-2027-call-for-abstracts/"
 
 - id: iges-2026
@@ -4943,7 +4966,7 @@
       types: [submission]
       date: 2026-12-01
   source: "https://www.gpsd-2027.de/registration-submissions"
-  checked: 2026-10-13
+  checked: 2026-11-23
 
 - id: uk-easter-probability-2027
   name: "UK Easter Probability Meeting 2027"
@@ -5012,7 +5035,7 @@
   note: "Registration is separate from the 70th RBras meeting held November 23–25."
   deadlineStatus: unknown
   deadlines: []
-  checked: 2026-10-13
+  checked: 2026-11-23
   source: "https://70rbras.org/wasa.html"
 
 - id: fsml-2026
@@ -5039,7 +5062,7 @@
       types: [registration]
       date: 2026-11-30
   note: "Deadlines use Anywhere on Earth (AoE) time. Both paper tracks are non-archival."
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://fsml-ims-workshop.org/"
 
 - id: orebro-econometrics-2026
@@ -5114,7 +5137,7 @@
       types: [submission]
       date: 2026-11-27
   note: "Posters and short talks are shared online. Workshops are in person; online workshop participation requires a specific request to the organisers."
-  checked: 2026-11-16
+  checked: 2026-11-23
   source: "https://sites.google.com/view/datascienceweek2026/"
 
 - id: bdai-2026
@@ -5200,3 +5223,119 @@
       date: 2027-06-30
   checked: 2026-10-26
   source: "https://hdda16.stat.unipd.it/important-dates/"
+
+# Added 2026-11-23 after review of official society and organiser announcements.
+
+- id: swim-2026
+  name: "South-West German Infectious Disease Modelling Workshop"
+  acronym: "SWIM 2026"
+  start: 2026-12-09
+  end: 2026-12-09
+  city: "Karlsruhe"
+  country: "Germany"
+  countryCode: "DE"
+  region: "Europe"
+  lat: 49.01
+  lon: 8.40
+  url: "https://swim-workshop.de/2026.html"
+  format: "in-person"
+  topics: [biostatistics, computational]
+  description: "One-day workshop at the Karlsruhe Institute of Technology's Institute of Statistics, bringing together infectious disease modellers, epidemiologists and biostatisticians."
+  note: "Talk submissions are closed; poster proposals remain open, with no closing date stated. Participation is free."
+  deadlineStatus: published
+  deadlines:
+    - label: "Registration closes"
+      types: [registration]
+      date: 2026-11-29
+  checked: 2026-11-23
+  source: "https://swim-workshop.de/2026.html"
+
+- id: sae-2027
+  name: "Small Area Estimation, Artificial Intelligence, and Health Science"
+  acronym: "SAE 2027"
+  start: 2027-06-14
+  end: 2027-06-18
+  city: "Hue"
+  country: "Vietnam"
+  countryCode: "VN"
+  region: "Asia"
+  lat: 16.46
+  lon: 107.59
+  url: "https://sae2027.huemed-univ.edu.vn/?p=home"
+  format: "in-person" # format inferred from the Hue University of Medicine and Pharmacy venue
+  topics: [spatial, biostatistics, general]
+  description: "IASS satellite conference of the 2027 ISI World Statistics Congress on small area estimation, artificial intelligence and health science, hosted by Hue University of Medicine and Pharmacy."
+  note: "The registration opening date is still to be announced; published submission and early-bird closing dates are recorded."
+  deadlineStatus: published
+  deadlines:
+    - label: "Abstracts and invited proposals"
+      types: [submission, proposal]
+      date: 2027-01-15
+    - label: "Early-bird registration"
+      types: [registration]
+      date: 2027-04-15
+    - label: "Optional full papers for proceedings"
+      types: [submission]
+      date: 2027-05-01
+  checked: 2026-11-23
+  source: "https://sae2027.huemed-univ.edu.vn/?p=home"
+
+- id: eysm-2027
+  name: "26th European Young Statisticians Meeting"
+  acronym: "EYSM 2027"
+  start: 2027-07-12
+  end: 2027-07-16
+  city: "London"
+  country: "United Kingdom"
+  countryCode: "GB"
+  region: "Europe"
+  lat: 51.50
+  lon: -0.18
+  url: "https://eysm2027.org/"
+  format: "in-person" # format inferred from the Imperial College London venue
+  topics: [general, probability]
+  description: "Bernoulli Society meeting for young statisticians, hosted at Imperial College London in collaboration with the University of Leicester; the 2027 edition marks the meeting's 50th anniversary."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-23
+  source: "https://eysm2027.org/"
+
+- id: iass-iaos-2027
+  name: "IASS–IAOS 2027 Conference: Statistics in Gaborone"
+  acronym: "IASS–IAOS 2027"
+  start: 2027-07-19
+  end: 2027-07-23
+  city: "Gaborone"
+  country: "Botswana"
+  countryCode: "BW"
+  region: "Africa"
+  lat: -24.65
+  lon: 25.91
+  url: "https://conferences.ub.bw/index.php/IASS-IAOS/IASS-IAOS-2027/index"
+  format: "in-person" # format inferred from the University of Botswana venue
+  topics: [general]
+  description: "Joint IASS and IAOS conference at the University of Botswana on trust and innovation in survey and official statistics; a satellite meeting of the 2027 ISI World Statistics Congress."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-23
+  source: "https://conferences.ub.bw/index.php/IASS-IAOS/IASS-IAOS-2027/index"
+
+- id: clatse-2027
+  name: "17th Latin American Congress of Statistical Societies"
+  acronym: "XVII CLATSE"
+  start: 2027-11-05
+  end: 2027-11-09
+  city: "Ushuaia"
+  country: "Argentina"
+  countryCode: "AR"
+  region: "Latin America"
+  lat: -54.80
+  lon: -68.30
+  url: "https://www.s-a-e.org.ar/"
+  format: "in-person" # format inferred from the announced Ushuaia location
+  topics: [general]
+  description: "Latin American congress of statistical societies, announced by the Argentine Statistical Society for Ushuaia in November 2027."
+  deadlineStatus: unknown
+  deadlines: []
+  checked: 2026-11-23
+  source: "https://www.s-a-e.org.ar/"
